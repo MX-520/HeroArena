@@ -1,0 +1,279 @@
+我正在用 Unity 2022.3.62f3 做一个 2D 像素风 RPG，目前正在规范化开发主角和项目结构。
+
+【我的基础】
+- 我会 Unity 的基础操作
+- 会创建角色、Prefab、Collider、Rigidbody2D、Animator、动画切片等
+- 地图和 Tilemap 我会
+- 我目前缺的是“行业规范化”的项目组织、Prefab 架构、Animator 架构、代码职责划分、Git 版本管理等
+- 所以请不要把我当完全新手，但也不要直接跳过关键的规范设计
+- 每次只教我下一步，确认完成后再继续
+- 如果前面的方案不规范，请直接指出并纠正，不要为了迁就之前的操作继续错误方案
+
+【项目】
+项目名：HeroArena
+Unity：2022.3.62f3
+目前正在做 2D 像素风 RPG。
+
+【素材】
+我使用了 Epic RPG World / RafaelMatos 的素材。
+其中主角是 Q 版角色 Bafu。
+
+角色素材中有完整的 Sprite Sheet，例如：
+
+当前主要使用：
+- idle
+- walk
+- run
+- attack
+- hurt
+- death
+- roll
+
+其他动画暂未规划：
+- jump
+- dig
+- doing
+- axe
+- fishing 等
+
+
+- 主角目前并没有现成完整的四方向动画，因此后面需要根据实际素材决定方向系统，不要默认它已经有四方向
+
+【当前项目结构】
+目前大致是：
+
+Assets
+├── Animations
+│   └── Player
+│       └── Player.controller
+│
+├── Prefabs
+│   └── Player
+│       └── Bafu.prefab
+│
+├── Props
+├── RafaelMatos
+├── Role
+│   ├── Bafu
+│   ├── Gobing
+│   └── Skeleton
+├── Scenes
+└── UI
+
+【主角 Prefab 当前结构】
+Hierarchy 中现在有：
+
+Bafu
+└── Visual
+
+Bafu 是 Prefab 实例。
+Bafu：
+- Tag = Player
+- Layer = Player
+- Rigidbody2D
+- BoxCollider2D
+
+Visual：
+- Sprite Renderer
+- Animator
+
+Visual 的 Animator 使用的是：
+
+Assets/Animations/Player/Player.controller
+
+
+
+
+这样动画 Controller 和 Prefab 是分离的。
+
+
+【角色架构思路】
+目前希望采用比较规范的职责划分：
+
+Bafu
+├── 角色本体/逻辑
+│   ├── Rigidbody2D
+│   └── Collider
+│
+└── Visual
+    ├── SpriteRenderer
+    └── Animator
+
+也就是说：
+- Bafu 负责角色逻辑、移动、碰撞等
+- Visual 负责视觉表现和动画
+- Animator Controller 负责动画状态切换
+- 不希望把所有东西都堆在一个 GameObject 上
+
+【UI】
+已有基础血条和爱心素材。
+后续用于HP和道具系统。
+
+
+【Git 当前状态】
+
+目前项目使用 GitHub Desktop。
+
+之前讨论过：
+- 曾考虑移动 Unity 项目目录和 Git 仓库关系
+- 曾重新配置 Git username
+- 曾删除/重新考虑创建 Unity 项目仓库
+
+后续如果涉及 Git：
+请先让我截图 GitHub Desktop 当前 History / Changes 状态，
+不要假设已有 commit。
+
+目前每完成一个稳定功能后提醒：
+- 是否应该 commit
+- commit message 怎么写
+
+请把 Git 也纳入“行业规范化”的教学中，而不是只教 Unity。
+
+我希望：
+- 合理的项目目录结构
+- 合理的 Git 提交时机
+- 每完成一个稳定功能/阶段就进行一次 commit
+- commit message 尽量规范、清晰
+- 不要频繁提交无意义的修改
+- 不要把 Library、Temp 等 Unity 自动生成目录提交进去
+- 后面如果涉及 `.gitignore`、Prefab、Scene、Animator Controller、脚本等文件的版本管理，请告诉我哪些应该提交、哪些不应该提交
+
+如果当前项目 GitHub Desktop 已经有提交记录/日志状态，请根据我之后提供的截图判断当前状态，不要假设我已经 commit 或 push。
+
+【日志/开发记录】
+我也希望保留比较规范的开发日志。
+
+日志的作用不是记录每一次鼠标点击，而是记录：
+- 今天完成了什么
+- 为什么这样设计
+- 遇到什么问题
+- 怎么解决
+- 当前进度
+- 下一步准备做什么
+
+如果需要我创建日志文件，请建议合适的位置和命名方式，并且不要让我为了写日志影响正常开发。
+
+【教学方式】
+请按照“真实项目开发”的方式教我：
+
+1. 先确定架构
+2. 再创建资源/Prefab
+3. 再配置 Animator
+4. 再写角色脚本
+5. 再测试
+6. 测试通过后进行 Git commit
+7. 更新开发日志
+
+不要一次给我几十步。
+每次告诉我当前最应该做的一步，我完成后发截图，再继续下一步。
+
+【代码学习目标】
+
+除了完成游戏功能，希望同步提升 Unity C# 工程能力。
+
+请在开发过程中安排代码练习：
+
+阶段1:
+- C# 类和对象
+- MonoBehaviour 生命周期
+- 变量、方法、访问权限
+- Input System 使用
+
+阶段2:
+- 组件通信
+- 状态机设计
+- ScriptableObject
+- 事件系统
+
+阶段3:
+- 角色控制架构
+- 战斗系统架构
+- 数据与表现分离
+
+不要脱离项目单独刷题，
+优先结合 HeroArena 实际代码练习。
+
+
+【当前角色开发进度】
+
+Bafu 主角 Prefab 已完成基础架构：
+
+Bafu
+├── Rigidbody2D
+├── BoxCollider2D
+├── PlayerInput
+├── PlayerMovement.cs
+└── Visual
+    ├── SpriteRenderer
+    └── Animator
+
+PlayerMovement.cs 当前负责：
+- 移动
+- Run速度切换
+- Animator Speed参数
+- Sprite翻转
+- Roll Trigger触发
+
+
+Input System:
+- 使用 Unity Input System
+- PlayerInput 使用 Send Messages
+
+
+目前 Input Actions：
+
+Player
+├── Move
+│   ├── WASD
+│   └── Arrow Keys
+├── Run
+│   └── Left Shift
+└── Roll
+    └── Space
+
+
+角色功能已经实现：
+
+✅ 移动
+✅ Walk 动画
+✅ Run（按住 Shift）
+✅ Roll 动画触发
+Run 输入已经解决：
+- Shift 按下 → Run True
+- Shift 松开 → Run False
+通过调整 Input Action Press Interaction 解决。
+
+Animator Parameters:
+
+Speed (Float)
+Roll (Trigger)
+
+
+Animator 状态：
+
+Locomotion Sub-State Machine:
+
+Idle
+Walk
+Run
+
+Any State:
+    → Roll
+
+
+目前 Roll 只播放动画，还没有：
+- 位移
+- 无敌帧
+- CD
+
+
+下一步：
+
+1. 完善 Roll 系统
+- 位移
+- 冷却
+- 无敌帧
+
+2. 整理 PlayerMovement.cs
+
+3. Git commit 保存 Player Controller 第一阶段版本
