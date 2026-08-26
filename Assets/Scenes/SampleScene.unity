@@ -14568,6 +14568,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8104589337922408919, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
+      propertyPath: rollSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104589337922408919, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
+      propertyPath: rollDuration
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

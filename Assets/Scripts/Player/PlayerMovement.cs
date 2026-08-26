@@ -1,40 +1,77 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerMovement : MonoBehaviour
 {
+    // ======================
+    // Movement Settings
+    // ======================
+
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float runSpeed = 8f;
+
+
+    // ======================
+    // Roll Settings
+    // ======================
+
+    [SerializeField] private float rollDuration = 0.25f;
+    [SerializeField] private float rollSpeed = 20f;
+
+
+    // ======================
+    // Components
+    // ======================
+
     private Rigidbody2D rb;
-
-    private Vector2 moveInput;
-
-    public float speed = 5f;
-    public float runSpeed = 8f;
-
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    private bool isRunning;
 
+    // ======================
+    // Runtime Data
+    // ======================
+
+    private Vector2 moveInput;
+    private Vector2 lastMoveDirection = Vector2.right;
+
+    private bool isRunning;
     private bool isRolling;
 
-    public float rollSpeed = 8f;
-
-    public void OnRoll(InputValue value)
-    {
-        if (value.isPressed)
-        {
-            animator.SetTrigger("Roll");
-        }
-    }
 
 
-    void Awake()
+    // ======================
+    // Unity Methods
+    // ======================
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
+
+    private void FixedUpdate()
+    {
+        if (isRolling)
+        {
+            return;
+        }
+
+        Move();
+        UpdateAnimation();
+        UpdateDirection();
+        UpdateLastMoveDirection();
+    }
+
+
+
+    // ======================
+    // Input
+    // ======================
 
     public void OnMove(InputValue value)
     {
@@ -45,25 +82,49 @@ public class PlayerMovement : MonoBehaviour
     public void OnRun(InputValue value)
     {
         isRunning = value.Get<float>() > 0;
-
-        Debug.Log("Run: " + isRunning);
     }
 
 
-    void FixedUpdate()
+    public void OnRoll(InputValue value)
     {
-        // 判断当前速度
+        if (value.isPressed && !isRolling)
+        {
+            StartCoroutine(RollCoroutine());
+        }
+    }
+
+
+
+    // ======================
+    // Movement
+    // ======================
+
+    private void Move()
+    {
         float currentSpeed = isRunning ? runSpeed : speed;
 
-        // 移动
         rb.velocity = moveInput * currentSpeed;
+    }
 
 
-        // 给Animator传速度
+
+    // ======================
+    // Animation
+    // ======================
+
+    private void UpdateAnimation()
+    {
         animator.SetFloat("Speed", rb.velocity.magnitude);
+    }
 
 
-        // 翻转角色
+
+    // ======================
+    // Direction
+    // ======================
+
+    private void UpdateDirection()
+    {
         if (moveInput.x > 0)
         {
             spriteRenderer.flipX = false;
@@ -72,5 +133,35 @@ public class PlayerMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+    }
+
+
+    private void UpdateLastMoveDirection()
+    {
+        if (moveInput != Vector2.zero)
+        {
+            lastMoveDirection = moveInput.normalized;
+        }
+    }
+
+
+
+    // ======================
+    // Roll
+    // ======================
+
+    private IEnumerator RollCoroutine()
+    {
+        isRolling = true;
+
+        animator.SetTrigger("Roll");
+
+        rb.velocity = lastMoveDirection * rollSpeed;
+
+        yield return new WaitForSeconds(rollDuration);
+
+        rb.velocity = Vector2.zero;
+
+        isRolling = false;
     }
 }

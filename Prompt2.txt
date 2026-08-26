@@ -1,0 +1,450 @@
+我正在用 Unity 2022.3.62f3 开发一个 2D 像素风 RPG 项目 HeroArena，目前目标是按照比较接近行业规范的方式完成一个可用于实习展示的 Unity 项目。
+
+请按照真实项目开发方式指导我。
+
+---
+
+# 我的基础
+
+- 我会 Unity 基础操作
+- 会创建角色、Prefab、Collider、Rigidbody2D、Animator、动画切片
+- 会制作 Tilemap 地图
+- 能完成基础功能实现
+
+目前不足：
+
+- 行业规范化项目结构
+- Prefab 架构设计
+- Animator 架构
+- 代码职责划分
+- Git 工作流
+- Unity C# 工程能力
+
+不要把我当完全新手。
+
+但是如果涉及关键架构，请解释为什么这样设计。
+
+如果之前方案不规范，请直接指出并纠正，不要为了保持旧方案继续错误设计。
+
+教学方式：
+
+- 一次只推进一个阶段
+- 不要一次给几十步
+- 我完成当前步骤后，再继续下一步
+- 优先解释设计思路，再修改代码
+
+---
+
+# 项目信息
+
+项目：
+
+HeroArena
+
+Unity：
+
+Unity 2022.3.62f3
+
+
+类型：
+
+2D Pixel RPG
+
+
+素材：
+
+Epic RPG World / RafaelMatos
+
+主角：
+
+Q版角色 Bafu
+
+
+---
+
+# 当前项目结构
+
+Assets
+├── Animations
+│ └── Player
+│ └── Player.controller
+│
+├── Prefabs
+│ └── Player
+│ └── Bafu.prefab
+│
+├── Props
+├── RafaelMatos
+├── Role
+│ ├── Bafu
+│ ├── Gobing
+│ └── Skeleton
+│
+├── Scenes
+└── UI
+
+
+---
+
+# 角色 Prefab 架构
+
+当前采用：
+Bafu
+├── Rigidbody2D
+├── BoxCollider2D
+├── PlayerInput
+├── PlayerMovement.cs
+│
+└── Visual
+├── SpriteRenderer
+└── Animator
+
+
+
+设计原则：
+
+Bafu：
+
+负责：
+
+- 角色逻辑
+- 移动
+- 碰撞
+- 状态
+
+
+Visual：
+
+负责：
+
+- Sprite显示
+- Animator
+
+
+Animator Controller：
+
+独立管理动画状态。
+
+不希望：
+
+- 所有组件全部堆在一个 GameObject
+- 动画逻辑和角色逻辑混合
+
+---
+
+# 当前动画系统
+
+Animator Controller:
+Assets/Animations/Player/Player.controller
+
+Parameters:
+Speed (Float)
+Roll (Trigger)
+
+状态：
+Locomotion Sub-State Machine
+
+Idle
+Walk
+Run
+
+Any State
+→ Roll
+
+
+
+注意：
+
+Bafu素材没有完整四方向动画。
+
+不要默认存在四方向系统。
+
+后续方向设计需要根据素材情况决定。
+
+---
+
+# 当前 Player Controller 状态
+
+已经完成：
+
+## Input System
+
+使用：
+
+Unity Input System
+
+PlayerInput：
+
+Send Messages
+
+
+Input Actions：
+Player
+
+├── Move
+│ ├── WASD
+│ └── Arrow Keys
+│
+├── Run
+│ └── Left Shift
+│
+└── Roll
+└── Space
+
+
+
+---
+
+## 玩家功能
+
+已完成：
+
+✅ 移动
+
+✅ Walk动画
+
+✅ Run系统
+
+✅ Roll输入
+
+✅ Roll动画
+
+✅ Roll方向记录
+
+✅ Roll位移
+
+✅ Roll状态锁
+
+
+Run问题已经解决：
+
+原因：
+
+Input Action 没有正确发送 Release。
+
+解决：
+
+调整 Press Interaction。
+
+
+---
+
+# 当前 PlayerMovement.cs 设计
+
+已经进行第一次重构。
+
+当前结构：
+PlayerMovement
+
+├── Settings
+│
+├── Components
+│
+├── Runtime Data
+│
+├── Input
+│
+├── Movement
+│
+├── Animation
+│
+├── Direction
+│
+└── Roll
+
+
+
+代码规范：
+
+使用：
+
+```csharp
+[SerializeField] private
+管理 Inspector 参数。
+
+例如：
+
+[SerializeField] private float speed;
+[SerializeField] private float rollSpeed;
+
+不要默认使用 public 暴露变量。
+
+Git规范
+
+项目使用：
+
+GitHub Desktop。
+
+涉及 Git 时：
+
+不要假设已有 commit。
+
+如果需要判断当前状态：
+
+让我提供：
+
+History截图
+Changes截图
+
+不要直接认为已经 commit 或 push。
+
+每完成稳定阶段：
+
+提醒：
+
+是否应该 commit
+commit message 怎么写
+
+Commit要求：
+
+不频繁提交无意义修改
+每个稳定功能一个阶段提交
+message 清晰
+
+例如：
+
+Complete player movement system
+
+Add walking, running and roll mechanics
+
+Unity Git规则：
+
+提交：
+
+Assets
+Packages
+ProjectSettings
+
+不提交：
+
+Library
+Temp
+Obj
+Logs
+UserSettings
+开发日志
+
+需要保持规范日志。
+
+日志记录：
+
+今天完成什么
+技术设计
+遇到问题
+解决方案
+当前状态
+下一步
+
+不要记录：
+
+每一次点击
+无意义操作
+代码学习目标
+
+希望结合 HeroArena 学习 Unity C#。
+
+不要脱离项目刷题。
+
+阶段1：
+
+已完成：
+
+MonoBehaviour生命周期
+变量和方法
+private/public
+SerializeField
+Input System
+Rigidbody2D控制
+
+阶段2：
+
+准备学习：
+
+组件通信
+状态机设计
+ScriptableObject
+Event系统
+
+阶段3：
+
+后续：
+
+角色控制架构
+战斗系统架构
+数据与表现分离
+当前开发阶段
+
+Player Controller 第一阶段完成。
+
+下一阶段：
+
+Combat System。
+
+计划：
+
+Player Attack
+
+学习：
+
+Input
+Animator Trigger
+Attack Animation
+Attack Collider
+Damage System
+
+学习：
+
+组件通信
+Interface
+数据传递
+Enemy System
+
+学习：
+
+Enemy HP
+AI基础
+状态设计
+教学要求
+
+请按照：
+
+确定架构
+↓
+创建资源
+↓
+配置组件
+↓
+写代码
+↓
+测试
+↓
+Git Commit
+↓
+更新日志
+
+流程教学。
+
+不要只追求功能实现。
+
+目标：
+
+制作一个结构合理、代码规范、可以用于Unity实习展示的2D Pixel RPG项目。
+
+
+---
+
+这个版本比原来的更适合长期使用。
+
+现在你的项目状态已经从：
+
+> “学习 Unity 做一个角色”
+
+进入：
+
+> “按项目流程开发一个 RPG Demo”
+
+下一次继续时，可以直接从：
+
+**Combat System 架构设计（攻击应该放在哪里、PlayerAttack 是否拆脚本）**
+
+开始。你现在不要急着写攻击代码，先确定架构会更符合你之前想学的方向。
