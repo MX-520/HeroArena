@@ -14496,14 +14496,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8563859726310080718, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
-      propertyPath: m_Size.y
-      value: 0.40625
-      objectReference: {fileID: 0}
-    - target: {fileID: -8563859726310080718, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.07812514
-      objectReference: {fileID: 0}
     - target: {fileID: 180127035632062060, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -14544,37 +14536,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1901445415923342189, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
-      propertyPath: m_Size.x
-      value: 0.33151162
-      objectReference: {fileID: 0}
-    - target: {fileID: 1901445415923342189, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
-      propertyPath: m_Size.y
-      value: 0.20956853
-      objectReference: {fileID: 0}
-    - target: {fileID: 1901445415923342189, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.016608536
-      objectReference: {fileID: 0}
-    - target: {fileID: 1901445415923342189, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.17646573
-      objectReference: {fileID: 0}
     - target: {fileID: 3287020020896457631, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
       propertyPath: m_Name
       value: Bafu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104589337922408919, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104589337922408919, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
-      propertyPath: rollSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104589337922408919, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
-      propertyPath: rollDuration
-      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
