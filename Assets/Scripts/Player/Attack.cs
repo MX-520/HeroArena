@@ -36,6 +36,13 @@ public class PlayerAttack : MonoBehaviour
         foreach (Collider2D hit in hitObjects)
         {
             Debug.Log("Hit: " + hit.name);
+
+            IDamageable damageable = hit.GetComponent<IDamageable>();
+
+            if (damageable != null)
+            {
+                damageable.TakeDamage(10);
+            }
         }
     }
 }
