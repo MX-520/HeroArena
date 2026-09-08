@@ -8,7 +8,9 @@ public class Health : MonoBehaviour
     private int currentHP;
     public event Action OnDamaged;
     public event Action OnDied;
+    private bool isDead;
 
+    public event Action<int, int> OnHealthChanged;
 
     private void Awake()
     {
@@ -18,29 +20,43 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead)
+            return;
+
         currentHP -= damage;
 
         Debug.Log(gameObject.name + " HP:" + currentHP);
 
-        OnHealthChanged?.Invoke(currentHP, maxHP);
-
         if (currentHP <= 0)
         {
             currentHP = 0;
+            OnHealthChanged?.Invoke(currentHP, maxHP);
+
             Die();
             return;
         }
 
+        OnHealthChanged?.Invoke(currentHP, maxHP);
         OnDamaged?.Invoke();
     }
 
 
     private void Die()
     {
-        Debug.Log(gameObject.name + " Dead");
+        if (isDead)
+            return;
 
+        isDead = true;
+
+        Debug.Log(gameObject.name + " Dead");
         OnDied?.Invoke();
     }
 
-    public event Action<int, int> OnHealthChanged;
+    public void RestoreFull()
+    {
+        currentHP = maxHP;
+        isDead = false;
+
+        OnHealthChanged?.Invoke(currentHP, maxHP);
+    }
 }

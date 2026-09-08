@@ -51,6 +51,11 @@ public class PlayerMovement : MonoBehaviour
     private PlayerAttack playerAttack;
     public bool IsRolling => isRolling;
 
+    private bool isDead;
+
+    public bool IsDead => isDead;
+    
+    private Coroutine rollCoroutine;
 
     // ======================
     // Unity Methods
@@ -68,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isRolling || isHurt)
+        if (isRolling || isHurt || isDead)
         {
             return;
         }
@@ -89,6 +94,11 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = value.Get<Vector2>();
     }
+    public void Die()
+    {
+        isDead = true;
+        rb.velocity = Vector2.zero;
+    }
 
 
     public void OnRun(InputValue value)
@@ -102,9 +112,10 @@ public class PlayerMovement : MonoBehaviour
         if (value.isPressed &&
             !isRolling &&
             !isHurt &&
+            !isDead &&
             !playerAttack.IsAttacking)
         {
-            StartCoroutine(RollCoroutine());
+            rollCoroutine = StartCoroutine(RollCoroutine());
         }
     }
 
@@ -171,18 +182,13 @@ public class PlayerMovement : MonoBehaviour
     {
         isRolling = true;
 
+        animator.SetTrigger("Roll");
+
         int playerLayer = gameObject.layer;
         int enemyLayer = LayerMask.NameToLayer(enemyLayerName);
 
-        Physics2D.IgnoreLayerCollision(
-            playerLayer,
-            enemyLayer,
-            true
-        );
-
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
         damageReceiver.SetInvincible(true);
-
-        animator.SetTrigger("Roll");
 
         rb.velocity = lastMoveDirection * rollSpeed;
 
@@ -190,15 +196,11 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = Vector2.zero;
 
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
         damageReceiver.SetInvincible(false);
 
-        Physics2D.IgnoreLayerCollision(
-            playerLayer,
-            enemyLayer,
-            false
-        );
-
         isRolling = false;
+        rollCoroutine = null;
     }
 
     public void EnterHurt()
@@ -210,5 +212,39 @@ public class PlayerMovement : MonoBehaviour
     public void ExitHurt()
     {
         isHurt = false;
+    }
+
+    public void Respawn()
+    {
+        isDead = false;
+        isHurt = false;
+        isRolling = false;
+
+        rb.velocity = Vector2.zero;
+    }
+    public void CancelRoll()
+    {
+        if (!isRolling)
+            return;
+
+        if (rollCoroutine != null)
+        {
+            StopCoroutine(rollCoroutine);
+            rollCoroutine = null;
+        }
+
+        isRolling = false;
+        rb.velocity = Vector2.zero;
+
+        int playerLayer = gameObject.layer;
+        int enemyLayer = LayerMask.NameToLayer(enemyLayerName);
+
+        Physics2D.IgnoreLayerCollision(
+            playerLayer,
+            enemyLayer,
+            false
+        );
+
+        damageReceiver.SetInvincible(false);
     }
 }

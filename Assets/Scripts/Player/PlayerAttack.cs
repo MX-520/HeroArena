@@ -26,6 +26,7 @@ public class PlayerAttack : MonoBehaviour
         if (value.isPressed &&
             !playerMovement.IsHurt &&
             !playerMovement.IsRolling &&
+            !playerMovement.IsDead &&
             !isAttacking)
         {
             isAttacking = true;
@@ -55,6 +56,10 @@ public class PlayerAttack : MonoBehaviour
         }
     }
     public void OnAttackFinished()
+    {
+        isAttacking = false;
+    }
+    public void CancelAttack()
     {
         isAttacking = false;
     }
