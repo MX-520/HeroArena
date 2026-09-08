@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float detectionRange = 5f;
     [SerializeField] private float attackRange = 1.2f;
     [SerializeField] private float attackCooldown = 1.5f;
+    [SerializeField] private float destroyDelay = 2f;
+    [SerializeField] private Transform attackPivot;
 
     private float attackTimer;
     private float hurtDuration = 0.3f;
@@ -26,6 +28,9 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private Health health;
+    private Collider2D enemyCollider;
+    private DamageReceiver damageReceiver;
+    private EnemyAttack enemyAttack;
 
     private void Awake()
     {
@@ -41,8 +46,10 @@ public class EnemyController : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         rb = GetComponent<Rigidbody2D>();
-
         health = GetComponent<Health>();
+        enemyCollider = GetComponent<Collider2D>();
+        damageReceiver = GetComponent<DamageReceiver>();
+        enemyAttack = GetComponent<EnemyAttack>();
     }
 
     private void Update()
@@ -149,7 +156,13 @@ public class EnemyController : MonoBehaviour
 
         if (direction.x != 0)
         {
-            spriteRenderer.flipX = direction.x < 0;
+            bool facingLeft = direction.x < 0;
+
+            spriteRenderer.flipX = facingLeft;
+
+            attackPivot.localScale = facingLeft
+                ? new Vector3(-1, 1, 1)
+                : new Vector3(1, 1, 1);
         }
     }
 
@@ -207,10 +220,28 @@ public class EnemyController : MonoBehaviour
     private void OnEnable()
     {
         health.OnDamaged += OnHurt;
+        health.OnDied += OnDeath;
     }
 
     private void OnDisable()
     {
         health.OnDamaged -= OnHurt;
+        health.OnDied -= OnDeath;
+    }
+
+    private void OnDeath()
+    {
+        ChangeState(EnemyState.Dead);
+
+        animator.SetBool("IsMoving", false);
+        animator.SetTrigger("Death");
+
+        enemyCollider.enabled = false;
+        damageReceiver.enabled = false;
+
+        rb.velocity = Vector2.zero;
+
+        Destroy(gameObject, destroyDelay);
+        enemyAttack.DisableAttack();
     }
 }

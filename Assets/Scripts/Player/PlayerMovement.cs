@@ -45,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isRolling;
 
     private DamageReceiver damageReceiver;
+    private bool isHurt;
+    public bool IsHurt => isHurt;
+
+    private PlayerAttack playerAttack;
+    public bool IsRolling => isRolling;
 
 
     // ======================
@@ -57,12 +62,13 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         damageReceiver = GetComponent<DamageReceiver>();
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
 
     private void FixedUpdate()
     {
-        if (isRolling)
+        if (isRolling || isHurt)
         {
             return;
         }
@@ -93,7 +99,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnRoll(InputValue value)
     {
-        if (value.isPressed && !isRolling)
+        if (value.isPressed &&
+            !isRolling &&
+            !isHurt &&
+            !playerAttack.IsAttacking)
         {
             StartCoroutine(RollCoroutine());
         }
@@ -190,5 +199,16 @@ public class PlayerMovement : MonoBehaviour
         );
 
         isRolling = false;
+    }
+
+    public void EnterHurt()
+    {
+        isHurt = true;
+        rb.velocity = Vector2.zero;
+    }
+
+    public void ExitHurt()
+    {
+        isHurt = false;
     }
 }

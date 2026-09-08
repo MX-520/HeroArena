@@ -15,4 +15,18 @@ public class AnimationEventReceiver : MonoBehaviour
     {
         playerAttack.DetectHit();
     }
+    public void OnHurtFinished()
+    {
+        PlayerMovement playerMovement =
+            GetComponentInParent<PlayerMovement>();
+
+        playerMovement.ExitHurt();
+    }
+    public void OnAttackFinished()
+    {
+        PlayerAttack playerAttack =
+            GetComponentInParent<PlayerAttack>();
+
+        playerAttack.OnAttackFinished();
+    }
 }

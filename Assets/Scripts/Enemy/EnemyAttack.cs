@@ -5,17 +5,22 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRange = 0.8f;
     [SerializeField] private int damage = 10;
+    [SerializeField] private LayerMask targetLayer;
+
+    private bool canAttack = true;
 
 
     public void DetectHit()
     {
-        Debug.Log("Enemy Attack Hit"); 
+        if (!canAttack)
+            return;
+
         Collider2D[] hitObjects =
             Physics2D.OverlapCircleAll(
                 attackPoint.position,
-                attackRange
-            );
-
+                attackRange,
+                targetLayer
+    );
 
         foreach (Collider2D hit in hitObjects)
         {
@@ -28,4 +33,11 @@ public class EnemyAttack : MonoBehaviour
             }
         }
     }
+
+    public void DisableAttack()
+    {
+        canAttack = false;
+    }
+
+
 }

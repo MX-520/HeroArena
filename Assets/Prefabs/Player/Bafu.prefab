@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 752711557825922661}
   - component: {fileID: 7388897867794286214}
   - component: {fileID: 8803373574164326512}
+  - component: {fileID: 7538248541223966646}
   m_Layer: 6
   m_Name: Bafu
   m_TagString: Player
@@ -210,6 +211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 3703992176239358351}
   attackRange: 0.8
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &7388897867794286214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +237,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a12e1db42c6623140bd01e907e05a7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7538248541223966646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287020020896457631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4641eda37a85024cac37e63f162ee84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5560689526541488324
