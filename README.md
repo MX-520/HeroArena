@@ -137,7 +137,6 @@ Documentation/
 └── DevLog/
 ```
 
-开发日志记录在 `Documentation/DevLog` 中。
 
 ---
 
