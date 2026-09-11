@@ -11,7 +11,7 @@ HeroArena 是一个用于学习和实践 Unity 游戏开发的个人项目。
 
 ## 🎬 游戏演示
 
-![HeroArena Gameplay Demo](Documentation/Media/gameplay-demo.gif)
+![HeroArena Gameplay Demo](Documentation/Media/heroarena-demo.gif)
 ---
 
 ## ✨ 已实现功能
