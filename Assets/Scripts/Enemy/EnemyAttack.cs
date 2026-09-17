@@ -7,6 +7,8 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private int damage = 10;
     [SerializeField] private LayerMask targetLayer;
 
+    public float AttackRange => attackRange;
+
     private bool canAttack = true;
 
 
@@ -38,6 +40,12 @@ public class EnemyAttack : MonoBehaviour
     {
         canAttack = false;
     }
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
 
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
 
 }

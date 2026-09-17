@@ -13,7 +13,6 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float detectionRange = 5f;
-    [SerializeField] private float attackRange = 1.2f;
     [SerializeField] private float attackCooldown = 1.5f;
     [SerializeField] private float destroyDelay = 2f;
     [SerializeField] private Transform attackPivot;
@@ -72,7 +71,6 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case EnemyState.Dead:
-                UpdateDead();
                 break;
 
             case EnemyState.Hurt:
@@ -104,7 +102,7 @@ public class EnemyController : MonoBehaviour
             player.position
         );
 
-        if (distance <= attackRange)
+        if (distance <= enemyAttack.AttackRange)
         {
             ChangeState(EnemyState.Attack);
             return;
@@ -125,21 +123,24 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetBool("IsMoving", false);
 
+        float distance = Vector2.Distance(
+            transform.position,
+            player.position
+        );
+
+        if (distance > enemyAttack.AttackRange)
+        {
+            ChangeState(EnemyState.Chase);
+            return;
+        }
 
         attackTimer -= Time.deltaTime;
-
 
         if (attackTimer <= 0)
         {
             animator.SetTrigger("Attack");
-
             attackTimer = attackCooldown;
         }
-    }
-
-    private void UpdateDead()
-    {
-        // 下一阶段实现
     }
 
     private void ChasePlayer()
@@ -186,7 +187,7 @@ public class EnemyController : MonoBehaviour
         );
 
 
-        if (distance > attackRange)
+        if (distance > enemyAttack.AttackRange)
         {
             ChangeState(EnemyState.Chase);
         }
