@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     private float attackTimer;
     private float hurtDuration = 0.3f;
     private float hurtTimer;
+    private bool isAttacking;
 
     private EnemyState currentState = EnemyState.Idle;
     private Transform player;
@@ -30,6 +31,7 @@ public class EnemyController : MonoBehaviour
     private Collider2D enemyCollider;
     private DamageReceiver damageReceiver;
     private EnemyAttack enemyAttack;
+
 
     private void Awake()
     {
@@ -123,6 +125,10 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetBool("IsMoving", false);
 
+        // 当前攻击动画还没结束时，不重新判断距离和朝向
+        if (isAttacking)
+            return;
+
         float distance = Vector2.Distance(
             transform.position,
             player.position
@@ -138,6 +144,8 @@ public class EnemyController : MonoBehaviour
 
         if (attackTimer <= 0)
         {
+            isAttacking = true;
+
             animator.SetTrigger("Attack");
             attackTimer = attackCooldown;
         }
@@ -181,6 +189,7 @@ public class EnemyController : MonoBehaviour
 
     public void OnAttackFinished()
     {
+        isAttacking = false; 
         float distance = Vector2.Distance(
             transform.position,
             player.position
