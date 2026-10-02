@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class EnemyController : MonoBehaviour
         Dead
     }
 
-    [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float detectionRange = 5f;
     [SerializeField] private float attackCooldown = 1.5f;
     [SerializeField] private float destroyDelay = 2f;
@@ -31,12 +31,17 @@ public class EnemyController : MonoBehaviour
     private Collider2D enemyCollider;
     private DamageReceiver damageReceiver;
     private EnemyAttack enemyAttack;
+    private NavMeshAgent agent;
 
 
     private void Awake()
     {
         GameObject playerObject =
             GameObject.FindGameObjectWithTag("Player");
+        agent = GetComponent<NavMeshAgent>();
+
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
 
         if (playerObject != null)
         {
@@ -51,6 +56,8 @@ public class EnemyController : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();
         damageReceiver = GetComponent<DamageReceiver>();
         enemyAttack = GetComponent<EnemyAttack>();
+        Debug.Log("Goblin isOnNavMesh: " + agent.isOnNavMesh);
+        Debug.Log("Goblin Position: " + transform.position);
     }
 
     private void Update()
@@ -153,15 +160,14 @@ public class EnemyController : MonoBehaviour
 
     private void ChasePlayer()
     {
-        Vector2 direction =
-            (player.position - transform.position).normalized;
+        if (!agent.isOnNavMesh)
+        {
+            return;
+        }
+        
+        agent.SetDestination(player.position);
 
-
-        rb.MovePosition(
-            rb.position +
-            direction * moveSpeed * Time.deltaTime
-        );
-
+        Vector2 direction = agent.velocity.normalized;
 
         if (direction.x != 0)
         {
