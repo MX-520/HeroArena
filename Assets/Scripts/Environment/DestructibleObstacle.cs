@@ -5,12 +5,14 @@ public class DestructibleObstacle : MonoBehaviour
     private Health health;
     private DamageReceiver damageReceiver;
     private Collider2D obstacleCollider;
+    private NavigationUpdater navigationUpdater;
 
     private void Awake()
     {
         health = GetComponent<Health>();
         damageReceiver = GetComponent<DamageReceiver>();
         obstacleCollider = GetComponent<Collider2D>();
+        navigationUpdater = FindObjectOfType<NavigationUpdater>();
     }
 
     private void OnEnable()
@@ -29,5 +31,10 @@ public class DestructibleObstacle : MonoBehaviour
         damageReceiver.enabled = false;
 
         Destroy(gameObject);
+
+        if (navigationUpdater != null)
+        {
+            navigationUpdater.RebuildNavMesh();
+        }
     }
 }
