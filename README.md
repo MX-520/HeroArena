@@ -3,15 +3,18 @@
 > 🎮 基于 Unity 2022.3 + C# 开发的 2D 像素风动作 RPG Demo  
 > 🚧 个人独立开发中，项目持续迭代
 
-HeroArena 是一个用于学习和实践 Unity 游戏开发的个人项目。
+HeroArena 是一个基于 Unity 2022.3 + C# 独立开发的 2D 像素风 Action RPG 战斗 Demo。
 
-目前主要围绕 **角色控制、战斗系统、敌人 AI、动画状态以及角色死亡/重生流程** 进行开发，并在实现功能的同时逐步整理代码结构和角色状态管理。
+项目围绕角色控制、战斗系统、敌人 AI、2D 导航与场景交互构建核心玩法，目前已完成从移动、战斗、闪避、敌人追踪，到可破坏障碍、动态寻路、死亡重生的基础 Gameplay 闭环。
+
+项目开发过程中注重功能模块复用、角色状态约束以及实际问题定位，并持续通过 Git 进行功能迭代与版本管理。
 
 ---
 
 ## 🎬 游戏演示
 
-![HeroArena Gameplay Demo](Documentation/Media/heroarena-demo.gif)
+![HeroArena Gameplay Demo](Documentation/Media/HeroArena_Demo.gif)
+▶️ **[查看完整游戏演示（Bilibili）](https://www.bilibili.com/video/BV1g8He6TEKb)**
 ---
 
 ## ✨ 已实现功能
@@ -28,20 +31,32 @@ HeroArena 是一个用于学习和实践 Unity 游戏开发的个人项目。
 - Respawn 重生
 - Attack / Roll / Hurt / Death 动作状态约束与中断处理
 
+
 ### Enemy
 
 当前敌人：`Gobling`
 
 - Idle / Chase / Attack / Hurt / Death 状态
-- 自动追踪玩家
+- 基于 NavMeshPlus 的 2D 寻路与玩家追踪
+- 静态地图边界与场景障碍规避
+- 根据移动方向调整角色朝向与攻击方向
 - 攻击距离判断与攻击冷却
-- 根据玩家位置调整攻击方向
-- Animation Event 攻击判定
-- 受伤与死亡处理
-- 死亡后禁用攻击、碰撞与伤害接收
-- 延迟销毁
+- Animation Event 同步攻击判定
+- 受伤、死亡与状态切换处理
+- 死亡后禁用攻击、碰撞与伤害接收并延迟销毁
 
 ---
+
+### Environment & Navigation
+
+- 可破坏场景障碍物
+- 复用 `IDamageable / DamageReceiver / Health` 通用伤害结构
+- 使用 NavMeshPlus 构建 2D 可行走区域
+- 分离物理碰撞区域与 AI 导航阻挡区域
+- 障碍物销毁后动态重建 NavMesh
+- 敌人能够根据场景变化重新规划移动路径
+- 使用 Cinemachine 实现玩家相机跟随与地图边界限制
+
 
 ## ⚔️ Combat System
 
@@ -58,12 +73,12 @@ Health
   ↓
 OnDamaged / OnDied
   ↓
-Player / Enemy State
+Player / Enemy / Destructible
 ```
 
-通过 `IDamageable`、`DamageReceiver` 与 `Health` 分离攻击、伤害接收和生命值管理。
+通过 `IDamageable`、`DamageReceiver` 与 `Health` 分离攻击、伤害接收和生命值管理，并复用于 Player、Enemy 与 Destructible。
 
-`Health` 通过事件通知角色受伤和死亡，使生命值逻辑不直接依赖具体的 Player 或 Enemy 行为。
+`Health` 通过事件通知受伤和死亡，使生命值逻辑不直接依赖具体角色或场景对象的行为。
 
 ---
 
@@ -114,6 +129,8 @@ Resume Control
 - Unity Input System
 - Animator / Animation Event
 - Rigidbody2D / Physics2D
+- NavMeshPlus / Unity AI Navigation
+- Cinemachine
 - Coroutine
 - Git / GitHub
 
@@ -142,26 +159,26 @@ Documentation/
 
 ## 🗺️ 开发进度
 
-- [x] 玩家基础移动
-- [x] 玩家攻击
-- [x] Roll / 无敌
-- [x] 基础伤害与生命值系统
-- [x] 玩家 Hurt / Death
-- [x] 玩家 Respawn
-- [x] 基础 Enemy AI
+- [x] 玩家移动与角色控制
+- [x] 基础战斗与伤害系统
+- [x] Roll 闪避 / 无敌 / 敌人穿越
+- [x] Hurt / Death / Respawn
+- [x] Enemy 状态 AI
 - [x] Enemy Attack / Hurt / Death
-- [ ] Health UI
-- [ ] 更多敌人类型
-- [ ] 技能系统
-- [ ] 可破坏障碍物
-- [ ] 随机道具 / BUFF
-- [ ] Boss AI
-- [ ] 完整游戏流程
+- [x] 2D NavMesh 寻路与障碍规避
+- [x] 可破坏场景障碍
+- [x] 障碍销毁后的动态导航更新
+- [x] Cinemachine 相机跟随与地图边界限制
+- [ ] Gameplay UI / Health UI
+- [ ] 战斗反馈与视觉表现优化
+- [ ] 更多 Gameplay 内容
 
 ---
 
 ## 📌 项目状态
 
-HeroArena 目前处于持续开发阶段。
+HeroArena 目前已完成基础战斗 Gameplay 闭环，并持续进行功能迭代与表现优化。
 
-项目目标是通过实际功能迭代，逐步学习和实践 Unity 2D 游戏中的角色控制、战斗系统、AI、动画状态管理以及基础游戏架构。
+当前版本重点完成角色控制、战斗系统、敌人状态 AI、2D NavMesh 寻路、可破坏场景、动态导航更新以及死亡重生等功能。
+
+项目主要用于 Unity 游戏客户端开发方向的学习与实践，后续将继续完善 Gameplay UI、战斗反馈与整体演示效果。
