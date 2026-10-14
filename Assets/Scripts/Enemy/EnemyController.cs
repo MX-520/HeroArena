@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float attackCooldown = 1.5f;
     [SerializeField] private float destroyDelay = 2f;
     [SerializeField] private Transform attackPivot;
+    [SerializeField] private bool isRunner = false;
 
     private float attackTimer;
     private float hurtDuration = 0.3f;
@@ -32,7 +33,8 @@ public class EnemyController : MonoBehaviour
     private DamageReceiver damageReceiver;
     private EnemyAttack enemyAttack;
     private NavMeshAgent agent;
-
+    private bool hasLockedTarget;
+   
 
     private void Awake()
     {
@@ -49,6 +51,7 @@ public class EnemyController : MonoBehaviour
         }
 
         animator = GetComponentInChildren<Animator>();
+        animator.SetBool("IsRunner", isRunner);
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         rb = GetComponent<Rigidbody2D>();
@@ -89,20 +92,32 @@ public class EnemyController : MonoBehaviour
     }
 
 
+
     private void UpdateIdle()
     {
-        animator.SetBool("IsMoving", false);
+        // 根据实际速度判断是否播放移动动画
+        bool isMoving = agent.isOnNavMesh
+            && agent.velocity.sqrMagnitude > 0.01f;
+
+        animator.SetBool("IsMoving", isMoving);
+
+        // 停稳后清理旧路径
+        if (!isMoving && agent.isOnNavMesh && agent.hasPath)
+        {
+            agent.ResetPath();
+        }
 
         float distance = Vector2.Distance(
             transform.position,
             player.position
         );
 
-        if (distance <= detectionRange)
+        if (distance <= detectionRange || (isRunner && hasLockedTarget))
         {
             ChangeState(EnemyState.Chase);
         }
     }
+
 
     private void UpdateChase()
     {
@@ -117,7 +132,7 @@ public class EnemyController : MonoBehaviour
             return;
         }
 
-        if (distance > detectionRange)
+        if (!isRunner && distance > detectionRange)
         {
             ChangeState(EnemyState.Idle);
             return;
@@ -152,8 +167,17 @@ public class EnemyController : MonoBehaviour
         if (attackTimer <= 0)
         {
             isAttacking = true;
+            animator.SetBool("IsAttacking", true);
 
-            animator.SetTrigger("Attack");
+            if (isRunner)
+            {
+                animator.SetTrigger("AxeAttack");
+            }
+            else
+            {
+                animator.SetTrigger("Attack");
+            }
+
             attackTimer = attackCooldown;
         }
     }
@@ -181,26 +205,63 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+
+
     private void ChangeState(EnemyState newState)
     {
         if (currentState == newState)
             return;
 
         currentState = newState;
+
+        if (newState == EnemyState.Chase)
+        {
+            if (isRunner)
+                hasLockedTarget = true;
+
+            if (agent.isOnNavMesh)
+            {
+                agent.isStopped = false;
+            }
+        }
+
+        else if (newState == EnemyState.Idle)
+        {
+            if (agent.isOnNavMesh)
+            {
+                // 停止沿路径追击，但不立即强制清零速度
+                agent.isStopped = true;
+            }
+        }
+        else
+        {
+            // 攻击、受击、死亡仍立即停止
+            if (agent.isOnNavMesh)
+            {
+                agent.isStopped = true;
+                agent.ResetPath();
+                agent.velocity = Vector3.zero;
+            }
+
+            animator.SetBool("IsMoving", false);
+        }
+
         if (newState == EnemyState.Attack)
         {
             attackTimer = 0;
         }
     }
 
+
     public void OnAttackFinished()
     {
-        isAttacking = false; 
+        isAttacking = false;
+        animator.SetBool("IsAttacking", false);
+
         float distance = Vector2.Distance(
             transform.position,
             player.position
         );
-
 
         if (distance > enemyAttack.AttackRange)
         {
@@ -225,6 +286,8 @@ public class EnemyController : MonoBehaviour
         if (currentState == EnemyState.Dead)
             return;
 
+        isAttacking = false;
+        animator.SetBool("IsAttacking", false);
 
         ChangeState(EnemyState.Hurt);
 
@@ -250,14 +313,16 @@ public class EnemyController : MonoBehaviour
         ChangeState(EnemyState.Dead);
 
         animator.SetBool("IsMoving", false);
+
         animator.SetTrigger("Death");
 
         enemyCollider.enabled = false;
         damageReceiver.enabled = false;
 
         rb.velocity = Vector2.zero;
+        agent.isStopped = true;
+        agent.ResetPath();
 
         Destroy(gameObject, destroyDelay);
-        enemyAttack.DisableAttack();
     }
 }

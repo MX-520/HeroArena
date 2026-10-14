@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1691450791941558773}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.49999997, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -91,7 +91,7 @@ Transform:
   m_GameObject: {fileID: 3838526743260453628}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.017, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,7 +137,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1272836858, guid: 615ee4d02932a494bbb11ec6e1b1137f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 5928007388936101975}
   - component: {fileID: -6780960516699089332}
   - component: {fileID: 4634064565367758795}
+  - component: {fileID: 618243088704203315}
   m_Layer: 7
   m_Name: Gobling
   m_TagString: Untagged
@@ -280,7 +281,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005817741, y: -0.13671285}
+  m_Offset: {x: 0.018005803, y: -0.1625205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -291,7 +292,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37170297, y: 0.22626291}
+  m_Size: {x: 0.2102324, y: 0.1380297}
   m_EdgeRadius: 0
 --- !u!114 &9031818667475233627
 MonoBehaviour:
@@ -305,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a79f44585c941240959e4d3bfcc586d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 50
 --- !u!114 &5928007388936101975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,12 +331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2578480a1b0ac45ab3710365cb5c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
   detectionRange: 5
-  attackRange: 1.2
-  attackCooldown: 1.5
-  destroyDelay: 3
+  attackCooldown: 0.8
+  destroyDelay: 1.5
   attackPivot: {fileID: 4535988388878958720}
+  isRunner: 0
 --- !u!114 &4634064565367758795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,8 +349,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 9183565399053597646}
-  attackRange: 0.8
+  attackRange: 1.2
   damage: 10
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!195 &618243088704203315
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653990315370750699}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 4
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
