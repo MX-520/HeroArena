@@ -91,4 +91,4 @@ Use case: stylized-concept. Asset type: Unity 2D pixel action RPG sprite atlas. 
 
 保留独立施法动画、1.2秒射击、持续步行追踪/同组警戒、右键/J近战与10秒手动多弹道。子弹视觉从0.9放大到1.35（直径+50%）。配置器不再修改任何导航配置；原SetupEnemiesAndNavigation兼容入口仅配置敌人，推荐入口SetupEnemies。删除已废弃的NavMesh-CombatNavigation资产；用户新建NavMesh-Navigation 1资产保留不动。
 
-静态验证：追击/后退方法与原Git文本一致；原导航数据、NavMeshAreas与原Git字节一致（Logs/navigation-rollback-static.txt）。石柱原摇摆问题暂缓，已从组合回归必过项移除，历史定点通过记录不代表当前版本仍保留该修复。组合Play Mode回归通过（Logs/full-demo-feedback-all.txt），已覆盖原导航参数/引用、放大子弹、独立施法与1.2秒间隔、持续锁定和旧战斗/道具/三波/右键输入。Windows构建待本轮结果。
+静态验证：追击/后退方法与原Git文本一致；原导航数据、NavMeshAreas与原Git字节一致（Logs/navigation-rollback-static.txt）。石柱原摇摆问题暂缓，已从组合回归必过项移除，历史定点通过记录不代表当前版本仍保留该修复。组合Play Mode回归通过（Logs/full-demo-feedback-all.txt），已覆盖原导航参数/引用、放大子弹、独立施法与1.2秒间隔、持续锁定和旧战斗/道具/三波/右键输入。Windows构建成功，0错误、1警告、93,645,101字节（Logs/windows-build.txt、Logs/navigation-rollback-build.log）；新版已启动。
