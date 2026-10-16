@@ -36,6 +36,7 @@ public class EnemyController : MonoBehaviour
     private bool hasLockedTarget;
     private RunnerGroup runnerGroup;
 
+    public bool CanPerformHit => currentState == EnemyState.Attack && isAttacking;
     public bool IsRunner => isRunner;
     public bool HasLockedTarget => hasLockedTarget;
     public bool IsDead => currentState == EnemyState.Dead;
@@ -150,6 +151,12 @@ public class EnemyController : MonoBehaviour
             player.position
         );
 
+        if (enemyAttack.IsRanged && distance < 2.5f)
+        {
+            Retreat();
+            return;
+        }
+
         if (distance <= enemyAttack.AttackRange)
         {
             ChangeState(EnemyState.Attack);
@@ -180,7 +187,7 @@ public class EnemyController : MonoBehaviour
             player.position
         );
 
-        if (distance > enemyAttack.AttackRange)
+        if (distance > enemyAttack.AttackRange || (enemyAttack.IsRanged && distance < 2.5f))
         {
             ChangeState(EnemyState.Chase);
             return;
@@ -191,6 +198,8 @@ public class EnemyController : MonoBehaviour
         if (attackTimer <= 0)
         {
             isAttacking = true;
+            FacePlayer();
+            enemyAttack.BeginAttack(player);
             animator.SetBool("IsAttacking", true);
 
             if (isRunner)
@@ -203,6 +212,27 @@ public class EnemyController : MonoBehaviour
             }
 
             attackTimer = attackCooldown;
+        }
+    }
+
+    private void FacePlayer()
+    {
+        bool left = player.position.x < transform.position.x;
+        spriteRenderer.flipX = left;
+        attackPivot.localScale = new Vector3(left ? -1 : 1, 1, 1);
+    }
+
+    private void Retreat()
+    {
+        if (!agent.isOnNavMesh) return;
+        Vector3 away = (transform.position - player.position).normalized;
+        var filter = new NavMeshQueryFilter { agentTypeID = agent.agentTypeID, areaMask = agent.areaMask };
+        if (NavMesh.SamplePosition(transform.position + away * 2f, out NavMeshHit hit, 1f, filter))
+        {
+            agent.isStopped = false;
+            agent.SetDestination(hit.position);
+            animator.SetBool("IsMoving", true);
+            FacePlayer();
         }
     }
 
@@ -322,6 +352,9 @@ public class EnemyController : MonoBehaviour
             runnerGroup?.Alert();
         }
 
+        enemyAttack.CancelWindup();
+        animator.ResetTrigger("Attack");
+        animator.ResetTrigger("AxeAttack");
         ChangeState(EnemyState.Hurt);
 
         hurtTimer = hurtDuration;
@@ -350,6 +383,7 @@ public class EnemyController : MonoBehaviour
         if (isRunner)
             runnerGroup?.Alert();
         runnerGroup?.Remove(this);
+        enemyAttack.DisableAttack();
         ChangeState(EnemyState.Dead);
         isAttacking = false;
         animator.SetBool("IsAttacking", false);

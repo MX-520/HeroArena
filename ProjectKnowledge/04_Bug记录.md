@@ -339,3 +339,8 @@ Animator不是独立系统。
 ## 2026-10-16 完整Demo迭代：主角射击
 
 已复现：初版子弹在出生点消失，目标HP仍100。根因证据：扫掠记录NavigationWalkable(layer9)在distance0命中；该多边形覆盖可行走区。方案：射击遮挡只查询实际墙体Default与伤害目标层，排除导航代理层。回归：实际命中扣12血与薄墙阻挡均通过（CompleteDemoVerification.RunShooting）。CameraBounds为Trigger，非触发器筛选会跳过。
+
+
+## 2026-10-16 远程哥布林
+
+已复现：弩手子弹瞄准玩家根坐标时HP仍100。证据：Bafu脚部Collider偏移Y=-0.18037，根缩放3.086，投射物轨迹高于脚部判定。修复：独立ProjectileHitbox身体Trigger，按父受伤组件判定阵营；忽略其他辅助Trigger和友方判定框。回归：实际弩手命中玩家扣8血通过；移动碰撞未扩大，近战不查询新层。

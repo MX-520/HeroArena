@@ -31,19 +31,20 @@ public class Projectile : MonoBehaviour
     {
         if (!initialized || Time.deltaTime <= 0) return;
         float distance = speed * Time.deltaTime;
-        var filter = new ContactFilter2D { useLayerMask = true, layerMask = targetMask | blockingMask, useTriggers = false };
+        var filter = new ContactFilter2D { useLayerMask = true, layerMask = targetMask | blockingMask | LayerMask.GetMask("ProjectileHitbox"), useTriggers = true };
         var hits = new RaycastHit2D[16];
         int count = Physics2D.CircleCast(transform.position, 0.08f, direction, filter, hits, distance);
         for (int i = 0; i < count; i++)
         {
             Collider2D collider = hits[i].collider;
             if (owner != null && collider.transform.IsChildOf(owner)) continue;
-            if ((targetMask & (1 << collider.gameObject.layer)) != 0)
-            {
-                var receiver = collider.GetComponentInParent<DamageReceiver>();
-                if (receiver != null && receiver.isActiveAndEnabled)
-                    receiver.TakeDamage(damage);
-            }
+            bool bodyHitbox = collider.gameObject.layer == LayerMask.NameToLayer("ProjectileHitbox");
+            if (collider.isTrigger && !bodyHitbox) continue;
+            var receiver = collider.GetComponentInParent<DamageReceiver>();
+            int recipientLayer = receiver == null ? collider.gameObject.layer : receiver.gameObject.layer;
+            if (bodyHitbox && ((targetMask & (1 << recipientLayer)) == 0 || receiver == null || !receiver.isActiveAndEnabled)) continue;
+            if ((targetMask & (1 << recipientLayer)) != 0 && receiver != null && receiver.isActiveAndEnabled)
+                receiver.TakeDamage(damage);
             Destroy(gameObject);
             return;
         }

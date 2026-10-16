@@ -5,7 +5,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-public static class CompleteDemoSetup
+public static partial class CompleteDemoSetup
 {
     public const string AtlasPath = "Assets/Art/Combat/CombatAtlas.png";
     public static Sprite Icon(string name) => AssetDatabase.LoadAllAssetsAtPath(AtlasPath).OfType<Sprite>().First(s => s.name == name);

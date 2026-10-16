@@ -15,7 +15,8 @@ public class EnemyAnimationEventReceiver : MonoBehaviour
 
     public void DetectHit()
     {
-        enemyAttack.DetectHit();
+        if (enemyController.CanPerformHit)
+            enemyAttack.DetectHit();
     }
 
 

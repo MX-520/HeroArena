@@ -7,7 +7,7 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 
 [InitializeOnLoad]
-public static class CompleteDemoVerification
+public static partial class CompleteDemoVerification
 {
     const string Key = "HeroArena.FullDemoTest";
     private static IEnumerator routine;
@@ -27,7 +27,7 @@ public static class CompleteDemoVerification
         deadline = EditorApplication.timeSinceStartup + 60;
         errors = false;
         Application.logMessageReceived += Log;
-        routine = Shooting();
+        routine = SessionState.GetString(Key, "") == "ranged" ? Ranged() : Shooting();
         EditorApplication.update += Tick;
     }
     private static void Log(string message, string stack, LogType type) { if (type == LogType.Error || type == LogType.Exception || type == LogType.Assert) errors = true; }
