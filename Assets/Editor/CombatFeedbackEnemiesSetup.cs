@@ -29,7 +29,7 @@ public static partial class CombatFeedbackSetup
         renderer.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/Knob.psd");
         renderer.color = new Color(0.8f, 0.5f, 1);
         renderer.sortingOrder = 30;
-        shotRoot.transform.localScale = Vector3.one * 1.35f;
+        shotRoot.transform.localScale = Vector3.one * 2.7f;
         shotRoot.AddComponent<Projectile>();
         var shotPrefab = PrefabUtility.SaveAsPrefabAsset(shotRoot, "Assets/Prefabs/Combat/EnemyEnergyBolt.prefab");
         Object.DestroyImmediate(shotRoot);
