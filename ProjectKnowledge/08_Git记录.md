@@ -359,3 +359,6 @@ Push
 - 86d9768：敌人/障碍物掉落及四种增益。
 
 完整UI与流程作为独立功能保存，实际哈希查看git log。原有AGENTS、.agentignore、Package和技能目录改动保持原状；本轮不自动推送或合并。
+
+
+已产生cb4e3fc：完整UI与整局流程，含TMP必要资源、当前截图及README更新。五个功能提交均保存在codex/complete-demo；Windows构建与启动结果在后续文档提交中记录。

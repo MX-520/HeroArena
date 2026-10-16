@@ -1,6 +1,6 @@
 # 完整 Demo 迭代（2026-10-16）
 
-计划：玩家射击 → 远程哥布林 → 第三波及难度曲线 → 回血/弹幕/巨化/护罩掉落 → 完整UI与游戏流程。每个模块验证后单独提交。当前仅主角射击完成验证；其余仍为计划。
+计划：玩家射击 → 远程哥布林 → 第三波及难度曲线 → 回血/弹幕/巨化/护罩掉落 → 完整UI与游戏流程。每个模块验证后单独提交。六项均已实现并完成自动验证；下面按开发顺序保留各阶段记录，最终交付结果见文末。首版难度仍待人工实玩验收。
 
 ## 已验证：主角射击
 左键持续朝鼠标发射，J近战。单发12伤害、0.32秒间隔、速度16、存活3秒。暂停/受击/翻滚/死亡/近战动作期间不能开火。扫掠检测避免穿越薄墙，复用DamageReceiver→Health。Unity Play Mode真实命中、无敌、冷却、墙体和禁射检查通过。未完成手动平衡验收。
@@ -43,3 +43,23 @@ Use case: stylized-concept. Asset type: Unity 2D pixel action RPG sprite atlas. 
 | Crossfire | 6 | 280 | 快速追击和远程瞄准交叉施压 | 8 |
 
 预算按普通=1、Runner=1.5、弩手=1.5估算，仅为设计比较，不是实测战斗指标。弩手40HP、8伤害、1.9秒冷却、0.4秒预警、弹速6.5；保持各类基础数值，依靠阵容递进，避免简单堆血。每波保证回血、波间3秒提供恢复窗口。之后应记录人工通关时间、各波受伤次数、失败波次和道具使用率再调整；当前不宣称平衡已验收。
+
+
+## 2026-10-17 最终交付验证
+
+| 检查 | 结果 | 本地证据 |
+|---|---|---|
+| 主角射击：实际伤害、无敌、冷却、受击/暂停禁射、薄墙 | 通过 | Logs/full-demo-shooting.txt |
+| 弩手：预警、实际伤害、受击与死亡中断 | 通过 | Logs/full-demo-ranged.txt |
+| 三波：阵容、导航、顺序、13击杀、重置 | 通过 | Logs/full-demo-waves.txt |
+| 掉落：四类配置、治疗边界、实际三路22伤害弹幕、刷新/过期、死亡/重启清理 | 通过（增强断言在组合回归中执行） | Logs/full-demo-regression.txt |
+| Runner：同组联动、跨组隔离、无敌、致命伤害、禁用/死亡、受击恢复 | 通过 | Logs/full-demo-regression.txt |
+| UI：按钮射线和回调、暂停冻结、胜利/失败、整局重开及返回菜单 | 通过 | Logs/full-demo-ui.txt |
+| 六个画面：菜单、HUD、第三波、暂停、胜利、失败 | 已检查通过 | Logs/demo-*.png |
+| 最终组合回归 | 通过 | Logs/full-demo-regression.txt |
+| Windows x64 正式构建 | 成功；0错误、1警告；93,645,341字节 | Logs/windows-build.txt |
+| Windows独立运行启动 | 已启动；本次启动日志未发现异常/错误 | Logs/player-smoke.log |
+
+程序：Builds/HeroArena/HeroArena.exe。运行和分发需要保留同目录的HeroArena_Data、MonoBleedingEdge和UnityPlayer.dll等依赖，不能仅复制exe。构建和日志按仓库规则忽略，不提交二进制；构建入口CompleteDemoBuild.BuildWindows可复现。当前Windows程序保持运行供实玩。
+
+功能提交：af5750b（射击）、86cf87a（弩手）、7965fd9（第三波与难度）、86d9768（掉落）、cb4e3fc（完整UI与流程）。独立运行启动检查不等同人工完整通关或平衡验收。
