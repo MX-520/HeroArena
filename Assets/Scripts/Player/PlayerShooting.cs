@@ -27,7 +27,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (Mouse.current == null || aimCamera == null) return;
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
-        if (Mouse.current.leftButton.isPressed || Barrage)
+        if (Mouse.current.leftButton.isPressed)
         {
             Vector3 screen = Mouse.current.position.ReadValue();
             screen.z = -aimCamera.transform.position.z + transform.position.z;
@@ -42,7 +42,7 @@ public class PlayerShooting : MonoBehaviour
             return false;
         Vector2 direction = target - (Vector2)transform.position;
         if (direction.sqrMagnitude < 0.001f) return false;
-        nextShot = Time.time + (Barrage ? 0.09f : interval);
+        nextShot = Time.time + interval;
         direction.Normalize();
         int count = Barrage ? 3 : 1;
         for (int i = 0; i < count; i++)

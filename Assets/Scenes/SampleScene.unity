@@ -3990,7 +3990,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WASD move   /   LMB shoot   /   J melee   /   SPACE roll   /   SHIFT run  
+  m_text: WASD move   /   LMB shoot   /   RMB/J melee   /   SPACE roll   /   SHIFT run  
     /   ESC pause
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4207,7 +4207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BARRAGE
+  m_text: MULTISHOT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12890,7 +12890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247a50f60465714488374d8279fe6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrageDuration: 6
+  barrageDuration: 10
   giantDuration: 8
   shieldDuration: 5
   shieldSprite: {fileID: -4765851570883655592, guid: c304db0f0b3b94a40a1b1c8fdb5e452c, type: 3}

@@ -35,6 +35,9 @@ public static partial class CompleteDemoVerification
         Application.logMessageReceived += Log;
         switch (SessionState.GetString(Key, ""))
         {
+            case "feedback-input": routine = FeedbackInput(); break;
+            case "nav-baseline": routine = NavigationProbe(false); break;
+            case "nav-fixed": routine = NavigationProbe(true); break;
             case "ranged": routine = Ranged(); break;
             case "waves": routine = Waves(); break;
             case "drops": routine = Drops(); break;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerEffects : MonoBehaviour
 {
-    [SerializeField] private float barrageDuration = 6f;
+    [SerializeField] private float barrageDuration = 10f;
     [SerializeField] private float giantDuration = 8f;
     [SerializeField] private float shieldDuration = 5f;
     [SerializeField] private Sprite shieldSprite;

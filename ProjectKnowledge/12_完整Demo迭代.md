@@ -63,3 +63,8 @@ Use case: stylized-concept. Asset type: Unity 2D pixel action RPG sprite atlas. 
 程序：Builds/HeroArena/HeroArena.exe。运行和分发需要保留同目录的HeroArena_Data、MonoBleedingEdge和UnityPlayer.dll等依赖，不能仅复制exe。构建和日志按仓库规则忽略，不提交二进制；构建入口CompleteDemoBuild.BuildWindows可复现。当前Windows程序保持运行供实玩。
 
 功能提交：af5750b（射击）、86cf87a（弩手）、7965fd9（第三波与难度）、86d9768（掉落）、cb4e3fc（完整UI与流程）。独立运行启动检查不等同人工完整通关或平衡验收。
+
+
+## 2026-10-17 实玩反馈：攻击输入与多弹道
+
+右键近战，保留J兼容；左键持续射击。原Barrage改为10秒三弹道增益，不再自动开火、不提高射速，单轮仍0.32秒。已通过合成鼠标实际输入回调、无左键不自动射击、三条子弹、冷却及完整10秒过期测试。测试中临时忽略无窗口焦点过滤并配对设备，未改正式游戏输入设置。日志Logs/full-demo-feedback-input.txt。
