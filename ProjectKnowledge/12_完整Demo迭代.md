@@ -80,3 +80,6 @@ Use case: stylized-concept. Asset type: Unity 2D pixel action RPG sprite atlas. 
 
 
 组合回归：CompleteDemoVerification.RunFeedbackAll通过（Logs/full-demo-feedback-all.txt）。包括三次实际射击间隔/独立动画、受击联动、超出侦测范围持续锁定、单敌人8处及四柱混合敌人、完整旧战斗/掉落/Runner/三波回归和真实右键/10秒多弹道。此次混合回归四柱最大翻转3次，近战最近距离0.80/0.98/1.20/0.94。测试自身的短时增益配置已在Drops检查结束时恢复，避免污染后续10秒检查；曾将攻击间歇误作丢失目标的断言已改为检查锁定及状态。
+
+
+本轮交付：图形模式RunVisualUI通过，六张截图已检查（Logs/demo-*.png），HUD显示10秒多弹道和RMB/J。Windows构建成功，0错误、1警告、93,634,581字节，证据Logs/windows-build.txt、Logs/feedback-build.log。新版程序Builds/HeroArena/HeroArena.exe；编辑器通过CombatFeedbackSetup.OpenReviewScene显式打开正式场景。本轮功能提交8c4bde5、952929d。自动定点回归通过不等同所有动态围堵和难度已人工验收。

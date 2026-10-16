@@ -362,3 +362,13 @@ Push
 
 
 已产生cb4e3fc：完整UI与整局流程，含TMP必要资源、当前截图及README更新。五个功能提交均保存在codex/complete-demo；Windows构建与启动结果在后续文档提交中记录。
+
+
+## 2026-10-17 实玩反馈修复交付
+
+分支：codex/combat-feedback。
+
+- 8c4bde5：右键近战、保留J；10秒手动三弹道，正常射速。
+- 952929d：独立远程施法、移除弓弩、1.2秒实际发射、同组持续步行追踪及石柱导航修复。
+
+组合Play Mode与六张UI画面检查均通过。Windows构建成功，0错误、1警告、93,634,581字节。已打开新版独立游戏和正式SampleScene；交付记录后续提交。原有规则、技能、Package、11_架构风险和原NavMesh-Navigation.asset修改未纳入本轮提交，原NavMesh文件哈希与本轮开工备份一致。
