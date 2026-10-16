@@ -24,7 +24,7 @@ public static partial class CompleteDemoVerification
     private static void Entered(PlayModeStateChange state)
     {
         if (state != PlayModeStateChange.EnteredPlayMode || SessionState.GetString(Key, "") == "") return;
-        deadline = EditorApplication.timeSinceStartup + 90;
+        deadline = EditorApplication.timeSinceStartup + 150;
         var flow = Object.FindObjectOfType<GameFlow>();
         if (flow != null && SessionState.GetString(Key, "") != "ui" && SessionState.GetString(Key, "") != "visual")
         {
@@ -35,6 +35,9 @@ public static partial class CompleteDemoVerification
         Application.logMessageReceived += Log;
         switch (SessionState.GetString(Key, ""))
         {
+            case "feedback-all": routine = FeedbackAll(); break;
+            case "crowd-baseline": routine = CrowdProbe(false); break;
+            case "crowd-fixed": routine = CrowdProbe(true); break;
             case "feedback-input": routine = FeedbackInput(); break;
             case "nav-baseline": routine = NavigationProbe(false); break;
             case "nav-fixed": routine = NavigationProbe(true); break;

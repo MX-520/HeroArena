@@ -70,6 +70,10 @@ public static partial class CompleteDemoVerification
         receiver.TakeDamage(30);
         Require(effects.TryApply(PickupKind.Heal) && health.CurrentHP == 95, "Heal did not restore 25");
         Require(effects.TryApply(PickupKind.Heal) && health.CurrentHP == 100, "Healing exceeded maximum");
+        var original = new SerializedObject(effects);
+        float giantDuration = original.FindProperty("giantDuration").floatValue;
+        float shieldDuration = original.FindProperty("shieldDuration").floatValue;
+        float barrageDuration = original.FindProperty("barrageDuration").floatValue;
         CompleteDemoSetup.Number(effects, "giantDuration", 0.25f);
         CompleteDemoSetup.Number(effects, "shieldDuration", 0.25f);
         CompleteDemoSetup.Number(effects, "barrageDuration", 0.25f);
@@ -114,6 +118,9 @@ public static partial class CompleteDemoVerification
         health.TakeDamage(1000);
         Require(!effects.GiantActive && effects.GetComponent<PlayerMovement>().SpeedMultiplier == 1, "Death leaked buffs");
         yield return null;
+        CompleteDemoSetup.Number(effects, "giantDuration", giantDuration);
+        CompleteDemoSetup.Number(effects, "shieldDuration", shieldDuration);
+        CompleteDemoSetup.Number(effects, "barrageDuration", barrageDuration);
         wave.enabled = true;
         wave.RestartChallenge();
         yield return null;

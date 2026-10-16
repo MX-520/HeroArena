@@ -16,6 +16,13 @@ public class EnemyAttack : MonoBehaviour
     public bool IsRanged => isRanged;
     public int ShotsFired { get; private set; }
 
+    public bool HasLineOfSight(Transform target)
+    {
+        foreach (var hit in Physics2D.LinecastAll(attackPoint.position, target.position, LayerMask.GetMask("Default", "Destructible")))
+            if (!hit.collider.isTrigger) return false;
+        return true;
+    }
+
     public void BeginAttack(Transform target)
     {
         if (!isRanged || target == null) return;

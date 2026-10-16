@@ -117,6 +117,7 @@ public class WaveController : MonoBehaviour
             }
 
             var runners = new RunnerGroup();
+            var shooters = new RunnerGroup();
             for (int i = 0; i < prefabs.Count; i++)
             {
                 EnemyController enemy = Instantiate(prefabs[i], positions[i], Quaternion.identity, transform);
@@ -127,7 +128,7 @@ public class WaveController : MonoBehaviour
                     Fail("Enemy could not join the NavMesh.");
                     yield break;
                 }
-                enemy.AssignRunnerGroup(runners);
+                enemy.AssignRunnerGroup(enemy.GetComponent<EnemyAttack>().IsRanged ? shooters : runners);
                 var drop = enemy.GetComponent<DropOnDeath>();
                 if (drop != null) drop.GuaranteeHeal = i == 0;
                 Health health = enemy.GetComponent<Health>();

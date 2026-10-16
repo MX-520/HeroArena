@@ -40,7 +40,7 @@ public static partial class CompleteDemoSetup
         instance.name = "GoblinArcher";
         var controller = instance.GetComponent<EnemyController>();
         Number(controller, "detectionRange", 10);
-        Number(controller, "attackCooldown", 1.9f);
+        Number(controller, "attackCooldown", 1.2f);
         Number(instance.GetComponent<Health>(), "maxHP", 40);
         Number(instance.GetComponent<UnityEngine.AI.NavMeshAgent>(), "m_Speed", 2.3f);
         var attack = instance.GetComponent<EnemyAttack>();
@@ -48,15 +48,8 @@ public static partial class CompleteDemoSetup
         data.FindProperty("isRanged").boolValue = true;
         data.FindProperty("attackRange").floatValue = 6;
         data.FindProperty("damage").intValue = 8;
-        data.FindProperty("projectilePrefab").objectReferenceValue = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Combat/PlayerBolt.prefab").GetComponent<Projectile>();
-        var point = (Transform)data.FindProperty("attackPoint").objectReferenceValue;
-        var weapon = new GameObject("Crossbow");
-        weapon.transform.SetParent(point.parent, false);
-        weapon.transform.localPosition = new Vector3(0.45f, 0.1f, 0);
-        weapon.transform.localScale = Vector3.one * 0.7f;
-        var renderer = weapon.AddComponent<SpriteRenderer>();
-        renderer.sprite = Icon("Crossbow");
-        renderer.sortingOrder = 15;
+        data.FindProperty("projectilePrefab").objectReferenceValue = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Combat/EnemyEnergyBolt.prefab").GetComponent<Projectile>();
+        instance.GetComponentInChildren<Animator>().runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>("Assets/Animations/Enemy/Gobling/GoblinArcher.overrideController");
         instance.GetComponentInChildren<SpriteRenderer>().color = new Color(0.8f, 0.72f, 1f);
         var lineObject = new GameObject("AimWarning");
         lineObject.transform.SetParent(instance.transform, false);

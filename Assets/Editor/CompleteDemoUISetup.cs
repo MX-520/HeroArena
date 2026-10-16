@@ -132,7 +132,7 @@ public static partial class CompleteDemoSetup
         var timer = Label("Timer", clockPanel, new Vector2(0, 17), new Vector2(250, 30), "00:00 / 0 KILLS", 18, Color.white);
         Button("PauseButton", clockPanel, new Vector2(0, -20), "PAUSE  [ ESC ]", new Color(0.12f, 0.25f, 0.27f), flow.Pause, 240).GetComponent<RectTransform>().sizeDelta = new Vector2(240, 32);
         var controls = Box("Controls", hud, new Vector2(0.5f, 0), new Vector2(0, 30), new Vector2(1000, 42), Ink);
-        Label("ControlsText", controls, Vector2.zero, new Vector2(970, 34), "WASD move   /   LMB shoot   /   J melee   /   SPACE roll   /   SHIFT run   /   ESC pause", 17, Color.white);
+        Label("ControlsText", controls, Vector2.zero, new Vector2(970, 34), "WASD move   /   LMB shoot   /   RMB/J melee   /   SPACE roll   /   SHIFT run   /   ESC pause", 17, Color.white);
         var buffLabels = new TMP_Text[3];
         string[] types = { "Barrage", "Giant", "Shield" };
         for (int i = 0; i < 3; i++)

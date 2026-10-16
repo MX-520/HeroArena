@@ -18,7 +18,7 @@ public static partial class CombatFeedbackSetup
         CompleteDemoSetup.Number(Object.FindObjectOfType<PlayerEffects>(), "barrageDuration", 10);
         foreach (var text in Object.FindObjectsOfType<TMPro.TMP_Text>(true))
         {
-            text.text = text.text.Replace("J melee", "RMB/J melee").Replace("BARRAGE", "MULTISHOT");
+            text.text = text.text.Replace("RMB/J melee", "J melee").Replace("J melee", "RMB/J melee").Replace("BARRAGE", "MULTISHOT");
             EditorUtility.SetDirty(text);
         }
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
@@ -80,6 +80,7 @@ public static partial class CompleteDemoVerification
         var player = Object.FindObjectOfType<PlayerHealth>();
         player.GetComponent<DamageReceiver>().SetInvincible(true);
         var body = player.GetComponent<Collider2D>();
+        Vector3 originalPosition = player.transform.position;
         Vector3 bodyOffset = body.bounds.center - player.transform.position;
         var pillars = GameObject.Find("MapCollision/Peristele").GetComponentsInChildren<BoxCollider2D>().Where(c => c.gameObject.layer == 0).ToArray();
         var report = new StringBuilder();
@@ -113,5 +114,56 @@ public static partial class CompleteDemoVerification
             }
         }
         File.WriteAllText(strict ? "Logs/pillar-probe-fixed.txt" : "Logs/pillar-probe-baseline.txt", report.ToString());
+        player.transform.position = originalPosition;
+        Physics2D.SyncTransforms();
     }
+    public static void RunCrowdBaseline() => Run("crowd-baseline");
+    public static void RunCrowdFixed() => Run("crowd-fixed");
+    static IEnumerator CrowdProbe(bool strict)
+    {
+        Object.FindObjectOfType<WaveController>().enabled = false;
+        var player = Object.FindObjectOfType<PlayerHealth>();
+        player.GetComponent<DamageReceiver>().SetInvincible(true);
+        var playerBody = player.GetComponent<Collider2D>();
+        var originalPosition = player.transform.position;
+        var offset = playerBody.bounds.center - player.transform.position;
+        var pillars = GameObject.Find("MapCollision/Peristele").GetComponentsInChildren<BoxCollider2D>().Where(c => c.gameObject.layer == 0).ToArray();
+        var report = new StringBuilder();
+        foreach (var pillar in pillars)
+        {
+            player.transform.position = pillar.bounds.center + Vector3.left * (pillar.bounds.extents.x + playerBody.bounds.extents.x + 0.03f) - offset;
+            Physics2D.SyncTransforms();
+            string[] names = { "Gobling", "GoblinRunner", "GoblinArcher", "GoblinArcher" };
+            var fixtures = new GameObject[4]; var facing = new bool[4]; var flips = new int[4];
+            for (int i = 0; i < fixtures.Length; i++)
+            {
+                fixtures[i] = Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemy/" + names[i] + ".prefab"), pillar.bounds.center + new Vector3(2 + i * 0.3f, (i - 1.5f) * 0.8f, 0), Quaternion.identity);
+                var agent = fixtures[i].GetComponent<NavMeshAgent>();
+                var filter = new NavMeshQueryFilter { agentTypeID = agent.agentTypeID, areaMask = agent.areaMask };
+                Require(NavMesh.SamplePosition(fixtures[i].transform.position, out NavMeshHit hit, 2f, filter) && agent.Warp(hit.position), "Crowd spawn failed");
+                facing[i] = fixtures[i].GetComponentInChildren<SpriteRenderer>().flipX;
+            }
+            float until = Time.time + 3.5f;
+            float closest = float.MaxValue;
+            while (Time.time < until)
+            {
+                for (int i = 0; i < fixtures.Length; i++)
+                {
+                    bool current = fixtures[i].GetComponentInChildren<SpriteRenderer>().flipX;
+                    if (current != facing[i]) flips[i]++;
+                    facing[i] = current;
+                    if (i < 2) closest = Mathf.Min(closest, Vector2.Distance(fixtures[i].transform.position, player.transform.position));
+                }
+                yield return null;
+            }
+            report.AppendLine($"Pillar={pillar.name}, facingFlips=[{string.Join(",", flips)}], closestMelee={closest:0.00}");
+            File.WriteAllText(strict ? "Logs/pillar-crowd-fixed.txt" : "Logs/pillar-crowd-baseline.txt", report.ToString());
+            if (strict) Require(flips.All(f => f < 12) && closest < 1.8f, "Crowd navigation still oscillates/stalls: " + report);
+            foreach (var fixture in fixtures) Object.Destroy(fixture);
+            yield return null;
+        }
+        player.transform.position = originalPosition;
+        Physics2D.SyncTransforms();
+    }
+
 }
