@@ -15,7 +15,7 @@ public static partial class CompleteDemoVerification
         Require(AssetDatabase.GetAssetPath(Object.FindObjectOfType<NavMeshPlus.Components.NavMeshSurface>().navMeshData) == "Assets/Scenes/SampleScene/NavMesh-Navigation.asset", "Scene does not use original navigation data");
         Require(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Combat/EnemyEnergyBolt.prefab").transform.localScale == Vector3.one * 2.7f, "Enemy projectile was not enlarged");
         // Stone-pillar jitter is deferred; retain probes only as optional diagnostics.
-        var checks = new[] { FeedbackEnemies(), Regression(), FeedbackInput() };
+        var checks = new[] { BlockedAttack(true), FeedbackEnemies(), Regression(), FeedbackInput() };
         foreach (var check in checks)
         {
             var player = Object.FindObjectOfType<PlayerHealth>();

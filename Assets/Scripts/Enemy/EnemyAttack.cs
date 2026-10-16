@@ -9,12 +9,49 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private bool isRanged;
     [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private LineRenderer aimLine;
+    private readonly RaycastHit2D[] obstacleHits = new RaycastHit2D[16];
+    private Collider2D bodyCollider;
     private Vector2 aim;
     private bool aiming;
     private bool canAttack = true;
     public float AttackRange => attackRange;
     public bool IsRanged => isRanged;
     public int ShotsFired { get; private set; }
+
+    private void Awake() => bodyCollider = GetComponent<Collider2D>();
+
+    public bool HasClearAttackPath(Transform target)
+    {
+        if (target == null) return false;
+        var targetBody = target.GetComponent<Collider2D>();
+        Vector2 start = isRanged ? attackPoint.position : bodyCollider.bounds.center;
+        Vector2 end = isRanged || targetBody == null ? target.position : targetBody.bounds.center;
+        return IsPathClear(start, end);
+    }
+
+    public bool CanAttackTarget(Transform target)
+    {
+        if (target == null || Vector2.Distance(transform.position, target.position) > attackRange || !HasClearAttackPath(target))
+            return false;
+        if (isRanged) return true;
+        var targetBody = target.GetComponent<Collider2D>();
+        if (targetBody == null || !targetBody.enabled) return false;
+        // Predict FacePlayer's attack-point position before committing to an attack.
+        Vector2 center = attackPoint.position;
+        float horizontalOffset = Mathf.Abs(center.x - transform.position.x);
+        center.x = transform.position.x + (target.position.x < transform.position.x ? -horizontalOffset : horizontalOffset);
+        return Vector2.Distance(center, targetBody.ClosestPoint(center)) <= attackRange;
+    }
+
+    private bool IsPathClear(Vector2 start, Vector2 end)
+    {
+        var filter = new ContactFilter2D {
+            useLayerMask = true,
+            layerMask = LayerMask.GetMask("Default", "Destructible"),
+            useTriggers = false
+        };
+        return Physics2D.Linecast(start, end, filter, obstacleHits) == 0;
+    }
 
     public void BeginAttack(Transform target)
     {
@@ -35,6 +72,7 @@ public class EnemyAttack : MonoBehaviour
         if (isRanged)
         {
             if (!aiming || projectilePrefab == null) return;
+            if (!IsPathClear(attackPoint.position, aim)) { CancelWindup(); return; }
             Vector2 heading = aim - (Vector2)attackPoint.position;
             if (heading.sqrMagnitude > 0.001f)
             {
@@ -48,7 +86,7 @@ public class EnemyAttack : MonoBehaviour
         foreach (Collider2D hit in Physics2D.OverlapCircleAll(attackPoint.position, attackRange, targetLayer))
         {
             var receiver = hit.GetComponentInParent<DamageReceiver>();
-            if (receiver != null && receiver.isActiveAndEnabled) receiver.TakeDamage(damage);
+            if (receiver != null && receiver.isActiveAndEnabled && HasClearAttackPath(receiver.transform)) receiver.TakeDamage(damage);
         }
     }
 

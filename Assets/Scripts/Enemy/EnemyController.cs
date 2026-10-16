@@ -153,13 +153,13 @@ public class EnemyController : MonoBehaviour
             player.position
         );
 
-        if (enemyAttack.IsRanged && distance < 2.5f)
+        if (enemyAttack.IsRanged && distance < 2.5f && enemyAttack.HasClearAttackPath(player))
         {
             Retreat();
             return;
         }
 
-        if (distance <= enemyAttack.AttackRange)
+        if (enemyAttack.CanAttackTarget(player))
         {
             ChangeState(EnemyState.Attack);
             return;
@@ -189,7 +189,7 @@ public class EnemyController : MonoBehaviour
             player.position
         );
 
-        if (distance > enemyAttack.AttackRange || (enemyAttack.IsRanged && distance < 2.5f))
+        if (!enemyAttack.CanAttackTarget(player) || (enemyAttack.IsRanged && distance < 2.5f))
         {
             ChangeState(EnemyState.Chase);
             return;
@@ -319,7 +319,7 @@ public class EnemyController : MonoBehaviour
             player.position
         );
 
-        if (distance > enemyAttack.AttackRange)
+        if (!enemyAttack.CanAttackTarget(player))
         {
             ChangeState(EnemyState.Chase);
         }

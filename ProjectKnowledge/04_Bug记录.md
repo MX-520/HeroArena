@@ -361,3 +361,8 @@ Animator不是独立系统。
 ## 2026-10-17 后续实玩反馈：撤回石柱导航修复
 
 用户实玩反馈：上轮其他障碍物绕行范围过大；代码证据为全局烘焙半径0.1→0.5，影响全部障碍物净空。上轮石柱定点测试不能证明其他障碍物体验正确。按用户要求撤回导航修复，恢复Git 8c4bde5原数据/参数及追击和后退逻辑，保留战斗需求。静态原版一致性检查与组合战斗回归通过；石柱原摇摆问题重新列为暂缓，不沿用之前“已修复”结论。证据Logs/navigation-rollback-static.txt、Logs/full-demo-feedback-all.txt。
+
+
+## 2026-10-17 隔障碍提前攻击修复
+
+复现：Unity固定薄障碍夹在玩家与普通哥布林脚部碰撞体之间，根节点距离0.9，旧UpdateChase进入Attack并停止导航（Logs/blocked-attack-baseline.txt、Logs/full-demo-blocked-baseline.txt）。根因：原攻击切换只比较根节点距离，未检查实体遮挡，且停止距离与偏移的实际命中圈不一致。厚度和相对方向不同使有些障碍不触发，因此不能推断其他障碍永远没问题。修复：统一检查实际命中范围和障碍遮挡，受阻继续追击，命中时再次检查。回归：同夹障碍条件进入Chase且Agent未停止、隔障碍不扣血；无障碍但实际攻击圈未覆盖时不攻击；靠近后可进入Attack并实际扣血。组合远程/掉落/Runner/三波/右键10秒多弹道均通过（Logs/full-demo-feedback-all.txt、Logs/blocked-attack-fixed.txt）。实际场景普通哥布林和Runner绕过Obstacles_03到达无遮挡攻击位置，PathComplete，均通过（Logs/obstacle-approach.txt、Logs/full-demo-obstacle-approach.txt）；旧贴柱朝向摇摆仍非本轮修复目标。

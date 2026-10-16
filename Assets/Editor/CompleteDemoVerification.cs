@@ -35,6 +35,9 @@ public static partial class CompleteDemoVerification
         Application.logMessageReceived += Log;
         switch (SessionState.GetString(Key, ""))
         {
+            case "obstacle-approach": routine = ObstacleApproach(); break;
+            case "blocked-baseline": routine = BlockedAttack(false); break;
+            case "blocked-fixed": routine = BlockedAttack(true); break;
             case "feedback-all": routine = FeedbackAll(); break;
             case "crowd-baseline": routine = CrowdProbe(false); break;
             case "crowd-fixed": routine = CrowdProbe(true); break;

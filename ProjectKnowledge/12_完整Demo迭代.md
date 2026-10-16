@@ -92,3 +92,10 @@ Use case: stylized-concept. Asset type: Unity 2D pixel action RPG sprite atlas. 
 保留独立施法动画、1.2秒射击、持续步行追踪/同组警戒、右键/J近战与10秒手动多弹道。子弹视觉从0.9放大到1.35（直径+50%）。配置器不再修改任何导航配置；原SetupEnemiesAndNavigation兼容入口仅配置敌人，推荐入口SetupEnemies。删除已废弃的NavMesh-CombatNavigation资产；用户新建NavMesh-Navigation 1资产保留不动。
 
 静态验证：追击/后退方法与原Git文本一致；原导航数据、NavMeshAreas与原Git字节一致（Logs/navigation-rollback-static.txt）。石柱原摇摆问题暂缓，已从组合回归必过项移除，历史定点通过记录不代表当前版本仍保留该修复。组合Play Mode回归通过（Logs/full-demo-feedback-all.txt），已覆盖原导航参数/引用、放大子弹、独立施法与1.2秒间隔、持续锁定和旧战斗/道具/三波/右键输入。Windows构建成功，0错误、1警告、93,645,101字节（Logs/windows-build.txt、Logs/navigation-rollback-build.log）；新版已启动。
+
+
+## 2026-10-17 隔障碍提前攻击修复
+
+哥布林子弹视觉缩放2.7（在1.35基础上直径加倍）。敌人攻击入口、维持与动画结束统一检查目标可达：近战需实际攻击圈覆盖玩家碰撞体，近/远程均需无实体遮挡；命中事件再次检查遮挡。受阻时继续原追击。导航参数、网格和场景碰撞体未改；本轮遵照用户要求不构建打包。组合Play Mode回归已通过，实际场景绕障测试已通过：Obstacles_03上方静止玩家，普通哥布林和Runner均从下方绕至无遮挡攻击位置，PathComplete，停止根距离1.20（Logs/obstacle-approach.txt、Logs/full-demo-obstacle-approach.txt）。
+
+复现：Unity固定薄障碍夹在玩家与普通哥布林脚部碰撞体之间，根节点距离0.9，旧UpdateChase进入Attack并停止导航（Logs/blocked-attack-baseline.txt、Logs/full-demo-blocked-baseline.txt）。根因：原攻击切换只比较根节点距离，未检查实体遮挡，且停止距离与偏移的实际命中圈不一致。厚度和相对方向不同使有些障碍不触发，因此不能推断其他障碍永远没问题。修复：统一检查实际命中范围和障碍遮挡，受阻继续追击，命中时再次检查。回归：同夹障碍条件进入Chase且Agent未停止、隔障碍不扣血；无障碍但实际攻击圈未覆盖时不攻击；靠近后可进入Attack并实际扣血。组合远程/掉落/Runner/三波/右键10秒多弹道均通过（Logs/full-demo-feedback-all.txt、Logs/blocked-attack-fixed.txt）。实际场景普通哥布林和Runner绕过Obstacles_03到达无遮挡攻击位置，PathComplete，均通过（Logs/obstacle-approach.txt、Logs/full-demo-obstacle-approach.txt）；旧贴柱朝向摇摆仍非本轮修复目标。
