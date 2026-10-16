@@ -41,6 +41,8 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnDeath()
     {
+        playerAttack.CancelAttack();
+        playerMovement.CancelRoll();
         playerMovement.Die();
         damageReceiver.enabled = false;
 

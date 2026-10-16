@@ -19,7 +19,7 @@ public static partial class CompleteDemoSetup
     {
         var data = new SerializedObject(target);
         var property = data.FindProperty(field);
-        if (property.propertyType == SerializedPropertyType.Integer) property.intValue = (int)value;
+        if ((property.propertyType == SerializedPropertyType.Integer || property.propertyType == SerializedPropertyType.Enum)) property.intValue = (int)value;
         else property.floatValue = value;
         data.ApplyModifiedPropertiesWithoutUndo();
     }

@@ -27,7 +27,7 @@ public static partial class CompleteDemoVerification
         deadline = EditorApplication.timeSinceStartup + 60;
         errors = false;
         Application.logMessageReceived += Log;
-        routine = SessionState.GetString(Key, "") == "ranged" ? Ranged() : SessionState.GetString(Key, "") == "waves" ? Waves() : Shooting();
+        routine = SessionState.GetString(Key, "") == "ranged" ? Ranged() : SessionState.GetString(Key, "") == "waves" ? Waves() : SessionState.GetString(Key, "") == "drops" ? Drops() : Shooting();
         EditorApplication.update += Tick;
     }
     private static void Log(string message, string stack, LogType type) { if (type == LogType.Error || type == LogType.Exception || type == LogType.Assert) errors = true; }

@@ -48,6 +48,8 @@ public class WaveController : MonoBehaviour
     {
         StopAllCoroutines();
         ClearEnemies();
+        foreach (var item in FindObjectsOfType<Pickup>()) Destroy(item.gameObject);
+        foreach (var shot in FindObjectsOfType<Projectile>()) Destroy(shot.gameObject);
         CurrentWave = 0;
         TotalKills = 0;
         FailureReason = null;
@@ -118,6 +120,8 @@ public class WaveController : MonoBehaviour
                     yield break;
                 }
                 enemy.AssignRunnerGroup(runners);
+                var drop = enemy.GetComponent<DropOnDeath>();
+                if (drop != null) drop.GuaranteeHeal = i == 0;
                 Health health = enemy.GetComponent<Health>();
                 Action callback = () => EnemyDied(health);
                 deaths.Add(health, callback);
@@ -221,6 +225,8 @@ public class WaveController : MonoBehaviour
     {
         StopAllCoroutines();
         ClearEnemies();
+        foreach (var item in FindObjectsOfType<Pickup>()) Destroy(item.gameObject);
+        foreach (var shot in FindObjectsOfType<Projectile>()) Destroy(shot.gameObject);
         CurrentWave = 0;
         SetState(ChallengeState.Idle);
     }

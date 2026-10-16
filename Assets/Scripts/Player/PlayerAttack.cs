@@ -12,6 +12,8 @@ public class PlayerAttack : MonoBehaviour
     private PlayerMovement playerMovement;
     private bool isAttacking;
 
+    public float DamageMultiplier { get; set; } = 1f;
+    public float RangeMultiplier { get; set; } = 1f;
     public bool IsAttacking => isAttacking;
 
     private void Awake()
@@ -35,10 +37,11 @@ public class PlayerAttack : MonoBehaviour
     }
     public void DetectHit()
     {
+        if (!isAttacking || playerMovement.IsDead || playerMovement.IsHurt) return;
         Collider2D[] hitObjects =
             Physics2D.OverlapCircleAll(
                 attackPoint.position,
-                attackRange,
+                attackRange * RangeMultiplier,
                 targetLayer
     );
 
@@ -51,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
 
             if (damageable != null)
             {
-                damageable.TakeDamage(10);
+                damageable.TakeDamage(Mathf.RoundToInt(10 * DamageMultiplier));
             }
         }
     }

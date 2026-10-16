@@ -55,6 +55,15 @@ public class Health : MonoBehaviour
         OnDied?.Invoke();
     }
 
+    public int Heal(int amount)
+    {
+        if (isDead || amount <= 0) return 0;
+        int previous = currentHP;
+        currentHP = Mathf.Min(maxHP, currentHP + amount);
+        if (currentHP != previous) OnHealthChanged?.Invoke(currentHP, maxHP);
+        return currentHP - previous;
+    }
+
     public void RestoreFull()
     {
         currentHP = maxHP;

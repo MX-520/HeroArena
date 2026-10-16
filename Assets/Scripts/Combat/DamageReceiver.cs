@@ -5,6 +5,8 @@ public class DamageReceiver : MonoBehaviour, IDamageable
     private Health health;
 
     private bool isInvincible;
+    private bool shielded;
+    public void SetShield(bool value) => shielded = value;
 
     private void Awake()
     {
@@ -13,7 +15,7 @@ public class DamageReceiver : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        if (isInvincible)
+        if (!isActiveAndEnabled || isInvincible || shielded)
             return;
 
         health.TakeDamage(damage);

@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastMoveDirection = Vector2.right;
 
 
+    public float SpeedMultiplier { get; set; } = 1f;
     private bool isRunning;
     private bool isRolling;
 
@@ -129,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float currentSpeed = isRunning ? runSpeed : speed;
 
-        rb.velocity = moveInput * currentSpeed;
+        rb.velocity = moveInput * currentSpeed * SpeedMultiplier;
     }
 
 
@@ -190,7 +191,7 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
         damageReceiver.SetInvincible(true);
 
-        rb.velocity = lastMoveDirection * rollSpeed;
+        rb.velocity = lastMoveDirection * rollSpeed * SpeedMultiplier;
 
         yield return new WaitForSeconds(rollDuration);
 
