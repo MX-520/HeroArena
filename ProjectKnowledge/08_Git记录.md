@@ -341,3 +341,9 @@ Push
 遇到重大问题：
 
 可以通过Commit回退版本。
+
+## 2026-10-16 开发分支
+
+分支：codex/runner-wave-challenge。
+
+已提交 dac1a13：feat: 完善Runner同组警戒与持续追击机制，含 Unity Play Mode 检查和文档。两波挑战作为后续独立功能提交，实际哈希以 git log 为准。只提交本任务代码、场景和文档，保留开始任务前已有的规则与 Package 改动。
