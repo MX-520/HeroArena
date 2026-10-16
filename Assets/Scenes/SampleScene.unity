@@ -1038,6 +1038,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5113390371955850823, guid: 178dac653b2ca634f924a1a313ed7b1e, type: 3}
   m_PrefabInstance: {fileID: 624794280216780239}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &361783948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 361783949}
+  m_Layer: 0
+  m_Name: SpawnPoint6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &361783949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361783948}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.2199998, y: 4.540001, z: -0.016665826}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2118255572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &362989780
 GameObject:
   m_ObjectHideFlags: 0
@@ -3571,6 +3602,37 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &1215162565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1215162566}
+  m_Layer: 0
+  m_Name: SpawnPoint5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1215162566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215162565}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.219999, y: -3.460001, z: -0.016664872}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2118255572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1221562740
 GameObject:
   m_ObjectHideFlags: 0
@@ -5337,19 +5399,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemies:
+  - title: First Contact
+    enemies:
     - prefab: {fileID: -6780960516699089332, guid: affce0ae02ff09c49ae088f5f196ae7f, type: 3}
       count: 3
-  - enemies:
+  - title: The Hunt
+    enemies:
     - prefab: {fileID: -6780960516699089332, guid: affce0ae02ff09c49ae088f5f196ae7f, type: 3}
       count: 2
     - prefab: {fileID: 2703802158837141955, guid: 4486dba15e89a5c439149e24014fb7d3, type: 3}
+      count: 2
+  - title: Crossfire
+    enemies:
+    - prefab: {fileID: -6780960516699089332, guid: affce0ae02ff09c49ae088f5f196ae7f, type: 3}
+      count: 2
+    - prefab: {fileID: 2703802158837141955, guid: 4486dba15e89a5c439149e24014fb7d3, type: 3}
+      count: 2
+    - prefab: {fileID: 2989562047535533807, guid: 5c2d5b63eb9b0ca42ae81cb86f67aa2c, type: 3}
       count: 2
   spawnPoints:
   - {fileID: 243444437}
   - {fileID: 368128795}
   - {fileID: 1074920461}
   - {fileID: 1140222159}
+  - {fileID: 1215162566}
+  - {fileID: 361783949}
   initialDelay: 1
   intermission: 3
   sampleRadius: 2
@@ -5371,6 +5445,8 @@ Transform:
   - {fileID: 368128795}
   - {fileID: 1074920461}
   - {fileID: 1140222159}
+  - {fileID: 1215162566}
+  - {fileID: 361783949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &327744049290340835

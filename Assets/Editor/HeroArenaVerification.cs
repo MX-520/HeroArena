@@ -33,9 +33,7 @@ public static class HeroArenaVerification
 
     public static void RunWaveChecks()
     {
-        SessionState.SetString(Key, "waves");
-        EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
-        EditorApplication.isPlaying = true;
+        CompleteDemoVerification.RunWaves();
     }
 
     public static void RunVisualChecks()

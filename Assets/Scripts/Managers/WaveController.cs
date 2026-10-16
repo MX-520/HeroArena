@@ -16,6 +16,7 @@ public class WaveController : MonoBehaviour
     [Serializable]
     public class Wave
     {
+        public string title;
         public EnemyBatch[] enemies;
     }
 
@@ -34,6 +35,8 @@ public class WaveController : MonoBehaviour
 
     public ChallengeState State { get; private set; }
     public int CurrentWave { get; private set; }
+    public string CurrentWaveTitle => waves != null && CurrentWave > 0 && CurrentWave <= waves.Length ? waves[CurrentWave - 1].title : "Forest Trial";
+    public int TotalKills { get; private set; }
     public int TotalWaves => waves == null ? 0 : waves.Length;
     public int RemainingEnemies => deaths.Count;
     public string FailureReason { get; private set; }
@@ -46,6 +49,7 @@ public class WaveController : MonoBehaviour
         StopAllCoroutines();
         ClearEnemies();
         CurrentWave = 0;
+        TotalKills = 0;
         FailureReason = null;
         State = ChallengeState.Idle;
         if (isActiveAndEnabled)
@@ -175,6 +179,7 @@ public class WaveController : MonoBehaviour
             return;
         health.OnDied -= callback;
         deaths.Remove(health);
+        TotalKills++;
         Changed?.Invoke();
     }
 
