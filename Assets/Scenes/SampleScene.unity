@@ -443,7 +443,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.4414573, y: 4.779338}
+  m_Offset: {x: 4.4826813, y: 4.079606}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -454,7 +454,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.97785914, y: 1.492565}
+  m_Size: {x: 0.8778591, y: 0.853426}
   m_EdgeRadius: 0
 --- !u!114 &66688020
 MonoBehaviour:
@@ -911,7 +911,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2306738, y: 4.7248173}
+  m_Offset: {x: -1.0870798, y: 4.1162496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -922,7 +922,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9290024, y: 1.5008112}
+  m_Size: {x: 0.8290024, y: 0.8289976}
   m_EdgeRadius: 0
 --- !u!114 &135931516
 MonoBehaviour:
@@ -2476,7 +2476,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0724087, y: 0.11161041}
+  m_Offset: {x: -0.9771496, y: -0.366431}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2487,7 +2487,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9534291, y: 1.280023}
+  m_Size: {x: 0.8534291, y: 0.9022846}
   m_EdgeRadius: 0
 --- !u!114 &447360985
 MonoBehaviour:
@@ -3959,8 +3959,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WASD move   /   LMB shoot   /   RMB/J melee   /   SPACE roll
-    /   SHIFT run   /   ESC pause
+  m_text: WASD move   /   LMB shoot   /   RMB/J melee   /   SPACE roll /   SHIFT
+    run   /   ESC pause
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4544,12 +4544,12 @@ MonoBehaviour:
   m_IgnoreNavMeshObstacle: 1
   m_OverrideTileSize: 0
   m_TileSize: 256
-  m_OverrideVoxelSize: 1
-  m_VoxelSize: 0.08
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.033333335
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 3b8518eaf5531c141b53d53ae4d8f699, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5a653670533a5aa42b9a23ce125be5f8, type: 2}
 --- !u!114 &744571070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9706,7 +9706,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.254172, y: 0.18562692}
+  m_Offset: {x: 4.384967, y: -0.42750394}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9717,7 +9717,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9290005, y: 1.3730261}
+  m_Size: {x: 0.8290005, y: 0.87785554}
   m_EdgeRadius: 0
 --- !u!114 &1638416354
 MonoBehaviour:

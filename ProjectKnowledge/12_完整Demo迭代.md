@@ -83,3 +83,12 @@ Use case: stylized-concept. Asset type: Unity 2D pixel action RPG sprite atlas. 
 
 
 本轮交付：图形模式RunVisualUI通过，六张截图已检查（Logs/demo-*.png），HUD显示10秒多弹道和RMB/J。Windows构建成功，0错误、1警告、93,634,581字节，证据Logs/windows-build.txt、Logs/feedback-build.log。新版程序Builds/HeroArena/HeroArena.exe；编辑器通过CombatFeedbackSetup.OpenReviewScene显式打开正式场景。本轮功能提交8c4bde5、952929d。自动定点回归通过不等同所有动态围堵和难度已人工验收。
+
+
+## 2026-10-17 后续实玩反馈：撤回石柱导航修复
+
+用户反馈其他障碍物绕行范围变大，要求从Git恢复原寻路。上轮全局烘焙半径0.1→0.5会影响所有障碍物净空，定点石柱回归没有覆盖这个体验影响。现从8c4bde5恢复NavMeshAreas、原NavMesh-Navigation.asset、四个石柱导航代理和NavMeshSurface参数/引用；恢复EnemyController原ChasePlayer/Retreat方法和2.5单位后退规则，移除路径缓存/目标投影/朝向阈值/新增视线绕行。普通障碍物碰撞体和既有脚部碰撞设置不改。
+
+保留独立施法动画、1.2秒射击、持续步行追踪/同组警戒、右键/J近战与10秒手动多弹道。子弹视觉从0.9放大到1.35（直径+50%）。配置器不再修改任何导航配置；原SetupEnemiesAndNavigation兼容入口仅配置敌人，推荐入口SetupEnemies。删除已废弃的NavMesh-CombatNavigation资产；用户新建NavMesh-Navigation 1资产保留不动。
+
+静态验证：追击/后退方法与原Git文本一致；原导航数据、NavMeshAreas与原Git字节一致（Logs/navigation-rollback-static.txt）。石柱原摇摆问题暂缓，已从组合回归必过项移除，历史定点通过记录不代表当前版本仍保留该修复。组合Play Mode回归通过（Logs/full-demo-feedback-all.txt），已覆盖原导航参数/引用、放大子弹、独立施法与1.2秒间隔、持续锁定和旧战斗/道具/三波/右键输入。Windows构建待本轮结果。

@@ -11,7 +11,11 @@ public static partial class CompleteDemoVerification
     public static void RunFeedbackAll() => Run("feedback-all");
     static IEnumerator FeedbackAll()
     {
-        var checks = new[] { FeedbackEnemies(), NavigationProbe(true), CrowdProbe(true), Regression(), FeedbackInput() };
+        Require(Mathf.Approximately(UnityEngine.AI.NavMesh.GetSettingsByID(-1372625422).agentRadius, 0.1f), "Original navigation bake radius not restored");
+        Require(AssetDatabase.GetAssetPath(Object.FindObjectOfType<NavMeshPlus.Components.NavMeshSurface>().navMeshData) == "Assets/Scenes/SampleScene/NavMesh-Navigation.asset", "Scene does not use original navigation data");
+        Require(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Combat/EnemyEnergyBolt.prefab").transform.localScale == Vector3.one * 1.35f, "Enemy projectile was not enlarged");
+        // Stone-pillar jitter is deferred; retain probes only as optional diagnostics.
+        var checks = new[] { FeedbackEnemies(), Regression(), FeedbackInput() };
         foreach (var check in checks)
         {
             var player = Object.FindObjectOfType<PlayerHealth>();

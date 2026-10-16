@@ -20,10 +20,6 @@ public class EnemyController : MonoBehaviour
 
     private float attackTimer;
     private float nextAttackTime;
-    private float nextPathRefresh;
-    private Vector3 lastGoal = Vector3.positiveInfinity;
-    private bool retreating;
-    private float retreatRetryAt;
     private float hurtDuration = 0.3f;
     private float hurtTimer;
     private bool isAttacking;
@@ -157,9 +153,13 @@ public class EnemyController : MonoBehaviour
             player.position
         );
 
-        if (enemyAttack.IsRanged && Retreat(distance)) return;
+        if (enemyAttack.IsRanged && distance < 2.5f)
+        {
+            Retreat();
+            return;
+        }
 
-        if (distance <= enemyAttack.AttackRange && (!enemyAttack.IsRanged || enemyAttack.HasLineOfSight(player)))
+        if (distance <= enemyAttack.AttackRange)
         {
             ChangeState(EnemyState.Attack);
             return;
@@ -189,7 +189,7 @@ public class EnemyController : MonoBehaviour
             player.position
         );
 
-        if (distance > enemyAttack.AttackRange || (enemyAttack.IsRanged && ((distance < 2f && Time.time >= retreatRetryAt) || !enemyAttack.HasLineOfSight(player))))
+        if (distance > enemyAttack.AttackRange || (enemyAttack.IsRanged && distance < 2.5f))
         {
             ChangeState(EnemyState.Chase);
             return;
@@ -224,36 +224,18 @@ public class EnemyController : MonoBehaviour
         attackPivot.localScale = new Vector3(left ? -1 : 1, 1, 1);
     }
 
-    private bool Retreat(float distance)
+    private void Retreat()
     {
-        if (!agent.isOnNavMesh) return false;
-        if (retreating && distance >= 3f) { retreating = false; lastGoal = Vector3.positiveInfinity; }
-        if (!retreating && (distance >= 2f || Time.time < retreatRetryAt)) return false;
-        if (!retreating || Time.time >= nextPathRefresh)
+        if (!agent.isOnNavMesh) return;
+        Vector3 away = (transform.position - player.position).normalized;
+        var filter = new NavMeshQueryFilter { agentTypeID = agent.agentTypeID, areaMask = agent.areaMask };
+        if (NavMesh.SamplePosition(transform.position + away * 2f, out NavMeshHit hit, 1f, filter))
         {
-            var filter = new NavMeshQueryFilter { agentTypeID = agent.agentTypeID, areaMask = agent.areaMask };
-            Vector3 away = (transform.position - player.position).normalized;
-            bool found = false;
-            foreach (float angle in new[] { 0f, 45f, -45f, 90f, -90f })
-            {
-                Vector3 direction = Quaternion.Euler(0, 0, angle) * away;
-                if (!NavMesh.SamplePosition(transform.position + direction * 2f, out NavMeshHit hit, 0.75f, filter)) continue;
-                var path = new NavMeshPath();
-                if (!NavMesh.CalculatePath(transform.position, hit.position, filter, path) || path.status != NavMeshPathStatus.PathComplete || path.corners.Length < 2) continue;
-                if (Vector2.Distance(hit.position, player.position) < distance + 0.5f || Vector3.Dot((path.corners[1] - transform.position).normalized, away) < 0.1f) continue;
-                agent.isStopped = false;
-                agent.SetPath(path);
-                found = true;
-                break;
-            }
-            retreating = found;
-            nextPathRefresh = Time.time + 0.5f;
-            lastGoal = Vector3.positiveInfinity;
-            if (!found) { retreatRetryAt = Time.time + 1f; return false; }
+            agent.isStopped = false;
+            agent.SetDestination(hit.position);
+            animator.SetBool("IsMoving", true);
+            FacePlayer();
         }
-        animator.SetBool("IsMoving", agent.velocity.sqrMagnitude > 0.04f);
-        FacePlayer();
-        return true;
     }
 
     private void ChasePlayer()
@@ -263,26 +245,11 @@ public class EnemyController : MonoBehaviour
             return;
         }
         
-        if (Time.time >= nextPathRefresh)
-        {
-            nextPathRefresh = Time.time + 0.2f;
-            var filter = new NavMeshQueryFilter { agentTypeID = agent.agentTypeID, areaMask = agent.areaMask };
-            if (NavMesh.SamplePosition(player.position, out NavMeshHit target, 1.5f, filter) &&
-                (!agent.hasPath || agent.isPathStale || (target.position - lastGoal).sqrMagnitude > 0.04f))
-            {
-                var path = new NavMeshPath();
-                if (NavMesh.CalculatePath(transform.position, target.position, filter, path) && path.status == NavMeshPathStatus.PathComplete)
-                {
-                    agent.SetPath(path);
-                    lastGoal = target.position;
-                }
-            }
-        }
-        animator.SetBool("IsMoving", agent.velocity.sqrMagnitude > 0.04f);
+        agent.SetDestination(player.position);
 
         Vector2 direction = agent.velocity.normalized;
 
-        if (Mathf.Abs(agent.velocity.x) > 0.15f && Mathf.Abs(direction.x) > 0.15f)
+        if (direction.x != 0)
         {
             bool facingLeft = direction.x < 0;
 
@@ -307,8 +274,6 @@ public class EnemyController : MonoBehaviour
         if (newState == EnemyState.Chase)
         {
             if (UsesPersistentPursuit) hasLockedTarget = true;
-            nextPathRefresh = 0;
-            lastGoal = Vector3.positiveInfinity;
 
             if (agent.isOnNavMesh)
             {

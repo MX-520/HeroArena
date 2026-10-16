@@ -1,15 +1,15 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.AI;
-using NavMeshPlus.Components;
 using Object = UnityEngine.Object;
 
 public static partial class CombatFeedbackSetup
 {
-    public static void SetupEnemiesAndNavigation()
+    // Compatibility entry point: navigation is intentionally left untouched.
+    public static void SetupEnemiesAndNavigation() => SetupEnemies();
+
+    public static void SetupEnemies()
     {
         EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
         var clip = new AnimationClip { name = "RangedShoot", frameRate = 20 };
@@ -51,33 +51,6 @@ public static partial class CombatFeedbackSetup
         PrefabUtility.SaveAsPrefabAsset(root, "Assets/Prefabs/Enemy/GoblinArcher.prefab");
         PrefabUtility.UnloadPrefabContents(root);
 
-        var baseEnemy = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemy/Gobling.prefab");
-        var foot = baseEnemy.GetComponent<Collider2D>();
-        Vector3 footOffset = baseEnemy.transform.TransformVector(foot.offset);
-        foreach (var pillar in GameObject.Find("MapCollision/Peristele").GetComponentsInChildren<BoxCollider2D>().Where(c => c.gameObject.layer == 0))
-        {
-            var proxy = pillar.transform.Find("NavigationObstacle").GetComponent<BoxCollider2D>();
-            Vector3 center = pillar.bounds.center - footOffset;
-            Vector3 size = Vector3.Max(pillar.bounds.size + new Vector3(0.1f, 0.1f, 0), proxy.bounds.size);
-            proxy.offset = proxy.transform.InverseTransformPoint(center);
-            proxy.size = new Vector2(size.x / Mathf.Abs(proxy.transform.lossyScale.x), size.y / Mathf.Abs(proxy.transform.lossyScale.y));
-            EditorUtility.SetDirty(proxy);
-        }
-        var surface = Object.FindObjectOfType<NavMeshSurface>();
-        surface.overrideVoxelSize = true; surface.voxelSize = 0.08f;
-        Physics2D.SyncTransforms();
-        surface.BuildNavMesh();
-        const string navPath = "Assets/Scenes/SampleScene/NavMesh-CombatNavigation.asset";
-        var oldData = AssetDatabase.LoadAssetAtPath<NavMeshData>(navPath);
-        if (oldData == null) AssetDatabase.CreateAsset(surface.navMeshData, navPath);
-        else
-        {
-            EditorUtility.CopySerialized(surface.navMeshData, oldData);
-            surface.RemoveData(); surface.navMeshData = oldData; surface.AddData();
-        }
-        EditorUtility.SetDirty(surface);
-        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-        EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
         AssetDatabase.SaveAssets();
         CompleteDemoVerification.RunFeedbackAll();
     }
