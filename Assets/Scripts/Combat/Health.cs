@@ -9,6 +9,9 @@ public class Health : MonoBehaviour
     public event Action OnDamaged;
     public event Action OnDied;
     private bool isDead;
+    public int CurrentHP => currentHP;
+    public int MaxHP => maxHP;
+    public bool IsDead => isDead;
 
     public event Action<int, int> OnHealthChanged;
 
@@ -20,7 +23,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (isDead)
+        if (isDead || damage <= 0)
             return;
 
         currentHP -= damage;

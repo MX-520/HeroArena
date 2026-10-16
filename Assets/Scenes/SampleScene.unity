@@ -5867,8 +5867,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3287020020896457631, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5854425596749784397}
   m_SourcePrefab: {fileID: 100100000, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
+--- !u!1 &5854425596749784396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3287020020896457631, guid: 253f837757aa98c4ca8bd14c05e42b37, type: 3}
+  m_PrefabInstance: {fileID: 5854425596749784395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5854425596749784397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5854425596749784396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9e8c2345be40b46a41920336275890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1905037435832753537, guid: ac60566297f99ca44af0b18f2d00ad5e, type: 3}
+  damage: 12
+  interval: 0.32
+  projectileSpeed: 16
 --- !u!1001 &6380766349980411060
 PrefabInstance:
   m_ObjectHideFlags: 0
