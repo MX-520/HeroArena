@@ -34,6 +34,30 @@ public class EnemyController : MonoBehaviour
     private EnemyAttack enemyAttack;
     private NavMeshAgent agent;
     private bool hasLockedTarget;
+    private RunnerGroup runnerGroup;
+
+    public bool IsRunner => isRunner;
+    public bool HasLockedTarget => hasLockedTarget;
+    public bool IsDead => currentState == EnemyState.Dead;
+
+    public void AssignRunnerGroup(RunnerGroup group)
+    {
+        runnerGroup?.Remove(this);
+        runnerGroup = group;
+        if (isRunner && !IsDead && isActiveAndEnabled)
+            runnerGroup?.Add(this);
+    }
+
+    public void LockTarget()
+    {
+        if (!isRunner || IsDead || !isActiveAndEnabled)
+            return;
+
+        hasLockedTarget = true;
+        // Preserve attack and hurt animations; Idle will resume pursuit.
+        if (currentState == EnemyState.Idle)
+            ChangeState(EnemyState.Chase);
+    }
    
 
     private void Awake()
@@ -95,13 +119,13 @@ public class EnemyController : MonoBehaviour
 
     private void UpdateIdle()
     {
-        // 根据实际速度判断是否播放移动动画
+        // 鏍规嵁瀹為檯閫熷害鍒ゆ柇鏄惁鎾斁绉诲姩鍔ㄧ敾
         bool isMoving = agent.isOnNavMesh
             && agent.velocity.sqrMagnitude > 0.01f;
 
         animator.SetBool("IsMoving", isMoving);
 
-        // 停稳后清理旧路径
+        // 鍋滅ǔ鍚庢竻鐞嗘棫璺緞
         if (!isMoving && agent.isOnNavMesh && agent.hasPath)
         {
             agent.ResetPath();
@@ -147,7 +171,7 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetBool("IsMoving", false);
 
-        // 当前攻击动画还没结束时，不重新判断距离和朝向
+        // 褰撳墠鏀诲嚮鍔ㄧ敾杩樻病缁撴潫鏃讹紝涓嶉噸鏂板垽鏂窛绂诲拰鏈濆悜
         if (isAttacking)
             return;
 
@@ -229,13 +253,13 @@ public class EnemyController : MonoBehaviour
         {
             if (agent.isOnNavMesh)
             {
-                // 停止沿路径追击，但不立即强制清零速度
+                // 鍋滄娌胯矾寰勮拷鍑伙紝浣嗕笉绔嬪嵆寮哄埗娓呴浂閫熷害
                 agent.isStopped = true;
             }
         }
         else
         {
-            // 攻击、受击、死亡仍立即停止
+            // 鏀诲嚮銆佸彈鍑汇�佹浜′粛绔嬪嵆鍋滄
             if (agent.isOnNavMesh)
             {
                 agent.isStopped = true;
@@ -255,6 +279,9 @@ public class EnemyController : MonoBehaviour
 
     public void OnAttackFinished()
     {
+        if (currentState != EnemyState.Attack || player == null)
+            return;
+
         isAttacking = false;
         animator.SetBool("IsAttacking", false);
 
@@ -289,6 +316,12 @@ public class EnemyController : MonoBehaviour
         isAttacking = false;
         animator.SetBool("IsAttacking", false);
 
+        if (isRunner)
+        {
+            LockTarget();
+            runnerGroup?.Alert();
+        }
+
         ChangeState(EnemyState.Hurt);
 
         hurtTimer = hurtDuration;
@@ -300,17 +333,26 @@ public class EnemyController : MonoBehaviour
     {
         health.OnDamaged += OnHurt;
         health.OnDied += OnDeath;
+        if (isRunner && !IsDead)
+            runnerGroup?.Add(this);
     }
 
     private void OnDisable()
     {
         health.OnDamaged -= OnHurt;
         health.OnDied -= OnDeath;
+        runnerGroup?.Remove(this);
     }
 
     private void OnDeath()
     {
+        // Health raises OnDied instead of OnDamaged for a lethal hit.
+        if (isRunner)
+            runnerGroup?.Alert();
+        runnerGroup?.Remove(this);
         ChangeState(EnemyState.Dead);
+        isAttacking = false;
+        animator.SetBool("IsAttacking", false);
 
         animator.SetBool("IsMoving", false);
 
@@ -320,8 +362,11 @@ public class EnemyController : MonoBehaviour
         damageReceiver.enabled = false;
 
         rb.velocity = Vector2.zero;
-        agent.isStopped = true;
-        agent.ResetPath();
+        if (agent.isOnNavMesh)
+        {
+            agent.isStopped = true;
+            agent.ResetPath();
+        }
 
         Destroy(gameObject, destroyDelay);
     }
