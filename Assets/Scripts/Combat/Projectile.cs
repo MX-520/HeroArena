@@ -3,6 +3,7 @@ using UnityEngine;
 // Swept 2D casts prevent fast projectiles tunnelling through thin colliders.
 public class Projectile : MonoBehaviour
 {
+    private readonly RaycastHit2D[] hits = new RaycastHit2D[16];
     private Transform owner;
     private Vector2 direction;
     private float speed;
@@ -32,7 +33,6 @@ public class Projectile : MonoBehaviour
         if (!initialized || Time.deltaTime <= 0) return;
         float distance = speed * Time.deltaTime;
         var filter = new ContactFilter2D { useLayerMask = true, layerMask = targetMask | blockingMask | LayerMask.GetMask("ProjectileHitbox"), useTriggers = true };
-        var hits = new RaycastHit2D[16];
         int count = Physics2D.CircleCast(transform.position, 0.08f, direction, filter, hits, distance);
         for (int i = 0; i < count; i++)
         {

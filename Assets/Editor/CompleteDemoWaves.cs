@@ -61,6 +61,8 @@ public static partial class CompleteDemoVerification
         var wave = Object.FindObjectOfType<WaveController>();
         Object.FindObjectOfType<PlayerHealth>().GetComponent<DamageReceiver>().SetInvincible(true);
         Require(wave.TotalWaves == 3, "Expected three waves");
+        wave.enabled = true;
+        if (wave.State == WaveController.ChallengeState.Idle) wave.RestartChallenge();
         int[] counts = { 3, 4, 6 };
         for (int index = 0; index < 3; index++)
         {

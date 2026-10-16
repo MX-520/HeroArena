@@ -5,13 +5,21 @@
 
 HeroArena 是一个基于 Unity 2022.3 + C# 独立开发的 2D 像素风 Action RPG 战斗 Demo。
 
-项目围绕角色控制、战斗系统、敌人 AI、2D 导航与场景交互构建核心玩法，目前已完成从移动、战斗、闪避、敌人追踪，到可破坏障碍、动态寻路、死亡重生的基础 Gameplay 闭环。
+项目已具备三波挑战的完整流程：主角近战与鼠标射击、普通/Runner/远程哥布林、可破坏环境与四种掉落增益，以及开始、暂停、胜利、失败和整局重开。
 
 项目开发过程中注重功能模块复用、角色状态约束以及实际问题定位，并持续通过 Git 进行功能迭代与版本管理。
 
 ---
 
 ## 🎬 游戏演示
+
+当前主菜单与第三波场景（第三波图来自自动验证）：
+
+![当前主菜单](Documentation/Media/HeroArena_Menu.png)
+
+![第三波混合挑战](Documentation/Media/HeroArena_ThreeWave.png)
+
+历史Gameplay录像：
 
 ![HeroArena Gameplay Demo](Documentation/Media/HeroArena_Demo.gif)
 ▶️ **[查看完整游戏演示（Bilibili）](https://www.bilibili.com/video/BV1g8He6TEKb)**
@@ -22,19 +30,22 @@ HeroArena 是一个基于 Unity 2022.3 + C# 独立开发的 2D 像素风 Action 
 ### Player
 
 - 移动 / 奔跑
-- 普通攻击
+- J 近战攻击 / 鼠标左键持续朝鼠标射击
 - 翻滚
 - 翻滚期间无敌
 - 翻滚穿越敌人
 - Hurt 受伤与受伤硬直
 - Death 死亡
-- Respawn 重生
+- 整局重新挑战，恢复角色与场景
 - Attack / Roll / Hurt / Death 动作状态约束与中断处理
 
 
 ### Enemy
 
-当前敌人：`Gobling`
+当前敌人：`Gobling`、`GoblinRunner`、`GoblinArcher`
+
+- Runner 同波受伤警戒与锁定追击
+- 弩手保持射程、贴近后退、0.4 秒瞄准预警、投射物攻击
 
 - Idle / Chase / Attack / Hurt / Death 状态
 - 基于 NavMeshPlus 的 2D 寻路与玩家追踪
@@ -96,29 +107,19 @@ Roll Coroutine 同样支持主动取消，确保中断后正确恢复碰撞、�
 
 ---
 
-## 🔄 Death & Respawn
+## 🔄 挑战与游戏流程
 
-玩家死亡流程：
+| 波次 | 阵容 | 总血量 |
+|---|---|---|
+| First Contact | 3 普通 | 150 |
+| The Hunt | 2 普通 + 2 Runner | 200 |
+| Crossfire | 2 普通 + 2 Runner + 2 弩手 | 280 |
 
-```text
-HP <= 0
-   ↓
-OnDied
-   ↓
-Player Death
-   ↓
-GameManager
-   ↓
-Respawn Delay
-   ↓
-RespawnPoint
-   ↓
-Restore HP
-   ↓
-Resume Control
-```
+波间休息 3 秒，每波至少一份回血掉落。敌人与障碍物可掉落回血、6 秒自动弹幕、8 秒巨化、5 秒护罩；同类增益刷新时间，暂停冻结，死亡清除。
 
-`GameManager` 负责玩家重生时间与 RespawnPoint 调度，Player 负责恢复自身生命值和角色状态。
+从开始菜单进入挑战，Esc 暂停。全部击败进入胜利界面；玩家死亡进入失败界面。重新挑战与返回菜单均重新载入场景，恢复玩家、障碍物和生成物。`GameManager` 的自动重生接口仍保留，正式挑战通过 `PlayerHealth.autoRespawn=false` 关闭。
+
+操作：WASD / 方向键移动，Shift 奔跑，空格翻滚，鼠标左键射击，J 近战，Esc 暂停。
 
 ---
 
@@ -126,7 +127,7 @@ Resume Control
 
 - Unity 2022.3 LTS
 - C#
-- Unity Input System
+- Unity Input System / uGUI / TextMeshPro
 - Animator / Animation Event
 - Rigidbody2D / Physics2D
 - NavMeshPlus / Unity AI Navigation
@@ -169,7 +170,9 @@ Documentation/
 - [x] 可破坏场景障碍
 - [x] 障碍销毁后的动态导航更新
 - [x] Cinemachine 相机跟随与地图边界限制
-- [ ] Gameplay UI / Health UI
+- [x] Gameplay UI / Health UI / 开始暂停与胜负流程
+- [x] 玩家射击、远程哥布林与三波挑战
+- [x] 回血、弹幕、巨化和护罩掉落
 - [ ] 战斗反馈与视觉表现优化
 - [ ] 更多 Gameplay 内容
 
@@ -179,6 +182,6 @@ Documentation/
 
 HeroArena 目前已完成基础战斗 Gameplay 闭环，并持续进行功能迭代与表现优化。
 
-当前版本重点完成角色控制、战斗系统、敌人状态 AI、2D NavMesh 寻路、可破坏场景、动态导航更新以及死亡重生等功能。
+当前版本已接通三波战斗、掉落与增益、完整 UI 和重新开局。Unity Play Mode 自动验证覆盖射击、敌人、增益和流程；首版难度数值仍需人工实玩校准。
 
-项目主要用于 Unity 游戏客户端开发方向的学习与实践，后续将继续完善 Gameplay UI、战斗反馈与整体演示效果。
+项目主要用于 Unity 游戏客户端开发方向的学习与实践，后续重点为人工难度调优、音效与战斗反馈，以及作品展示素材更新。上方演示视频为历史版本。

@@ -25,7 +25,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnAttack(InputValue value)
     {
-        if (value.isPressed &&
+        if (Time.timeScale > 0 && value.isPressed &&
             !playerMovement.IsHurt &&
             !playerMovement.IsRolling &&
             !playerMovement.IsDead &&

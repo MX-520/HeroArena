@@ -91,6 +91,8 @@ public class PlayerMovement : MonoBehaviour
     // Input
     // ======================
 
+    public void ResetInput() { moveInput = Vector2.zero; isRunning = false; rb.velocity = Vector2.zero; }
+
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
@@ -110,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnRoll(InputValue value)
     {
-        if (value.isPressed &&
+        if (Time.timeScale > 0 && value.isPressed &&
             !isRolling &&
             !isHurt &&
             !isDead &&

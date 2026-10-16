@@ -347,3 +347,15 @@ Push
 分支：codex/runner-wave-challenge。
 
 已提交 dac1a13：feat: 完善Runner同组警戒与持续追击机制，含 Unity Play Mode 检查和文档。两波挑战作为后续独立功能提交，实际哈希以 git log 为准。只提交本任务代码、场景和文档，保留开始任务前已有的规则与 Package 改动。
+
+
+## 2026-10-17 完整Demo迭代记录
+
+当前开发分支：codex/complete-demo（基于已完成的Runner和两波挑战）。
+
+- af5750b：主角鼠标射击与扫掠子弹检测。
+- 86cf87a：远程哥布林、预警、后退及身体子弹判定框。
+- 7965fd9：第三波与首版难度曲线。
+- 86d9768：敌人/障碍物掉落及四种增益。
+
+完整UI与流程作为独立功能保存，实际哈希查看git log。原有AGENTS、.agentignore、Package和技能目录改动保持原状；本轮不自动推送或合并。

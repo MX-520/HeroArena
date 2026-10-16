@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     private PlayerAttack playerAttack;
 
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private bool autoRespawn = true;
 
     private void Awake()
     {
@@ -48,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
 
         animator.SetTrigger("Death");
 
-        gameManager.RespawnPlayer(this);
+        if (autoRespawn && gameManager != null) gameManager.RespawnPlayer(this);
     }
     public void Respawn(Vector3 position)
     {

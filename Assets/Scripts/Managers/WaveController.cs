@@ -22,6 +22,7 @@ public class WaveController : MonoBehaviour
 
     public enum ChallengeState { Idle, Preparing, Fighting, Intermission, Completed, Failed }
 
+    [SerializeField] private bool autoStart = true;
     [SerializeField] private Wave[] waves;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField, Min(0)] private float initialDelay = 1f;
@@ -35,14 +36,21 @@ public class WaveController : MonoBehaviour
 
     public ChallengeState State { get; private set; }
     public int CurrentWave { get; private set; }
-    public string CurrentWaveTitle => waves != null && CurrentWave > 0 && CurrentWave <= waves.Length ? waves[CurrentWave - 1].title : "Forest Trial";
+    public string CurrentWaveTitle => waves != null && CurrentWave > 0 && CurrentWave <= waves.Length && waves[CurrentWave - 1] != null ? waves[CurrentWave - 1].title : "Forest Trial";
     public int TotalKills { get; private set; }
     public int TotalWaves => waves == null ? 0 : waves.Length;
     public int RemainingEnemies => deaths.Count;
     public string FailureReason { get; private set; }
     public event Action Changed;
 
-    private void Start() => RestartChallenge();
+    private void Start() { if (autoStart) RestartChallenge(); }
+
+    public void StopChallenge()
+    {
+        StopAllCoroutines();
+        ClearEnemies();
+        foreach (var shot in FindObjectsOfType<Projectile>()) Destroy(shot.gameObject);
+    }
 
     public void RestartChallenge()
     {

@@ -76,6 +76,12 @@ public static partial class CompleteDemoVerification
         effects.TryApply(PickupKind.Giant);
         effects.TryApply(PickupKind.Barrage);
         effects.TryApply(PickupKind.Shield);
+        effects.GetComponent<PlayerMovement>().ExitHurt();
+        effects.GetComponentInChildren<Animator>().Play("Idle");
+        int shotsBefore = effects.GetComponent<PlayerShooting>().ShotsFired;
+        Require(effects.GetComponent<PlayerShooting>().TryShoot(effects.transform.position + Vector3.right * 6), "Barrage could not fire");
+        Require(effects.GetComponent<PlayerShooting>().ShotsFired == shotsBefore + 3, "Barrage did not create three projectiles");
+        Require(Object.FindObjectsOfType<Projectile>().Any(p => p.Owner == effects.transform && p.Damage == 22), "Giant multiplier did not affect projectile damage");
         Require(effects.GiantActive && effects.GetComponent<PlayerShooting>().Barrage && effects.GetComponent<PlayerMovement>().SpeedMultiplier == 1.25f, "Buffs not applied");
         receiver.SetInvincible(true);
         receiver.SetInvincible(false);

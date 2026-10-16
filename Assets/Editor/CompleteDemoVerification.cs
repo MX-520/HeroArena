@@ -24,10 +24,25 @@ public static partial class CompleteDemoVerification
     private static void Entered(PlayModeStateChange state)
     {
         if (state != PlayModeStateChange.EnteredPlayMode || SessionState.GetString(Key, "") == "") return;
-        deadline = EditorApplication.timeSinceStartup + 60;
+        deadline = EditorApplication.timeSinceStartup + 90;
+        var flow = Object.FindObjectOfType<GameFlow>();
+        if (flow != null && SessionState.GetString(Key, "") != "ui" && SessionState.GetString(Key, "") != "visual")
+        {
+            flow.enabled = false;
+            Time.timeScale = 1;
+        }
         errors = false;
         Application.logMessageReceived += Log;
-        routine = SessionState.GetString(Key, "") == "ranged" ? Ranged() : SessionState.GetString(Key, "") == "waves" ? Waves() : SessionState.GetString(Key, "") == "drops" ? Drops() : Shooting();
+        switch (SessionState.GetString(Key, ""))
+        {
+            case "ranged": routine = Ranged(); break;
+            case "waves": routine = Waves(); break;
+            case "drops": routine = Drops(); break;
+            case "runners": routine = Runners(); break;
+            case "regression": routine = Regression(); break;
+            case "ui": case "visual": routine = UI(); break;
+            default: routine = Shooting(); break;
+        }
         EditorApplication.update += Tick;
     }
     private static void Log(string message, string stack, LogType type) { if (type == LogType.Error || type == LogType.Exception || type == LogType.Assert) errors = true; }
