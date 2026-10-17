@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 /// <summary>Explicit multi-graphic feedback, animated with unscaled time so paused menus still respond.</summary>
 [RequireComponent(typeof(UnityEngine.UI.Button))]
 public sealed class ArenaButtonFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
-    IPointerDownHandler, IPointerUpHandler, ISelectHandler, IDeselectHandler
+    IPointerDownHandler, IPointerUpHandler, ISelectHandler, IDeselectHandler, ISubmitHandler
 {
     [SerializeField] private Color restingFill;
     [SerializeField] private Color restingText;
@@ -52,10 +52,19 @@ public sealed class ArenaButtonFeedback : MonoBehaviour, IPointerEnterHandler, I
         if(trim!=null) trim.Configure(Color.Lerp(new Color(0.87f,0.77f,0.50f,0.65f),new Color(1,0.91f,0.45f,1),emphasis),8+emphasis*6);
         transform.localScale=Vector3.one*(1+emphasis*(pressed?0.004f:0.025f));
     }
-    public void OnPointerEnter(PointerEventData data) { hovered=true; }
+    public void OnPointerEnter(PointerEventData data)
+    {
+        if(!hovered && button.IsInteractable()) GameAudio.Play(GameSound.UIHover);
+        hovered=true;
+    }
     public void OnPointerExit(PointerEventData data) { hovered=false;pressed=false; }
-    public void OnPointerDown(PointerEventData data) { if(data.button==PointerEventData.InputButton.Left) pressed=true; }
+    public void OnPointerDown(PointerEventData data)
+    {
+        if(data.button==PointerEventData.InputButton.Left && button.IsInteractable()) {pressed=true;ClickSound();}
+    }
     public void OnPointerUp(PointerEventData data) { pressed=false; }
     public void OnSelect(BaseEventData data) { selected=true; }
     public void OnDeselect(BaseEventData data) { selected=false;pressed=false; }
+    public void OnSubmit(BaseEventData data) { if(button.IsInteractable()) ClickSound(); }
+    private void ClickSound()=>GameAudio.Play(name=="MenuButton" || name=="QuitButton"?GameSound.UIBack:GameSound.UIClick);
 }

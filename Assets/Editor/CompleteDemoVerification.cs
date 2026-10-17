@@ -26,7 +26,7 @@ public static partial class CompleteDemoVerification
         if (state != PlayModeStateChange.EnteredPlayMode || SessionState.GetString(Key, "") == "") return;
         deadline = EditorApplication.timeSinceStartup + 150;
         var flow = Object.FindObjectOfType<GameFlow>();
-        if (flow != null && SessionState.GetString(Key, "") != "ui" && SessionState.GetString(Key, "") != "visual")
+        if (flow != null && SessionState.GetString(Key, "") != "ui" && SessionState.GetString(Key, "") != "visual" && !SessionState.GetString(Key, "").StartsWith("audio"))
         {
             flow.enabled = false;
             Time.timeScale = 1;
@@ -35,6 +35,8 @@ public static partial class CompleteDemoVerification
         Application.logMessageReceived += Log;
         switch (SessionState.GetString(Key, ""))
         {
+            case "audio-ui": routine = AudioUI(); break;
+            case "audio-all": routine = AudioAll(); break;
             case "projectile-vfx": routine = ProjectileVfx(); break;
             case "pillar-only-baseline": routine = PillarOnly(false); break;
             case "pillar-only-fixed": routine = PillarOnly(true); break;
