@@ -75,6 +75,9 @@ public static class ForestMenuSetup
         guide.GetComponent<UnityEngine.UI.Image>().color=Color.clear;
         Text(guide,"GuideTitle","近战 · 射击 · 生存",new Vector2(0,17),new Vector2(398,27),15,new Color(0.91f,0.80f,0.54f),true);
         Text(guide,"GuideText","翻滚避险，收集遗物，迎战三波伏兵。",new Vector2(0,-17),new Vector2(398,26),13,new Color(0.77f,0.85f,0.81f));
+        frame.Find("Eyebrow").gameObject.SetActive(false);
+        frame.Find("Subtitle").gameObject.SetActive(false);
+        guide.Find("GuideText").gameObject.SetActive(false);
         DecoratedUISetup.Frame(menu,new Color(0.87f,0.76f,0.48f,0.38f),28);
         var trim=menu.Find("ArenaTrim") as RectTransform;
         trim.offsetMin=new Vector2(18,18);trim.offsetMax=new Vector2(-18,-18);
