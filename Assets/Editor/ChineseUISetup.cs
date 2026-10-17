@@ -67,7 +67,7 @@ public static class ChineseUISetup
         }
         foreach(var image in ui.GetComponentsInChildren<UnityEngine.UI.Image>(true))
         {
-            bool graphic=image==fill || image.sprite!=null && (image.name=="Icon" || new[]{"Heal","Barrage","Giant","Shield"}.Contains(image.name));
+            bool graphic=image==fill || image.sprite!=null && (image.name=="MenuArtwork" || image.name=="Icon" || new[]{"Heal","Barrage","Giant","Shield"}.Contains(image.name));
             if(!graphic)
             {
                 var opacity = BackgroundOpacity(image.name);
@@ -94,6 +94,7 @@ public static class ChineseUISetup
         data.ApplyModifiedPropertiesWithoutUndo();
         ApplyReadableLayout(ui);
         DecoratedUISetup.ApplyHUD(ui);
+        ForestMenuSetup.Apply(ui);
         var wave=new SerializedObject(Object.FindObjectOfType<WaveController>());
         string[] titles={"初次交锋","群体追猎","交叉火力"};
         for(int i=0;i<3;i++) wave.FindProperty("waves").GetArrayElementAtIndex(i).FindPropertyRelative("title").stringValue=titles[i];
@@ -171,7 +172,7 @@ public static class ChineseUISetup
             asset.name="HeroArenaChinese SDF";
             AssetDatabase.CreateAsset(asset,FontPath);
         }
-        string content=string.Join("",labels.Values)+string.Join("",buttons.Values)+"治疗多弹道巨化护罩初次交锋群体追猎交叉火力森林试炼"+File.ReadAllText("Assets/Scripts/UI/GameUI.cs");
+        string content=string.Join("",labels.Values)+string.Join("",buttons.Values)+"治疗多弹道巨化护罩初次交锋群体追猎交叉火力森林试炼"+File.ReadAllText("Assets/Scripts/UI/GameUI.cs")+File.ReadAllText("Assets/Editor/ForestMenuSetup.cs");
         string characters=new string(content.Concat(Enumerable.Range(32,95).Select(i=>(char)i)).Where(c=>!char.IsControl(c)).Distinct().ToArray());
         // TMP 3.0.x reports false when all requested glyphs already exist; add only new characters.
         string additions=new string(characters.Where(c=>!asset.HasCharacter(c)).ToArray());

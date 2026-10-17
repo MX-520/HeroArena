@@ -15,13 +15,17 @@ public static partial class CompleteDemoVerification
         var fill=(UnityEngine.UI.Image)data.FindProperty("healthFill").objectReferenceValue;
         foreach(var image in ui.GetComponentsInChildren<UnityEngine.UI.Image>(true))
         {
-            bool graphic=image==fill || image.sprite!=null && (image.name=="Icon" || new[]{"Heal","Barrage","Giant","Shield"}.Contains(image.name));
+            bool graphic=image==fill || image.sprite!=null && (image.name=="MenuArtwork" || image.name=="Icon" || new[]{"Heal","Barrage","Giant","Shield"}.Contains(image.name));
             Require(graphic || image.color.a<=0.6f,"UI background is too opaque: "+image.name);
             if(new[]{"HUD","MainMenu","Modal"}.Contains(image.name)) Require(image.color.a==0,"Full-screen UI cover obscures world: "+image.name);
             if(new[]{"HealthPanel","WavePanel","RunPanel","BarrageCard","GiantCard","ShieldCard"}.Contains(image.name)) Require(image.color.a>=0.25f && image.color.a<=0.45f,"Missing or excessive compact backdrop: "+image.name);
             if(graphic) Require(image.color.a>0,"UI icon/health graphic was hidden: "+image.name);
         }
         var rects=ui.GetComponentsInChildren<RectTransform>(true);
+        var artwork=rects.First(r=>r.name=="MenuArtwork");
+        Require(!artwork.GetComponent<UnityEngine.UI.Image>().raycastTarget,"Menu artwork intercepts clicks");
+        Require(artwork.GetSiblingIndex()==0 && artwork.GetComponent<UnityEngine.UI.Image>().sprite!=null,"Menu artwork is not behind existing controls");
+        Require(artwork.GetComponent<UnityEngine.UI.AspectRatioFitter>().aspectMode==UnityEngine.UI.AspectRatioFitter.AspectMode.EnvelopeParent,"Menu artwork must fill without stretching");
         var controls=rects.First(r=>r.name=="Controls");
         Require(controls.anchoredPosition==new Vector2(0,18) && controls.sizeDelta==new Vector2(820,30),"Accepted controls layout changed");
         Require(controls.GetComponentsInChildren<ArenaPanelFrame>(true).Length==0,"Controls received unwanted trim");

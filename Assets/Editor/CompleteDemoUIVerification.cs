@@ -26,7 +26,7 @@ public static partial class CompleteDemoVerification
         var hits = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointer, hits);
         Require(hits.Any(h => h.gameObject == button.gameObject), "Start button does not receive pointer raycasts");
-        if (SessionState.GetString(Key, "") == "visual") CaptureDemo("menu");
+        if (SessionState.GetString(Key, "") == "visual") { CaptureDemo("menu"); CaptureDemo("menu-wide",2048,940); }
         button.onClick.Invoke();
         Require(flow.State == GameFlow.ScreenState.Playing && Time.timeScale == 1, "Start button not wired");
         while (flow.Waves.State != WaveController.ChallengeState.Fighting) yield return null;
