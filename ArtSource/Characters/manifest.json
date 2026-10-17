@@ -28,7 +28,7 @@
       "height": 1254,
       "mode": "RGBA",
       "status": "candidate-not-active-in-game",
-      "review_notes": "Frame 14 still shows a straight blade in the slumped death pose; must replace or exclude before use."
+      "review_notes": "Row 4 column 3 (zero-based frame index 14) still shows a straight blade in the slumped death pose; must replace or exclude before use."
     },
     {
       "path": "ArtSource/Characters/Hero/HeroMaster.png",
