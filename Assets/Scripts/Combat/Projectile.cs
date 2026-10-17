@@ -12,8 +12,10 @@ public class Projectile : MonoBehaviour
     private int targetMask;
     private int blockingMask;
     private bool initialized;
+    private ArcaneBoltVfx visual;
     public int Damage => damage;
     public Transform Owner => owner;
+    private void Awake() { visual=GetComponent<ArcaneBoltVfx>(); }
 
     public void Initialize(Transform source, Vector2 heading, int amount, float velocity, int targets, int blockers, float lifetime = 3f)
     {
@@ -45,11 +47,16 @@ public class Projectile : MonoBehaviour
             if (bodyHitbox && ((targetMask & (1 << recipientLayer)) == 0 || receiver == null || !receiver.isActiveAndEnabled)) continue;
             if ((targetMask & (1 << recipientLayer)) != 0 && receiver != null && receiver.isActiveAndEnabled)
                 receiver.TakeDamage(damage);
+            if(visual!=null) visual.Finish(true,hits[i].point);
             Destroy(gameObject);
             return;
         }
         transform.position += (Vector3)(direction * distance);
         remaining -= Time.deltaTime;
-        if (remaining <= 0) Destroy(gameObject);
+        if (remaining <= 0)
+        {
+            if(visual!=null) visual.Finish(false,transform.position);
+            Destroy(gameObject);
+        }
     }
 }

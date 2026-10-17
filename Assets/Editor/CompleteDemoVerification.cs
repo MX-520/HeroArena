@@ -35,6 +35,7 @@ public static partial class CompleteDemoVerification
         Application.logMessageReceived += Log;
         switch (SessionState.GetString(Key, ""))
         {
+            case "projectile-vfx": routine = ProjectileVfx(); break;
             case "pillar-only-baseline": routine = PillarOnly(false); break;
             case "pillar-only-fixed": routine = PillarOnly(true); break;
             case "obstacle-approach": routine = ObstacleApproach(); break;

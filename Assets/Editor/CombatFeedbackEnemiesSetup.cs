@@ -31,6 +31,7 @@ public static partial class CombatFeedbackSetup
         renderer.sortingOrder = 30;
         shotRoot.transform.localScale = Vector3.one * 2.7f;
         shotRoot.AddComponent<Projectile>();
+        ArcaneProjectileSetup.Configure(shotRoot);
         var shotPrefab = PrefabUtility.SaveAsPrefabAsset(shotRoot, "Assets/Prefabs/Combat/EnemyEnergyBolt.prefab");
         Object.DestroyImmediate(shotRoot);
         var root = PrefabUtility.LoadPrefabContents("Assets/Prefabs/Enemy/GoblinArcher.prefab");
