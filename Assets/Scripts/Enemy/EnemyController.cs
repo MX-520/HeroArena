@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform attackPivot;
     [SerializeField] private bool isRunner = false;
 
+    private readonly PillarNavigation.Approach pillarApproach = new PillarNavigation.Approach();
     private float attackTimer;
     private float nextAttackTime;
     private float hurtDuration = 0.3f;
@@ -159,7 +160,8 @@ public class EnemyController : MonoBehaviour
             return;
         }
 
-        if (enemyAttack.CanAttackTarget(player))
+        bool pillarReady = !pillarApproach.TryGetDestination(player, enemyAttack, enemyCollider, agent, out Vector3 pillarGoal) || Vector2.Distance(transform.position, pillarGoal) < 0.2f;
+        if (enemyAttack.CanAttackTarget(player) && pillarReady)
         {
             ChangeState(EnemyState.Attack);
             return;
@@ -245,11 +247,12 @@ public class EnemyController : MonoBehaviour
             return;
         }
         
-        agent.SetDestination(player.position);
+        bool approachingPillar = pillarApproach.TryGetDestination(player, enemyAttack, enemyCollider, agent, out Vector3 destination);
+        agent.SetDestination(approachingPillar ? destination : player.position);
 
         Vector2 direction = agent.velocity.normalized;
 
-        if (direction.x != 0)
+        if (approachingPillar ? Mathf.Abs(agent.velocity.x) > 0.15f : direction.x != 0)
         {
             bool facingLeft = direction.x < 0;
 

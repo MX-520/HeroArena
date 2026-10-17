@@ -29,18 +29,19 @@ public class EnemyAttack : MonoBehaviour
         return IsPathClear(start, end);
     }
 
-    public bool CanAttackTarget(Transform target)
+    public bool CanAttackTarget(Transform target) => CanAttackFromPosition(target, transform.position);
+
+    public bool CanAttackFromPosition(Transform target, Vector3 position)
     {
-        if (target == null || Vector2.Distance(transform.position, target.position) > attackRange || !HasClearAttackPath(target))
-            return false;
-        if (isRanged) return true;
+        if (target == null || Vector2.Distance(position, target.position) > attackRange) return false;
         var targetBody = target.GetComponent<Collider2D>();
+        Vector2 center = attackPoint.position + position - transform.position;
+        float horizontalOffset = Mathf.Abs(attackPoint.position.x - transform.position.x);
+        center.x = position.x + (target.position.x < position.x ? -horizontalOffset : horizontalOffset);
+        if (isRanged) return IsPathClear(center, target.position);
         if (targetBody == null || !targetBody.enabled) return false;
-        // Predict FacePlayer's attack-point position before committing to an attack.
-        Vector2 center = attackPoint.position;
-        float horizontalOffset = Mathf.Abs(center.x - transform.position.x);
-        center.x = transform.position.x + (target.position.x < transform.position.x ? -horizontalOffset : horizontalOffset);
-        return Vector2.Distance(center, targetBody.ClosestPoint(center)) <= attackRange;
+        Vector2 feet = bodyCollider.bounds.center + position - transform.position;
+        return IsPathClear(feet, targetBody.bounds.center) && Vector2.Distance(center, targetBody.ClosestPoint(center)) <= attackRange;
     }
 
     private bool IsPathClear(Vector2 start, Vector2 end)

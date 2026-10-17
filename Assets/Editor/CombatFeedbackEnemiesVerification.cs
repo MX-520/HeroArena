@@ -12,9 +12,9 @@ public static partial class CompleteDemoVerification
     static IEnumerator FeedbackAll()
     {
         Require(Mathf.Approximately(UnityEngine.AI.NavMesh.GetSettingsByID(-1372625422).agentRadius, 0.1f), "Original navigation bake radius not restored");
-        Require(AssetDatabase.GetAssetPath(Object.FindObjectOfType<NavMeshPlus.Components.NavMeshSurface>().navMeshData) == "Assets/Scenes/SampleScene/NavMesh-Navigation.asset", "Scene does not use original navigation data");
+        Require(AssetDatabase.GetAssetPath(Object.FindObjectOfType<NavMeshPlus.Components.NavMeshSurface>().navMeshData) == "Assets/Scenes/SampleScene/NavMesh-Pillars.asset", "Scene does not use calibrated pillar navigation data");
         Require(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Combat/EnemyEnergyBolt.prefab").transform.localScale == Vector3.one * 2.7f, "Enemy projectile was not enlarged");
-        // Stone-pillar jitter is deferred; retain probes only as optional diagnostics.
+        // Four-sided pillar contact and penetration are checked by RunPillarOnlyFixed.
         var checks = new[] { BlockedAttack(true), FeedbackEnemies(), Regression(), FeedbackInput() };
         foreach (var check in checks)
         {

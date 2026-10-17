@@ -99,3 +99,12 @@ Use case: stylized-concept. Asset type: Unity 2D pixel action RPG sprite atlas. 
 哥布林子弹视觉缩放2.7（在1.35基础上直径加倍）。敌人攻击入口、维持与动画结束统一检查目标可达：近战需实际攻击圈覆盖玩家碰撞体，近/远程均需无实体遮挡；命中事件再次检查遮挡。受阻时继续原追击。导航参数、网格和场景碰撞体未改；本轮遵照用户要求不构建打包。组合Play Mode回归已通过，实际场景绕障测试已通过：Obstacles_03上方静止玩家，普通哥布林和Runner均从下方绕至无遮挡攻击位置，PathComplete，停止根距离1.20（Logs/obstacle-approach.txt、Logs/full-demo-obstacle-approach.txt）。
 
 复现：Unity固定薄障碍夹在玩家与普通哥布林脚部碰撞体之间，根节点距离0.9，旧UpdateChase进入Attack并停止导航（Logs/blocked-attack-baseline.txt、Logs/full-demo-blocked-baseline.txt）。根因：原攻击切换只比较根节点距离，未检查实体遮挡，且停止距离与偏移的实际命中圈不一致。厚度和相对方向不同使有些障碍不触发，因此不能推断其他障碍永远没问题。修复：统一检查实际命中范围和障碍遮挡，受阻继续追击，命中时再次检查。回归：同夹障碍条件进入Chase且Agent未停止、隔障碍不扣血；无障碍但实际攻击圈未覆盖时不攻击；靠近后可进入Attack并实际扣血。组合远程/掉落/Runner/三波/右键10秒多弹道均通过（Logs/full-demo-feedback-all.txt、Logs/blocked-attack-fixed.txt）。实际场景普通哥布林和Runner绕过Obstacles_03到达无遮挡攻击位置，PathComplete，均通过（Logs/obstacle-approach.txt、Logs/full-demo-obstacle-approach.txt）；旧贴柱朝向摇摆仍非本轮修复目标。
+
+
+## 2026-10-17 石柱专项修复与重启后检查
+
+四根石柱已完成局部修复：保留全局0.1烘焙半径与其他障碍物，按哥布林脚部中心/尺寸对齐柱子导航代理；石柱附近匹配局部避让半径，选择可达且可攻击的位置。四柱四方向共16组普通+Runner测试，32/32均能接近并攻击，最大朝向翻转2次、测得穿透0。证据Logs/pillar-only-fixed.txt。重启后Git完整性检查通过，未提交文件额外备份Logs/Recovery-20261017-121055。重启后组合Play Mode回归通过（Logs/full-demo-feedback-all.txt，2026-10-17 12:13；Logs/post-reboot-regression.log），Git完整性检查无报错。本轮不打包。
+
+复现：四柱×上下左右贴柱、普通+Runner混合追击，旧版4秒/组共16组，仅16/32到达攻击状态，最多199次翻转，最大实体脚部穿透0.711。根因证据：脚部相对导航根偏移(0.048,-0.432)，半尺寸(0.279,0.183)；柱导航代理明显小于实体碰撞。只扩大/对齐柱代理后穿透归零但仍摇摆，表明不是单纯净空问题；动态Agent避让半径0.5与烘焙0.1不一致、贴柱目标位于受限边缘以及攻击入口边界切换共同影响。方案：仅校准四柱代理，局部匹配避让与缓存可达攻击落点，在稳定落点进入近战。回归：6秒/组16组32/32接近并攻击，最大翻转2，穿透0。证据Logs/pillar-only-original-baseline.txt、pillar-only-geometry-only.txt、pillar-only-fixed.txt；新旧测试时长不同，不能把翻转计数比作为同时间频率。未把单一因素写作唯一根因。其他障碍及原Nav数据保持。
+
+其他障碍物回归：Obstacles_03上方玩家、下方普通/Runner均成功绕行至无遮挡攻击位置（Logs/full-demo-obstacle-approach.txt，2026-10-17 12:14；Logs/pillar-other-obstacle-regression.log）。全局NavMeshAreas、原NavMesh数据和非石柱碰撞体保持本轮开始时状态。
