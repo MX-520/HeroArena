@@ -278,6 +278,26 @@
       "mode": "RGBA",
       "status": "unity-imported-candidate-not-gameplay-validated",
       "generation_record": "ArtSource/Characters/Actions/Weapons-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/UserHeroTrial/source-board.png",
+      "sha256": "6658fc05b719404bbd7dd97645c12871f40afaa365d1a5f3e6ea7e2460d8f833",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "status": "user-supplied-idle-trial-not-live",
+      "origin": "user-provided board",
+      "source_record": "ArtSource/Characters/UserHeroTrial/source.json"
+    },
+    {
+      "path": "ArtSource/Characters/UserHeroTrial/UserHeroIdleTrial.png",
+      "sha256": "7b0a04ba853d89621f4d30118e118c9640bb0c6f6a5e691bc513e29103bf2b8a",
+      "width": 768,
+      "height": 448,
+      "mode": "RGBA",
+      "status": "user-supplied-idle-trial-not-live",
+      "origin": "deterministic extraction from user board",
+      "source_record": "ArtSource/Characters/UserHeroTrial/source.json"
     }
   ],
   "approved_hero": "ArtSource/Characters/Hero/HeroReferenceStudy-v2.png",
@@ -290,5 +310,12 @@
     "animation_clips": 22,
     "verification": "ArtSource/Characters/Actions/unity-import-report.json",
     "active_in_game": false
+  },
+  "user_hero_trial": {
+    "path": "ArtSource/Characters/UserHeroTrial",
+    "sprites": 32,
+    "clips": 4,
+    "active_in_game": false,
+    "verification": "ArtSource/Characters/UserHeroTrial/unity-import-report.json"
   }
 }

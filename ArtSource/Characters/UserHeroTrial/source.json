@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-18",
+  "origin": "user-provided presentation board, stated ChatGPT artwork workflow",
+  "status": "trial-only-not-final-approved",
+  "source": "source-board.png",
+  "sha256": "6658fc05b719404bbd7dd97645c12871f40afaa365d1a5f3e6ea7e2460d8f833",
+  "processing": "extract_board.py; no image generation tool used",
+  "generated_image_tool_called": false,
+  "output": "UserHeroIdleTrial.png",
+  "gameplay_replaced": false,
+  "future_preference": "User will create images with ChatGPT; agent processes existing images and handles Unity integration and verification."
+}

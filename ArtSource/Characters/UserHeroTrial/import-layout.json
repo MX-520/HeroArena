@@ -1,0 +1,405 @@
+{
+  "sheets": [
+    {
+      "name": "UserHeroIdleTrial",
+      "source": "ArtSource/Characters/UserHeroTrial/UserHeroIdleTrial.png",
+      "pixelsPerUnit": 40.325484265860155,
+      "frames": [
+        {
+          "name": "Down00",
+          "x": 0,
+          "y": 0,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Down01",
+          "x": 96,
+          "y": 0,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Down02",
+          "x": 192,
+          "y": 0,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Down03",
+          "x": 288,
+          "y": 0,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Down04",
+          "x": 384,
+          "y": 0,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Down05",
+          "x": 480,
+          "y": 0,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Down06",
+          "x": 576,
+          "y": 0,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Down07",
+          "x": 672,
+          "y": 0,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Left00",
+          "x": 0,
+          "y": 112,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Left01",
+          "x": 96,
+          "y": 112,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Left02",
+          "x": 192,
+          "y": 112,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Left03",
+          "x": 288,
+          "y": 112,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Left04",
+          "x": 384,
+          "y": 112,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Left05",
+          "x": 480,
+          "y": 112,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Left06",
+          "x": 576,
+          "y": 112,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Left07",
+          "x": 672,
+          "y": 112,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Right00",
+          "x": 0,
+          "y": 224,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Right01",
+          "x": 96,
+          "y": 224,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Right02",
+          "x": 192,
+          "y": 224,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Right03",
+          "x": 288,
+          "y": 224,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Right04",
+          "x": 384,
+          "y": 224,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Right05",
+          "x": 480,
+          "y": 224,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Right06",
+          "x": 576,
+          "y": 224,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Right07",
+          "x": 672,
+          "y": 224,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Up00",
+          "x": 0,
+          "y": 336,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Up01",
+          "x": 96,
+          "y": 336,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Up02",
+          "x": 192,
+          "y": 336,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Up03",
+          "x": 288,
+          "y": 336,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Up04",
+          "x": 384,
+          "y": 336,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Up05",
+          "x": 480,
+          "y": 336,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Up06",
+          "x": 576,
+          "y": 336,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        },
+        {
+          "name": "Up07",
+          "x": 672,
+          "y": 336,
+          "width": 96,
+          "height": 112,
+          "pivotX": 0.5,
+          "pivotY": 0.07142857142857142
+        }
+      ]
+    }
+  ],
+  "clips": [
+    {
+      "actor": "UserHeroTrial",
+      "name": "IdleDown",
+      "source": "Assets/Animations/Player/Idle.anim",
+      "sheet": "UserHeroIdleTrial",
+      "frames": [
+        "Down00",
+        "Down01",
+        "Down02",
+        "Down03",
+        "Down04",
+        "Down05",
+        "Down06",
+        "Down07"
+      ],
+      "phases": [
+        0.0,
+        0.125,
+        0.25,
+        0.375,
+        0.5,
+        0.625,
+        0.75,
+        0.875
+      ]
+    },
+    {
+      "actor": "UserHeroTrial",
+      "name": "IdleLeft",
+      "source": "Assets/Animations/Player/Idle.anim",
+      "sheet": "UserHeroIdleTrial",
+      "frames": [
+        "Left00",
+        "Left01",
+        "Left02",
+        "Left03",
+        "Left04",
+        "Left05",
+        "Left06",
+        "Left07"
+      ],
+      "phases": [
+        0.0,
+        0.125,
+        0.25,
+        0.375,
+        0.5,
+        0.625,
+        0.75,
+        0.875
+      ]
+    },
+    {
+      "actor": "UserHeroTrial",
+      "name": "IdleRight",
+      "source": "Assets/Animations/Player/Idle.anim",
+      "sheet": "UserHeroIdleTrial",
+      "frames": [
+        "Right00",
+        "Right01",
+        "Right02",
+        "Right03",
+        "Right04",
+        "Right05",
+        "Right06",
+        "Right07"
+      ],
+      "phases": [
+        0.0,
+        0.125,
+        0.25,
+        0.375,
+        0.5,
+        0.625,
+        0.75,
+        0.875
+      ]
+    },
+    {
+      "actor": "UserHeroTrial",
+      "name": "IdleUp",
+      "source": "Assets/Animations/Player/Idle.anim",
+      "sheet": "UserHeroIdleTrial",
+      "frames": [
+        "Up00",
+        "Up01",
+        "Up02",
+        "Up03",
+        "Up04",
+        "Up05",
+        "Up06",
+        "Up07"
+      ],
+      "phases": [
+        0.0,
+        0.125,
+        0.25,
+        0.375,
+        0.5,
+        0.625,
+        0.75,
+        0.875
+      ]
+    }
+  ]
+}

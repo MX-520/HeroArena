@@ -79,3 +79,7 @@ crashlytics-build.properties
 
 # Rebuild the standalone action preview from its template and source PNGs.
 ArtSource/Characters/Actions/preview.html
+
+ArtSource/Characters/UserHeroTrial/preview.html
+
+ArtSource/Characters/UserHeroTrial/__pycache__/

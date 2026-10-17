@@ -1,0 +1,15 @@
+{
+    "status": "passed",
+    "error": "",
+    "sprites": 32,
+    "clips": 4,
+    "liveActorsChanged": false,
+    "checks": [
+        "UserHeroIdleTrial: 32 sprites; point filtering; explicit rects/pivots.",
+        "Assets/Art/Characters/Generated/UserHeroTrial/IdleDown.anim: original timing, frame rate, loop and events preserved.",
+        "Assets/Art/Characters/Generated/UserHeroTrial/IdleLeft.anim: original timing, frame rate, loop and events preserved.",
+        "Assets/Art/Characters/Generated/UserHeroTrial/IdleRight.anim: original timing, frame rate, loop and events preserved.",
+        "Assets/Art/Characters/Generated/UserHeroTrial/IdleUp.anim: original timing, frame rate, loop and events preserved.",
+        "Imported candidates only; no scene, prefab or controller was changed."
+    ]
+}

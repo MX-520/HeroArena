@@ -42,13 +42,24 @@ public static class CharacterActionPreparation
     [MenuItem("Tools/HeroArena/Characters/Prepare Candidate Actions")]
     public static void PrepareLive()
     {
+        Prepare(LayoutPath, ReportPath);
+    }
+
+    [MenuItem("Tools/HeroArena/Characters/Prepare User Hero Idle Trial")]
+    public static void PrepareUserHeroTrial()
+    {
+        Prepare("ArtSource/Characters/UserHeroTrial/import-layout.json", "Logs/Characters/user-hero-import-report.json");
+    }
+
+    private static void Prepare(string layoutPath, string reportPath)
+    {
         var report = new Report { status = "failed", liveActorsChanged = false };
         Directory.CreateDirectory("Logs/Characters");
         try
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 throw new InvalidOperationException("Prepare candidate actions in Edit Mode; Play Mode was left unchanged.");
-            var layout = JsonUtility.FromJson<Layout>(File.ReadAllText(LayoutPath));
+            var layout = JsonUtility.FromJson<Layout>(File.ReadAllText(layoutPath));
             if (layout == null || layout.sheets == null || layout.clips == null)
                 throw new InvalidDataException("Missing sheet/clip layout.");
             EnsureFolder(OutputRoot);
@@ -67,7 +78,7 @@ public static class CharacterActionPreparation
             report.error = exception.ToString();
             Debug.LogException(exception);
         }
-        File.WriteAllText(ReportPath, JsonUtility.ToJson(report, true));
+        File.WriteAllText(reportPath, JsonUtility.ToJson(report, true));
     }
 
     private static void ImportSheet(Sheet sheet, Dictionary<string, Sprite> sprites, Report report)

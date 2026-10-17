@@ -27,6 +27,11 @@ public static class HeroArenaEditorBridge
             CharacterActionPreparation.PrepareLive();
             return;
         }
+        if (command == "prepare-user-hero-trial")
+        {
+            CharacterActionPreparation.PrepareUserHeroTrial();
+            return;
+        }
         if (command == "inspect-character-editor")
         {
             Directory.CreateDirectory("Logs/Characters");
