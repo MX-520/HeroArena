@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-17",
+  "generator": "built-in image_gen",
+  "references": "Main-menu ForestTrial.png and project-generated candidates; no unlicensed sprite-sheet inputs were uploaded. Main-menu reference history is documented in ProjectKnowledge/13.",
+  "licensing_status": "Generated candidate artwork; not a claim of legal clearance or CC0. Preserve account/service terms and review reference history before commercial release.",
+  "active_in_game": false,
+  "files": [
+    {
+      "path": "ArtSource/Characters/Goblins/GoblinCaster.png",
+      "sha256": "61c14a7961fdda4e7078b8df1361d864f30caa2495cff99df86c4059d7e663f0",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "candidate-not-active-in-game"
+    },
+    {
+      "path": "ArtSource/Characters/Goblins/GoblinMelee.png",
+      "sha256": "9ceb2925c73c660503967c5583076a5e8962cb5987ff07dd9395f3b005e4e31c",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "candidate-not-active-in-game"
+    },
+    {
+      "path": "ArtSource/Characters/Goblins/GoblinRunner.png",
+      "sha256": "b1ddfa35ff4bcd4ad7773e1cf0dad99bd05fa4d1f9808a45406caeb791d73312",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "candidate-not-active-in-game",
+      "review_notes": "Frame 14 still shows a straight blade in the slumped death pose; must replace or exclude before use."
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroMaster.png",
+      "sha256": "17076e6c7c7910e58794fb041e0de7138e03f5f4f05f6cfb15404ab4f5901e8c",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "status": "candidate-not-active-in-game",
+      "review_notes": "Latest decorated chibi master. Raw source contains soft alpha halo; needs clean sprite import. Pose sheets must be regenerated to match decorations."
+    }
+  ]
+}

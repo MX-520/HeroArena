@@ -1,0 +1,17 @@
+{
+  "rootScale": {
+    "x": 3.0859999656677246,
+    "y": 3.0859999656677246,
+    "z": 3.0859999656677246
+  },
+  "attackCenterOffset": {
+    "x": 1.5429998636245728,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "normalRadius": 0.800000011920929,
+  "forwardBoundary": 2.3429999351501465,
+  "standingBodyHeight": 1.7358750104904175,
+  "swordTipInBodyHeights": 1.3497514724731445,
+  "giantForwardBoundary": 2.742999792098999
+}

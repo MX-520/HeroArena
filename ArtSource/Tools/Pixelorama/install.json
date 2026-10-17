@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-17",
+  "name": "Pixelorama",
+  "version": "v1.2.3",
+  "release_url": "https://github.com/Orama-Interactive/Pixelorama/releases/tag/v1.2.3",
+  "download_url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.2.3/Pixelorama-Windows-64bit.zip",
+  "archive_sha256": "942e38288b818ef44e0c834691a00a521f811739af523a2cfdc09aae58753646",
+  "license": "MIT; copied from the fixed release tag into LICENSE.txt",
+  "local_executable": "Logs/CharacterTools/Pixelorama-1.2.3/Pixelorama-Windows-64bit/Pixelorama.exe",
+  "smoke_test": {
+    "result": "read-only PNG input verified",
+    "reported_version": "v1.2.3-stable",
+    "input_size": [
+      1254,
+      1254
+    ],
+    "frame_count": 1,
+    "notes": "Headless mode emitted shader compiler warnings/errors. CLI export test exited 0 but did not create the requested output, so export automation is not verified."
+  }
+}

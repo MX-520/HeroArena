@@ -15,9 +15,14 @@ public static class HeroArenaEditorBridge
     {
         const string request = "Logs/editor-command.txt";
         if (!File.Exists(request) || EditorApplication.isCompiling || EditorApplication.isUpdating) return;
-        string command = File.ReadAllText(request).Trim();
-        File.Delete(request);
-        if (command != "close" && command != "open-scene") return;
+        string command;
+        try
+        {
+            command = File.ReadAllText(request).Trim();
+            File.Delete(request);
+        }
+        catch (IOException) { return; } // A producer may still be completing the request; retry next update.
+        if (command != "close" && command != "open-scene" && command != "measure-character-art") return;
         EditorApplication.isPlaying = false;
         EditorApplication.delayCall += () => Complete(command);
     }
@@ -33,6 +38,11 @@ public static class HeroArenaEditorBridge
             EditorSceneManager.SaveOpenScenes();
             File.WriteAllText("Logs/editor-closed.txt", "Graceful editor exit requested");
             EditorApplication.Exit(0);
+            return;
+        }
+        if (command == "measure-character-art")
+        {
+            CharacterArtworkSetup.MeasureLive();
             return;
         }
         const string path = "Assets/Scenes/SampleScene.unity";
