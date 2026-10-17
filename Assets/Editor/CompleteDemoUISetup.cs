@@ -174,6 +174,7 @@ public static partial class CompleteDemoSetup
         for (int i = 0; i < 3; i++) buffArray.GetArrayElementAtIndex(i).objectReferenceValue = buffLabels[i];
         uiData.ApplyModifiedPropertiesWithoutUndo();
         menu.gameObject.SetActive(true); hud.gameObject.SetActive(false); modal.gameObject.SetActive(false);
+        ChineseUISetup.ApplyToOpenScene();
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
         AssetDatabase.SaveAssets();

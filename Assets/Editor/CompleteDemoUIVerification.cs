@@ -85,6 +85,7 @@ public static partial class CompleteDemoVerification
 
     private static void CaptureDemo(string name)
     {
+        VerifyChinesePresentation();
         Camera camera = Camera.main;
         Canvas canvas = Object.FindObjectOfType<GameUI>().GetComponent<Canvas>();
         var target = RenderTexture.GetTemporary(1280, 720, 24);

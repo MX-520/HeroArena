@@ -36,7 +36,7 @@ public class WaveController : MonoBehaviour
 
     public ChallengeState State { get; private set; }
     public int CurrentWave { get; private set; }
-    public string CurrentWaveTitle => waves != null && CurrentWave > 0 && CurrentWave <= waves.Length && waves[CurrentWave - 1] != null ? waves[CurrentWave - 1].title : "Forest Trial";
+    public string CurrentWaveTitle => waves != null && CurrentWave > 0 && CurrentWave <= waves.Length && waves[CurrentWave - 1] != null ? waves[CurrentWave - 1].title : "森林试炼";
     public int TotalKills { get; private set; }
     public int TotalWaves => waves == null ? 0 : waves.Length;
     public int RemainingEnemies => deaths.Count;

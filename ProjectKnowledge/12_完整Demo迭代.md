@@ -108,3 +108,10 @@ Use case: stylized-concept. Asset type: Unity 2D pixel action RPG sprite atlas. 
 复现：四柱×上下左右贴柱、普通+Runner混合追击，旧版4秒/组共16组，仅16/32到达攻击状态，最多199次翻转，最大实体脚部穿透0.711。根因证据：脚部相对导航根偏移(0.048,-0.432)，半尺寸(0.279,0.183)；柱导航代理明显小于实体碰撞。只扩大/对齐柱代理后穿透归零但仍摇摆，表明不是单纯净空问题；动态Agent避让半径0.5与烘焙0.1不一致、贴柱目标位于受限边缘以及攻击入口边界切换共同影响。方案：仅校准四柱代理，局部匹配避让与缓存可达攻击落点，在稳定落点进入近战。回归：6秒/组16组32/32接近并攻击，最大翻转2，穿透0。证据Logs/pillar-only-original-baseline.txt、pillar-only-geometry-only.txt、pillar-only-fixed.txt；新旧测试时长不同，不能把翻转计数比作为同时间频率。未把单一因素写作唯一根因。其他障碍及原Nav数据保持。
 
 其他障碍物回归：Obstacles_03上方玩家、下方普通/Runner均成功绕行至无遮挡攻击位置（Logs/full-demo-obstacle-approach.txt，2026-10-17 12:14；Logs/pillar-other-obstacle-regression.log）。全局NavMeshAreas、原NavMesh数据和非石柱碰撞体保持本轮开始时状态。
+
+
+## 2026-10-17 中文与全透明UI
+
+菜单、战斗HUD、波次、道具、暂停/胜负/重开文案全部中文，键位名称保留WASD/Shift/Esc/J。所有非文字/图标/血条的面板、遮罩、按钮和卡片底色alpha为0。战斗仅显示右上角暂停入口；暂停时隐藏该入口，仅中央“已暂停”，底部移除重复提示。已在Unity图形模式通过六状态透明度、中文/字形、暂停唯一性、透明按钮射线、整局流程检查，并检查六张截图；不打包。
+
+按反馈清除全部UI底色与遮罩，保留图标和生命条填充；各画面统一中文。加入Noto Sans CJK SC Regular及OFL许可证，生成静态HeroArenaChinese SDF及细黑描边。透明按钮仍可点击，暂停提示按状态只保留一个。证据Logs/chinese-ui-verified.log、Logs/full-demo-visual.txt（2026-10-17 13:11）、Logs/demo-*.png。六张画面已检查；本轮未打包。

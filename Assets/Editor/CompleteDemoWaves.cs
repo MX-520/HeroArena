@@ -16,10 +16,10 @@ public static partial class CompleteDemoSetup
         var data = new SerializedObject(challenge);
         var waves = data.FindProperty("waves");
         waves.arraySize = 3;
-        waves.GetArrayElementAtIndex(0).FindPropertyRelative("title").stringValue = "First Contact";
-        waves.GetArrayElementAtIndex(1).FindPropertyRelative("title").stringValue = "The Hunt";
+        waves.GetArrayElementAtIndex(0).FindPropertyRelative("title").stringValue = "初次交锋";
+        waves.GetArrayElementAtIndex(1).FindPropertyRelative("title").stringValue = "群体追猎";
         var third = waves.GetArrayElementAtIndex(2);
-        third.FindPropertyRelative("title").stringValue = "Crossfire";
+        third.FindPropertyRelative("title").stringValue = "交叉火力";
         var entries = third.FindPropertyRelative("enemies");
         entries.arraySize = 3;
         var paths = new[] { "Gobling", "GoblinRunner", "GoblinArcher" };
