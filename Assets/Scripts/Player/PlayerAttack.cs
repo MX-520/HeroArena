@@ -47,6 +47,7 @@ public class PlayerAttack : MonoBehaviour
     );
 
 
+        bool playedImpact = false;
         foreach (Collider2D hit in hitObjects)
         {
             Debug.Log("Hit: " + hit.name);
@@ -55,7 +56,14 @@ public class PlayerAttack : MonoBehaviour
 
             if (damageable != null)
             {
+                Health targetHealth = hit.GetComponent<Health>();
+                int beforeHP = targetHealth != null ? targetHealth.CurrentHP : 0;
                 damageable.TakeDamage(Mathf.RoundToInt(10 * DamageMultiplier));
+                if (!playedImpact && targetHealth != null && targetHealth.CurrentHP < beforeHP)
+                {
+                    GameAudio.Play(GameSound.MeleeImpact, hit.transform.position);
+                    playedImpact = true;
+                }
             }
         }
     }

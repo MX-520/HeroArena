@@ -1,12 +1,12 @@
 # 音效与背景音乐（首轮接入）
 
-准备与接入日期：2026-10-17。24个候选中23个已接入，error_001保留未使用。当前映射为 `Assets/Audio/HeroArenaAudio.asset`，由 `AudioIntegrationSetup.Apply` 配置。
+准备与接入日期：2026-10-17。27个候选中24个已接入，error_001及旧knifeSlice/knifeSlice2保留未使用。当前映射为 `Assets/Audio/HeroArenaAudio.asset`，由 `AudioIntegrationSetup.Apply` 配置。
 
 ## 授权
 
 - `ThirdParty/Kenney`：作者官方 Interface Sounds、Impact Sounds、RPG Audio 发布页及原包 License.txt 均为 CC0。允许商业使用、修改和分发，不强制署名。三个原始许可保存在 `Licenses/`。
 - `ThirdParty/CleytonKauffman`：Forest Whisper Theme、RPG Battle Theme II 作者发布页标注 CC0。前者原包 readme 也明确 CC0，已保留。项目将保留作者署名：`Music by Cleyton Kauffman - https://soundcloud.com/cleytonkauffman`。
-- `Original`：本项目用自写振荡器、噪声及包络合成的六个声音，没有外部采样或参考歌曲旋律，可随项目商用；原始生成代码随附。没有调用第三方 AI 音乐服务。
+- `Original`：本项目用自写振荡器、噪声及包络合成的九个声音，没有外部采样或参考歌曲旋律，可随项目商用；原始生成代码随附。没有调用第三方 AI 音乐服务。
 
 来源、每个文件的原始名称、下载地址、许可、核对日期、用途候选和 SHA-256 见 `manifest.json`。授权核对依据见 `Licenses/SOURCES.md`。下载原包与原始页面备份在工作区 `Logs/AudioPreparation`，正式交付记录为本目录的许可文件和 manifest。
 
@@ -19,7 +19,8 @@
 | 首页／胜负结算 | ForestWhisper，循环、流式 |
 | 全部三波战斗及波间休整 | BattleThemeII，循环、流式，换波不重播 |
 | 按钮悬停／点击／返回／波次开始 | select / click / back / confirmation |
-| 玩家／敌人近战挥动 | knifeSlice / knifeSlice2 |
+| 玩家／敌人近战挥动 | Original 的 MeleeSwingA / MeleeSwingB |
+| 主角近战实际命中 | Original 的 MeleeImpact，仅实际扣血时播放一次 |
 | 翻滚／草地脚步 | cloth1 / footstep_grass_000～002 |
 | 玩家／敌人受伤与死亡 | impactPunch_heavy / medium |
 | 木质／石质破坏 | impactWood_heavy / impactPlate_medium |
@@ -36,3 +37,9 @@
 - 自动化技术验证覆盖上述事件、音源播放与采样推进、暂停/恢复、音量静音、声部限制、三波胜负、重开和场景重载。证据在 `Logs/full-demo-audio-all.txt` 与对应日志。
 
 这是一轮可玩版本，未完成主观听感、循环接缝、削波及长时间疲劳验收；后续根据实际游玩调整。没有构建打包。角色/敌人旧图像授权风险另见 `ProjectKnowledge/13_素材授权与替换计划.md`，不因音频采用CC0便视作全部游戏资源可商用。
+
+## 2026-10-17 打击感调整
+
+按实玩反馈停止使用原knifeSlice摩擦声。新增0.16/0.17秒挥击变体和0.20秒近战接触声，使用短空气脉冲、阻尼低频和干脆瞬态；空挥只播放挥击，DetectHit确实造成扣血才叠加接触声，每次DetectHit最多一声，无敌拦截不报命中。玩家/敌人挥击gain为0.42/0.30，接触声0.48。
+魔法发射改为0.23秒压力脉冲/颗粒电裂，命中改为0.32秒低频冲击/非整数倍谐振碎裂；去掉原单一正弦下滑音和较长软起音。发射/命中gain为0.38/0.48。背景音乐继续关闭，其他音频保持。
+五个新制/重制声音峰值统一约0.80，文件末端淡出，源码可逐字节重现。单文件检查不代表多人混音或主观听感已经最终验收。

@@ -1,5 +1,5 @@
 {
-  "stage": "integrated-first-pass-awaiting-listening-QA",
+  "stage": "integrated-impact-revision-awaiting-listening-QA",
   "verified_date": "2026-10-17",
   "assets": [
     {
@@ -75,7 +75,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-rpg/knifeSlice.ogg",
       "event_candidate": "近战挥刀A",
-      "status": "wired-HeroArenaAudio",
+      "status": "candidate-unused",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -89,7 +89,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-rpg/knifeSlice2.ogg",
       "event_candidate": "近战挥刀B",
-      "status": "wired-HeroArenaAudio",
+      "status": "candidate-unused",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -271,7 +271,7 @@
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
-      "sha256": "275a7613c94f217baef1495bfc67fc17aa6992bccc1291257048b306a2f422f6",
+      "sha256": "6c74b361a2a6f5fd91ae4e7aa951707773b7cbbb534874ce04f04bee934097bd",
       "checked_date": "2026-10-17"
     },
     {
@@ -281,7 +281,7 @@
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
-      "sha256": "60587aab02920a013e46bb0d2916ccfb67992b5cf0b57448f1fa5706f0af0740",
+      "sha256": "cd1270406b68db60f27491590582e9cc530404d1eff5ac5d2b4ae51963061c72",
       "checked_date": "2026-10-17"
     },
     {
@@ -312,6 +312,36 @@
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
       "sha256": "d567528d12c856ac25edea270febf1edb50052f522b1eae32c6768c77195b7fe",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "Original/MeleeSwingA.wav",
+      "event_candidate": "重击挥动变体A",
+      "status": "wired-HeroArenaAudio",
+      "author": "HeroArena project procedural synthesis",
+      "license": "project-original-no-third-party-samples",
+      "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+      "sha256": "a9c0dda38f1945f002ca33f57cc6c876fe4e83c67534cdf41c80b711ed344e9f",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "Original/MeleeSwingB.wav",
+      "event_candidate": "重击挥动变体B",
+      "status": "wired-HeroArenaAudio",
+      "author": "HeroArena project procedural synthesis",
+      "license": "project-original-no-third-party-samples",
+      "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+      "sha256": "a95205781b252b11388344d7cd88d0b99d34189bde494d9557bdab3cc81aa107",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "Original/MeleeImpact.wav",
+      "event_candidate": "近战实际命中",
+      "status": "wired-HeroArenaAudio",
+      "author": "HeroArena project procedural synthesis",
+      "license": "project-original-no-third-party-samples",
+      "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+      "sha256": "45f91be17faea384b27578ffa447f6452debbbeecc13f7f792f3c3e14d7aba46",
       "checked_date": "2026-10-17"
     }
   ]

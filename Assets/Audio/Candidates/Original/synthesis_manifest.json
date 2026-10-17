@@ -1,0 +1,92 @@
+[
+  {
+    "asset": "Original/PlayerShot.wav",
+    "event_candidate": "玩家射击",
+    "status": "generated-original",
+    "author": "HeroArena project procedural synthesis",
+    "license": "project-original-no-third-party-samples",
+    "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+    "sha256": "9931eb75dfa104a0e322988fd597d21b9533e432f44d185caa74408337fc5778",
+    "checked_date": "2026-10-17"
+  },
+  {
+    "asset": "Original/MagicCast.wav",
+    "event_candidate": "哥布林魔法发射",
+    "status": "generated-original",
+    "author": "HeroArena project procedural synthesis",
+    "license": "project-original-no-third-party-samples",
+    "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+    "sha256": "6c74b361a2a6f5fd91ae4e7aa951707773b7cbbb534874ce04f04bee934097bd",
+    "checked_date": "2026-10-17"
+  },
+  {
+    "asset": "Original/MagicImpact.wav",
+    "event_candidate": "魔法弹命中",
+    "status": "generated-original",
+    "author": "HeroArena project procedural synthesis",
+    "license": "project-original-no-third-party-samples",
+    "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+    "sha256": "cd1270406b68db60f27491590582e9cc530404d1eff5ac5d2b4ae51963061c72",
+    "checked_date": "2026-10-17"
+  },
+  {
+    "asset": "Original/HealPickup.wav",
+    "event_candidate": "回血/增益拾取",
+    "status": "generated-original",
+    "author": "HeroArena project procedural synthesis",
+    "license": "project-original-no-third-party-samples",
+    "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+    "sha256": "433525803c1bee884d27f84ce0a13e15fb146d51e503a9afbca213ce504b6f37",
+    "checked_date": "2026-10-17"
+  },
+  {
+    "asset": "Original/Victory.wav",
+    "event_candidate": "挑战成功短音",
+    "status": "generated-original",
+    "author": "HeroArena project procedural synthesis",
+    "license": "project-original-no-third-party-samples",
+    "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+    "sha256": "cd4e251895f0407bcee87404f9910164ecc21df53e0788254f7527622a0cec0e",
+    "checked_date": "2026-10-17"
+  },
+  {
+    "asset": "Original/Defeat.wav",
+    "event_candidate": "挑战失败短音",
+    "status": "generated-original",
+    "author": "HeroArena project procedural synthesis",
+    "license": "project-original-no-third-party-samples",
+    "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+    "sha256": "d567528d12c856ac25edea270febf1edb50052f522b1eae32c6768c77195b7fe",
+    "checked_date": "2026-10-17"
+  },
+  {
+    "asset": "Original/MeleeSwingA.wav",
+    "event_candidate": "重击挥动变体A",
+    "status": "generated-original",
+    "author": "HeroArena project procedural synthesis",
+    "license": "project-original-no-third-party-samples",
+    "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+    "sha256": "a9c0dda38f1945f002ca33f57cc6c876fe4e83c67534cdf41c80b711ed344e9f",
+    "checked_date": "2026-10-17"
+  },
+  {
+    "asset": "Original/MeleeSwingB.wav",
+    "event_candidate": "重击挥动变体B",
+    "status": "generated-original",
+    "author": "HeroArena project procedural synthesis",
+    "license": "project-original-no-third-party-samples",
+    "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+    "sha256": "a95205781b252b11388344d7cd88d0b99d34189bde494d9557bdab3cc81aa107",
+    "checked_date": "2026-10-17"
+  },
+  {
+    "asset": "Original/MeleeImpact.wav",
+    "event_candidate": "近战实际命中",
+    "status": "generated-original",
+    "author": "HeroArena project procedural synthesis",
+    "license": "project-original-no-third-party-samples",
+    "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
+    "sha256": "45f91be17faea384b27578ffa447f6452debbbeecc13f7f792f3c3e14d7aba46",
+    "checked_date": "2026-10-17"
+  }
+]

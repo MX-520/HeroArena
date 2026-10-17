@@ -5,7 +5,7 @@ public enum GameSound
 {
     UIHover, UIClick, UIBack, WaveStart, PlayerShot, PlayerSwing, EnemySwing, Roll,
     Footstep, PlayerHurt, EnemyHurt, EnemyDeath, PlayerDeath, WoodBreak, StoneBreak,
-    Pickup, Heal, MagicCast, MagicImpact, Victory, Defeat, Count
+    Pickup, Heal, MagicCast, MagicImpact, Victory, Defeat, MeleeImpact, Count
 }
 
 [CreateAssetMenu(menuName="HeroArena/Audio Library")]

@@ -73,6 +73,20 @@ public static partial class CompleteDemoVerification
         if(audio.MusicEnabled) Require(audio.MusicSource.clip!=null && audio.MusicSource.clip.name==expected && audio.MusicSource.isPlaying,"Music route failed: "+expected);
         else Require(audio.GetComponentsInChildren<AudioSource>().Where(s=>s.name.StartsWith("Music")).All(s=>!s.isPlaying && s.clip==null),"Disabled background music still playing/loaded");
     }
+    static void VerifyMeleeContactSound()
+    {
+        var player=Object.FindObjectOfType<PlayerHealth>();var audio=GameAudio.Current;
+        var melee=player.GetComponent<PlayerAttack>();
+        var attackPoint=(Transform)new SerializedObject(melee).FindProperty("attackPoint").objectReferenceValue;
+        var contact=new GameObject("MeleeAudioContact");contact.layer=LayerMask.NameToLayer("Enemy");contact.transform.position=attackPoint.position;
+        var contactHealth=contact.AddComponent<Health>();var contactReceiver=contact.AddComponent<DamageReceiver>();
+        var contactCollider=contact.AddComponent<BoxCollider2D>();contactCollider.size=Vector2.one*.1f;Physics2D.SyncTransforms();
+        int impacts=audio.Played(GameSound.MeleeImpact);melee.DetectHit();
+        Require(contactHealth.CurrentHP<100 && audio.Played(GameSound.MeleeImpact)==impacts+1,"Actual melee contact did not play impact");
+        contactReceiver.SetInvincible(true);melee.DetectHit();
+        Require(audio.Played(GameSound.MeleeImpact)==impacts+1,"Blocked melee contact played false impact");
+        contactCollider.enabled=false;Object.Destroy(contact);
+    }
     static IEnumerator AudioAll()
     {
         var check=AudioUI();while(check.MoveNext()) yield return check.Current;

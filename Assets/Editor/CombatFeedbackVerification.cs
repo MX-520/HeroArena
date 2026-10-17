@@ -66,6 +66,7 @@ public static partial class CompleteDemoVerification
         typeof(InputSystem).GetMethod("Update", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic, null, new[] { typeof(InputUpdateType) }, null).Invoke(null, new object[] { InputUpdateType.Dynamic });
         Debug.Log($"Right click diagnostic: raw={mouse.rightButton.isPressed}, action={input.actions.FindAction("Attack").IsPressed()}, active={input.inputIsActive}, enabled={input.enabled}, timeScale={Time.timeScale}, rolling={effects.GetComponent<PlayerMovement>().IsRolling}, hurt={effects.GetComponent<PlayerMovement>().IsHurt}");
         Require(effects.GetComponent<PlayerAttack>().IsAttacking, "Right click did not actually start melee");
+        if(SessionState.GetString(Key, "")=="audio-all") VerifyMeleeContactSound();
         InputSystem.QueueStateEvent(mouse, state);
         until = Time.time + 10.1f;
         while (Time.time < until) yield return null;

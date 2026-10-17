@@ -63,9 +63,9 @@ MonoBehaviour:
     priority: 2
   - sound: 5
     clips:
-    - {fileID: 8300000, guid: d9f3a2967cb2e2e4eb5295839218b21a, type: 3}
-    - {fileID: 8300000, guid: 0d58f371f6eb2324c8adf3f4627925ca, type: 3}
-    gain: 0.25
+    - {fileID: 8300000, guid: cd422f91834a58e4a816794cf5e51f0e, type: 3}
+    - {fileID: 8300000, guid: 81e7c619c05dde646a2a3e1ca11fd87d, type: 3}
+    gain: 0.42
     pitch: {x: 0.96, y: 1.04}
     cooldown: 0.04
     voices: 3
@@ -73,13 +73,22 @@ MonoBehaviour:
     priority: 2
   - sound: 6
     clips:
-    - {fileID: 8300000, guid: 0d58f371f6eb2324c8adf3f4627925ca, type: 3}
-    gain: 0.18
+    - {fileID: 8300000, guid: 81e7c619c05dde646a2a3e1ca11fd87d, type: 3}
+    gain: 0.3
     pitch: {x: 0.96, y: 1.04}
     cooldown: 0.04
     voices: 3
     unpaused: 0
     priority: 1
+  - sound: 21
+    clips:
+    - {fileID: 8300000, guid: d80b090cf74c2a841af619e3f896972c, type: 3}
+    gain: 0.48
+    pitch: {x: 0.96, y: 1.04}
+    cooldown: 0.04
+    voices: 3
+    unpaused: 0
+    priority: 2
   - sound: 7
     clips:
     - {fileID: 8300000, guid: d1f3f07e7d5b7b1409af8c3128e64731, type: 3}
@@ -175,7 +184,7 @@ MonoBehaviour:
   - sound: 17
     clips:
     - {fileID: 8300000, guid: 0f99d95f0abd10342aaaf75cd5853b14, type: 3}
-    gain: 0.3
+    gain: 0.38
     pitch: {x: 0.96, y: 1.04}
     cooldown: 0.04
     voices: 3
@@ -184,7 +193,7 @@ MonoBehaviour:
   - sound: 18
     clips:
     - {fileID: 8300000, guid: 0fc570f0420f21447a4c2470ee43a7bb, type: 3}
-    gain: 0.34
+    gain: 0.48
     pitch: {x: 0.96, y: 1.04}
     cooldown: 0.04
     voices: 3

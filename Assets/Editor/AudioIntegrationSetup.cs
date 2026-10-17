@@ -21,8 +21,9 @@ public static class AudioIntegrationSetup
             Add(cues,GameSound.UIBack,.28f,true,"interface/back_001");
             Add(cues,GameSound.WaveStart,.3f,false,"interface/confirmation_001");
             Add(cues,GameSound.PlayerShot,.22f,false,"PlayerShot");
-            Add(cues,GameSound.PlayerSwing,.25f,false,"rpg/knifeSlice","rpg/knifeSlice2");
-            Add(cues,GameSound.EnemySwing,.18f,false,"rpg/knifeSlice2");
+            Add(cues,GameSound.PlayerSwing,.42f,false,"MeleeSwingA","MeleeSwingB");
+            Add(cues,GameSound.EnemySwing,.30f,false,"MeleeSwingB");
+            Add(cues,GameSound.MeleeImpact,.48f,false,"MeleeImpact");
             Add(cues,GameSound.Roll,.24f,false,"rpg/cloth1");
             Add(cues,GameSound.Footstep,.10f,false,"impact/footstep_grass_000","impact/footstep_grass_001","impact/footstep_grass_002");
             Add(cues,GameSound.PlayerHurt,.45f,false,"impact/impactPunch_heavy_000");
@@ -33,8 +34,8 @@ public static class AudioIntegrationSetup
             Add(cues,GameSound.StoneBreak,.3f,false,"impact/impactPlate_medium_000");
             Add(cues,GameSound.Pickup,.25f,false,"rpg/handleCoins");
             Add(cues,GameSound.Heal,.35f,false,"HealPickup");
-            Add(cues,GameSound.MagicCast,.3f,false,"MagicCast");
-            Add(cues,GameSound.MagicImpact,.34f,false,"MagicImpact");
+            Add(cues,GameSound.MagicCast,.38f,false,"MagicCast");
+            Add(cues,GameSound.MagicImpact,.48f,false,"MagicImpact");
             Add(cues,GameSound.Victory,.5f,true,"Victory");
             Add(cues,GameSound.Defeat,.45f,true,"Defeat");
             library.cues=cues.ToArray();EditorUtility.SetDirty(library);
@@ -43,7 +44,7 @@ public static class AudioIntegrationSetup
             var audio=flow.GetComponent<GameAudio>();if(audio==null) audio=flow.gameObject.AddComponent<GameAudio>();
             var serialized=new SerializedObject(audio);serialized.FindProperty("library").objectReferenceValue=library;serialized.ApplyModifiedPropertiesWithoutUndo();
             EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();
-            Debug.Log("PASS audio setup: two music clips, 21 cue mappings");EditorApplication.Exit(0);
+            Debug.Log("PASS audio setup: two music clips, "+cues.Count+" cue mappings");EditorApplication.Exit(0);
         }
         catch(Exception e) {Debug.LogException(e);EditorApplication.Exit(1);}
     }
