@@ -59,9 +59,11 @@ public static class DecoratedUISetup
         }
         foreach(var button in dialog.GetComponentsInChildren<UnityEngine.UI.Button>(true))
         {
+            button.GetComponent<UnityEngine.UI.Image>().color=new Color(0.07f,0.14f,0.15f,0.56f);
             button.GetComponent<RectTransform>().sizeDelta=new Vector2(360,48);
             var label=button.GetComponentInChildren<TMP_Text>(true);
             label.rectTransform.sizeDelta=new Vector2(346,44);label.fontSize=20;
+            label.color=new Color(0.95f,0.86f,0.66f);
             var colors=button.colors;colors.normalColor=Color.white;
             colors.highlightedColor=new Color(1,1,0.80f);colors.selectedColor=colors.highlightedColor;
             button.colors=colors;

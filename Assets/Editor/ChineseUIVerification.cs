@@ -28,6 +28,9 @@ public static partial class CompleteDemoVerification
         Require(artwork.GetSiblingIndex()==0 && artwork.GetComponent<UnityEngine.UI.Image>().sprite!=null,"Menu artwork is not behind existing controls");
         Require(artwork.GetComponent<UnityEngine.UI.AspectRatioFitter>().aspectMode==UnityEngine.UI.AspectRatioFitter.AspectMode.EnvelopeParent,"Menu artwork must fill without stretching");
         var controls=rects.First(r=>r.name=="Controls");
+        var controlText=controls.GetComponentInChildren<TMP_Text>(true);
+        Require(Vector4.Distance(controlText.color,new Color(0.78f,0.5f,1))<0.01f,"Controls text is not purple");
+        Require(controlText.fontSharedMaterial.GetFloat(ShaderUtilities.ID_OutlineWidth)==0,"Controls text regained an outline");
         Require(controls.anchoredPosition==new Vector2(0,18) && controls.sizeDelta==new Vector2(820,30),"Accepted controls layout changed");
         Require(controls.GetComponentsInChildren<ArenaPanelFrame>(true).Length==0,"Controls received unwanted trim");
         foreach(var frame in ui.GetComponentsInChildren<ArenaPanelFrame>(true))
