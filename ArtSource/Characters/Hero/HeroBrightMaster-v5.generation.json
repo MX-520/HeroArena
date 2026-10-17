@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-17",
+  "tool": "built-in image_gen",
+  "status": "design-candidate-awaiting-user-review",
+  "image": "HeroBrightMaster-v5.png",
+  "reference": "HeroBrightMaster-v4.png",
+  "prompt": "Use case: precise-object-edit. Edit supplied single chibi boy hero pixel-art image. User requests sword SHORTER BY ONE FIFTH relative to THIS EXACT image. Set sword overall tip-to-pommel length to 80% of current length, preserving weapon thickness and width, grip size and gold guard. Shorten silver blade along its length to achieve this, keep held grip anchored at existing hand, bring tip 20% closer to hand along current diagonal blade axis. Still a proper long sword, not short dagger. Preserve exact hero face, sharp determined blue eyes and thick brows, youthful boyish face, confident expression, chunky spiky chestnut hair, red scarf, blue costume, belt, boots, chibi proportions, body position/scale, pose and every other element. Preserve bright palette and same clear chunky uniform square pixel clusters, no smoothing or extra detail. Same camera and canvas framing, do not zoom to compensate for shorter sword. One full body hero with complete sword, real transparent alpha, no background, shadow, FX, text or grid.",
+  "requested_weapon_length_multiplier": 0.8,
+  "notes": "Requested reduction is a generation target, not an exact pixel measurement. Generated image visibly shortens weapons but precise percentage has not been verified. No game integration or attack parameters changed; do not claim calibrated reach."
+}

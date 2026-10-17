@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-18",
+  "tool": "built-in image_gen",
+  "status": "user-approved-appearance-not-production-ready",
+  "image": "HeroReferenceStudy-v2.png",
+  "reference": "HeroReferenceStudy-v1.png; inherits documented research history.",
+  "prompt": "Use case: precise-object-edit. Edit this EXACT original cute chibi pixel boy adventurer. User asks 再帅气开朗一点: a little more HANDSOME, CONFIDENT AND CHEERFUL. Preserve recognizable face identity, ROUND CUTE chibi proportions, compact brown hair silhouette, red scarf, blue-and-ivory outfit, navy shorts, brown boots, full body position, sword exact length/shape/angle and hand pose, pixel art rendering and bright colors. Main edit FACE EXPRESSION: make blue eyes slightly more focused and a little less vertically round, simple strong upper eyelid line WITHOUT lashes, eyebrows slightly straighter and more confident but relaxed and friendly, gaze bright alert adventurous. Replace tiny timid smile with a naturally wider sunny confident grin, mouth slightly open with just a SMALL clean ivory upper-teeth pixel strip, no big open laughing mouth. Tiny subtle raised cheek corners. Clearly a happy courageous BOY hero: warm outgoing friendly energetic and self-assured, cute but cool. No angry inward V-brows, no villain grin, no adult sharp jaw, no makeup, no blush patches, no eyelashes. A few hair tufts may become slightly more neatly swept to reinforce boyish energy but preserve original hair volume and overall shape. Do not redesign clothing or add armor/details. Keep exact short limbs and natural stance, not taller adult proportions. Preserve clear square-pixel clusters and stepped outline, no smooth illustration, gradients or new fine textures. Remove external background halo where possible: actual transparent alpha outside silhouette, NO glow, haze, ground, shadows, backdrop, text or FX. One complete full-body hero and full sword only.",
+  "notes": "User requested slightly cooler/handsomer and more cheerful. Face expression revised with confident sunny open smile and focused brows while retaining rounded chibi proportions and outfit. Visible outer halo remains, not production-ready alpha. No game integration.",
+  "approval": {
+    "date": "2026-10-18",
+    "user_message": "就这样，还有哥布林",
+    "scope": "Hero appearance only; alpha cleanup, animation, consistent pixel scale and weapon calibration still required."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-17",
+  "tool": "built-in image_gen",
+  "status": "design-candidate-awaiting-user-review",
+  "image": "GoblinLongWeapons-v2.png",
+  "reference": "GoblinLongWeapons-v1.png",
+  "prompt": "Use case: precise-object-edit. Edit supplied two melee goblin pixel-art lineup. User requests BOTH melee weapons SHORTER BY ONE QUARTER relative to THIS EXACT image. Set the sword overall tip-to-pommel length to 75% of current length, and long battle axe overall end-to-end length to 75% of current length. Shorten along each weapon's longitudinal axis ONLY, do not shrink weapon thickness, crossguard, blade width or axe-head size. For sword shorten primarily silver blade, preserve grip/guard. For axe shorten wooden haft, preserve crescent axe-head dimensions. Keep hands/grip anchored at their current positions; bring sword tip and axe head 25% closer along shaft axis. Still clearly a long sword and long-handled battle axe. Preserve exact two goblin bodies, faces, costumes, bald heads, bright green colors, orange headband, poses, pixel block scale and crisp stepped edges. Do not change character scale or camera/canvas framing. Left character sword, right Runner axe. No other edits. Actual transparent background, no shadows, text, grid or new items. Only two full characters with revised weapons.",
+  "requested_weapon_length_multiplier": 0.75,
+  "notes": "Requested reduction is a generation target, not an exact pixel measurement. Generated image visibly shortens weapons but precise percentage has not been verified. No game integration or attack parameters changed; do not claim calibrated reach."
+}

@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-17",
+  "tool": "built-in image_gen",
+  "status": "design-candidate-awaiting-user-review",
+  "image": "HeroBrightMaster-v6.png",
+  "reference": "HeroBrightMaster-v5.png",
+  "prompt": "Use case: precise-object-edit. Edit supplied single pixel boy hero. ONE TINY CHANGE: extend ONLY silver sword blade length by about TEN PERCENT relative to current blade, anchored at existing gold crossguard, keeping same sword angle, width, pointed tip design, grip, guard, hands. A modest extra 10 percent, NOT a dramatically longer weapon. Everything else identical: canvas framing, character scale and position, face, chunky square pixel rendering, bright colors, hair, red scarf, blue clothes, boots and stance. Keep actual transparent alpha, full sword tip visible. No other changes, no labels/text, no effects.",
+  "notes": "User requested both swords slightly longer. Target blade increase about 10%, approximate generated concept, not exact pixel measurement or runtime reach verification. Runner axe requested unchanged. No game integration."
+}

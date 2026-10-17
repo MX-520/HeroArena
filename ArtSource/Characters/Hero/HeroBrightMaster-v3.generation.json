@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-17",
+  "tool": "built-in image_gen",
+  "status": "design-candidate-awaiting-user-review",
+  "image": "HeroBrightMaster-v3.png",
+  "reference": "HeroBrightMaster-v2.png; inherits documented reference history.",
+  "prompt": "Use case: precise-object-edit. Edit only FACE of the supplied chibi hero. User says face looks feminine and wants a cute but unmistakably BOYISH youthful male swordsman with a sharp determined handsome gaze. Keep his head size, face direction and all other pixels/composition as close as possible. Face changes: slightly narrower less vertically tall blue eyes, smaller irises and modest single highlights, straight angular upper eyelids WITHOUT eyelashes or eyeliner wings. Thicker straight dark brown eyebrows with subtle inward downward angle. A slightly broader cheek/jaw contour, youthful boy face not adult. Remove pink blush. Small closed confident neutral smile rather than sweet dainty curved smile. Keep alert determined courageous expression, cute young male adventurer, no beard or wrinkles, no angry scowl. Preserve identical hair, red scarf, blue outfit, hands, boots, pose, long silver sword exact proportions, transparent background and bright chunky pixel style. No added armor, text, scenery, shadows, glow. One full body hero only. Real transparent alpha.",
+  "notes": "User found previous face feminine. Revised boyish angular eyes/brows, reduced eyelash/blush impression. No animation or game integration authorized until design finalized."
+}

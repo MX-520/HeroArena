@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-17",
+  "tool": "built-in image_gen",
+  "status": "design-candidate-awaiting-user-review",
+  "image": "HeroBrightMaster-v4.png",
+  "references": [
+    "HeroBrightMaster-v3.png: edit target.",
+    "../Goblins/GoblinBrightLineup-v2.png: pixel rendering style only."
+  ],
+  "prompt": "Use case: style-transfer. Edit target is FIRST image, the single bright chibi boy swordsman. SECOND image is ONLY reference for the larger crisp pixel block rendering scale; do not include goblins. User wants 主角也像素化一点: make the HERO more pixelated in the same manner as the latest goblins. Preserve FIRST image hero identity, youthful male face with straight strong brows and sharp determined BLUE eyes without lashes, confident little smile, same large head/short body proportions, chestnut spiky hair, vivid red scarf, bright blue tunic, simple belt and brown boots, pose facing 3/4 RIGHT, left hand free and right hand holding long silver sword. Render as a deliberately LOW RESOLUTION clean pixel sprite, effective standing body height about 64 pixels, displayed enlarged with nearest-neighbor crisp uniform square pixels. Clearly visible blocky color clusters, staircase contours, limited palette, 3-4 tones per material. Simplify hair into a few large angular tufts and solid highlight clusters, scarf folds into solid red blocks, outfit into readable blue clusters. No fine brushwork, no smooth gradients, no tiny high resolution texture, no antialiasing, no blur. Keep bright fresh cheerful colors, avoid muddy antique palette. IMPORTANT preserve long sword length: blade alone around one standing body height, from torso center to tip approximately 1.35 standing body heights in this extended pose; do not shorten into a dagger. Narrow elegant silver blade with crisp stepped contour and few broad white/blue-grey clusters, simple gold guard. Weapon complete with uncropped tip. Match the SECOND image's chunky clean square pixel aesthetic while keeping ONLY the FIRST image character. One full-body boy hero only, transparent background, no text, ground shadows, halo, magic FX, borders or grid. Preserve canvas space right for full sword.",
+  "notes": "User requested stronger pixel rendering to match latest goblins. Preserve boyish determined face and bright costume. Long sword remains a design candidate; gameplay range calibration not performed. Animation and integration remain paused pending design approval."
+}

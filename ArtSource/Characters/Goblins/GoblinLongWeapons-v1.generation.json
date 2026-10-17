@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-17",
+  "tool": "built-in image_gen",
+  "status": "design-candidate-awaiting-user-review",
+  "image": "GoblinLongWeapons-v1.png",
+  "reference": "GoblinBrightLineup-v2.png; inherits documented reference history.",
+  "prompt": "Use case: precise-object-edit. Source is three cute pixel goblin designs. Create a WEAPON LENGTH REVISION approval image showing ONLY the first TWO melee goblins, omit the purple caster entirely. Preserve exact source bright chunky pixel rendering, vivid green BALD heads, large ears, faces, proportions and clothing. Left goblin ordinary brown leather sword fighter; right goblin orange headband Runner axe fighter. Exactly two complete characters, equal standing height, on a wide genuinely transparent canvas, very generous spacing and padding. Both face three-quarter LEFT. Critical requested change: SIGNIFICANTLY LONGER melee weapons to match measured game reach. In-game outer hit reach is approximately 1.9 standing-goblin heights from torso center in fully extended attack. Treat this as reach guideline, do not add measurements/text. LEFT goblin: replace tiny short sword with one elegant long straight SILVER SWORD, blade alone 1.5 times entire standing goblin height (scalp to boot), gold crossguard, brown grip. Arm extends forward LEFT, sword points forward left at slight up angle, full tip visible. Weapon must unmistakeably be MUCH longer than source, not a dagger. Keep blade narrow, no broad oversized paddle. RIGHT Runner: significantly lengthen brown WOODEN AXE HAFT so the full axe from butt to blade is about 1.6 times entire standing goblin height. One clearly recognizable wide crescent SILVER axe head, not sword tip, axe head size stays about half head width. Hold long axe in two hands forward LEFT diagonally, blade head at the far end, show full shaft. Weapon should read as LONG-HANDLED battle axe, never short hatchet, never a sword. Body poses can adjust arms minimally to hold revised long weapons naturally. Allocate much more empty space to LEFT of EACH body so the complete long weapon fits. Weapons must not overlap other goblin. Do not shrink weapons to fit, widen canvas or use small bodies with SAME scale for both. Maintain bright cute modern pixel style and big uniform square pixels, crisp staircase edges, limited flat color clusters, no smooth gradients, no antialiasing or fine texture. No new clothing ornamentation. No environment, ground, shadow, text, labels, grid, borders, magic effects, extra goblins or extra weapons. This is character-and-weapon concept review not an animation or calibrated game screenshot.",
+  "static_prefab_baseline": {
+    "sources": [
+      "Assets/Prefabs/Enemy/Gobling.prefab",
+      "Assets/Prefabs/Enemy/GoblinRunner.prefab",
+      "Assets/Role/Gobling/PNG/spr_idle_strip9.png.meta"
+    ],
+    "root_scale": 2.6558,
+    "attack_point_local_x": 0.5,
+    "hit_circle_radius_world": 1.2,
+    "outer_forward_boundary_world": 2.5279,
+    "sprite_rect_height_pixels": 16,
+    "sprite_ppu": 32,
+    "standing_rect_height_world": 1.3279,
+    "outer_boundary_in_standing_rect_heights": 1.9036825062128169,
+    "method": "Static serialized prefab calculation, not live measurement; excludes scene/runtime overrides and transparent padding."
+  },
+  "notes": "Sword blade and axe haft visibly lengthened. Two melee designs only; caster remains in GoblinBrightLineup-v2.png. Generated art does not prove exact numerical dimensions or hit coverage. Verify hands, attack frame, left/right and actual runtime scale before game integration. No gameplay parameters changed."
+}

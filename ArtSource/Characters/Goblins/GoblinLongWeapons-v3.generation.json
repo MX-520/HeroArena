@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-17",
+  "tool": "built-in image_gen",
+  "status": "design-candidate-awaiting-user-review",
+  "image": "GoblinLongWeapons-v3.png",
+  "reference": "GoblinLongWeapons-v2.png",
+  "prompt": "Use case: precise-object-edit. Edit supplied two pixel goblin lineup. ONE TINY CHANGE: LEFT ordinary goblin's silver SWORD blade should be about TEN PERCENT longer than current silver blade. Extend tip along existing blade direction away from fixed gold guard, maintain same blade width/thickness, grip, crossguard, hands. This is just a slight length increase, NOT large. RIGHT Runner and his AXE must remain completely UNCHANGED in shaft length, axe head size, grip, pose and design. Preserve both bodies, faces, all clothing, bright green palette, uniform chunky square pixels and canvas composition/scale. Real transparent alpha, no new text/items, no shadows. Only left sword gets a small 10 percent extension.",
+  "notes": "User requested both swords slightly longer. Target blade increase about 10%, approximate generated concept, not exact pixel measurement or runtime reach verification. Runner axe requested unchanged. No game integration."
+}

@@ -1,7 +1,7 @@
 {
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "generator": "built-in image_gen",
-  "references": "Main-menu ForestTrial.png and project-generated candidates; no unlicensed sprite-sheet inputs were uploaded. Main-menu reference history is documented in ProjectKnowledge/13.",
+  "references": "Project-generated candidates and user-provided forest screenshot; reference history in ProjectKnowledge/13. Web research sources recorded per image; no third-party game image was uploaded for HeroReferenceStudy-v1.",
   "licensing_status": "Generated candidate artwork; not a claim of legal clearance or CC0. Preserve account/service terms and review reference history before commercial release.",
   "active_in_game": false,
   "files": [
@@ -11,7 +11,7 @@
       "width": 1254,
       "height": 1254,
       "mode": "RGBA",
-      "status": "candidate-not-active-in-game"
+      "status": "historical-design-not-active-in-game"
     },
     {
       "path": "ArtSource/Characters/Goblins/GoblinMelee.png",
@@ -19,7 +19,7 @@
       "width": 1254,
       "height": 1254,
       "mode": "RGBA",
-      "status": "candidate-not-active-in-game"
+      "status": "historical-design-not-active-in-game"
     },
     {
       "path": "ArtSource/Characters/Goblins/GoblinRunner.png",
@@ -27,7 +27,7 @@
       "width": 1254,
       "height": 1254,
       "mode": "RGBA",
-      "status": "candidate-not-active-in-game",
+      "status": "historical-design-not-active-in-game",
       "review_notes": "Row 4 column 3 (zero-based frame index 14) still shows a straight blade in the slumped death pose; must replace or exclude before use."
     },
     {
@@ -36,8 +36,178 @@
       "width": 1536,
       "height": 1024,
       "mode": "RGBA",
-      "status": "candidate-not-active-in-game",
-      "review_notes": "Latest decorated chibi master. Raw source contains soft alpha halo; needs clean sprite import. Pose sheets must be regenerated to match decorations."
+      "status": "historical-design-not-active-in-game",
+      "review_notes": "Superseded design. Approved hero is HeroReferenceStudy-v2.png. Do not reuse this as current identity."
+    },
+    {
+      "path": "ArtSource/Characters/Goblins/GoblinBrightLineup-v1.png",
+      "sha256": "c350bd01d7e16bfb48d5a6cadd04b2ed6f99ab10faf4139f8d89b277fe4b0ba0",
+      "width": 2014,
+      "height": 780,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Goblins/GoblinBrightLineup-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Goblins/GoblinBrightLineup-v2.png",
+      "sha256": "824d44291d4c52a1e31df91adcb252599f6631ef49afa9fc10208c911d24ff75",
+      "width": 2014,
+      "height": 780,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Goblins/GoblinBrightLineup-v2.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Goblins/GoblinChibiLineup-v1.png",
+      "sha256": "5668063a7512523200110701296b5fbd1432a8e5cafd9eaef7434152cfdb7a19",
+      "width": 2014,
+      "height": 780,
+      "status": "current-goblin-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Goblins/GoblinChibiLineup-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Goblins/GoblinLongWeapons-v1.png",
+      "sha256": "208003bd049cc1549bf5718da0f5bb063129859a04abd5c3acb7c9812adc5647",
+      "width": 2014,
+      "height": 780,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Goblins/GoblinLongWeapons-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Goblins/GoblinLongWeapons-v2.png",
+      "sha256": "bab67c4ee61129a74209054c7ae6c647183c90b63984d54d560f73295183fa53",
+      "width": 2016,
+      "height": 780,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Goblins/GoblinLongWeapons-v2.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Goblins/GoblinLongWeapons-v3.png",
+      "sha256": "98cd8cf0f7af769173b586ab6dc4dede3d10bbca79fcdd328ddd3ab6fdf20a49",
+      "width": 2014,
+      "height": 780,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Goblins/GoblinLongWeapons-v3.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroBodyActions-v1.png",
+      "sha256": "1fedc574baf65cc9f2cd740551f121b2947403c368d5b3c6881890806f8bd20a",
+      "width": 1254,
+      "height": 1254,
+      "status": "historical-design-not-active-in-game",
+      "review_notes": "Discarded premature action study: mismatched costume, inadequate gutters, repeated walk steps. Not an animation source for approved hero."
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroBrightMaster-v1.png",
+      "sha256": "4582adeb8fd8617bacd3d537ef7f663ab192681db50339b3a0cf332d53ded0a2",
+      "width": 1586,
+      "height": 992,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroBrightMaster-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroBrightMaster-v2.png",
+      "sha256": "b0b2c6d1da1012c782fc0f1e88fe00da441f739716e1c8d1839205a202224bdd",
+      "width": 1586,
+      "height": 992,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroBrightMaster-v2.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroBrightMaster-v3.png",
+      "sha256": "8ff2534de43afabee5ad3bb850feea0d3e2b48fbdd4bba077e4ee07a4717910a",
+      "width": 1585,
+      "height": 992,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroBrightMaster-v3.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroBrightMaster-v4.png",
+      "sha256": "79d9ddda066c91bf162383a359b4328600f57263c12657a9f158b086cadf7b11",
+      "width": 1586,
+      "height": 992,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroBrightMaster-v4.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroBrightMaster-v5.png",
+      "sha256": "e0e1e08ca724e50609e858a2632f1b5ada8d191fdf695ff19da5623c6c60ef7a",
+      "width": 1586,
+      "height": 992,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroBrightMaster-v5.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroBrightMaster-v6.png",
+      "sha256": "f2e4777922a5b5243f6f29f5c61aa19b497a2bda5a43851afbb1408c3547af21",
+      "width": 1586,
+      "height": 992,
+      "status": "design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroBrightMaster-v6.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroDirectionComparison-v1.png",
+      "sha256": "d65eeb0f8a72b125b227fc0eb9e88e03c57239ff89b4918332d6db2e0915c77e",
+      "width": 1942,
+      "height": 809,
+      "status": "two-design-directions-awaiting-user-selection",
+      "generation_record": "ArtSource/Characters/Hero/HeroDirectionComparison-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroOutfit-v1.png",
+      "sha256": "024d5ba7b2ecf01dd506a9bb0e142dbd13862685160ef096316383a307da39da",
+      "width": 1586,
+      "height": 992,
+      "status": "outfit-design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroOutfit-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroOutfit-v2.png",
+      "sha256": "d9917dd41930dfbc94d9ad36027af1558b49fcd6f6f23dab949e460d25cdef00",
+      "width": 1585,
+      "height": 992,
+      "status": "outfit-design-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroOutfit-v2.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroOutfitComparison-v1.png",
+      "sha256": "5c0ff840b34f2b4a5ca56f60b577fbe45aa25926c0b47645cd656ed02bfacd76",
+      "width": 2172,
+      "height": 724,
+      "status": "outfit-options-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroOutfitComparison-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroReferenceStudy-v1.png",
+      "sha256": "f352b8b5a900546dbcc37f73d8e3e632d971a137e9b6676e451146bb6ef32a89",
+      "width": 1536,
+      "height": 1024,
+      "status": "web-research-informed-original-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroReferenceStudy-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroReferenceStudy-v2.png",
+      "sha256": "adda05277dce18add42e879a66061ee144c03d739bb08ce3b368bdd16ab23b01",
+      "width": 1536,
+      "height": 1024,
+      "status": "user-approved-appearance-not-production-ready",
+      "generation_record": "ArtSource/Characters/Hero/HeroReferenceStudy-v2.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroTinyChibi-v1.png",
+      "sha256": "3eabacfbbfa99893911a7d804536f92991cbe470c011954c76598f2d5fd01de1",
+      "width": 1536,
+      "height": 1024,
+      "status": "chibi-proportion-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroTinyChibi-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Hero/HeroTinyChibi-v2.png",
+      "sha256": "d2356b8a72fb4b8c429926e13f654e840cdca1fd06476972c6e981146152a45f",
+      "width": 1536,
+      "height": 1024,
+      "status": "cuter-chibi-candidate-awaiting-user-review",
+      "generation_record": "ArtSource/Characters/Hero/HeroTinyChibi-v2.generation.json"
     }
-  ]
+  ],
+  "approved_hero": "ArtSource/Characters/Hero/HeroReferenceStudy-v2.png",
+  "current_goblin_candidate": "ArtSource/Characters/Goblins/GoblinChibiLineup-v1.png"
 }

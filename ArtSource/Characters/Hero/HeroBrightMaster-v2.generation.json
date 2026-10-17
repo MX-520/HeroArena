@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-17",
+  "tool": "built-in image_gen",
+  "status": "design-candidate-awaiting-user-review",
+  "image": "HeroBrightMaster-v2.png",
+  "reference": "HeroBrightMaster-v1.png; inherits its documented reference history.",
+  "prompt": "Use case: precise-object-edit. Edit target: supplied bright chibi hero concept on transparent background. Change ONLY the FACE EXPRESSION, specifically eyes and eyebrows and a tiny mouth adjustment. User request in Chinese: 主角眼睛犀利一点，坚定帅气 — sharper gaze, determined and handsome. Give the hero more focused slightly narrower BLUE eyes, upper eyelids angled with a clear sharp confident line, subtly lowered inner eyebrows expressing brave resolve, gaze forward RIGHT toward the sword tip. Keep the blue eyes luminous and readable, maintain his adorable youthful chibi face. Mouth a small closed confident assured smile. Cool heroic determination, composed and courageous, NOT angry, not villainous, no scowl or grimace, not squinting closed eyes. Preserve EXACTLY the rest of the supplied image: big chestnut spiky hair, head/body proportions, face position and skin colors, vivid red scarf, bright blue tunic and simple outfit, belt, boots, stance, hands, long silver sword and its exact length and angle, camera angle, canvas framing, clean pixel art color clusters and bright sunny palette. No added armor or accessories. One full-body hero only, no text, no scenery, no ground shadow, no glow. Preserve real transparent alpha background.",
+  "notes": "User requested sharper determined handsome eyes. Design review only; not active in game. Sword reach has not been verified in Unity."
+}
