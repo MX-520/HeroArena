@@ -1,0 +1,2 @@
+# Preserve snapshot bytes and recognize their original CRLF line endings.
+2026-10-17/*.md -text whitespace=cr-at-eol
