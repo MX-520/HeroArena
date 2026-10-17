@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-18",
+  "tool": "built-in image_gen",
+  "image": "Weapons-v1.png",
+  "status": "unity-imported-candidate-not-gameplay-validated",
+  "references": [
+    "Hero/HeroReferenceStudy-v2.png",
+    "Goblins/GoblinLongWeapons-v3.png"
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: THREE isolated independent WEAPON SPRITES for cute bright pixel action RPG. References are project's approved hero and two melee goblins, used only for weapon identity. NO CHARACTERS, NO HANDS, no bodies. Horizontal landscape sheet, exactly THREE separate equal columns with plenty transparent gutters. LEFT: hero elegant straight SILVER LONG SWORD, simple small warm gold crossguard, brown handle/pommel. CENTER: goblin straight silver sword with simple gold crossguard and darker brown grip, slightly rougher steel edge but no rust. RIGHT: Runner battle axe, long straight brown wooden shaft with a wide crescent silver steel axe head and little rear counterweight. All weapons oriented HORIZONTALLY pointing RIGHT: sword grips on left and tips on right, axe shaft butt left and head right. Complete weapon silhouettes fit entirely within their own equal cells, no overlap, consistent thickness for small game scale. All weapons roughly same overall length in sheet as scaling will be set in Unity. Swords are narrow elegant blades, not thick paddles, and axe head must unmistakably be a crescent axe not a sword. Bright simple chunky low-resolution square pixels, crisp stepped dark outline, 3 flat shade tones per metal/wood, clear white highlights and cool silver shadow, no fine painterly detail, no gradients. Output ONLY 3 isolated full weapons on genuine TRANSPARENT alpha, zero glow, zero halo, zero floor shadows or backdrop, no labels, text, grid, hands, characters, FX or decorative frame. Production sprite assets for separate Unity weapon layer, with clean solid opaque silhouettes and transparent margins.",
+  "notes": "Body sheets contain no weapons; weapon sheet separate. Generated spacing/scale/motion require inspection. Does not claim active gameplay replacement.",
+  "imported_sprite_count": 3
+}

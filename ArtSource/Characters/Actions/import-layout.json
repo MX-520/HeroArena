@@ -1,0 +1,1569 @@
+{
+  "version": 1,
+  "status": "candidate-import-layout-not-live-integration",
+  "sheets": [
+    {
+      "name": "HeroBasic-v1",
+      "source": "ArtSource/Characters/Actions/HeroBasic-v1.png",
+      "pixelsPerUnit": 193.56232447612874,
+      "frames": [
+        {
+          "name": "f00",
+          "x": 66,
+          "y": 16,
+          "width": 233,
+          "height": 340,
+          "pivotX": 0.51931330472103,
+          "pivotY": 0.0058823529411764705,
+          "contentHeight": 336
+        },
+        {
+          "name": "f01",
+          "x": 422,
+          "y": 15,
+          "width": 227,
+          "height": 340,
+          "pivotX": 0.5110132158590308,
+          "pivotY": 0.0058823529411764705,
+          "contentHeight": 336
+        },
+        {
+          "name": "f02",
+          "x": 776,
+          "y": 21,
+          "width": 236,
+          "height": 334,
+          "pivotX": 0.5211864406779662,
+          "pivotY": 0.005988023952095809,
+          "contentHeight": 330
+        },
+        {
+          "name": "f03",
+          "x": 1139,
+          "y": 15,
+          "width": 234,
+          "height": 340,
+          "pivotX": 0.5213675213675214,
+          "pivotY": 0.0058823529411764705,
+          "contentHeight": 336
+        },
+        {
+          "name": "f04",
+          "x": 67,
+          "y": 371,
+          "width": 243,
+          "height": 331,
+          "pivotX": 0.5432098765432098,
+          "pivotY": 0.006042296072507553,
+          "contentHeight": 327
+        },
+        {
+          "name": "f05",
+          "x": 440,
+          "y": 371,
+          "width": 231,
+          "height": 335,
+          "pivotX": 0.5194805194805194,
+          "pivotY": 0.005970149253731343,
+          "contentHeight": 331
+        },
+        {
+          "name": "f06",
+          "x": 782,
+          "y": 372,
+          "width": 245,
+          "height": 333,
+          "pivotX": 0.5387755102040817,
+          "pivotY": 0.006006006006006006,
+          "contentHeight": 329
+        },
+        {
+          "name": "f07",
+          "x": 1160,
+          "y": 371,
+          "width": 230,
+          "height": 331,
+          "pivotX": 0.5130434782608696,
+          "pivotY": 0.006042296072507553,
+          "contentHeight": 327
+        },
+        {
+          "name": "f08",
+          "x": 51,
+          "y": 719,
+          "width": 272,
+          "height": 334,
+          "pivotX": 0.5404411764705882,
+          "pivotY": 0.005988023952095809,
+          "contentHeight": 330
+        },
+        {
+          "name": "f09",
+          "x": 406,
+          "y": 728,
+          "width": 288,
+          "height": 325,
+          "pivotX": 0.5277777777777778,
+          "pivotY": 0.006153846153846154,
+          "contentHeight": 321
+        },
+        {
+          "name": "f10",
+          "x": 775,
+          "y": 735,
+          "width": 292,
+          "height": 318,
+          "pivotX": 0.5856164383561644,
+          "pivotY": 0.006289308176100629,
+          "contentHeight": 314
+        },
+        {
+          "name": "f11",
+          "x": 1144,
+          "y": 728,
+          "width": 226,
+          "height": 325,
+          "pivotX": 0.504424778761062,
+          "pivotY": 0.006153846153846154,
+          "contentHeight": 321
+        }
+      ],
+      "actor": "Hero",
+      "columns": 4,
+      "rows": 3,
+      "xSeparators": [
+        0,
+        364,
+        732,
+        1100,
+        1448
+      ],
+      "rowXSeparators": [
+        [
+          0,
+          360,
+          712,
+          1075,
+          1448
+        ],
+        [
+          0,
+          374,
+          726,
+          1093,
+          1448
+        ],
+        [
+          0,
+          364,
+          734,
+          1105,
+          1448
+        ]
+      ],
+      "ySeparators": [
+        0,
+        363,
+        712,
+        1086
+      ],
+      "sha256": "9eb69b661d5d77b2749fb65f242c160912960693f6f40368cce4d3f934afbe0f",
+      "warnings": [],
+      "transparentFraction": 0.5571805398695604,
+      "alphaPolicy": "Original source alpha preserved; >=128 used for bounds only"
+    },
+    {
+      "name": "HeroExtra-v1",
+      "source": "ArtSource/Characters/Actions/HeroExtra-v1.png",
+      "pixelsPerUnit": 167.35075970331965,
+      "frames": [
+        {
+          "name": "f00",
+          "x": 30,
+          "y": 40,
+          "width": 251,
+          "height": 294,
+          "pivotX": 0.5936254980079682,
+          "pivotY": 0.006802721088435374,
+          "contentHeight": 290
+        },
+        {
+          "name": "f01",
+          "x": 343,
+          "y": 40,
+          "width": 246,
+          "height": 299,
+          "pivotX": 0.5853658536585366,
+          "pivotY": 0.006688963210702341,
+          "contentHeight": 295
+        },
+        {
+          "name": "f02",
+          "x": 647,
+          "y": 39,
+          "width": 259,
+          "height": 295,
+          "pivotX": 0.61003861003861,
+          "pivotY": 0.006779661016949152,
+          "contentHeight": 291
+        },
+        {
+          "name": "f03",
+          "x": 980,
+          "y": 40,
+          "width": 244,
+          "height": 294,
+          "pivotX": 0.5819672131147541,
+          "pivotY": 0.006802721088435374,
+          "contentHeight": 290
+        },
+        {
+          "name": "f04",
+          "x": 37,
+          "y": 401,
+          "width": 273,
+          "height": 215,
+          "pivotX": 0.4981684981684982,
+          "pivotY": 0.009302325581395349,
+          "contentHeight": 211
+        },
+        {
+          "name": "f05",
+          "x": 378,
+          "y": 409,
+          "width": 224,
+          "height": 211,
+          "pivotX": 0.49776785714285715,
+          "pivotY": 0.009478672985781991,
+          "contentHeight": 207
+        },
+        {
+          "name": "f06",
+          "x": 674,
+          "y": 374,
+          "width": 215,
+          "height": 249,
+          "pivotX": 0.49767441860465117,
+          "pivotY": 0.008032128514056224,
+          "contentHeight": 245
+        },
+        {
+          "name": "f07",
+          "x": 973,
+          "y": 390,
+          "width": 265,
+          "height": 226,
+          "pivotX": 0.4981132075471698,
+          "pivotY": 0.008849557522123894,
+          "contentHeight": 222
+        },
+        {
+          "name": "f08",
+          "x": 35,
+          "y": 649,
+          "width": 287,
+          "height": 287,
+          "pivotX": 0.42160278745644597,
+          "pivotY": 0.006968641114982578,
+          "contentHeight": 283
+        },
+        {
+          "name": "f09",
+          "x": 344,
+          "y": 651,
+          "width": 265,
+          "height": 285,
+          "pivotX": 0.5735849056603773,
+          "pivotY": 0.007017543859649123,
+          "contentHeight": 281
+        },
+        {
+          "name": "f10",
+          "x": 659,
+          "y": 651,
+          "width": 255,
+          "height": 285,
+          "pivotX": 0.5764705882352941,
+          "pivotY": 0.007017543859649123,
+          "contentHeight": 281
+        },
+        {
+          "name": "f11",
+          "x": 996,
+          "y": 646,
+          "width": 222,
+          "height": 290,
+          "pivotX": 0.5315315315315315,
+          "pivotY": 0.006896551724137931,
+          "contentHeight": 286
+        },
+        {
+          "name": "f12",
+          "x": 43,
+          "y": 955,
+          "width": 242,
+          "height": 267,
+          "pivotX": 0.5578512396694215,
+          "pivotY": 0.00749063670411985,
+          "contentHeight": 263
+        },
+        {
+          "name": "f13",
+          "x": 349,
+          "y": 995,
+          "width": 273,
+          "height": 227,
+          "pivotX": 0.6117216117216118,
+          "pivotY": 0.00881057268722467,
+          "contentHeight": 223
+        },
+        {
+          "name": "f14",
+          "x": 632,
+          "y": 1062,
+          "width": 305,
+          "height": 151,
+          "pivotX": 0.49836065573770494,
+          "pivotY": 0.013245033112582781,
+          "contentHeight": 147
+        },
+        {
+          "name": "f15",
+          "x": 945,
+          "y": 1095,
+          "width": 296,
+          "height": 109,
+          "pivotX": 0.4983108108108108,
+          "pivotY": 0.01834862385321101,
+          "contentHeight": 105
+        }
+      ],
+      "actor": "Hero",
+      "columns": 4,
+      "rows": 4,
+      "xSeparators": [
+        0,
+        332,
+        626,
+        940,
+        1254
+      ],
+      "rowXSeparators": [
+        [
+          0,
+          312,
+          618,
+          942,
+          1254
+        ],
+        [
+          0,
+          344,
+          638,
+          930,
+          1254
+        ],
+        [
+          0,
+          332,
+          634,
+          954,
+          1254
+        ],
+        [
+          0,
+          316,
+          626,
+          940,
+          1254
+        ]
+      ],
+      "ySeparators": [
+        0,
+        346,
+        634,
+        945,
+        1254
+      ],
+      "sha256": "8ed3193234a9650f10863dcc9bae42e87260a5a07c96b3298ab4c8f38bdaedd2",
+      "warnings": [],
+      "transparentFraction": 0.5460287844448005,
+      "alphaPolicy": "Original source alpha preserved; >=128 used for bounds only"
+    },
+    {
+      "name": "GoblinMelee-v2",
+      "source": "ArtSource/Characters/Actions/GoblinMelee-v2.png",
+      "pixelsPerUnit": 208.6000451841253,
+      "frames": [
+        {
+          "name": "f00",
+          "x": 58,
+          "y": 26,
+          "width": 231,
+          "height": 281,
+          "pivotX": 0.5108225108225108,
+          "pivotY": 0.0071174377224199285,
+          "contentHeight": 277
+        },
+        {
+          "name": "f01",
+          "x": 371,
+          "y": 25,
+          "width": 231,
+          "height": 282,
+          "pivotX": 0.5151515151515151,
+          "pivotY": 0.0070921985815602835,
+          "contentHeight": 278
+        },
+        {
+          "name": "f02",
+          "x": 684,
+          "y": 26,
+          "width": 231,
+          "height": 281,
+          "pivotX": 0.5108225108225108,
+          "pivotY": 0.0071174377224199285,
+          "contentHeight": 277
+        },
+        {
+          "name": "f03",
+          "x": 998,
+          "y": 26,
+          "width": 231,
+          "height": 281,
+          "pivotX": 0.5108225108225108,
+          "pivotY": 0.0071174377224199285,
+          "contentHeight": 277
+        },
+        {
+          "name": "f04",
+          "x": 49,
+          "y": 334,
+          "width": 231,
+          "height": 282,
+          "pivotX": 0.5064935064935064,
+          "pivotY": 0.0070921985815602835,
+          "contentHeight": 278
+        },
+        {
+          "name": "f05",
+          "x": 358,
+          "y": 334,
+          "width": 236,
+          "height": 282,
+          "pivotX": 0.5084745762711864,
+          "pivotY": 0.0070921985815602835,
+          "contentHeight": 278
+        },
+        {
+          "name": "f06",
+          "x": 671,
+          "y": 334,
+          "width": 235,
+          "height": 282,
+          "pivotX": 0.5148936170212766,
+          "pivotY": 0.0070921985815602835,
+          "contentHeight": 278
+        },
+        {
+          "name": "f07",
+          "x": 990,
+          "y": 335,
+          "width": 232,
+          "height": 281,
+          "pivotX": 0.5086206896551724,
+          "pivotY": 0.0071174377224199285,
+          "contentHeight": 277
+        },
+        {
+          "name": "f08",
+          "x": 45,
+          "y": 636,
+          "width": 252,
+          "height": 279,
+          "pivotX": 0.5158730158730159,
+          "pivotY": 0.007168458781362007,
+          "contentHeight": 275
+        },
+        {
+          "name": "f09",
+          "x": 343,
+          "y": 645,
+          "width": 309,
+          "height": 270,
+          "pivotX": 0.49514563106796117,
+          "pivotY": 0.007407407407407408,
+          "contentHeight": 266
+        },
+        {
+          "name": "f10",
+          "x": 671,
+          "y": 665,
+          "width": 277,
+          "height": 256,
+          "pivotX": 0.5956678700361011,
+          "pivotY": 0.0078125,
+          "contentHeight": 252
+        },
+        {
+          "name": "f11",
+          "x": 980,
+          "y": 645,
+          "width": 231,
+          "height": 276,
+          "pivotX": 0.5064935064935064,
+          "pivotY": 0.007246376811594203,
+          "contentHeight": 272
+        },
+        {
+          "name": "f12",
+          "x": 34,
+          "y": 939,
+          "width": 235,
+          "height": 276,
+          "pivotX": 0.4723404255319149,
+          "pivotY": 0.007246376811594203,
+          "contentHeight": 272
+        },
+        {
+          "name": "f13",
+          "x": 329,
+          "y": 976,
+          "width": 266,
+          "height": 234,
+          "pivotX": 0.556390977443609,
+          "pivotY": 0.008547008547008548,
+          "contentHeight": 230
+        },
+        {
+          "name": "f14",
+          "x": 609,
+          "y": 1014,
+          "width": 283,
+          "height": 203,
+          "pivotX": 0.49823321554770317,
+          "pivotY": 0.009852216748768473,
+          "contentHeight": 199
+        },
+        {
+          "name": "f15",
+          "x": 901,
+          "y": 1063,
+          "width": 335,
+          "height": 147,
+          "pivotX": 0.49850746268656715,
+          "pivotY": 0.013605442176870748,
+          "contentHeight": 143
+        }
+      ],
+      "actor": "GoblinMelee",
+      "columns": 4,
+      "rows": 4,
+      "xSeparators": [
+        0,
+        312,
+        654,
+        947,
+        1254
+      ],
+      "rowXSeparators": [
+        [
+          0,
+          330,
+          642,
+          956,
+          1254
+        ],
+        [
+          0,
+          318,
+          632,
+          948,
+          1254
+        ],
+        [
+          0,
+          320,
+          661,
+          964,
+          1254
+        ],
+        [
+          0,
+          298,
+          602,
+          896,
+          1254
+        ]
+      ],
+      "ySeparators": [
+        0,
+        320,
+        626,
+        930,
+        1254
+      ],
+      "sha256": "5868114bcd991d8d742e2137ae197ac7d7599ffb95e5a831e8cb2069a36a2534",
+      "warnings": [],
+      "transparentFraction": 0.49301819504539224,
+      "alphaPolicy": "Original source alpha preserved; >=128 used for bounds only"
+    },
+    {
+      "name": "GoblinRunner-v2",
+      "source": "ArtSource/Characters/Actions/GoblinRunner-v2.png",
+      "pixelsPerUnit": 198.4336169892311,
+      "frames": [
+        {
+          "name": "f00",
+          "x": 33,
+          "y": 50,
+          "width": 262,
+          "height": 268,
+          "pivotX": 0.5267175572519084,
+          "pivotY": 0.007462686567164179,
+          "contentHeight": 264
+        },
+        {
+          "name": "f01",
+          "x": 349,
+          "y": 50,
+          "width": 262,
+          "height": 267,
+          "pivotX": 0.5305343511450382,
+          "pivotY": 0.00749063670411985,
+          "contentHeight": 263
+        },
+        {
+          "name": "f02",
+          "x": 658,
+          "y": 66,
+          "width": 263,
+          "height": 252,
+          "pivotX": 0.532319391634981,
+          "pivotY": 0.007936507936507936,
+          "contentHeight": 248
+        },
+        {
+          "name": "f03",
+          "x": 968,
+          "y": 50,
+          "width": 258,
+          "height": 268,
+          "pivotX": 0.5271317829457365,
+          "pivotY": 0.007462686567164179,
+          "contentHeight": 264
+        },
+        {
+          "name": "f04",
+          "x": 45,
+          "y": 359,
+          "width": 274,
+          "height": 276,
+          "pivotX": 0.5364963503649635,
+          "pivotY": 0.007246376811594203,
+          "contentHeight": 272
+        },
+        {
+          "name": "f05",
+          "x": 349,
+          "y": 353,
+          "width": 275,
+          "height": 283,
+          "pivotX": 0.5381818181818182,
+          "pivotY": 0.007067137809187279,
+          "contentHeight": 279
+        },
+        {
+          "name": "f06",
+          "x": 665,
+          "y": 359,
+          "width": 269,
+          "height": 277,
+          "pivotX": 0.5315985130111525,
+          "pivotY": 0.007220216606498195,
+          "contentHeight": 273
+        },
+        {
+          "name": "f07",
+          "x": 975,
+          "y": 353,
+          "width": 267,
+          "height": 283,
+          "pivotX": 0.5355805243445693,
+          "pivotY": 0.007067137809187279,
+          "contentHeight": 279
+        },
+        {
+          "name": "f08",
+          "x": 31,
+          "y": 643,
+          "width": 295,
+          "height": 298,
+          "pivotX": 0.5016949152542373,
+          "pivotY": 0.006711409395973154,
+          "contentHeight": 294
+        },
+        {
+          "name": "f09",
+          "x": 353,
+          "y": 682,
+          "width": 304,
+          "height": 259,
+          "pivotX": 0.555921052631579,
+          "pivotY": 0.007722007722007722,
+          "contentHeight": 255
+        },
+        {
+          "name": "f10",
+          "x": 685,
+          "y": 704,
+          "width": 259,
+          "height": 237,
+          "pivotX": 0.5057915057915058,
+          "pivotY": 0.008438818565400843,
+          "contentHeight": 233
+        },
+        {
+          "name": "f11",
+          "x": 962,
+          "y": 671,
+          "width": 257,
+          "height": 270,
+          "pivotX": 0.5097276264591439,
+          "pivotY": 0.007407407407407408,
+          "contentHeight": 266
+        },
+        {
+          "name": "f12",
+          "x": 16,
+          "y": 972,
+          "width": 297,
+          "height": 261,
+          "pivotX": 0.5117845117845118,
+          "pivotY": 0.007662835249042145,
+          "contentHeight": 257
+        },
+        {
+          "name": "f13",
+          "x": 361,
+          "y": 978,
+          "width": 253,
+          "height": 255,
+          "pivotX": 0.5177865612648221,
+          "pivotY": 0.00784313725490196,
+          "contentHeight": 251
+        },
+        {
+          "name": "f14",
+          "x": 655,
+          "y": 1019,
+          "width": 278,
+          "height": 215,
+          "pivotX": 0.4982014388489209,
+          "pivotY": 0.009302325581395349,
+          "contentHeight": 211
+        },
+        {
+          "name": "f15",
+          "x": 944,
+          "y": 1109,
+          "width": 310,
+          "height": 117,
+          "pivotX": 0.49838709677419357,
+          "pivotY": 0.017094017094017096,
+          "contentHeight": 113
+        }
+      ],
+      "actor": "GoblinRunner",
+      "columns": 4,
+      "rows": 4,
+      "xSeparators": [
+        0,
+        337,
+        656,
+        944,
+        1254
+      ],
+      "rowXSeparators": [
+        [
+          0,
+          322,
+          634,
+          944,
+          1254
+        ],
+        [
+          0,
+          334,
+          644,
+          954,
+          1254
+        ],
+        [
+          0,
+          339,
+          670,
+          952,
+          1254
+        ],
+        [
+          0,
+          336,
+          634,
+          938,
+          1254
+        ]
+      ],
+      "ySeparators": [
+        0,
+        335,
+        639,
+        956,
+        1254
+      ],
+      "sha256": "552c70c5b964c31ccb4baff4445e371e9ae286143478b9d00abb4df4902daa7a",
+      "warnings": [],
+      "transparentFraction": 0.4871855039948719,
+      "alphaPolicy": "Original source alpha preserved; >=128 used for bounds only"
+    },
+    {
+      "name": "GoblinCaster-v1",
+      "source": "ArtSource/Characters/Actions/GoblinCaster-v1.png",
+      "pixelsPerUnit": 192.785601325401,
+      "frames": [
+        {
+          "name": "f00",
+          "x": 64,
+          "y": 55,
+          "width": 207,
+          "height": 261,
+          "pivotX": 0.5072463768115942,
+          "pivotY": 0.007662835249042145,
+          "contentHeight": 257
+        },
+        {
+          "name": "f01",
+          "x": 379,
+          "y": 57,
+          "width": 209,
+          "height": 259,
+          "pivotX": 0.49760765550239233,
+          "pivotY": 0.007722007722007722,
+          "contentHeight": 255
+        },
+        {
+          "name": "f02",
+          "x": 693,
+          "y": 55,
+          "width": 206,
+          "height": 261,
+          "pivotX": 0.5048543689320388,
+          "pivotY": 0.007662835249042145,
+          "contentHeight": 257
+        },
+        {
+          "name": "f03",
+          "x": 1005,
+          "y": 58,
+          "width": 210,
+          "height": 258,
+          "pivotX": 0.49523809523809526,
+          "pivotY": 0.007751937984496124,
+          "contentHeight": 254
+        },
+        {
+          "name": "f04",
+          "x": 64,
+          "y": 353,
+          "width": 209,
+          "height": 269,
+          "pivotX": 0.507177033492823,
+          "pivotY": 0.007434944237918215,
+          "contentHeight": 265
+        },
+        {
+          "name": "f05",
+          "x": 380,
+          "y": 353,
+          "width": 207,
+          "height": 270,
+          "pivotX": 0.5072463768115942,
+          "pivotY": 0.007407407407407408,
+          "contentHeight": 266
+        },
+        {
+          "name": "f06",
+          "x": 692,
+          "y": 354,
+          "width": 208,
+          "height": 270,
+          "pivotX": 0.5048076923076923,
+          "pivotY": 0.007407407407407408,
+          "contentHeight": 266
+        },
+        {
+          "name": "f07",
+          "x": 1007,
+          "y": 354,
+          "width": 208,
+          "height": 269,
+          "pivotX": 0.5048076923076923,
+          "pivotY": 0.007434944237918215,
+          "contentHeight": 265
+        },
+        {
+          "name": "f08",
+          "x": 64,
+          "y": 657,
+          "width": 209,
+          "height": 272,
+          "pivotX": 0.5023923444976076,
+          "pivotY": 0.007352941176470588,
+          "contentHeight": 268
+        },
+        {
+          "name": "f09",
+          "x": 378,
+          "y": 664,
+          "width": 209,
+          "height": 266,
+          "pivotX": 0.5023923444976076,
+          "pivotY": 0.007518796992481203,
+          "contentHeight": 262
+        },
+        {
+          "name": "f10",
+          "x": 667,
+          "y": 670,
+          "width": 289,
+          "height": 259,
+          "pivotX": 0.4429065743944637,
+          "pivotY": 0.007722007722007722,
+          "contentHeight": 255
+        },
+        {
+          "name": "f11",
+          "x": 1005,
+          "y": 657,
+          "width": 210,
+          "height": 272,
+          "pivotX": 0.5047619047619047,
+          "pivotY": 0.007352941176470588,
+          "contentHeight": 268
+        },
+        {
+          "name": "f12",
+          "x": 26,
+          "y": 959,
+          "width": 275,
+          "height": 260,
+          "pivotX": 0.43272727272727274,
+          "pivotY": 0.007692307692307693,
+          "contentHeight": 256
+        },
+        {
+          "name": "f13",
+          "x": 365,
+          "y": 1010,
+          "width": 244,
+          "height": 214,
+          "pivotX": 0.5409836065573771,
+          "pivotY": 0.009345794392523364,
+          "contentHeight": 210
+        },
+        {
+          "name": "f14",
+          "x": 632,
+          "y": 1092,
+          "width": 283,
+          "height": 132,
+          "pivotX": 0.49823321554770317,
+          "pivotY": 0.015151515151515152,
+          "contentHeight": 128
+        },
+        {
+          "name": "f15",
+          "x": 945,
+          "y": 1122,
+          "width": 294,
+          "height": 101,
+          "pivotX": 0.49829931972789115,
+          "pivotY": 0.019801980198019802,
+          "contentHeight": 97
+        }
+      ],
+      "actor": "GoblinCaster",
+      "columns": 4,
+      "rows": 4,
+      "xSeparators": [
+        0,
+        328,
+        620,
+        954,
+        1254
+      ],
+      "rowXSeparators": [
+        [
+          0,
+          324,
+          640,
+          952,
+          1254
+        ],
+        [
+          0,
+          326,
+          639,
+          953,
+          1254
+        ],
+        [
+          0,
+          325,
+          626,
+          980,
+          1254
+        ],
+        [
+          0,
+          332,
+          620,
+          930,
+          1254
+        ]
+      ],
+      "ySeparators": [
+        0,
+        334,
+        640,
+        944,
+        1254
+      ],
+      "sha256": "4826a1d109277727802cea5b1ce0221719dca3d65dcac6006428895e0883e09b",
+      "warnings": [],
+      "transparentFraction": 0.5567345578677737,
+      "alphaPolicy": "Original source alpha preserved; >=128 used for bounds only"
+    },
+    {
+      "name": "Weapons-v1",
+      "source": "ArtSource/Characters/Actions/Weapons-v1.png",
+      "pixelsPerUnit": 675.0,
+      "frames": [
+        {
+          "name": "f00",
+          "x": 39,
+          "y": 247,
+          "width": 675,
+          "height": 228,
+          "pivotX": 0.13200000000000003,
+          "pivotY": 0.5,
+          "contentHeight": 224
+        },
+        {
+          "name": "f01",
+          "x": 771,
+          "y": 264,
+          "width": 617,
+          "height": 186,
+          "pivotX": 0.1321880064829821,
+          "pivotY": 0.5,
+          "contentHeight": 182
+        },
+        {
+          "name": "f02",
+          "x": 1462,
+          "y": 226,
+          "width": 673,
+          "height": 278,
+          "pivotX": 0.13200594353640405,
+          "pivotY": 0.5,
+          "contentHeight": 274
+        }
+      ],
+      "actor": "Weapons",
+      "columns": 3,
+      "rows": 1,
+      "xSeparators": [
+        0,
+        742,
+        1424,
+        2172
+      ],
+      "rowXSeparators": [
+        [
+          0,
+          742,
+          1424,
+          2172
+        ]
+      ],
+      "ySeparators": [
+        0,
+        724
+      ],
+      "sha256": "4d924b5dbb879572d30b61408c6040b70646db886e8894296ae078d5ae70c003",
+      "warnings": [],
+      "transparentFraction": 0.8772594192281473,
+      "alphaPolicy": "Original source alpha preserved; >=128 used for bounds only"
+    }
+  ],
+  "clips": [
+    {
+      "actor": "Hero",
+      "name": "Idle",
+      "source": "Assets/Animations/Player/Idle.anim",
+      "sheet": "HeroBasic-v1",
+      "frames": [
+        "f00",
+        "f01",
+        "f02",
+        "f03"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.75,
+      "events": []
+    },
+    {
+      "actor": "Hero",
+      "name": "Walk",
+      "source": "Assets/Animations/Player/Walk.anim",
+      "sheet": "HeroBasic-v1",
+      "frames": [
+        "f04",
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.6666666,
+      "events": []
+    },
+    {
+      "actor": "Hero",
+      "name": "Attack",
+      "source": "Assets/Animations/Player/Attack.anim",
+      "sheet": "HeroBasic-v1",
+      "frames": [
+        "f08",
+        "f09",
+        "f10",
+        "f11"
+      ],
+      "phases": [
+        0,
+        0.4,
+        0.5,
+        0.8
+      ],
+      "duration": 0.8333333,
+      "events": [
+        {
+          "time": 0.33333334,
+          "function": "DetectHit"
+        },
+        {
+          "time": 0.75,
+          "function": "OnAttackFinished"
+        }
+      ]
+    },
+    {
+      "actor": "Hero",
+      "name": "Run",
+      "source": "Assets/Animations/Player/Run.anim",
+      "sheet": "HeroExtra-v1",
+      "frames": [
+        "f00",
+        "f01",
+        "f02",
+        "f03"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.6666666,
+      "events": []
+    },
+    {
+      "actor": "Hero",
+      "name": "Roll",
+      "source": "Assets/Animations/Player/Roll.anim",
+      "sheet": "HeroExtra-v1",
+      "frames": [
+        "f04",
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.75,
+      "events": []
+    },
+    {
+      "actor": "Hero",
+      "name": "Hurt",
+      "source": "Assets/Animations/Player/Hurt.anim",
+      "sheet": "HeroExtra-v1",
+      "frames": [
+        "f08",
+        "f09",
+        "f10",
+        "f11"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.6666666,
+      "events": [
+        {
+          "time": 0.33333334,
+          "function": "OnHurtFinished"
+        }
+      ]
+    },
+    {
+      "actor": "Hero",
+      "name": "Death",
+      "source": "Assets/Animations/Player/Death.anim",
+      "sheet": "HeroExtra-v1",
+      "frames": [
+        "f12",
+        "f13",
+        "f14",
+        "f15"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 1.0833334,
+      "events": []
+    },
+    {
+      "actor": "GoblinMelee",
+      "name": "Idle",
+      "source": "Assets/Animations/Enemy/Gobling/Idle.anim",
+      "sheet": "GoblinMelee-v2",
+      "frames": [
+        "f00",
+        "f01",
+        "f02",
+        "f03"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.8,
+      "events": []
+    },
+    {
+      "actor": "GoblinMelee",
+      "name": "Walk",
+      "source": "Assets/Animations/Enemy/Gobling/Walk.anim",
+      "sheet": "GoblinMelee-v2",
+      "frames": [
+        "f04",
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.8,
+      "events": []
+    },
+    {
+      "actor": "GoblinMelee",
+      "name": "Attack",
+      "source": "Assets/Animations/Enemy/Gobling/Attack.anim",
+      "sheet": "GoblinMelee-v2",
+      "frames": [
+        "f08",
+        "f09",
+        "f10",
+        "f11"
+      ],
+      "phases": [
+        0,
+        0.4,
+        0.5,
+        0.8
+      ],
+      "duration": 1.0,
+      "events": [
+        {
+          "time": 0.4,
+          "function": "DetectHit"
+        },
+        {
+          "time": 0.9,
+          "function": "OnAttackFinished"
+        }
+      ]
+    },
+    {
+      "actor": "GoblinMelee",
+      "name": "Hurt",
+      "source": "Assets/Animations/Enemy/Gobling/Hurt.anim",
+      "sheet": "GoblinMelee-v2",
+      "frames": [
+        "f12",
+        "f13"
+      ],
+      "phases": [
+        0.0,
+        0.5
+      ],
+      "duration": 0.8,
+      "events": []
+    },
+    {
+      "actor": "GoblinMelee",
+      "name": "Death",
+      "source": "Assets/Animations/Enemy/Gobling/Death.anim",
+      "sheet": "GoblinMelee-v2",
+      "frames": [
+        "f14",
+        "f15"
+      ],
+      "phases": [
+        0.0,
+        0.5
+      ],
+      "duration": 0.9,
+      "events": []
+    },
+    {
+      "actor": "GoblinRunner",
+      "name": "Idle",
+      "source": "Assets/Animations/Enemy/Gobling/Idle.anim",
+      "sheet": "GoblinRunner-v2",
+      "frames": [
+        "f00",
+        "f01",
+        "f02",
+        "f03"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.8,
+      "events": []
+    },
+    {
+      "actor": "GoblinRunner",
+      "name": "Run",
+      "source": "Assets/Animations/Enemy/Gobling/Run.anim",
+      "sheet": "GoblinRunner-v2",
+      "frames": [
+        "f04",
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.6666666,
+      "events": []
+    },
+    {
+      "actor": "GoblinRunner",
+      "name": "AxeAttack",
+      "source": "Assets/Animations/Enemy/Gobling/AxeAttack.anim",
+      "sheet": "GoblinRunner-v2",
+      "frames": [
+        "f08",
+        "f09",
+        "f10",
+        "f11"
+      ],
+      "phases": [
+        0,
+        0.5,
+        0.6,
+        0.8
+      ],
+      "duration": 0.8333333,
+      "events": [
+        {
+          "time": 0.41666666,
+          "function": "DetectHit"
+        },
+        {
+          "time": 0.75,
+          "function": "OnAttackFinished"
+        }
+      ]
+    },
+    {
+      "actor": "GoblinRunner",
+      "name": "Hurt",
+      "source": "Assets/Animations/Enemy/Gobling/Hurt.anim",
+      "sheet": "GoblinRunner-v2",
+      "frames": [
+        "f12",
+        "f13"
+      ],
+      "phases": [
+        0.0,
+        0.5
+      ],
+      "duration": 0.8,
+      "events": []
+    },
+    {
+      "actor": "GoblinRunner",
+      "name": "Death",
+      "source": "Assets/Animations/Enemy/Gobling/Death.anim",
+      "sheet": "GoblinRunner-v2",
+      "frames": [
+        "f14",
+        "f15"
+      ],
+      "phases": [
+        0.0,
+        0.5
+      ],
+      "duration": 0.9,
+      "events": []
+    },
+    {
+      "actor": "GoblinCaster",
+      "name": "Idle",
+      "source": "Assets/Animations/Enemy/Gobling/Idle.anim",
+      "sheet": "GoblinCaster-v1",
+      "frames": [
+        "f00",
+        "f01",
+        "f02",
+        "f03"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.8,
+      "events": []
+    },
+    {
+      "actor": "GoblinCaster",
+      "name": "Walk",
+      "source": "Assets/Animations/Enemy/Gobling/Walk.anim",
+      "sheet": "GoblinCaster-v1",
+      "frames": [
+        "f04",
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "phases": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "duration": 0.8,
+      "events": []
+    },
+    {
+      "actor": "GoblinCaster",
+      "name": "RangedShoot",
+      "source": "Assets/Animations/Enemy/Gobling/RangedShoot.anim",
+      "sheet": "GoblinCaster-v1",
+      "frames": [
+        "f08",
+        "f09",
+        "f10",
+        "f11"
+      ],
+      "phases": [
+        0,
+        0.2,
+        0.46,
+        0.7
+      ],
+      "duration": 0.65000004,
+      "events": [
+        {
+          "time": 0.3,
+          "function": "DetectHit"
+        },
+        {
+          "time": 0.55,
+          "function": "OnAttackFinished"
+        }
+      ]
+    },
+    {
+      "actor": "GoblinCaster",
+      "name": "Hurt",
+      "source": "Assets/Animations/Enemy/Gobling/Hurt.anim",
+      "sheet": "GoblinCaster-v1",
+      "frames": [
+        "f12",
+        "f13"
+      ],
+      "phases": [
+        0.0,
+        0.5
+      ],
+      "duration": 0.8,
+      "events": []
+    },
+    {
+      "actor": "GoblinCaster",
+      "name": "Death",
+      "source": "Assets/Animations/Enemy/Gobling/Death.anim",
+      "sheet": "GoblinCaster-v1",
+      "frames": [
+        "f14",
+        "f15"
+      ],
+      "phases": [
+        0.0,
+        0.5
+      ],
+      "duration": 0.9,
+      "events": []
+    }
+  ]
+}

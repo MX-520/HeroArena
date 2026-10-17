@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-18",
+  "tool": "built-in image_gen",
+  "image": "GoblinCaster-v1.png",
+  "status": "unity-imported-candidate-not-gameplay-validated",
+  "references": [
+    "E:/UnityProject/HeroArena/ArtSource/Characters/Goblins/GoblinChibiLineup-v1.png"
+  ],
+  "prompt": "Production BODY-only Unity animation sheet, EXACT regular FOUR COLUMNS FOUR ROWS = 16 complete separated poses, square canvas. Same character scale and camera in every frame, 3/4 facing RIGHT. Each sprite centrally contained in 70% of equal square cell with ample transparent gutters, boots baseline at 88% down each cell for standing poses. Clear chunky square pixel clusters and stepped outlines, limited palette, solid opaque silhouette and genuinely transparent empty background. NO WEAPONS in any cell, hands empty grip, weapon attached later as separate sprite. No text, labels, grid, scenery, floor shadow, glow, halo, haze, detached effects or duplicated characters. Make clear different motion silhouettes, consistent head/face/costume. Use ONLY RIGHT purple caster goblin from reference, omit two melee goblins. Same cute rich GREEN smooth BALD round head, broad ears, tiny ivory tusks, purple sleeveless tunic, purple wrist wraps, brown belt and boots, dark shorts. NO hair. No orb or spell effect baked in (game adds separate effect), NO staff/bow/weapon. Row1 IDLE4, hands ready near torso, subtle breathing; Row2 WALK4 alternating legs near forward/cross/far forward/cross; Row3 CAST4: draw empty hands in, cup hands together in front chest, extend both palms forward RIGHT at shot launch, recover. Clear hands and facing. Row4 HURT2 then kneeling dying1 and lying dead1. No FX in any cell.",
+  "notes": "Body sheets contain no weapons; weapon sheet separate. Generated spacing/scale/motion require inspection. Does not claim active gameplay replacement.",
+  "imported_sprite_count": 16
+}

@@ -22,6 +22,18 @@ public static class HeroArenaEditorBridge
             File.Delete(request);
         }
         catch (IOException) { return; } // A producer may still be completing the request; retry next update.
+        if (command == "prepare-character-actions")
+        {
+            CharacterActionPreparation.PrepareLive();
+            return;
+        }
+        if (command == "inspect-character-editor")
+        {
+            Directory.CreateDirectory("Logs/Characters");
+            File.WriteAllText("Logs/Characters/editor-state.txt", "Project: " + Application.dataPath +
+                "\nPlaying: " + EditorApplication.isPlaying + "\nScene: " + SceneManager.GetActiveScene().path);
+            return;
+        }
         if (command != "close" && command != "open-scene" && command != "measure-character-art") return;
         EditorApplication.isPlaying = false;
         EditorApplication.delayCall += () => Complete(command);

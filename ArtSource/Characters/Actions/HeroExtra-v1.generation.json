@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-18",
+  "tool": "built-in image_gen",
+  "image": "HeroExtra-v1.png",
+  "status": "unity-imported-candidate-not-gameplay-validated",
+  "references": [
+    "E:/UnityProject/HeroArena/ArtSource/Characters/Actions/HeroBasic-v1.png"
+  ],
+  "prompt": "Production BODY-only Unity animation sheet, EXACT regular FOUR COLUMNS FOUR ROWS = 16 complete separated poses, square canvas. Same character scale and camera in every frame, 3/4 facing RIGHT. Each sprite centrally contained in 70% of equal square cell with ample transparent gutters, boots baseline at 88% down each cell for standing poses. Clear chunky square pixel clusters and stepped outlines, limited palette, solid opaque silhouette and genuinely transparent empty background. NO WEAPONS in any cell, hands empty grip, weapon attached later as separate sprite. No text, labels, grid, scenery, floor shadow, glow, halo, haze, detached effects or duplicated characters. Make clear different motion silhouettes, consistent head/face/costume. Reference is newly generated APPROVED hero body sheet, exact same cheerful boy identity, brown cowlick hair, blue eyes, red scarf, blue vest and ivory front/sleeves, navy shorts, tan boots. Do not redesign or enlarge hair. Row1 RUN four alternating leg strides with forward lean and scarf trails; near forward, crossing, far forward, opposite crossing. Row2 ROLL four sequential forward somersault phases: crouch, curled side profile rotating head down, curled upside-down with boots up, low landing ready. Keep same scale while rotating whole body, head/boots fit inside cell. Row3 HURT four frames: recoil, eyes shut brace, recover, ready. Row4 DEATH four frames: stagger, kneel, fall sideways, lie completely still side view. Must show readable fully horizontal lying dead last frame, not still kneeling. Same scarf, no weapons.",
+  "notes": "Body sheets contain no weapons; weapon sheet separate. Generated spacing/scale/motion require inspection. Does not claim active gameplay replacement.",
+  "imported_sprite_count": 16
+}

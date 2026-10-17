@@ -206,8 +206,89 @@
       "height": 1024,
       "status": "cuter-chibi-candidate-awaiting-user-review",
       "generation_record": "ArtSource/Characters/Hero/HeroTinyChibi-v2.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Actions/GoblinCaster-v1.png",
+      "sha256": "4826a1d109277727802cea5b1ce0221719dca3d65dcac6006428895e0883e09b",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "unity-imported-candidate-not-gameplay-validated",
+      "generation_record": "ArtSource/Characters/Actions/GoblinCaster-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Actions/GoblinMelee-v1.png",
+      "sha256": "059b554cb74012028a58db49d435c21166cffa4a65d3744729e080f3b55a5ae2",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "superseded-inconsistent-idle-facing-do-not-import",
+      "generation_record": "ArtSource/Characters/Actions/GoblinMelee-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Actions/GoblinMelee-v2.png",
+      "sha256": "5868114bcd991d8d742e2137ae197ac7d7599ffb95e5a831e8cb2069a36a2534",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "unity-imported-candidate-not-gameplay-validated",
+      "generation_record": "ArtSource/Characters/Actions/GoblinMelee-v2.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Actions/GoblinRunner-v1.png",
+      "sha256": "499c712993f5b793023bc9dc165bf175dc583bf825faa8ba1d6c9366126f0417",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "superseded-inconsistent-idle-facing-do-not-import",
+      "generation_record": "ArtSource/Characters/Actions/GoblinRunner-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Actions/GoblinRunner-v2.png",
+      "sha256": "552c70c5b964c31ccb4baff4445e371e9ae286143478b9d00abb4df4902daa7a",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "unity-imported-candidate-not-gameplay-validated",
+      "generation_record": "ArtSource/Characters/Actions/GoblinRunner-v2.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Actions/HeroBasic-v1.png",
+      "sha256": "9eb69b661d5d77b2749fb65f242c160912960693f6f40368cce4d3f934afbe0f",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGBA",
+      "status": "unity-imported-candidate-not-gameplay-validated",
+      "generation_record": "ArtSource/Characters/Actions/HeroBasic-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Actions/HeroExtra-v1.png",
+      "sha256": "8ed3193234a9650f10863dcc9bae42e87260a5a07c96b3298ab4c8f38bdaedd2",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "unity-imported-candidate-not-gameplay-validated",
+      "generation_record": "ArtSource/Characters/Actions/HeroExtra-v1.generation.json"
+    },
+    {
+      "path": "ArtSource/Characters/Actions/Weapons-v1.png",
+      "sha256": "4d924b5dbb879572d30b61408c6040b70646db886e8894296ae078d5ae70c003",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "status": "unity-imported-candidate-not-gameplay-validated",
+      "generation_record": "ArtSource/Characters/Actions/Weapons-v1.generation.json"
     }
   ],
   "approved_hero": "ArtSource/Characters/Hero/HeroReferenceStudy-v2.png",
-  "current_goblin_candidate": "ArtSource/Characters/Goblins/GoblinChibiLineup-v1.png"
+  "current_goblin_candidate": "ArtSource/Characters/Goblins/GoblinChibiLineup-v1.png",
+  "actions": {
+    "layout": "ArtSource/Characters/Actions/import-layout.json",
+    "unity_output": "Assets/Art/Characters/Generated",
+    "body_frames": 76,
+    "weapon_sprites": 3,
+    "animation_clips": 22,
+    "verification": "ArtSource/Characters/Actions/unity-import-report.json",
+    "active_in_game": false
+  }
 }

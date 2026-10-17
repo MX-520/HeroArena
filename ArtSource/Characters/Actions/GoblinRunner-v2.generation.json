@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-18",
+  "tool": "built-in image_gen",
+  "image": "GoblinRunner-v2.png",
+  "status": "unity-imported-candidate-not-gameplay-validated",
+  "references": [
+    "Actions/GoblinRunner-v1.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Fix ONLY the FIRST ROW (top four idle sprites) of this 4x4 BODY-only animation sheet. Current idle heads/stance face LEFT/front, while walk and attack rows face RIGHT. Change top four idle bodies to face 3/4 RIGHT EXACTLY matching row2's face orientation (nose/mouth shifted right, larger near ear on left, head tilt right). The headband tails, if present, trail LEFT behind head in all idle poses just like row2. Preserve the idle breathing/blink variations, exact character scale and cell positions and costume. Do NOT change rows2,3,4. Do NOT redesign character. NO WEAPONS anywhere. All sixteen frames should have coherent RIGHT-facing identity. Keep exact 4 columns x4 rows, transparent gutters, pixel rendering and clear complete sprites. Actual transparent background, no shadows, glow, labels or text. Only turn top idle row to RIGHT to match walk/attack.",
+  "notes": "Body sheets contain no weapons; weapon sheet separate. Generated spacing/scale/motion require inspection. Does not claim active gameplay replacement.",
+  "imported_sprite_count": 16
+}

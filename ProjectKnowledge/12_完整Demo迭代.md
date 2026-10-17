@@ -31,6 +31,8 @@
 - `open-scene`：退出 Play 后打开 SampleScene；检测到脏场景时采用 Additive 保留，并写 Logs/editor-open-scene.txt。
 - `close`：保存所有已打开场景并退出。它有写入副作用，不能只为查询状态发送。
 - `measure-character-art`：退出 Play 后读取当前场景玩家的实际近战几何，写 Logs/Characters/attack-reach-baseline.json；不打开/保存场景，不退出编辑器。命令用临时文件写完再原子改名，桥接对短暂文件占用下一帧重试。
+- `inspect-character-editor`：只读记录当前工程、Play 状态与场景到 `Logs/Characters/editor-state.txt`，不切换运行状态。
+- `prepare-character-actions`：Edit Mode 下读取 `ArtSource/Characters/Actions/import-layout.json`，仅写入 `Assets/Art/Characters/Generated` 的候选 Sprite/Clip，报告到 `Logs/Characters/action-import-report.json`；Play Mode 下报错并保持原状态，不保存/关闭场景。
 
 工具路径和连接状态以本机现场为准，不把某台机器的安装路径写成所有智能体的前提。受限进程列表可能漏掉宿主 Unity；启动独立验证前交叉核对现有日志、宿主进程和工程占用，不能因未列出进程就删除锁或并发启动。
 

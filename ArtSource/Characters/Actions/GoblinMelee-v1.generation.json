@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-18",
+  "tool": "built-in image_gen",
+  "image": "GoblinMelee-v1.png",
+  "status": "superseded-inconsistent-idle-facing-do-not-import",
+  "references": [
+    "E:/UnityProject/HeroArena/ArtSource/Characters/Goblins/GoblinChibiLineup-v1.png"
+  ],
+  "prompt": "Production BODY-only Unity animation sheet, EXACT regular FOUR COLUMNS FOUR ROWS = 16 complete separated poses, square canvas. Same character scale and camera in every frame, 3/4 facing RIGHT. Each sprite centrally contained in 70% of equal square cell with ample transparent gutters, boots baseline at 88% down each cell for standing poses. Clear chunky square pixel clusters and stepped outlines, limited palette, solid opaque silhouette and genuinely transparent empty background. NO WEAPONS in any cell, hands empty grip, weapon attached later as separate sprite. No text, labels, grid, scenery, floor shadow, glow, halo, haze, detached effects or duplicated characters. Make clear different motion silhouettes, consistent head/face/costume. Use ONLY LEFT ordinary goblin from reference, omit orange Runner and purple mage. Exact same cute bright rich GREEN smooth BALD round-square head, wide ears, tiny ivory tusks, mischievous eyes, brown sleeveless leather vest, belt with small gold buckle, dark shorts, brown boots. NO hair/tufts. EMPTY hands NO sword. Row1 idle4 subtle breathing and eye blink; Row2 WALK4 clear alternating leg cycle near forward/crossing/far forward/crossing; Row3 MELEE4 windup fist up/back, thrust closed fist fully RIGHT at chest height, low followthrough, recover. Row4 HURT2 then kneeling dying1 and lying dead1. All fists EMPTY; no weapons even near corpse. Keep head bald and costume identical every cell.",
+  "notes": "Body sheets contain no weapons; weapon sheet separate. Generated spacing/scale/motion require inspection. Does not claim active gameplay replacement."
+}

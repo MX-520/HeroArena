@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-18",
+  "tool": "built-in image_gen",
+  "image": "GoblinRunner-v1.png",
+  "status": "superseded-inconsistent-idle-facing-do-not-import",
+  "references": [
+    "E:/UnityProject/HeroArena/ArtSource/Characters/Goblins/GoblinChibiLineup-v1.png"
+  ],
+  "prompt": "Production BODY-only Unity animation sheet, EXACT regular FOUR COLUMNS FOUR ROWS = 16 complete separated poses, square canvas. Same character scale and camera in every frame, 3/4 facing RIGHT. Each sprite centrally contained in 70% of equal square cell with ample transparent gutters, boots baseline at 88% down each cell for standing poses. Clear chunky square pixel clusters and stepped outlines, limited palette, solid opaque silhouette and genuinely transparent empty background. NO WEAPONS in any cell, hands empty grip, weapon attached later as separate sprite. No text, labels, grid, scenery, floor shadow, glow, halo, haze, detached effects or duplicated characters. Make clear different motion silhouettes, consistent head/face/costume. Use ONLY CENTER Runner goblin from reference, omit sword goblin and purple mage. Exact same cute rich GREEN smooth BALD head with orange headband and trailing tails, broad ears, little tusks, lean small chibi body, brown diagonal leather strap, orange waist cloth, ivory wrist wraps, dark shorts brown boots. NO hair/tufts. EMPTY hands NO axe or sword. Row1 idle4 light agile bounce; Row2 RUN4 alternating leg strides near forward/cross/far forward/cross with forward lean and bandana tails; Row3 TWO-HAND AXE body action4 hands together in empty grip: windup lifted above/back, forceful forward RIGHT downward chop, low followthrough, ready. Row4 HURT2, kneeling dying1, lying dead1. Maintain headband/costume every cell, no weapon near dead body.",
+  "notes": "Body sheets contain no weapons; weapon sheet separate. Generated spacing/scale/motion require inspection. Does not claim active gameplay replacement."
+}
