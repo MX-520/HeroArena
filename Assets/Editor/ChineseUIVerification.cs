@@ -23,6 +23,13 @@ public static partial class CompleteDemoVerification
         }
         var rects=ui.GetComponentsInChildren<RectTransform>(true);
         var controls=rects.First(r=>r.name=="Controls");
+        Require(controls.anchoredPosition==new Vector2(0,18) && controls.sizeDelta==new Vector2(820,30),"Accepted controls layout changed");
+        Require(controls.GetComponentsInChildren<ArenaPanelFrame>(true).Length==0,"Controls received unwanted trim");
+        foreach(var frame in ui.GetComponentsInChildren<ArenaPanelFrame>(true))
+        {
+            Require(!frame.raycastTarget,"Decoration intercepts input");
+            Require(frame.GetComponent<CanvasRenderer>()!=null,"Trim is missing its renderer");
+        }
         foreach(var card in rects.Where(r=>new[]{"BarrageCard","GiantCard","ShieldCard"}.Contains(r.name)))
         {
             Require(card.anchoredPosition.y<85 && card.anchoredPosition.y>65,"Item UI was not lowered: "+card.name);

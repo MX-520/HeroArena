@@ -93,6 +93,7 @@ public static class ChineseUISetup
         }
         data.ApplyModifiedPropertiesWithoutUndo();
         ApplyReadableLayout(ui);
+        DecoratedUISetup.ApplyHUD(ui);
         var wave=new SerializedObject(Object.FindObjectOfType<WaveController>());
         string[] titles={"初次交锋","群体追猎","交叉火力"};
         for(int i=0;i<3;i++) wave.FindProperty("waves").GetArrayElementAtIndex(i).FindPropertyRelative("title").stringValue=titles[i];
