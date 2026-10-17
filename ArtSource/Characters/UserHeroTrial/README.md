@@ -23,8 +23,11 @@
 
 用户新偏好：今后图片创作由用户通过 ChatGPT 完成，本智能体负责确定输入规格、处理既有素材、接入与验证。正式替换应取得独立真实透明帧或规则精灵表，避免从带背景/文案的展示板反推正式资产。
 
-## Unity 独立预览场景
+## 裁剪交付（当前要求）
 
-用户要求在 Unity 直接观看后，新增 `Assets/Scenes/CharacterIdlePreview.unity`，四个方向并排循环；运行时提供 Pause/Play、Next frame 和速度滑条。菜单 `Tools/HeroArena/Characters/Show Idle Preview` 打开已有场景并进入 Play Mode；有未保存场景或已经在播放时拒绝切换，避免覆盖现场。`Create Idle Preview Scene` 用于重新导入并重建此独立场景。
+用户要求恢复原来并只裁剪素材；已撤除新加的 Unity 独立预览场景、控制器及播放脚本，编辑器恢复 SampleScene，正式角色保持原样。此前试播报告仅保留为历史证据。
 
-独立 Unity 创建检查通过，SampleScene 前后文件哈希相同，报告见 `unity-idle-preview-report.json`。可见编辑器实际 Play Mode 观察到四方向各 8 个不同 Sprite，报告见 `unity-idle-live-report.json`；人工查看四方向画面并操作暂停、逐帧和恢复播放。32 帧绿色底接触表已检查白发完整性；边缘仍有少量浅色残留、帧间姿态变化，保留为试验。未替换正式角色，未运行整局玩法回归，未构建。
+- `Cropped/Down`、`Left`、`Right`、`Up`：每方向 8 张独立透明 PNG，共 32 张，统一 96×112 画布及脚底对齐，无缩放。
+- `Cropped/*-sheet.png`：四张方向精灵表，每张 768×112；总精灵表 `UserHeroIdleTrial.png` 为 768×448，行顺序下、左、右、上，每行 8 帧。
+- `UserHeroIdleCrops.zip`：以上单帧、方向表及总表，方便导入其他工具。运行 `extract_board.py` 可重建全部导出。
+- 这是先前选取的每方向 8 个独立轮廓，不是展示板标注的每方向 32 帧。源图不是原始透明帧，去底仍有浅色边缘，帧间造型不一致，不能当作无缝动作定稿。

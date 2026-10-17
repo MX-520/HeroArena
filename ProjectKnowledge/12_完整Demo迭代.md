@@ -37,10 +37,6 @@
 
 工具路径和连接状态以本机现场为准，不把某台机器的安装路径写成所有智能体的前提。受限进程列表可能漏掉宿主 Unity；启动独立验证前交叉核对现有日志、宿主进程和工程占用，不能因未列出进程就删除锁或并发启动。
 
-## 白发角色独立动画预览
-
-`Tools/HeroArena/Characters/Show Idle Preview` 打开 `Assets/Scenes/CharacterIdlePreview.unity` 并进入播放，不退出编辑器；`Create Idle Preview Scene` 重建预览场景和四个专用控制器。两者检测 Play Mode 和未保存场景后拒绝切换，不保存正式场景。预览运行脚本只挂在独立场景，提供暂停、逐帧和调速。创建/真实播放报告保存在 `ArtSource/Characters/UserHeroTrial`；本轮四方向各观察到 8 个 Sprite，主场景文件前后相同，未执行玩法回归或打包。
-
 ## 既有证据（历史记录，本轮未重跑）
 
 - Logs/full-demo-audio-all.txt：整局战斗与音频组合回归。

@@ -317,7 +317,7 @@
     "clips": 4,
     "active_in_game": false,
     "verification": "ArtSource/Characters/UserHeroTrial/unity-import-report.json",
-    "preview_scene": "Assets/Scenes/CharacterIdlePreview.unity",
-    "live_verification": "ArtSource/Characters/UserHeroTrial/unity-idle-live-report.json"
+    "cropped_frames": "ArtSource/Characters/UserHeroTrial/Cropped",
+    "crop_archive": "ArtSource/Characters/UserHeroTrial/UserHeroIdleCrops.zip"
   }
 }

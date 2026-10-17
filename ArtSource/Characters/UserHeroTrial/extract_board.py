@@ -9,6 +9,7 @@ import json
 import hashlib
 import shutil
 import base64
+import zipfile
 
 import numpy as np
 from PIL import Image, ImageFilter
@@ -137,6 +138,20 @@ def extract():
         for obj in row['components']:
             obj.pop('points')
     sheet.save(ROOT/'UserHeroIdleTrial.png')
+    # Export the same aligned pixels as ordinary PNG files for manual use.
+    with zipfile.ZipFile(ROOT/'UserHeroIdleCrops.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+        archive.write(ROOT/'UserHeroIdleTrial.png', 'UserHeroIdleTrial.png')
+        for row_index, (direction, _, _) in enumerate(ROWS):
+            folder = ROOT/'Cropped'/direction
+            folder.mkdir(parents=True, exist_ok=True)
+            strip = sheet.crop((0, row_index*112, 768, (row_index+1)*112))
+            strip_path = ROOT/'Cropped'/f'{direction}-sheet.png'
+            strip.save(strip_path)
+            archive.write(strip_path, f'{direction}-sheet.png')
+            for index in range(8):
+                path = folder/f'{direction}_{index+1:02d}.png'
+                strip.crop((index*96, 0, (index+1)*96, 112)).save(path)
+                archive.write(path, f'{direction}/{path.name}')
     result.update(status='approximate-extraction-for-trial-only',
                   source_sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
                   source_origin='User supplied ChatGPT presentation board; not raw transparent frames.',

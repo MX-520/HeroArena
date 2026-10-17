@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "frames": 32,
+  "directions": 4,
+  "frames_per_direction": 8,
+  "frame_size": [
+    96,
+    112
+  ],
+  "alpha_range": [
+    0,
+    255
+  ],
+  "baseline_bottom": 104,
+  "zip_entries": 37,
+  "checks": [
+    "Individual files exactly match atlas pixels.",
+    "All frames have transparent padding; no bounding box reaches canvas edge.",
+    "ZIP integrity passed."
+  ]
+}
