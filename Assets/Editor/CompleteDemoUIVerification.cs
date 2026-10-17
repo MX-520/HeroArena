@@ -25,7 +25,7 @@ public static partial class CompleteDemoVerification
         var pointer = new PointerEventData(EventSystem.current) { position = RectTransformUtility.WorldToScreenPoint(null, button.transform.position) };
         var hits = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointer, hits);
-        Require(hits.Any(h => h.gameObject == button.gameObject), "Start button does not receive pointer raycasts");
+        Require(hits.Count>0 && hits[0].gameObject==button.gameObject, "Start button is obscured from pointer input");
         if (SessionState.GetString(Key, "") == "visual") { CaptureDemo("menu"); CaptureDemo("menu-wide",2048,940); }
         button.onClick.Invoke();
         Require(flow.State == GameFlow.ScreenState.Playing && Time.timeScale == 1, "Start button not wired");
@@ -50,7 +50,7 @@ public static partial class CompleteDemoVerification
         double wait = EditorApplication.timeSinceStartup + 0.2;
         while (EditorApplication.timeSinceStartup < wait) yield return null;
         Require(Mathf.Abs(buffTime - effects.Remaining(PickupKind.Barrage)) < 0.01f && player.transform.position == playerPosition, "Pause did not freeze buffs/movement");
-        if (SessionState.GetString(Key, "") == "visual") CaptureDemo("pause");
+        if (SessionState.GetString(Key, "") == "visual") { CaptureDemo("pause"); CaptureDemo("pause-wide",2048,940); }
         FindButton("ResumeButton").onClick.Invoke();
         Require(flow.State == GameFlow.ScreenState.Playing && Time.timeScale == 1, "Resume button failed");
         Object.FindObjectOfType<DestructibleObstacle>().GetComponent<Health>().TakeDamage(1000);
@@ -65,7 +65,7 @@ public static partial class CompleteDemoVerification
             yield return null;
         }
         Require(flow.State == GameFlow.ScreenState.Victory && flow.Kills == 13 && Time.timeScale == 0, "Three waves did not show victory");
-        if (SessionState.GetString(Key, "") == "visual") CaptureDemo("victory");
+        if (SessionState.GetString(Key, "") == "visual") { CaptureDemo("victory"); CaptureDemo("victory-wide",2048,940); }
         FindButton("RestartButton").onClick.Invoke();
         yield return null;
         flow = Object.FindObjectOfType<GameFlow>();

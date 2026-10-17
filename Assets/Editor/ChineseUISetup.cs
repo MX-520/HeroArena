@@ -111,7 +111,7 @@ public static class ChineseUISetup
             case "HealthTrack": return 0.28f;
             case "MenuFrame": return 0.52f;
             case "FieldGuide": return 0.25f;
-            case "Dialog": return 0.58f;
+            case "Dialog": return 0.89f;
             case "StartButton": case "QuitButton": case "PauseButton":
             case "ResumeButton": case "RestartButton": case "MenuButton": return 0.32f;
             default: return 0;
@@ -149,8 +149,11 @@ public static class ChineseUISetup
         {
             bool accent=new[]{"Eyebrow","GuideTitle","Heading","WaveText"}.Contains(text.name);
             text.color=accent?new Color(1,0.91f,0.68f):Color.white;
+            if(new[]{"HealthText","Timer","WaveText"}.Contains(text.name) || text.transform.parent.name=="PauseButton") text.color=new Color(1,0.86f,0.45f);
+            if(text.name=="WaveHint") text.color=new Color(0.98f,0.89f,0.68f);
             bool bold=new[]{"HealthText","WaveText","Timer","Heading","Title","GuideTitle","Label","Time"}.Contains(text.name);
             text.fontStyle=bold?FontStyles.Bold:FontStyles.Normal;
+            if(text.name=="WaveHint") text.fontStyle=FontStyles.Bold;
             if(text.name=="WaveText") text.fontSize=21;
             if(text.name=="WaveHint") text.fontSize=14;
             if(text.name=="Timer" || text.transform.parent.name=="PauseButton") text.fontSize=17;

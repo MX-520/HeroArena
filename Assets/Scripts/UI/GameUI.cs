@@ -19,6 +19,8 @@ public class GameUI : MonoBehaviour
     [SerializeField] private TMP_Text timer;
     [SerializeField] private UnityEngine.UI.Image healthFill;
     [SerializeField] private TMP_Text[] buffTimes;
+    [SerializeField] private ArenaStatusEmblem statusEmblem;
+    [SerializeField] private TMP_Text modalSummary;
     private void OnEnable()
     {
         flow.Changed += Refresh;
@@ -58,18 +60,49 @@ public class GameUI : MonoBehaviour
         else if (state == GameFlow.ScreenState.Victory)
         {
             heading.text = "挑战成功";
-            detail.text = $"已击退全部三波敌人。\n击败 {flow.Kills} 名敌人　用时 {flow.RunSeconds:0.0} 秒";
+            detail.text = "已击退全部三波敌人，森林重归宁静。";
         }
         else if (state == GameFlow.ScreenState.Defeat)
         {
             heading.text = "挑战失败";
             detail.text = flow.Waves.State == WaveController.ChallengeState.Failed
                 ? "挑战中断，请重新尝试。"
-                : $"已击败 {flow.Kills} 名敌人。\n善用翻滚，避开预警弹道。";
+                : "善用翻滚，避开预警弹道，再战一局。";
         }
+        if(modal.activeSelf) PresentModal(state);
         var waves = flow.Waves;
         waveText.text = $"第 {Mathf.Max(1, waves.CurrentWave)} / {waves.TotalWaves} 波　剩余 {waves.RemainingEnemies}";
         hint.text = waves.State == WaveController.ChallengeState.Intermission ? "本波结束，稍作休整" :
             waves.State == WaveController.ChallengeState.Preparing ? "准备战斗" : waves.CurrentWaveTitle;
+    }
+
+    private void PresentModal(GameFlow.ScreenState state)
+    {
+        bool paused=state==GameFlow.ScreenState.Paused;
+        var dialog=heading.transform.parent as RectTransform;
+        dialog.sizeDelta=new Vector2(500,paused?440:420);
+        dialog.anchoredPosition=new Vector2(0,14);
+        heading.rectTransform.anchoredPosition=new Vector2(0,paused?94:78);
+        heading.color=state==GameFlow.ScreenState.Defeat?new Color(1,0.67f,0.43f):new Color(1,0.86f,0.45f);
+        detail.rectTransform.anchoredPosition=new Vector2(0,paused?48:32);
+        if(statusEmblem!=null)
+        {
+            statusEmblem.Show(state);
+            ((RectTransform)statusEmblem.transform).anchoredPosition=new Vector2(0,paused?160:140);
+        }
+        if(modalSummary!=null)
+        {
+            ((RectTransform)modalSummary.transform.parent).anchoredPosition=new Vector2(0,paused?-12:-28);
+            modalSummary.text=$"第 {Mathf.Max(1,flow.Waves.CurrentWave)} / {flow.Waves.TotalWaves} 波　·　击败 {flow.Waves.TotalKills}\n战斗用时　{flow.RunSeconds:0.0} 秒";
+        }
+        // Collapse the unused resume row in result screens; keep existing persistent callbacks.
+        foreach(var button in dialog.GetComponentsInChildren<UnityEngine.UI.Button>(true))
+        {
+            float y=button.name=="ResumeButton"?-76:button.name=="RestartButton"?(paused?-130:-108):(paused?-184:-166);
+            button.GetComponent<RectTransform>().anchoredPosition=new Vector2(0,y);
+            bool primary=paused?button.name=="ResumeButton":button.name=="RestartButton";
+            button.GetComponent<UnityEngine.UI.Image>().color=primary?new Color(0.24f,0.17f,0.06f,0.82f):new Color(0.07f,0.14f,0.15f,0.56f);
+            button.GetComponentInChildren<TMP_Text>(true).color=primary?new Color(1,0.86f,0.45f):new Color(0.95f,0.86f,0.66f);
+        }
     }
 }

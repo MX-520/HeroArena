@@ -16,7 +16,8 @@ public static partial class CompleteDemoVerification
         foreach(var image in ui.GetComponentsInChildren<UnityEngine.UI.Image>(true))
         {
             bool graphic=image==fill || image.sprite!=null && (image.name=="MenuArtwork" || image.name=="Icon" || new[]{"Heal","Barrage","Giant","Shield"}.Contains(image.name));
-            Require(graphic || image.color.a<=0.6f,"UI background is too opaque: "+image.name);
+            bool dialogImage=image.transform.IsChildOf(ui.transform.Find("Modal/Dialog"));
+            Require(graphic || image.color.a<=(dialogImage?0.9f:0.6f),"UI background is too opaque: "+image.name);
             if(new[]{"HUD","MainMenu","Modal"}.Contains(image.name)) Require(image.color.a==0,"Full-screen UI cover obscures world: "+image.name);
             if(new[]{"HealthPanel","WavePanel","RunPanel","BarrageCard","GiantCard","ShieldCard"}.Contains(image.name)) Require(image.color.a>=0.25f && image.color.a<=0.45f,"Missing or excessive compact backdrop: "+image.name);
             if(graphic) Require(image.color.a>0,"UI icon/health graphic was hidden: "+image.name);
@@ -41,6 +42,17 @@ public static partial class CompleteDemoVerification
         }
         var wave=rects.First(r=>r.name=="WavePanel");
         Require(wave.sizeDelta.x<=340 && wave.sizeDelta.y<=75,"Wave backdrop takes excessive screen space");
+        if(state==GameFlow.ScreenState.Paused || state==GameFlow.ScreenState.Victory || state==GameFlow.ScreenState.Defeat)
+        {
+            var dialog=(RectTransform)ui.transform.Find("Modal/Dialog");
+            Require(dialog.sizeDelta.x<=500 && dialog.sizeDelta.y<=440,"Modal remains oversized");
+            Require(dialog.Find("StatusEmblem").GetComponent<ArenaStatusEmblem>()!=null,"Modal lacks status emblem");
+            Require(!dialog.Find("StatusEmblem").GetComponent<ArenaStatusEmblem>().raycastTarget,"Emblem intercepts clicks");
+            var summary=dialog.Find("ModalStats/ModalSummary").GetComponent<TMP_Text>();
+            Require(summary.text.Contains("击败") && summary.text.Contains("用时"),"Missing modal statistics");
+            if(state!=GameFlow.ScreenState.Paused)
+                Require(dialog.Find("RestartButton").GetComponent<RectTransform>().anchoredPosition.y>-120,"Results retain empty resume row");
+        }
         var texts=ui.GetComponentsInChildren<TMP_Text>(true);
         foreach(var text in texts)
         {
