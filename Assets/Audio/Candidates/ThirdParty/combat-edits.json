@@ -1,0 +1,38 @@
+[
+  {
+    "asset": "ThirdParty/StarNinjas/SteelSwingA.wav",
+    "seconds": 0.36,
+    "peak": 0.72,
+    "sha256": "3a1e81673a6055165f70079a00a712eb8706363a8258996f2b35fc2a69e67cb0"
+  },
+  {
+    "asset": "ThirdParty/StarNinjas/SteelSwingB.wav",
+    "seconds": 0.44,
+    "peak": 0.72,
+    "sha256": "7d2ce9e639d7f8d1dd70136d812038371a400ec90aba00a54d9dcb5e7469b8c1"
+  },
+  {
+    "asset": "ThirdParty/StarNinjas/SteelImpactA.wav",
+    "seconds": 0.4,
+    "peak": 0.72,
+    "sha256": "c4ac8b3b3ef6ae41206f299d1135dc4d977353e100cdf8a9b5f95c76b2971a6a"
+  },
+  {
+    "asset": "ThirdParty/StarNinjas/SteelImpactB.wav",
+    "seconds": 0.4,
+    "peak": 0.72,
+    "sha256": "cfbaf7975d4e75a81c0cfd0abde55b0da7484d04b75ee46084bb7b77fcf40a9f"
+  },
+  {
+    "asset": "ThirdParty/Rubberduck/ArcaneCast.wav",
+    "seconds": 0.44,
+    "peak": 0.72,
+    "sha256": "78015b20376220dfe3cfb414849c28cccfc5dc49946818e4add5c616400ba449"
+  },
+  {
+    "asset": "ThirdParty/Rubberduck/ArcaneImpact.wav",
+    "seconds": 0.56,
+    "peak": 0.72,
+    "sha256": "08dc162a258ab694ff93a342ce1970bac904452caa7c897302e7e63de604239c"
+  }
+]

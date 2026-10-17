@@ -21,9 +21,9 @@ public static class AudioIntegrationSetup
             Add(cues,GameSound.UIBack,.28f,true,"interface/back_001");
             Add(cues,GameSound.WaveStart,.3f,false,"interface/confirmation_001");
             Add(cues,GameSound.PlayerShot,.22f,false,"PlayerShot");
-            Add(cues,GameSound.PlayerSwing,.42f,false,"MeleeSwingA","MeleeSwingB");
-            Add(cues,GameSound.EnemySwing,.30f,false,"MeleeSwingB");
-            Add(cues,GameSound.MeleeImpact,.48f,false,"MeleeImpact");
+            Add(cues,GameSound.PlayerSwing,.46f,false,"ThirdParty/StarNinjas/SteelSwingA.wav","ThirdParty/StarNinjas/SteelSwingB.wav");
+            Add(cues,GameSound.EnemySwing,.30f,false,"ThirdParty/StarNinjas/SteelSwingB.wav");
+            Add(cues,GameSound.MeleeImpact,.50f,false,"ThirdParty/StarNinjas/SteelImpactA.wav","ThirdParty/StarNinjas/SteelImpactB.wav");
             Add(cues,GameSound.Roll,.24f,false,"rpg/cloth1");
             Add(cues,GameSound.Footstep,.10f,false,"impact/footstep_grass_000","impact/footstep_grass_001","impact/footstep_grass_002");
             Add(cues,GameSound.PlayerHurt,.45f,false,"impact/impactPunch_heavy_000");
@@ -34,8 +34,8 @@ public static class AudioIntegrationSetup
             Add(cues,GameSound.StoneBreak,.3f,false,"impact/impactPlate_medium_000");
             Add(cues,GameSound.Pickup,.25f,false,"rpg/handleCoins");
             Add(cues,GameSound.Heal,.35f,false,"HealPickup");
-            Add(cues,GameSound.MagicCast,.38f,false,"MagicCast");
-            Add(cues,GameSound.MagicImpact,.48f,false,"MagicImpact");
+            Add(cues,GameSound.MagicCast,.40f,false,"ThirdParty/Rubberduck/ArcaneCast.wav");
+            Add(cues,GameSound.MagicImpact,.50f,false,"ThirdParty/Rubberduck/ArcaneImpact.wav");
             Add(cues,GameSound.Victory,.5f,true,"Victory");
             Add(cues,GameSound.Defeat,.45f,true,"Defeat");
             library.cues=cues.ToArray();EditorUtility.SetDirty(library);
@@ -59,7 +59,7 @@ public static class AudioIntegrationSetup
         for(int i=0;i<files.Length;i++)
         {
             int slash=files[i].IndexOf('/');
-            clips[i]=Clip(slash<0?"Original/"+files[i]+".wav":"ThirdParty/Kenney/kenney-"+files[i].Substring(0,slash)+"/"+files[i].Substring(slash+1)+".ogg");
+            clips[i]=Clip(files[i].StartsWith("ThirdParty/")?files[i]:slash<0?"Original/"+files[i]+".wav":"ThirdParty/Kenney/kenney-"+files[i].Substring(0,slash)+"/"+files[i].Substring(slash+1)+".ogg");
         }
         list.Add(new GameAudioLibrary.Cue{sound=sound,gain=gain,clips=clips,unpaused=unpaused,
             priority=sound==GameSound.Victory || sound==GameSound.Defeat?5:

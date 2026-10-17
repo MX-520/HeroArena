@@ -40,7 +40,7 @@ public static partial class CompleteDemoVerification
         else VerifyMusic("BattleThemeII");
         float battleVolume=audio.MusicSource.volume;
         Require(GameAudio.Play(GameSound.MagicImpact),"World cue failed while playing");
-        var world=audio.GetComponentsInChildren<AudioSource>().First(s=>s.clip!=null && s.clip.name=="MagicImpact");
+        var world=audio.GetComponentsInChildren<AudioSource>().First(s=>s.clip!=null && s.clip.name=="ArcaneImpact");
         flow.Pause();int frozen=world.timeSamples;int musicSample=audio.MusicSource.timeSamples;
         Require(AudioListener.pause,"Pause did not pause listener");
         until=EditorApplication.timeSinceStartup+.3;while(EditorApplication.timeSinceStartup<until) yield return null;

@@ -1,5 +1,5 @@
 {
-  "stage": "integrated-impact-revision-awaiting-listening-QA",
+  "stage": "integrated-cc0-metal-and-magic-samples-awaiting-listening-QA",
   "verified_date": "2026-10-17",
   "assets": [
     {
@@ -267,7 +267,7 @@
     {
       "asset": "Original/MagicCast.wav",
       "event_candidate": "哥布林魔法发射",
-      "status": "wired-HeroArenaAudio",
+      "status": "candidate-unused",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
@@ -277,7 +277,7 @@
     {
       "asset": "Original/MagicImpact.wav",
       "event_candidate": "魔法弹命中",
-      "status": "wired-HeroArenaAudio",
+      "status": "candidate-unused",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
@@ -317,7 +317,7 @@
     {
       "asset": "Original/MeleeSwingA.wav",
       "event_candidate": "重击挥动变体A",
-      "status": "wired-HeroArenaAudio",
+      "status": "candidate-unused",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
@@ -327,7 +327,7 @@
     {
       "asset": "Original/MeleeSwingB.wav",
       "event_candidate": "重击挥动变体B",
-      "status": "wired-HeroArenaAudio",
+      "status": "candidate-unused",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
@@ -337,11 +337,201 @@
     {
       "asset": "Original/MeleeImpact.wav",
       "event_candidate": "近战实际命中",
-      "status": "wired-HeroArenaAudio",
+      "status": "candidate-unused",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
       "sha256": "45f91be17faea384b27578ffa447f6452debbbeecc13f7f792f3c3e14d7aba46",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/StarNinjas/Source/sword.4.ogg",
+      "event_candidate": "原始样例留档，不直接播放",
+      "status": "reference-source-not-played",
+      "author": "StarNinjas",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/node/122900",
+      "download_url": "https://opengameart.org/sites/default/files/sword_-_starninjas_1.zip",
+      "original_file": "sword - StarNinjas/sword.4.ogg",
+      "download_sha256": "87a1fe1cfeee5f282fe06a7a9c25ab9ebf24b7674fe19171b7f2762dffb628c1",
+      "sha256": "320aa8a77d35f9354c3d7e03a53e987ae67b0c5721f0dd2680100c5e6b5e4cc4",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/StarNinjas/Source/sword.10.ogg",
+      "event_candidate": "原始样例留档，不直接播放",
+      "status": "reference-source-not-played",
+      "author": "StarNinjas",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/node/122900",
+      "download_url": "https://opengameart.org/sites/default/files/sword_-_starninjas_1.zip",
+      "original_file": "sword - StarNinjas/sword.10.ogg",
+      "download_sha256": "87a1fe1cfeee5f282fe06a7a9c25ab9ebf24b7674fe19171b7f2762dffb628c1",
+      "sha256": "530bf3daac9e21ba7f8414291820bc8c26f3522ecbda8f00e6454b1cef74cd07",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/StarNinjas/Source/sword_clash.1.ogg",
+      "event_candidate": "原始样例留档，不直接播放",
+      "status": "reference-source-not-played",
+      "author": "StarNinjas",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/node/122900",
+      "download_url": "https://opengameart.org/sites/default/files/sword_clash_-_starninjas_0.zip",
+      "original_file": "sword_clash.1.ogg",
+      "download_sha256": "f363c80ea1627548d336370750651b0d2d092978148ecfb3642717c2efb54b6b",
+      "sha256": "5c5e78e466ba78fe2414f2b7a2a6eb674822ccfc8a8bc9fda32be22f5dde5e69",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/StarNinjas/Source/sword_clash.10.ogg",
+      "event_candidate": "原始样例留档，不直接播放",
+      "status": "reference-source-not-played",
+      "author": "StarNinjas",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/node/122900",
+      "download_url": "https://opengameart.org/sites/default/files/sword_clash_-_starninjas_0.zip",
+      "original_file": "sword_clash.10.ogg",
+      "download_sha256": "f363c80ea1627548d336370750651b0d2d092978148ecfb3642717c2efb54b6b",
+      "sha256": "61d40c241c5df7722249983938109564a8470245116fe34d23d2a35324d3a4f1",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/Rubberduck/Source/spell_01.ogg",
+      "event_candidate": "原始样例留档，不直接播放",
+      "status": "reference-source-not-played",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "download_url": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip",
+      "original_file": "spell_01.ogg",
+      "download_sha256": "1c2f06ff4e8563b5b8b745b23cf213c1474142a69bb82bd8f5e10d9b3f7a7bbd",
+      "sha256": "09821a53c418c5eeeac4fa25bada9d245e822fed302eeeae9ae4151522a45ae5",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/Rubberduck/Source/spell_02.ogg",
+      "event_candidate": "原始样例留档，不直接播放",
+      "status": "reference-source-not-played",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "download_url": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip",
+      "original_file": "spell_02.ogg",
+      "download_sha256": "1c2f06ff4e8563b5b8b745b23cf213c1474142a69bb82bd8f5e10d9b3f7a7bbd",
+      "sha256": "bf9c48b76921e56aa266172d969a2c08215d6ce0ffae7c3584f23fa05d3f8bd4",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/Rubberduck/Source/spell_fire_07.ogg",
+      "event_candidate": "原始样例留档，不直接播放",
+      "status": "reference-source-not-played",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "download_url": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip",
+      "original_file": "spell_fire_07.ogg",
+      "download_sha256": "1c2f06ff4e8563b5b8b745b23cf213c1474142a69bb82bd8f5e10d9b3f7a7bbd",
+      "sha256": "bb13cef9c0b0b4ec7f9335c356b14814c88418abd85dd3747cb62469e9ada93f",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/StarNinjas/SteelSwingA.wav",
+      "event_candidate": "金属挥砍/接触",
+      "status": "wired-HeroArenaAudio",
+      "author": "StarNinjas",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/node/122900",
+      "derived_from": [
+        "ThirdParty/StarNinjas/Source/sword.4.ogg"
+      ],
+      "processing": "ThirdParty/prepare_combat_samples.py: onset trim, pitch/rate adjustment, 1.5ms/45ms fades, peak 0.72; arcane cues layer spells with short echoes",
+      "sha256": "3a1e81673a6055165f70079a00a712eb8706363a8258996f2b35fc2a69e67cb0",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/StarNinjas/SteelSwingB.wav",
+      "event_candidate": "金属挥砍/接触",
+      "status": "wired-HeroArenaAudio",
+      "author": "StarNinjas",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/node/122900",
+      "derived_from": [
+        "ThirdParty/StarNinjas/Source/sword.10.ogg"
+      ],
+      "processing": "ThirdParty/prepare_combat_samples.py: onset trim, pitch/rate adjustment, 1.5ms/45ms fades, peak 0.72; arcane cues layer spells with short echoes",
+      "sha256": "7d2ce9e639d7f8d1dd70136d812038371a400ec90aba00a54d9dcb5e7469b8c1",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/StarNinjas/SteelImpactA.wav",
+      "event_candidate": "金属挥砍/接触",
+      "status": "wired-HeroArenaAudio",
+      "author": "StarNinjas",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/node/122900",
+      "derived_from": [
+        "ThirdParty/StarNinjas/Source/sword_clash.1.ogg"
+      ],
+      "processing": "ThirdParty/prepare_combat_samples.py: onset trim, pitch/rate adjustment, 1.5ms/45ms fades, peak 0.72; arcane cues layer spells with short echoes",
+      "sha256": "c4ac8b3b3ef6ae41206f299d1135dc4d977353e100cdf8a9b5f95c76b2971a6a",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/StarNinjas/SteelImpactB.wav",
+      "event_candidate": "金属挥砍/接触",
+      "status": "wired-HeroArenaAudio",
+      "author": "StarNinjas",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/node/122900",
+      "derived_from": [
+        "ThirdParty/StarNinjas/Source/sword_clash.10.ogg"
+      ],
+      "processing": "ThirdParty/prepare_combat_samples.py: onset trim, pitch/rate adjustment, 1.5ms/45ms fades, peak 0.72; arcane cues layer spells with short echoes",
+      "sha256": "cfbaf7975d4e75a81c0cfd0abde55b0da7484d04b75ee46084bb7b77fcf40a9f",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/Rubberduck/ArcaneCast.wav",
+      "event_candidate": "法术发射/命中",
+      "status": "wired-HeroArenaAudio",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "derived_from": [
+        "ThirdParty/Rubberduck/Source/spell_02.ogg",
+        "ThirdParty/Rubberduck/Source/spell_fire_07.ogg"
+      ],
+      "processing": "ThirdParty/prepare_combat_samples.py: onset trim, pitch/rate adjustment, 1.5ms/45ms fades, peak 0.72; arcane cues layer spells with short echoes",
+      "sha256": "78015b20376220dfe3cfb414849c28cccfc5dc49946818e4add5c616400ba449",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/Rubberduck/ArcaneImpact.wav",
+      "event_candidate": "法术发射/命中",
+      "status": "wired-HeroArenaAudio",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "derived_from": [
+        "ThirdParty/Rubberduck/Source/spell_01.ogg",
+        "ThirdParty/Rubberduck/Source/spell_fire_07.ogg"
+      ],
+      "processing": "ThirdParty/prepare_combat_samples.py: onset trim, pitch/rate adjustment, 1.5ms/45ms fades, peak 0.72; arcane cues layer spells with short echoes",
+      "sha256": "08dc162a258ab694ff93a342ce1970bac904452caa7c897302e7e63de604239c",
       "checked_date": "2026-10-17"
     }
   ]

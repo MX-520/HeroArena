@@ -23,7 +23,7 @@ public static class AudioCandidatePreparation
         {
             AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
             var paths=AssetDatabase.FindAssets("t:AudioClip",new[]{"Assets/Audio/Candidates"}).Select(AssetDatabase.GUIDToAssetPath).OrderBy(p=>p).ToArray();
-            if(paths.Length!=27) throw new Exception("Expected 27 candidate audio clips, got "+paths.Length);
+            if(paths.Length!=40) throw new Exception("Expected 40 candidate audio clips, got "+paths.Length);
             var report=new List<ClipInfo>();
             foreach(var path in paths)
             {
@@ -44,7 +44,7 @@ public static class AudioCandidatePreparation
             }
             Directory.CreateDirectory("Logs");
             File.WriteAllText("Logs/audio-candidates-report.json",JsonUtility.ToJson(new Report{status="PASS: import metadata checked; listening QA separate",clips=report.ToArray()},true));
-            AssetDatabase.SaveAssets();Debug.Log("PASS audio-candidates: 27 clips imported; import operation only; playback configuration unchanged");
+            AssetDatabase.SaveAssets();Debug.Log("PASS audio-candidates: "+paths.Length+" clips imported; import operation only; playback configuration unchanged");
             EditorApplication.Exit(0);
         }
         catch(Exception e) { Debug.LogException(e);EditorApplication.Exit(1); }

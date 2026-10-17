@@ -21,3 +21,6 @@ CC0 官方说明：https://creativecommons.org/publicdomain/zero/1.0/ 。允许�
 音乐曲名对应：ForestWhisper.ogg = Forest Whisper Theme；BattleThemeII.ogg = RPG Battle Theme II（Fighting is not an option）。均只重命名，没有修改原音频；SHA-256 可按 manifest 校验。
 
 Original 中声音属于本项目程序合成成果，不含下载音源。其生成代码和参数随附；对外授权方式由项目作者决定。
+
+
+2026-10-17新增实录刀剑与法术CC0来源，作者为StarNinjas及rubberduck；原始样例、加工关系、署名与下载页另见CC0-Combat-Sources.md及manifest.json。
