@@ -17,11 +17,18 @@ public static partial class CompleteDemoVerification
         Require(audio!=null && Object.FindObjectsOfType<GameAudio>().Length==1,"Audio singleton missing/duplicated");
         Require(audio.GetComponentsInChildren<AudioSource>().Length==14,"Voice pool not bounded to 14 sources");
         Require(Object.FindObjectsOfType<AudioListener>().Length==1,"Expected one listener");
-        VerifyMusic("ForestWhisper");
+        VerifyMusic("FlowerbedFields");
         Require(Vector2.Distance(Object.FindObjectOfType<PlayerHealth>().GetComponent<Collider2D>().bounds.center,CenteredSpawnSetup.ArenaCenter())<.01f,"Initial feet not at arena center");
         audio.enabled=false;Require(!AudioListener.pause,"Disabling audio left the global listener paused");
         audio.enabled=true;yield return null;
-        Require(GameAudio.Current==audio && AudioListener.pause,"Re-enabled audio did not restore menu state");VerifyMusic("ForestWhisper");
+        Require(GameAudio.Current==audio && AudioListener.pause,"Re-enabled audio did not restore menu state");VerifyMusic("FlowerbedFields");
+        // Exercise the actual imported loop seam without waiting for the entire track.
+        if(audio.MusicEnabled)
+        {
+            var source=audio.MusicSource;source.timeSamples=source.clip.samples-(int)(source.clip.frequency*.15f);
+            until=EditorApplication.timeSinceStartup+.35;while(EditorApplication.timeSinceStartup<until) yield return null;
+            Require(source.isPlaying && source.time<1,"Adventure BGM did not wrap/continue at loop end");
+        }
         int menuSample=audio.MusicSource.timeSamples;
         var button=FindButton("StartButton");
         var pointer=new PointerEventData(EventSystem.current);
@@ -32,12 +39,14 @@ public static partial class CompleteDemoVerification
         Require(!GameAudio.Play(GameSound.PlayerShot),"Gameplay cue allowed in menu");
         until=EditorApplication.timeSinceStartup+.2;while(EditorApplication.timeSinceStartup<until) yield return null;
         if(audio.MusicEnabled) Require(audio.MusicSource.timeSamples>menuSample,"Menu music frozen with game time");
+        int transitionSample=audio.MusicSource.timeSamples;
         button.onClick.Invoke();
-        VerifyMusic("BattleThemeII");
+        Require(audio.MusicSource.timeSamples>=transitionSample,"Starting run restarted shared adventure music");
+        VerifyMusic("FlowerbedFields");
         Object.FindObjectOfType<PlayerHealth>().GetComponent<DamageReceiver>().SetInvincible(true);
         until=EditorApplication.timeSinceStartup+1.2;while(EditorApplication.timeSinceStartup<until) yield return null;
         if(audio.MusicEnabled) Require(audio.MusicSource.isPlaying && audio.MusicSource.volume>0,"Battle source silent/stopped");
-        else VerifyMusic("BattleThemeII");
+        else VerifyMusic("FlowerbedFields");
         float battleVolume=audio.MusicSource.volume;
         Require(GameAudio.Play(GameSound.MagicImpact),"World cue failed while playing");
         var world=audio.GetComponentsInChildren<AudioSource>().First(s=>s.clip!=null && s.clip.name=="ArcaneImpact");
@@ -46,7 +55,7 @@ public static partial class CompleteDemoVerification
         until=EditorApplication.timeSinceStartup+.3;while(EditorApplication.timeSinceStartup<until) yield return null;
         Require(world.timeSamples==frozen,"Gameplay audio advanced during pause");
         if(audio.MusicEnabled) Require(audio.MusicSource.timeSamples>musicSample && audio.MusicSource.volume<battleVolume,"Paused music not continuing/ducking");
-        else VerifyMusic("BattleThemeII");
+        else VerifyMusic("FlowerbedFields");
         Require(!GameAudio.Play(GameSound.PlayerShot) && GameAudio.Play(GameSound.UIClick),"Pause did not separate UI and world audio");
         flow.Resume();Require(!AudioListener.pause,"Listener stayed paused on resume");
         float master=audio.MasterVolume,music=audio.MusicVolume,sfx=audio.SfxVolume;
@@ -64,7 +73,7 @@ public static partial class CompleteDemoVerification
         while(GameAudio.Current==null || Object.FindObjectOfType<GameFlow>().State!=GameFlow.ScreenState.Menu) yield return null;
         Require(Object.FindObjectsOfType<GameAudio>().Length==1 && GameAudio.Current.GetComponentsInChildren<AudioSource>().Length==14,"Reload leaked audio voices");
         var ui=UI();while(ui.MoveNext()) yield return ui.Current;
-        Require(Object.FindObjectsOfType<GameAudio>().Length==1,"Full UI flow leaked audio");VerifyMusic("ForestWhisper");
+        Require(Object.FindObjectsOfType<GameAudio>().Length==1,"Full UI flow leaked audio");VerifyMusic("FlowerbedFields");
         Debug.Log("PASS configured music state, centered spawn/delayed respawn, bounded voices, timeScale-zero UI, pause, mute, reload and full three-wave UI");
     }
     static void VerifyMusic(string expected)

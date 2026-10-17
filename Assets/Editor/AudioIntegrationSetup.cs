@@ -13,8 +13,9 @@ public static class AudioIntegrationSetup
         {
             var library=AssetDatabase.LoadAssetAtPath<GameAudioLibrary>("Assets/Audio/HeroArenaAudio.asset");
             if(library==null) {library=ScriptableObject.CreateInstance<GameAudioLibrary>();AssetDatabase.CreateAsset(library,"Assets/Audio/HeroArenaAudio.asset");}
-            library.menuMusic=Clip("ThirdParty/CleytonKauffman/ForestWhisper.ogg");
-            library.battleMusic=Clip("ThirdParty/CleytonKauffman/BattleThemeII.ogg");
+            library.menuMusic=Clip("ThirdParty/ZaneLittle/FlowerbedFields.ogg");
+            library.battleMusic=library.menuMusic;
+            library.musicEnabled=true;library.musicGain=.45f;
             var cues=new List<GameAudioLibrary.Cue>();
             Add(cues,GameSound.UIHover,.12f,true,"interface/select_001");
             Add(cues,GameSound.UIClick,.3f,true,"interface/click_001");

@@ -1,5 +1,5 @@
 {
-  "stage": "integrated-cc0-metal-and-magic-samples-awaiting-listening-QA",
+  "stage": "integrated-upbeat-adventure-bgm-awaiting-listening-QA",
   "verified_date": "2026-10-17",
   "assets": [
     {
@@ -229,7 +229,7 @@
     {
       "asset": "ThirdParty/CleytonKauffman/ForestWhisper.ogg",
       "event_candidate": "主菜单/休整BGM候选",
-      "status": "wired-HeroArenaAudio",
+      "status": "candidate-unused",
       "author": "Cleyton Kauffman",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -243,7 +243,7 @@
     {
       "asset": "ThirdParty/CleytonKauffman/BattleThemeII.ogg",
       "event_candidate": "战斗BGM候选",
-      "status": "wired-HeroArenaAudio",
+      "status": "candidate-unused",
       "author": "Cleyton Kauffman",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -532,6 +532,19 @@
       ],
       "processing": "ThirdParty/prepare_combat_samples.py: onset trim, pitch/rate adjustment, 1.5ms/45ms fades, peak 0.72; arcane cues layer spells with short echoes",
       "sha256": "08dc162a258ab694ff93a342ce1970bac904452caa7c897302e7e63de604239c",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/ZaneLittle/FlowerbedFields.ogg",
+      "event_candidate": "开始界面/战斗/结算轻快冒险循环BGM",
+      "status": "wired-HeroArenaAudio",
+      "author": "Zane Little Music",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/content/flowerbed-fields-loop",
+      "download_url": "https://opengameart.org/sites/default/files/flowerbed_fields.ogg",
+      "original_file": "flowerbed_fields.ogg",
+      "sha256": "99607b996cc43c1891afcbf7c2c8d8aad1009266cea358d4753e3c50b1332d36",
       "checked_date": "2026-10-17"
     }
   ]

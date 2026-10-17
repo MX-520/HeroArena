@@ -1,24 +1,24 @@
 # 音效与背景音乐（首轮接入）
 
-准备与接入日期：2026-10-17。40个音频中25个被播放库引用（其中2首BGM仍关闭），7个原声仅留档，8个旧候选未使用。当前映射为 `Assets/Audio/HeroArenaAudio.asset`，由 `AudioIntegrationSetup.Apply` 配置。
+准备与接入日期：2026-10-17。41个音频中24个被播放库引用（包含1首已启用BGM），7个原声仅留档，10个旧候选未使用。当前映射为 `Assets/Audio/HeroArenaAudio.asset`，由 `AudioIntegrationSetup.Apply` 配置。
 
 ## 授权
 
 - `ThirdParty/Kenney`：作者官方 Interface Sounds、Impact Sounds、RPG Audio 发布页及原包 License.txt 均为 CC0。允许商业使用、修改和分发，不强制署名。三个原始许可保存在 `Licenses/`。
 - `ThirdParty/CleytonKauffman`：Forest Whisper Theme、RPG Battle Theme II 作者发布页标注 CC0。前者原包 readme 也明确 CC0，已保留。项目将保留作者署名：`Music by Cleyton Kauffman - https://soundcloud.com/cleytonkauffman`。
 - `ThirdParty/StarNinjas` / `ThirdParty/Rubberduck`：作者发布页均为CC0，实录刀剑与作者法术音效；原声保留在Source，游戏剪辑及署名见 `Licenses/CC0-Combat-Sources.md`。
+- `ThirdParty/ZaneLittle`：Flowerbed Fields作者页标注CC0，来源与原文件哈希见 `Licenses/CC0-Adventure-Music.md`。
 - `Original`：本项目用自写振荡器、噪声及包络合成的九个声音，没有外部采样或参考歌曲旋律，可随项目商用；原始生成代码随附。没有调用第三方 AI 音乐服务。
 
 来源、每个文件的原始名称、下载地址、许可、核对日期、用途候选和 SHA-256 见 `manifest.json`。授权核对依据见 `Licenses/SOURCES.md`。下载原包与原始页面备份在工作区 `Logs/AudioPreparation`，正式交付记录为本目录的许可文件和 manifest。
 
 ## 当前播放映射
 
-2026-10-17 最新设置：按用户要求，`HeroArenaAudio.musicEnabled=false`，首页、战斗与结算背景音乐暂不播放；下表保留后续可恢复的映射。按钮、动作、战斗、拾取和胜负提示音继续启用。
+2026-10-17 最新设置：按用户要求重新启用轻快冒险背景音乐，`HeroArenaAudio.musicEnabled=true`；首页、战斗、结算共用Flowerbed Fields，进入战斗不重新起播。原ForestWhisper/BattleThemeII留作候选。现有按钮与战斗音效保持。
 
 | 场景／反馈 | 文件 |
 |---|---|
-| 首页／胜负结算 | ForestWhisper，循环、流式 |
-| 全部三波战斗及波间休整 | BattleThemeII，循环、流式，换波不重播 |
+| 首页／全部三波战斗／休整／胜负结算 | Zane Little Music 的 FlowerbedFields，循环、立体声流式；开始游戏和换波延续播放 |
 | 按钮悬停／点击／返回／波次开始 | select / click / back / confirmation |
 | 玩家／敌人近战挥动 | StarNinjas 实录刀刃剪辑 SteelSwingA / SteelSwingB |
 | 主角近战实际命中 | StarNinjas 金属碰撞剪辑 SteelImpactA / SteelImpactB，仅实际扣血时播放一次 |
@@ -51,3 +51,7 @@
 按用户要求从网上核验并采用两套CC0原声：StarNinjas实录刀剑、rubberduck法术音效。保留7个未修改OGG原声；6个游戏剪辑版为单声道44.1kHz PCM16，峰值0.72，1.5ms起音淡入与45ms尾部淡出。
 挥击保留刀刃短促金属共鸣（0.36/0.44秒）；接触声保留碰撞余响（各0.40秒），每次真实命中随机选一个；法术发射0.44秒、命中0.56秒，叠合作者法术和火焰冲击纹理并附短回声。gain为玩家挥击0.46、敌人挥击0.30、近战接触0.50、法术发射0.40、法术命中0.50。原先五个项目合成战斗声音保留作候选，当前不播放。
 处理代码、派生表、来源、原包和文件哈希均随附。可复现剪辑与导入/播放技术检查不代表主观听感最终通过，仍待实玩试听。BGM继续关闭，出生/重生、伤害、动画、导航和UI不因本轮音源替换而修改。
+
+## 2026-10-17 轻快冒险BGM
+
+当前启用Flowerbed Fields [Loop]（Zane Little Music，CC0），时长105.93秒、44.1kHz立体声，保留原OGG字节。开始界面立即播放，进入战斗同曲连续，暂停压低至25%，恢复回升；重载不复制音源。库的musicGain=0.45，乘在已有Master/Music用户偏好之后，不影响SFX，避免覆盖已接受的战斗声音。完整听感平衡与循环衔接留待实玩确认。

@@ -23,12 +23,12 @@ public static class AudioCandidatePreparation
         {
             AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
             var paths=AssetDatabase.FindAssets("t:AudioClip",new[]{"Assets/Audio/Candidates"}).Select(AssetDatabase.GUIDToAssetPath).OrderBy(p=>p).ToArray();
-            if(paths.Length!=40) throw new Exception("Expected 40 candidate audio clips, got "+paths.Length);
+            if(paths.Length!=41) throw new Exception("Expected 41 candidate audio clips, got "+paths.Length);
             var report=new List<ClipInfo>();
             foreach(var path in paths)
             {
                 var importer=(AudioImporter)AssetImporter.GetAtPath(path);
-                bool music=path.Contains("/CleytonKauffman/");
+                bool music=path.Contains("/CleytonKauffman/") || path.Contains("/ZaneLittle/");
                 importer.forceToMono=!music;importer.loadInBackground=music;
                 var settings=importer.defaultSampleSettings;
                 settings.preloadAudioData=!music;

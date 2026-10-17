@@ -24,3 +24,6 @@ Original 中声音属于本项目程序合成成果，不含下载音源。其�
 
 
 2026-10-17新增实录刀剑与法术CC0来源，作者为StarNinjas及rubberduck；原始样例、加工关系、署名与下载页另见CC0-Combat-Sources.md及manifest.json。
+
+
+2026-10-17启用Zane Little Music的Flowerbed Fields [Loop]（CC0），来源和完整原文件SHA-256见CC0-Adventure-Music.md及manifest.json；保留原OGG字节与作者署名。

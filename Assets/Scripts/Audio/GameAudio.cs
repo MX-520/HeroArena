@@ -104,7 +104,7 @@ public sealed class GameAudio : MonoBehaviour
         {
             if(!MusicEnabled) {music[i].Stop();music[i].clip=null;music[i].volume=0;musicGain[i]=0;continue;}
             musicGain[i]=Mathf.MoveTowards(musicGain[i],i==activeMusic?1:0,Time.unscaledDeltaTime/0.8f);
-            music[i].volume=MasterVolume*MusicVolume*musicGain[i]*duck;
+            music[i].volume=MasterVolume*MusicVolume*library.musicGain*musicGain[i]*duck;
             if(i!=activeMusic && musicGain[i]==0 && music[i].clip!=null) {music[i].Stop();music[i].clip=null;}
         }
         foreach(var voice in voices) voice.source.volume=MasterVolume*SfxVolume*voice.gain;
