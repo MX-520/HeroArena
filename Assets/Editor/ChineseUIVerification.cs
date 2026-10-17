@@ -16,9 +16,20 @@ public static partial class CompleteDemoVerification
         foreach(var image in ui.GetComponentsInChildren<UnityEngine.UI.Image>(true))
         {
             bool graphic=image==fill || image.sprite!=null && (image.name=="Icon" || new[]{"Heal","Barrage","Giant","Shield"}.Contains(image.name));
-            Require(graphic || image.color.a==0,"UI background is not completely transparent: "+image.name);
+            Require(graphic || image.color.a<=0.6f,"UI background is too opaque: "+image.name);
+            if(new[]{"HUD","MainMenu","Modal"}.Contains(image.name)) Require(image.color.a==0,"Full-screen UI cover obscures world: "+image.name);
+            if(new[]{"HealthPanel","WavePanel","RunPanel","BarrageCard","GiantCard","ShieldCard"}.Contains(image.name)) Require(image.color.a>=0.25f && image.color.a<=0.45f,"Missing or excessive compact backdrop: "+image.name);
             if(graphic) Require(image.color.a>0,"UI icon/health graphic was hidden: "+image.name);
         }
+        var rects=ui.GetComponentsInChildren<RectTransform>(true);
+        var controls=rects.First(r=>r.name=="Controls");
+        foreach(var card in rects.Where(r=>new[]{"BarrageCard","GiantCard","ShieldCard"}.Contains(r.name)))
+        {
+            Require(card.anchoredPosition.y<85 && card.anchoredPosition.y>65,"Item UI was not lowered: "+card.name);
+            Require(card.anchoredPosition.y-card.sizeDelta.y/2>controls.anchoredPosition.y+controls.sizeDelta.y/2+4,"Item UI overlaps bottom controls");
+        }
+        var wave=rects.First(r=>r.name=="WavePanel");
+        Require(wave.sizeDelta.x<=340 && wave.sizeDelta.y<=75,"Wave backdrop takes excessive screen space");
         var texts=ui.GetComponentsInChildren<TMP_Text>(true);
         foreach(var text in texts)
         {

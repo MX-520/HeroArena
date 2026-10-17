@@ -34,7 +34,7 @@ public class GameUI : MonoBehaviour
         {
             float left = effects.Remaining((PickupKind)(i + 1));
             buffTimes[i].text = left > 0 ? $"{left:0.0}秒" : "—";
-            buffTimes[i].color = left > 0 ? new Color(1, 0.86f, 0.45f) : new Color(0.5f, 0.59f, 0.6f);
+            buffTimes[i].color = left > 0 ? new Color(1, 0.86f, 0.45f) : new Color(0.78f, 0.84f, 0.86f);
         }
     }
     private void HealthChanged(int current, int max)

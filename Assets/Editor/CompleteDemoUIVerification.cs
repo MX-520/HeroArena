@@ -42,7 +42,7 @@ public static partial class CompleteDemoVerification
         var effects = player.GetComponent<PlayerEffects>();
         effects.TryApply(PickupKind.Giant); effects.TryApply(PickupKind.Shield); effects.TryApply(PickupKind.Barrage);
         yield return null;
-        if (SessionState.GetString(Key, "") == "visual") CaptureDemo("hud");
+        if (SessionState.GetString(Key, "") == "visual") { CaptureDemo("hud"); CaptureDemo("hud-wide", 2048, 940); }
         FindButton("PauseButton").onClick.Invoke();
         Require(flow.State == GameFlow.ScreenState.Paused && Time.timeScale == 0, "Pause button failed");
         float buffTime = effects.Remaining(PickupKind.Barrage);
@@ -83,18 +83,18 @@ public static partial class CompleteDemoVerification
         Require(Time.timeScale == 0 && Object.FindObjectsOfType<EnemyController>().Length == 0, "Return to menu did not reset world");
     }
 
-    private static void CaptureDemo(string name)
+    private static void CaptureDemo(string name, int width = 1280, int height = 720)
     {
         VerifyChinesePresentation();
         Camera camera = Camera.main;
         Canvas canvas = Object.FindObjectOfType<GameUI>().GetComponent<Canvas>();
-        var target = RenderTexture.GetTemporary(1280, 720, 24);
+        var target = RenderTexture.GetTemporary(width, height, 24);
         var previous = RenderTexture.active;
         var oldTarget = camera.targetTexture;
         var oldMode = canvas.renderMode;
         var oldCamera = canvas.worldCamera;
         float oldDistance = canvas.planeDistance;
-        var pixels = new Texture2D(1280, 720, TextureFormat.RGB24, false);
+        var pixels = new Texture2D(width, height, TextureFormat.RGB24, false);
         try
         {
             camera.targetTexture = target;
@@ -104,7 +104,7 @@ public static partial class CompleteDemoVerification
             Canvas.ForceUpdateCanvases();
             camera.Render();
             RenderTexture.active = target;
-            pixels.ReadPixels(new Rect(0, 0, 1280, 720), 0, 0);
+            pixels.ReadPixels(new Rect(0, 0, width, height), 0, 0);
             pixels.Apply();
             File.WriteAllBytes("Logs/demo-" + name + ".png", pixels.EncodeToPNG());
         }

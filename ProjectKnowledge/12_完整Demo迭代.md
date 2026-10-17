@@ -115,3 +115,10 @@ Use case: stylized-concept. Asset type: Unity 2D pixel action RPG sprite atlas. 
 菜单、战斗HUD、波次、道具、暂停/胜负/重开文案全部中文，键位名称保留WASD/Shift/Esc/J。所有非文字/图标/血条的面板、遮罩、按钮和卡片底色alpha为0。战斗仅显示右上角暂停入口；暂停时隐藏该入口，仅中央“已暂停”，底部移除重复提示。已在Unity图形模式通过六状态透明度、中文/字形、暂停唯一性、透明按钮射线、整局流程检查，并检查六张截图；不打包。
 
 按反馈清除全部UI底色与遮罩，保留图标和生命条填充；各画面统一中文。加入Noto Sans CJK SC Regular及OFL许可证，生成静态HeroArenaChinese SDF及细黑描边。透明按钮仍可点击，暂停提示按状态只保留一个。证据Logs/chinese-ui-verified.log、Logs/full-demo-visual.txt（2026-10-17 13:11）、Logs/demo-*.png。六张画面已检查；本轮未打包。
+
+
+## 2026-10-17 UI可读性与道具栏位置调整
+
+按后续反馈改为紧凑半透明深色信息框，顶部背景alpha0.42、道具卡0.34、底部提示0.24；全屏覆盖层仍完全透明，中央战斗区域不加遮罩。主要文字加粗，白色/浅金色和0.24黑描边增强对比。道具卡由y108下移至76，缩至80×72，保留48×48图标；与底部提示间距8参考像素。中文和单一暂停入口保留。六状态交互/字形/透明上限/下移间距以及2048×940宽屏画面通过，未打包。
+
+修正完全透明后文字融入地图的问题：仅信息区添加单层深色半透明底，缩小顶部与道具卡占用，增加字重和描边并下移道具栏。移除会将整块面板叠亮的Image Outline效果，保留字体描边。修复TMP 3.0.x对“全部字形已存在”的TryAddCharacters返回false导致重复应用误判，只补充缺少字形。最终图形回归通过（Logs/readable-ui-final.log、Logs/full-demo-visual.txt，2026-10-17 13:24），六张界面及Logs/demo-hud-wide.png已检查；未打包。

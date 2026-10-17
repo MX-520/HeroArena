@@ -68,7 +68,17 @@ public static class ChineseUISetup
         foreach(var image in ui.GetComponentsInChildren<UnityEngine.UI.Image>(true))
         {
             bool graphic=image==fill || image.sprite!=null && (image.name=="Icon" || new[]{"Heal","Barrage","Giant","Shield"}.Contains(image.name));
-            if(!graphic) { var color=image.color;color.a=0;image.color=color; }
+            if(!graphic)
+            {
+                var opacity = BackgroundOpacity(image.name);
+                image.color = new Color(0.025f,0.055f,0.065f,opacity);
+                if(opacity>0 && image.name!="HealthTrack")
+                {
+                    // A filled Image's Outline also repeats its interior; keep the backdrop a single translucent layer.
+                    var border=image.GetComponent<UnityEngine.UI.Outline>();
+                    if(border!=null) Object.DestroyImmediate(border);
+                }
+            }
             EditorUtility.SetDirty(image);
         }
         foreach(var button in ui.GetComponentsInChildren<UnityEngine.UI.Button>(true))
@@ -82,11 +92,71 @@ public static class ChineseUISetup
             if(button.name=="PauseButton") data.FindProperty("pauseButton").objectReferenceValue=button.gameObject;
         }
         data.ApplyModifiedPropertiesWithoutUndo();
+        ApplyReadableLayout(ui);
         var wave=new SerializedObject(Object.FindObjectOfType<WaveController>());
         string[] titles={"初次交锋","群体追猎","交叉火力"};
         for(int i=0;i<3;i++) wave.FindProperty("waves").GetArrayElementAtIndex(i).FindPropertyRelative("title").stringValue=titles[i];
         wave.ApplyModifiedPropertiesWithoutUndo();
         Canvas.ForceUpdateCanvases();
+    }
+    private static float BackgroundOpacity(string name)
+    {
+        switch(name)
+        {
+            case "HealthPanel": case "WavePanel": case "RunPanel": return 0.42f;
+            case "BarrageCard": case "GiantCard": case "ShieldCard": return 0.34f;
+            case "Controls": return 0.24f;
+            case "HealthTrack": return 0.28f;
+            case "MenuFrame": return 0.52f;
+            case "FieldGuide": return 0.25f;
+            case "Dialog": return 0.58f;
+            case "StartButton": case "QuitButton": case "PauseButton":
+            case "ResumeButton": case "RestartButton": case "MenuButton": return 0.32f;
+            default: return 0;
+        }
+    }
+    private static void ApplyReadableLayout(GameUI ui)
+    {
+        var rects=ui.GetComponentsInChildren<RectTransform>(true);
+        Action<string,Vector2,Vector2> place=(name,position,size)=> {
+            var rect=rects.First(r=>r.name==name);
+            rect.anchoredPosition=position;rect.sizeDelta=size;EditorUtility.SetDirty(rect);
+        };
+        place("HealthPanel",new Vector2(143,-49),new Vector2(242,70));
+        place("HealthText",new Vector2(0,12),new Vector2(220,30));
+        place("HealthTrack",new Vector2(0,-17),new Vector2(212,8));
+        place("Fill",Vector2.zero,new Vector2(212,8));
+        place("WavePanel",new Vector2(0,-49),new Vector2(320,70));
+        place("WaveText",new Vector2(0,12),new Vector2(300,32));
+        place("WaveHint",new Vector2(0,-17),new Vector2(300,24));
+        place("RunPanel",new Vector2(-136,-49),new Vector2(228,70));
+        place("Timer",new Vector2(0,14),new Vector2(210,28));
+        place("PauseButton",new Vector2(0,-17),new Vector2(202,28));
+        place("Controls",new Vector2(0,18),new Vector2(820,30));
+        place("ControlsText",Vector2.zero,new Vector2(800,26));
+        string[] cards={"BarrageCard","GiantCard","ShieldCard"};
+        for(int i=0;i<3;i++)
+        {
+            place(cards[i],new Vector2((i-1)*94,76),new Vector2(80,72));
+            var card=rects.First(r=>r.name==cards[i]);
+            var icon=(RectTransform)card.Find("Icon");icon.anchoredPosition=new Vector2(0,12);icon.sizeDelta=new Vector2(48,48);
+            var time=(RectTransform)card.Find("Time");time.anchoredPosition=new Vector2(0,-24);time.sizeDelta=new Vector2(76,22);
+            EditorUtility.SetDirty(icon);EditorUtility.SetDirty(time);
+        }
+        foreach(var text in ui.GetComponentsInChildren<TMP_Text>(true))
+        {
+            bool accent=new[]{"Eyebrow","GuideTitle","Heading","WaveText"}.Contains(text.name);
+            text.color=accent?new Color(1,0.91f,0.68f):Color.white;
+            bool bold=new[]{"HealthText","WaveText","Timer","Heading","Title","GuideTitle","Label","Time"}.Contains(text.name);
+            text.fontStyle=bold?FontStyles.Bold:FontStyles.Normal;
+            if(text.name=="WaveText") text.fontSize=21;
+            if(text.name=="WaveHint") text.fontSize=14;
+            if(text.name=="Timer" || text.transform.parent.name=="PauseButton") text.fontSize=17;
+            if(text.name=="Time") text.fontSize=16;
+            if(text.name=="ControlsText") text.fontSize=14;
+            if(text.transform.parent.name=="PauseButton") text.rectTransform.sizeDelta=new Vector2(198,26);
+            EditorUtility.SetDirty(text);EditorUtility.SetDirty(text.rectTransform);
+        }
     }
     private static TMP_FontAsset GetFont()
     {
@@ -102,13 +172,18 @@ public static class ChineseUISetup
         }
         string content=string.Join("",labels.Values)+string.Join("",buttons.Values)+"治疗多弹道巨化护罩初次交锋群体追猎交叉火力森林试炼"+File.ReadAllText("Assets/Scripts/UI/GameUI.cs");
         string characters=new string(content.Concat(Enumerable.Range(32,95).Select(i=>(char)i)).Where(c=>!char.IsControl(c)).Distinct().ToArray());
-        asset.atlasPopulationMode=AtlasPopulationMode.Dynamic;
-        if(!asset.TryAddCharacters(characters,out string missing)) throw new Exception("Missing Chinese glyphs: "+missing);
+        // TMP 3.0.x reports false when all requested glyphs already exist; add only new characters.
+        string additions=new string(characters.Where(c=>!asset.HasCharacter(c)).ToArray());
+        if(additions.Length>0)
+        {
+            asset.atlasPopulationMode=AtlasPopulationMode.Dynamic;
+            if(!asset.TryAddCharacters(additions,out string missing)) throw new Exception("Missing Chinese glyphs: "+missing);
+        }
         asset.atlasPopulationMode=AtlasPopulationMode.Static;
         foreach(var texture in asset.atlasTextures) if(!AssetDatabase.Contains(texture)) AssetDatabase.AddObjectToAsset(texture,asset);
         if(!AssetDatabase.Contains(asset.material)) AssetDatabase.AddObjectToAsset(asset.material,asset);
         asset.material.EnableKeyword("OUTLINE_ON");
-        asset.material.SetFloat(ShaderUtilities.ID_OutlineWidth,0.16f);
+        asset.material.SetFloat(ShaderUtilities.ID_OutlineWidth,0.24f);
         asset.material.SetColor(ShaderUtilities.ID_OutlineColor,new Color(0,0,0,0.95f));
         EditorUtility.SetDirty(asset);EditorUtility.SetDirty(asset.material);
         return asset;
