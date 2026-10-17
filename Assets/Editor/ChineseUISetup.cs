@@ -95,6 +95,7 @@ public static class ChineseUISetup
         ApplyReadableLayout(ui);
         DecoratedUISetup.ApplyHUD(ui);
         ForestMenuSetup.Apply(ui);
+        DecoratedUISetup.ApplyButtonFeedback(ui);
         var wave=new SerializedObject(Object.FindObjectOfType<WaveController>());
         string[] titles={"初次交锋","群体追猎","交叉火力"};
         for(int i=0;i<3;i++) wave.FindProperty("waves").GetArrayElementAtIndex(i).FindPropertyRelative("title").stringValue=titles[i];
@@ -159,6 +160,18 @@ public static class ChineseUISetup
             if(text.name=="Timer" || text.transform.parent.name=="PauseButton") text.fontSize=17;
             if(text.name=="Time") text.fontSize=16;
             if(text.name=="ControlsText") text.fontSize=14;
+            if(text.name=="ControlsText")
+            {
+                text.color=new Color(1,0.86f,0.45f);
+                text.fontStyle=FontStyles.Normal;
+                const string path="Assets/UI/Fonts/ControlsText.mat";
+                var material=AssetDatabase.LoadAssetAtPath<Material>(path);
+                if(material==null) { material=new Material(text.font.material);material.name="ControlsText";AssetDatabase.CreateAsset(material,path); }
+                material.SetTexture(ShaderUtilities.ID_MainTex,text.font.atlasTexture);
+                material.SetFloat(ShaderUtilities.ID_OutlineWidth,0);
+                material.DisableKeyword("OUTLINE_ON");
+                text.fontSharedMaterial=material;EditorUtility.SetDirty(material);
+            }
             if(text.transform.parent.name=="PauseButton") text.rectTransform.sizeDelta=new Vector2(198,26);
             EditorUtility.SetDirty(text);EditorUtility.SetDirty(text.rectTransform);
         }

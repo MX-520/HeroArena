@@ -24,6 +24,10 @@ public static class DecoratedUISetup
     private static void ApplyModal(GameUI ui)
     {
         var dialog = ui.transform.Find("Modal/Dialog") as RectTransform;
+        var ornament=Child(dialog,"ForestInlays",Vector2.zero,Vector2.zero);
+        ornament.anchorMin=Vector2.zero;ornament.anchorMax=Vector2.one;
+        ornament.offsetMin=ornament.offsetMax=Vector2.zero;ornament.SetAsFirstSibling();
+        if(ornament.GetComponent<ArenaModalOrnament>()==null) ornament.gameObject.AddComponent<ArenaModalOrnament>();
         dialog.sizeDelta = new Vector2(500,440);
         dialog.anchoredPosition = new Vector2(0,14);
         dialog.GetComponent<UnityEngine.UI.Image>().color = new Color(0.025f,0.055f,0.065f,0.89f);
@@ -64,6 +68,16 @@ public static class DecoratedUISetup
         }
         foreach(var component in dialog.GetComponentsInChildren<Component>(true))
             if(component!=null) EditorUtility.SetDirty(component);
+    }
+
+    public static void ApplyButtonFeedback(GameUI ui)
+    {
+        foreach(var button in ui.GetComponentsInChildren<UnityEngine.UI.Button>(true))
+        {
+            var feedback=button.GetComponent<ArenaButtonFeedback>() ?? button.gameObject.AddComponent<ArenaButtonFeedback>();
+            feedback.CaptureRestStyle();
+            EditorUtility.SetDirty(feedback);EditorUtility.SetDirty(button);
+        }
     }
 
     private static RectTransform Child(Transform parent,string name,Vector2 position,Vector2 size)

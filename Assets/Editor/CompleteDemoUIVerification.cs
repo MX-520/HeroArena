@@ -27,6 +27,8 @@ public static partial class CompleteDemoVerification
         EventSystem.current.RaycastAll(pointer, hits);
         Require(hits.Count>0 && hits[0].gameObject==button.gameObject, "Start button is obscured from pointer input");
         if (SessionState.GetString(Key, "") == "visual") { CaptureDemo("menu"); CaptureDemo("menu-wide",2048,940); }
+        var hover=VerifyHover(button,"menu-hover");
+        while(hover.MoveNext()) yield return hover.Current;
         button.onClick.Invoke();
         Require(flow.State == GameFlow.ScreenState.Playing && Time.timeScale == 1, "Start button not wired");
         while (flow.Waves.State != WaveController.ChallengeState.Fighting) yield return null;
@@ -51,6 +53,8 @@ public static partial class CompleteDemoVerification
         while (EditorApplication.timeSinceStartup < wait) yield return null;
         Require(Mathf.Abs(buffTime - effects.Remaining(PickupKind.Barrage)) < 0.01f && player.transform.position == playerPosition, "Pause did not freeze buffs/movement");
         if (SessionState.GetString(Key, "") == "visual") { CaptureDemo("pause"); CaptureDemo("pause-wide",2048,940); }
+        hover=VerifyHover(FindButton("RestartButton"),"pause-hover");
+        while(hover.MoveNext()) yield return hover.Current;
         FindButton("ResumeButton").onClick.Invoke();
         Require(flow.State == GameFlow.ScreenState.Playing && Time.timeScale == 1, "Resume button failed");
         Object.FindObjectOfType<DestructibleObstacle>().GetComponent<Health>().TakeDamage(1000);
@@ -81,6 +85,25 @@ public static partial class CompleteDemoVerification
         flow = Object.FindObjectOfType<GameFlow>();
         while (flow == null || flow.State != GameFlow.ScreenState.Menu) { yield return null; flow = Object.FindObjectOfType<GameFlow>(); }
         Require(Time.timeScale == 0 && Object.FindObjectsOfType<EnemyController>().Length == 0, "Return to menu did not reset world");
+    }
+
+    private static IEnumerator VerifyHover(UnityEngine.UI.Button button,string screenshot)
+    {
+        var fill=button.GetComponent<UnityEngine.UI.Image>();
+        Color resting=fill.color;
+        var pointer=new PointerEventData(EventSystem.current){position=RectTransformUtility.WorldToScreenPoint(null,button.transform.position)};
+        var hits=new List<RaycastResult>();EventSystem.current.RaycastAll(pointer,hits);
+        Require(hits.Count>0 && hits[0].gameObject==button.gameObject,"Button decoration blocks hover: "+button.name);
+        ExecuteEvents.Execute(button.gameObject,pointer,ExecuteEvents.pointerEnterHandler);
+        double until=EditorApplication.timeSinceStartup+0.22;
+        while(EditorApplication.timeSinceStartup<until) yield return null;
+        Require(Vector4.Distance(fill.color,resting)>0.16f && button.transform.localScale.x>1.015f,"Hover did not visibly change fill and scale: "+button.name);
+        if(SessionState.GetString(Key,"")=="visual") CaptureDemo(screenshot);
+        ExecuteEvents.Execute(button.gameObject,pointer,ExecuteEvents.pointerExitHandler);
+        EventSystem.current.SetSelectedGameObject(null);
+        until=EditorApplication.timeSinceStartup+0.22;
+        while(EditorApplication.timeSinceStartup<until) yield return null;
+        Require(Vector4.Distance(fill.color,resting)<0.03f && Mathf.Abs(button.transform.localScale.x-1)<0.002f,"Hover did not restore rest style: "+button.name);
     }
 
     private static void CaptureDemo(string name, int width = 1280, int height = 720)

@@ -11,6 +11,7 @@ public sealed class ArenaPanelFrame : MaskableGraphic
 
     public void Configure(Color tint, float corners = 12)
     {
+        if(accent==tint && Mathf.Approximately(cornerLength,corners)) return;
         accent = tint;
         cornerLength = corners;
         raycastTarget = false;

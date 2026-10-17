@@ -103,6 +103,7 @@ public class GameUI : MonoBehaviour
             bool primary=paused?button.name=="ResumeButton":button.name=="RestartButton";
             button.GetComponent<UnityEngine.UI.Image>().color=primary?new Color(0.24f,0.17f,0.06f,0.82f):new Color(0.07f,0.14f,0.15f,0.56f);
             button.GetComponentInChildren<TMP_Text>(true).color=primary?new Color(1,0.86f,0.45f):new Color(0.95f,0.86f,0.66f);
+            button.GetComponent<ArenaButtonFeedback>()?.CaptureRestStyle();
         }
     }
 }
