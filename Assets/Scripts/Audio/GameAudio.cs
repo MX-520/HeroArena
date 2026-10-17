@@ -26,6 +26,7 @@ public sealed class GameAudio : MonoBehaviour
     public float MusicVolume { get; private set; }
     public float SfxVolume { get; private set; }
     public AudioSource MusicSource=>music[activeMusic];
+    public bool MusicEnabled=>library!=null && library.musicEnabled;
     public int Played(GameSound sound)=>played[(int)sound];
     public static bool Play(GameSound sound,Vector3 position=default)=>Current!=null && Current.PlayCue(sound,position);
 
@@ -90,7 +91,7 @@ public sealed class GameAudio : MonoBehaviour
     }
     private void SwitchMusic(AudioClip clip)
     {
-        if(clip==null) return;
+        if(!MusicEnabled || clip==null) return;
         if(music[activeMusic].clip==clip) {if(!music[activeMusic].isPlaying) music[activeMusic].Play();return;}
         activeMusic=1-activeMusic;music[activeMusic].clip=clip;music[activeMusic].volume=0;musicGain[activeMusic]=0;
         music[activeMusic].Play();
@@ -101,6 +102,7 @@ public sealed class GameAudio : MonoBehaviour
         duck=Mathf.MoveTowards(duck,target,Time.unscaledDeltaTime*2);
         for(int i=0;i<2;i++)
         {
+            if(!MusicEnabled) {music[i].Stop();music[i].clip=null;music[i].volume=0;musicGain[i]=0;continue;}
             musicGain[i]=Mathf.MoveTowards(musicGain[i],i==activeMusic?1:0,Time.unscaledDeltaTime/0.8f);
             music[i].volume=MasterVolume*MusicVolume*musicGain[i]*duck;
             if(i!=activeMusic && musicGain[i]==0 && music[i].clip!=null) {music[i].Stop();music[i].clip=null;}

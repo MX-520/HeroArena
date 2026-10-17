@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009118f704d7ae8459b5555ed5b1156f, type: 3}
   m_Name: HeroArenaAudio
   m_EditorClassIdentifier:
+  musicEnabled: 0
   menuMusic: {fileID: 8300000, guid: a535d300a19c8e444b6853c92805a6d0, type: 3}
   battleMusic: {fileID: 8300000, guid: 0fa11f45592421e479432cf5ff8cf628, type: 3}
   cues:

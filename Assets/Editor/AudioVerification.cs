@@ -17,10 +17,11 @@ public static partial class CompleteDemoVerification
         Require(audio!=null && Object.FindObjectsOfType<GameAudio>().Length==1,"Audio singleton missing/duplicated");
         Require(audio.GetComponentsInChildren<AudioSource>().Length==14,"Voice pool not bounded to 14 sources");
         Require(Object.FindObjectsOfType<AudioListener>().Length==1,"Expected one listener");
-        Require(audio.MusicSource.clip.name=="ForestWhisper" && audio.MusicSource.isPlaying,"Menu music not playing");
+        VerifyMusic("ForestWhisper");
+        Require(Vector2.Distance(Object.FindObjectOfType<PlayerHealth>().GetComponent<Collider2D>().bounds.center,CenteredSpawnSetup.ArenaCenter())<.01f,"Initial feet not at arena center");
         audio.enabled=false;Require(!AudioListener.pause,"Disabling audio left the global listener paused");
         audio.enabled=true;yield return null;
-        Require(GameAudio.Current==audio && audio.MusicSource.isPlaying && AudioListener.pause,"Re-enabled audio did not restore menu playback");
+        Require(GameAudio.Current==audio && AudioListener.pause,"Re-enabled audio did not restore menu state");VerifyMusic("ForestWhisper");
         int menuSample=audio.MusicSource.timeSamples;
         var button=FindButton("StartButton");
         var pointer=new PointerEventData(EventSystem.current);
@@ -30,12 +31,13 @@ public static partial class CompleteDemoVerification
         Require(audio.Played(GameSound.UIHover)==hover+1 && audio.Played(GameSound.UIClick)==click+1,"Pointer feedback audio missing at timeScale zero");
         Require(!GameAudio.Play(GameSound.PlayerShot),"Gameplay cue allowed in menu");
         until=EditorApplication.timeSinceStartup+.2;while(EditorApplication.timeSinceStartup<until) yield return null;
-        Require(audio.MusicSource.timeSamples>menuSample,"Menu music frozen with game time");
+        if(audio.MusicEnabled) Require(audio.MusicSource.timeSamples>menuSample,"Menu music frozen with game time");
         button.onClick.Invoke();
-        Require(audio.MusicSource.clip.name=="BattleThemeII","Battle music not switched");
+        VerifyMusic("BattleThemeII");
         Object.FindObjectOfType<PlayerHealth>().GetComponent<DamageReceiver>().SetInvincible(true);
         until=EditorApplication.timeSinceStartup+1.2;while(EditorApplication.timeSinceStartup<until) yield return null;
-        Require(audio.MusicSource.isPlaying && audio.MusicSource.volume>0,"Battle source silent/stopped");
+        if(audio.MusicEnabled) Require(audio.MusicSource.isPlaying && audio.MusicSource.volume>0,"Battle source silent/stopped");
+        else VerifyMusic("BattleThemeII");
         float battleVolume=audio.MusicSource.volume;
         Require(GameAudio.Play(GameSound.MagicImpact),"World cue failed while playing");
         var world=audio.GetComponentsInChildren<AudioSource>().First(s=>s.clip!=null && s.clip.name=="MagicImpact");
@@ -43,7 +45,8 @@ public static partial class CompleteDemoVerification
         Require(AudioListener.pause,"Pause did not pause listener");
         until=EditorApplication.timeSinceStartup+.3;while(EditorApplication.timeSinceStartup<until) yield return null;
         Require(world.timeSamples==frozen,"Gameplay audio advanced during pause");
-        Require(audio.MusicSource.timeSamples>musicSample && audio.MusicSource.volume<battleVolume,"Paused music not continuing/ducking");
+        if(audio.MusicEnabled) Require(audio.MusicSource.timeSamples>musicSample && audio.MusicSource.volume<battleVolume,"Paused music not continuing/ducking");
+        else VerifyMusic("BattleThemeII");
         Require(!GameAudio.Play(GameSound.PlayerShot) && GameAudio.Play(GameSound.UIClick),"Pause did not separate UI and world audio");
         flow.Resume();Require(!AudioListener.pause,"Listener stayed paused on resume");
         float master=audio.MasterVolume,music=audio.MusicVolume,sfx=audio.SfxVolume;
@@ -51,12 +54,24 @@ public static partial class CompleteDemoVerification
         Require(audio.MasterVolume==0 && audio.MusicVolume==1 && audio.SfxVolume==0,"Volume clamp failed");
         Require(audio.GetComponentsInChildren<AudioSource>().All(s=>s.volume==0),"Master mute failed");
         audio.SetVolumes(master,music,sfx,false);
+        var player=Object.FindObjectOfType<PlayerHealth>();var point=GameObject.Find("RespawnPoint").transform;
+        Require(Vector2.Distance(player.transform.position,point.position)<.01f,"Initial and respawn positions differ");
+        player.transform.position+=Vector3.right;
+        Object.FindObjectOfType<GameManager>().RespawnPlayer(player);
+        until=EditorApplication.timeSinceStartup+2.3;while(EditorApplication.timeSinceStartup<until) yield return null;
+        Require(Vector2.Distance(player.transform.position,point.position)<.01f && Vector2.Distance(player.GetComponent<Collider2D>().bounds.center,CenteredSpawnSetup.ArenaCenter())<.01f,"Actual delayed respawn missed arena center");
         flow.MainMenu();yield return null;
         while(GameAudio.Current==null || Object.FindObjectOfType<GameFlow>().State!=GameFlow.ScreenState.Menu) yield return null;
         Require(Object.FindObjectsOfType<GameAudio>().Length==1 && GameAudio.Current.GetComponentsInChildren<AudioSource>().Length==14,"Reload leaked audio voices");
         var ui=UI();while(ui.MoveNext()) yield return ui.Current;
-        Require(Object.FindObjectsOfType<GameAudio>().Length==1 && GameAudio.Current.MusicSource.clip.name=="ForestWhisper","Full UI flow leaked/misrouted music");
-        Debug.Log("PASS music, bounded voices, timeScale-zero UI, pause freeze/duck, mute, reload and full three-wave UI");
+        Require(Object.FindObjectsOfType<GameAudio>().Length==1,"Full UI flow leaked audio");VerifyMusic("ForestWhisper");
+        Debug.Log("PASS configured music state, centered spawn/delayed respawn, bounded voices, timeScale-zero UI, pause, mute, reload and full three-wave UI");
+    }
+    static void VerifyMusic(string expected)
+    {
+        var audio=GameAudio.Current;
+        if(audio.MusicEnabled) Require(audio.MusicSource.clip!=null && audio.MusicSource.clip.name==expected && audio.MusicSource.isPlaying,"Music route failed: "+expected);
+        else Require(audio.GetComponentsInChildren<AudioSource>().Where(s=>s.name.StartsWith("Music")).All(s=>!s.isPlaying && s.clip==null),"Disabled background music still playing/loaded");
     }
     static IEnumerator AudioAll()
     {

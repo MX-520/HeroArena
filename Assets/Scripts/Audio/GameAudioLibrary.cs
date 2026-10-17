@@ -22,6 +22,7 @@ public sealed class GameAudioLibrary : ScriptableObject
         public bool unpaused;
         public int priority;
     }
+    public bool musicEnabled=true;
     public AudioClip menuMusic,battleMusic;
     public Cue[] cues;
 }

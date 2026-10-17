@@ -75,6 +75,7 @@ public static partial class CompleteDemoVerification
         flow = Object.FindObjectOfType<GameFlow>();
         while (flow == null || flow.State != GameFlow.ScreenState.Playing) { yield return null; flow = Object.FindObjectOfType<GameFlow>(); }
         Require(Object.FindObjectsOfType<DestructibleObstacle>().Length == obstacleCount, "Restart did not restore obstacles");
+        Require(Vector2.Distance(Object.FindObjectOfType<PlayerHealth>().GetComponent<Collider2D>().bounds.center,CenteredSpawnSetup.ArenaCenter())<.01f,"Restart did not restore centered spawn");
         player = Object.FindObjectOfType<PlayerHealth>();
         Require(player.GetComponent<Health>().CurrentHP == 100 && !player.GetComponent<PlayerEffects>().GiantActive, "Restart leaked health or buffs");
         player.GetComponent<Health>().TakeDamage(1000);
