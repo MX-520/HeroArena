@@ -291,7 +291,7 @@
     },
     {
       "path": "ArtSource/Characters/UserHeroTrial/UserHeroIdleTrial.png",
-      "sha256": "7b0a04ba853d89621f4d30118e118c9640bb0c6f6a5e691bc513e29103bf2b8a",
+      "sha256": "d3ba6e36ba533e7095f38d2ef5c14070b7487bc583602bb4624f2ad52bf90c37",
       "width": 768,
       "height": 448,
       "mode": "RGBA",
@@ -316,6 +316,8 @@
     "sprites": 32,
     "clips": 4,
     "active_in_game": false,
-    "verification": "ArtSource/Characters/UserHeroTrial/unity-import-report.json"
+    "verification": "ArtSource/Characters/UserHeroTrial/unity-import-report.json",
+    "preview_scene": "Assets/Scenes/CharacterIdlePreview.unity",
+    "live_verification": "ArtSource/Characters/UserHeroTrial/unity-idle-live-report.json"
   }
 }

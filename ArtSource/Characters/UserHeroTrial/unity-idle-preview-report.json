@@ -1,0 +1,16 @@
+{
+    "status": "passed",
+    "error": "",
+    "scene": "Assets/Scenes/CharacterIdlePreview.unity",
+    "gameplaySceneHashBefore": "0F8B0C5D301EC83063B486E297FF6DFA95910E0B8EC7567629B577EE9AE13CE8",
+    "gameplaySceneHashAfter": "0F8B0C5D301EC83063B486E297FF6DFA95910E0B8EC7567629B577EE9AE13CE8",
+    "playing": false,
+    "directions": 4,
+    "checks": [
+        "Down: looping Animator controller; 7 distinct sampled sprites.",
+        "Left: looping Animator controller; 7 distinct sampled sprites.",
+        "Right: looping Animator controller; 7 distinct sampled sprites.",
+        "Up: looping Animator controller; 7 distinct sampled sprites.",
+        "Dedicated scene saved; original SampleScene bytes unchanged."
+    ]
+}

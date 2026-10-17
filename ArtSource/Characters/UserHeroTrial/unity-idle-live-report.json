@@ -1,0 +1,15 @@
+{
+    "status": "passed",
+    "error": "",
+    "scene": "Assets/Scenes/CharacterIdlePreview.unity",
+    "gameplaySceneHashBefore": "",
+    "gameplaySceneHashAfter": "",
+    "playing": true,
+    "directions": 4,
+    "checks": [
+        "IdleDown: 8 different sprites observed during Play Mode.",
+        "IdleLeft: 8 different sprites observed during Play Mode.",
+        "IdleRight: 8 different sprites observed during Play Mode.",
+        "IdleUp: 8 different sprites observed during Play Mode."
+    ]
+}

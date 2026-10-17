@@ -55,7 +55,7 @@ def inspect():
               'rows': []}
     for name, top, bottom in ROWS:
         rgb = rgba[top:bottom, 80:1529, :3].astype(int)
-        mask = (rgb.min(axis=2) < 155) | ((rgb.max(axis=2)-rgb.min(axis=2)) > 35)
+        mask = (rgb.min(axis=2) < 185) | ((rgb.max(axis=2)-rgb.min(axis=2)) > 35)
         objects = components(mask)
         result['rows'].append(dict(direction=name, top=top, bottom=bottom,
                                    detected_characters=len(objects), components=objects))
@@ -109,6 +109,11 @@ def extract():
             # the dark outline before filling its enclosed highlights.
             closed = Image.fromarray(mask.astype(np.uint8)*255).filter(ImageFilter.MaxFilter(3)).filter(ImageFilter.MinFilter(3))
             mask = np.array(closed) > 0
+            # Some presentation frames break the pale hair outline by several
+            # pixels. Apply stronger closing to the head only; keep arm/leg gaps.
+            head_closed = np.array(Image.fromarray(mask.astype(np.uint8)*255).filter(ImageFilter.MaxFilter(7)).filter(ImageFilter.MinFilter(7))) > 0
+            head_end = obj['y'] + round(obj['height'] * 0.55)
+            mask[:head_end] = head_closed[:head_end]
             mask = fill_inside(mask)
             y, x = np.where(mask)
             left, right, first, bottom = int(x.min()), int(x.max())+1, int(y.min()), int(y.max())+1
@@ -137,7 +142,7 @@ def extract():
                   source_origin='User supplied ChatGPT presentation board; not raw transparent frames.',
                   output='UserHeroIdleTrial.png',frames_per_direction=8,
                   actual_cell=[96,112],original_pixels_resampled=False,
-                  limitations=['Baked checkerboard removed using connected silhouettes, one-pixel outline closing and enclosed-hole fill.',
+                  limitations=['Baked checkerboard removed using connected silhouettes, local outline closing and enclosed-hole fill; stronger closing limited to the head protects white hair.',
                                'Board contains inconsistent numbering/spacing; claimed 32x32/32 frames not used.',
                                'Selected frames are trial samples, not verified original animation keyframes.',
                                'Do not treat this as final alpha-quality or seamless idle-loop approval.'])
