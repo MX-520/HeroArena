@@ -184,6 +184,7 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator RollCoroutine()
     {
         isRolling = true;
+        GameAudio.Play(GameSound.Roll,transform.position);
 
         animator.SetTrigger("Roll");
 

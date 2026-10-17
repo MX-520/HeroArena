@@ -1,11 +1,11 @@
 {
-  "stage": "prepared-not-integrated",
+  "stage": "integrated-first-pass-awaiting-listening-QA",
   "verified_date": "2026-10-17",
   "assets": [
     {
       "asset": "ThirdParty/Kenney/kenney-interface/select_001.ogg",
       "event_candidate": "UI悬停",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -19,7 +19,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-interface/click_001.ogg",
       "event_candidate": "UI点击",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -33,7 +33,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-interface/back_001.ogg",
       "event_candidate": "UI返回",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -47,7 +47,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-interface/confirmation_001.ogg",
       "event_candidate": "UI确认",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -61,7 +61,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-interface/error_001.ogg",
       "event_candidate": "操作不可用",
-      "status": "candidate-not-wired",
+      "status": "candidate-unused",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -75,7 +75,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-rpg/knifeSlice.ogg",
       "event_candidate": "近战挥刀A",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -89,7 +89,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-rpg/knifeSlice2.ogg",
       "event_candidate": "近战挥刀B",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -103,7 +103,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-rpg/cloth1.ogg",
       "event_candidate": "翻滚衣料",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -117,7 +117,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-rpg/handleCoins.ogg",
       "event_candidate": "道具拾取候选",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -131,7 +131,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-impact/impactPunch_medium_000.ogg",
       "event_candidate": "玩家受伤候选",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -145,7 +145,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-impact/impactPunch_heavy_000.ogg",
       "event_candidate": "敌人受伤候选",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -159,7 +159,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-impact/impactWood_heavy_000.ogg",
       "event_candidate": "木障碍破坏",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -173,7 +173,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-impact/impactPlate_medium_000.ogg",
       "event_candidate": "硬质障碍命中候选",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -187,7 +187,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-impact/footstep_grass_000.ogg",
       "event_candidate": "草地脚步A",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -201,7 +201,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-impact/footstep_grass_001.ogg",
       "event_candidate": "草地脚步B",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -215,7 +215,7 @@
     {
       "asset": "ThirdParty/Kenney/kenney-impact/footstep_grass_002.ogg",
       "event_candidate": "草地脚步C",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Kenney",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -229,7 +229,7 @@
     {
       "asset": "ThirdParty/CleytonKauffman/ForestWhisper.ogg",
       "event_candidate": "主菜单/休整BGM候选",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Cleyton Kauffman",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -243,7 +243,7 @@
     {
       "asset": "ThirdParty/CleytonKauffman/BattleThemeII.ogg",
       "event_candidate": "战斗BGM候选",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "Cleyton Kauffman",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -257,7 +257,7 @@
     {
       "asset": "Original/PlayerShot.wav",
       "event_candidate": "玩家射击",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
@@ -267,7 +267,7 @@
     {
       "asset": "Original/MagicCast.wav",
       "event_candidate": "哥布林魔法发射",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
@@ -277,7 +277,7 @@
     {
       "asset": "Original/MagicImpact.wav",
       "event_candidate": "魔法弹命中",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
@@ -287,7 +287,7 @@
     {
       "asset": "Original/HealPickup.wav",
       "event_candidate": "回血/增益拾取",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
@@ -297,7 +297,7 @@
     {
       "asset": "Original/Victory.wav",
       "event_candidate": "挑战成功短音",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",
@@ -307,7 +307,7 @@
     {
       "asset": "Original/Defeat.wav",
       "event_candidate": "挑战失败短音",
-      "status": "candidate-not-wired",
+      "status": "wired-HeroArenaAudio",
       "author": "HeroArena project procedural synthesis",
       "license": "project-original-no-third-party-samples",
       "source": "Assets/Audio/Candidates/Original/generate_original_audio.py",

@@ -32,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
             !isAttacking)
         {
             isAttacking = true;
+            GameAudio.Play(GameSound.PlayerSwing,transform.position);
             animator.SetTrigger("Attack");
         }
     }

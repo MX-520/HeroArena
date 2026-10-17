@@ -54,6 +54,7 @@ public class PlayerShooting : MonoBehaviour
                 LayerMask.GetMask("Enemy", "Destructible"), LayerMask.GetMask("Default"));
             ShotsFired++;
         }
+        GameAudio.Play(GameSound.PlayerShot,transform.position);
         return true;
     }
 }

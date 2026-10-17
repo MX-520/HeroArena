@@ -80,10 +80,12 @@ public class EnemyAttack : MonoBehaviour
                 Projectile shot = Instantiate(projectilePrefab, attackPoint.position, Quaternion.identity);
                 shot.Initialize(transform, heading, damage, 6.5f, targetLayer, LayerMask.GetMask("Default", "Destructible"));
                 ShotsFired++;
+                GameAudio.Play(GameSound.MagicCast,transform.position);
             }
             CancelWindup();
             return;
         }
+        GameAudio.Play(GameSound.EnemySwing,transform.position);
         foreach (Collider2D hit in Physics2D.OverlapCircleAll(attackPoint.position, attackRange, targetLayer))
         {
             var receiver = hit.GetComponentInParent<DamageReceiver>();

@@ -47,7 +47,7 @@ public class Projectile : MonoBehaviour
             if (bodyHitbox && ((targetMask & (1 << recipientLayer)) == 0 || receiver == null || !receiver.isActiveAndEnabled)) continue;
             if ((targetMask & (1 << recipientLayer)) != 0 && receiver != null && receiver.isActiveAndEnabled)
                 receiver.TakeDamage(damage);
-            if(visual!=null) visual.Finish(true,hits[i].point);
+            if(visual!=null) {GameAudio.Play(GameSound.MagicImpact,hits[i].point);visual.Finish(true,hits[i].point);}
             Destroy(gameObject);
             return;
         }

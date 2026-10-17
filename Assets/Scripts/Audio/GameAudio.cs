@@ -90,7 +90,8 @@ public sealed class GameAudio : MonoBehaviour
     }
     private void SwitchMusic(AudioClip clip)
     {
-        if(clip==null || music[activeMusic].clip==clip) return;
+        if(clip==null) return;
+        if(music[activeMusic].clip==clip) {if(!music[activeMusic].isPlaying) music[activeMusic].Play();return;}
         activeMusic=1-activeMusic;music[activeMusic].clip=clip;music[activeMusic].volume=0;musicGain[activeMusic]=0;
         music[activeMusic].Play();
     }

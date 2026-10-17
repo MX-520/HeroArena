@@ -61,7 +61,9 @@ public static class AudioIntegrationSetup
             clips[i]=Clip(slash<0?"Original/"+files[i]+".wav":"ThirdParty/Kenney/kenney-"+files[i].Substring(0,slash)+"/"+files[i].Substring(slash+1)+".ogg");
         }
         list.Add(new GameAudioLibrary.Cue{sound=sound,gain=gain,clips=clips,unpaused=unpaused,
-            priority=sound==GameSound.Victory || sound==GameSound.Defeat?3:unpaused?2:1,
+            priority=sound==GameSound.Victory || sound==GameSound.Defeat?5:
+                sound==GameSound.PlayerDeath?4:sound==GameSound.PlayerHurt || sound==GameSound.UIClick || sound==GameSound.UIBack?3:
+                sound==GameSound.Footstep?0:sound==GameSound.EnemyDeath || sound==GameSound.EnemyHurt || sound==GameSound.EnemySwing?1:2,
             cooldown=sound==GameSound.Footstep?.09f:.04f,voices=sound==GameSound.Footstep?2:3});
     }
 }

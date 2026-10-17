@@ -1,6 +1,6 @@
-# 音效与背景音乐候选（尚未接入）
+# 音效与背景音乐（首轮接入）
 
-准备日期：2026-10-17。当前只有素材与导入配置，游戏内还不会播放这些声音。
+准备与接入日期：2026-10-17。24个候选中23个已接入，error_001保留未使用。当前映射为 `Assets/Audio/HeroArenaAudio.asset`，由 `AudioIntegrationSetup.Apply` 配置。
 
 ## 授权
 
@@ -10,31 +10,27 @@
 
 来源、每个文件的原始名称、下载地址、许可、核对日期、用途候选和 SHA-256 见 `manifest.json`。授权核对依据见 `Licenses/SOURCES.md`。下载原包与原始页面备份在工作区 `Logs/AudioPreparation`，正式交付记录为本目录的许可文件和 manifest。
 
-## 初步分工
+## 当前播放映射
 
-| 场景／反馈 | 文件 | 状态 |
-|---|---|---|
-| 开始界面／波间休整 | `ThirdParty/CleytonKauffman/ForestWhisper.ogg` | 森林主题循环候选 |
-| 波次战斗 | `ThirdParty/CleytonKauffman/BattleThemeII.ogg` | 战斗循环候选 |
-| 按钮悬停／点击／返回 | Kenney Interface 的 select / click / back | 待实机听感选择 |
-| 近战挥刀 | Kenney RPG 的 knifeSlice / knifeSlice2 | 待实机音量与变调 |
-| 翻滚／草地脚步 | cloth1 / footstep_grass_000～002 | 待接动画事件 |
-| 玩家／敌人受伤 | impactPunch_medium / heavy | 待区分力度 |
-| 木质破坏／硬质命中 | impactWood_heavy / impactPlate_medium | 待实机听感选择 |
-| 射击／魔法发射／魔法命中 | Original 的 PlayerShot / MagicCast / MagicImpact | 自制候选 |
-| 回血／增益／拾取 | HealPickup / handleCoins | 待分配各道具 |
-| 成功／失败 | Original 的 Victory / Defeat | 自制提示短音候选 |
+| 场景／反馈 | 文件 |
+|---|---|
+| 首页／胜负结算 | ForestWhisper，循环、流式 |
+| 全部三波战斗及波间休整 | BattleThemeII，循环、流式，换波不重播 |
+| 按钮悬停／点击／返回／波次开始 | select / click / back / confirmation |
+| 玩家／敌人近战挥动 | knifeSlice / knifeSlice2 |
+| 翻滚／草地脚步 | cloth1 / footstep_grass_000～002 |
+| 玩家／敌人受伤与死亡 | impactPunch_heavy / medium |
+| 木质／石质破坏 | impactWood_heavy / impactPlate_medium |
+| 玩家射击／魔法发射／魔法命中 | PlayerShot / MagicCast / MagicImpact |
+| 回血／增益拾取 | HealPickup / handleCoins |
+| 成功／失败 | Victory / Defeat |
 
-候选基于发布页说明、原包文件与技术检查，不代表完成听感验收。两首音乐使用同一作者，最终是否采用及音量平衡需在接入后试听。
+## 实现与验证
 
-## 下一步接入方案（计划，未实现）
+- GameAudio随场景创建和销毁，2个音乐通道交叉淡入0.8秒；12个固定短音效声部，含3个不受暂停影响的界面／死亡／结束提示声部。按优先级抢占低优先级音效，避免战斗声吞掉重要提示。
+- 暂停冻结普通战斗音效，背景音乐继续并降低至25%；界面声音正常响应。回到菜单、重开不会积累旧音源。
+- 独立随机源选变体／轻微变调，不改变掉落、波次等Unity随机序列。单类音效有冷却与并发限制；Master/Music/SFX为代码增益通道，数值存入PlayerPrefs，尚无AudioMixer资产或音量UI。
+- 主角射击成功时每次齐射一声；近战起手、实际翻滚、实际位移脚步；远程敌人实际发射／碰撞；生命真实受伤／死亡；成功拾取及实际障碍破坏。护罩、无敌及无效治疗不会误播放受伤／治疗声。
+- 自动化技术验证覆盖上述事件、音源播放与采样推进、暂停/恢复、音量静音、声部限制、三波胜负、重开和场景重载。证据在 `Logs/full-demo-audio-all.txt` 与对应日志。
 
-1. 复用 GameFlow.Changed 切换菜单／战斗／胜负音乐；暂停淡出或低通，恢复时延续播放，重开与返回菜单避免重复音源。
-2. UI 声音接 ArenaButtonFeedback 的真实进入／点击事件；连续悬停做间隔限制，暂停时仍可播放 UI 音效。
-3. PlayerShooting.TryShoot 成功生成子弹才发声；EnemyAttack.DetectHit 真实发射时播放魔法声，命中声接 Projectile 的实际命中分支。
-4. 受伤声接 Health.OnDamaged，死亡声接 OnDied。注意现有致命伤不会触发 OnDamaged，应避免死亡漏声或重复受击声；护罩／翻滚无敌挡住伤害时不播放普通受伤声。
-5. 拾取声接成功收集，障碍破坏接死亡事件。脚步与挥刀按动作时刻触发，避免用每帧轮询反复播放。
-6. 添加 Master／Music／SFX 混音分组、音量保存、同类音效并发上限与轻微变调；BGM 使用流式加载，短音效预加载。
-7. 实机验收覆盖持续射击、多人同屏、暂停／恢复、三波胜负、死亡、重开与场景重载；另行检查循环接缝、削波和听觉疲劳。
-
-音频准备步骤不修改 Scene、Prefab、Animator、Input 或战斗逻辑来播放音频，不构建打包。
+这是一轮可玩版本，未完成主观听感、循环接缝、削波及长时间疲劳验收；后续根据实际游玩调整。没有构建打包。角色/敌人旧图像授权风险另见 `ProjectKnowledge/13_素材授权与替换计划.md`，不因音频采用CC0便视作全部游戏资源可商用。

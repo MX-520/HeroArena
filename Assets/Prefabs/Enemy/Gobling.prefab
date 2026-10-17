@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 4634064565367758795}
   - component: {fileID: 618243088704203315}
   - component: {fileID: 6004311231430047765}
+  - component: {fileID: 433724108221397753}
   m_Layer: 7
   m_Name: Gobling
   m_TagString: Untagged
@@ -476,3 +477,16 @@ MonoBehaviour:
   - {fileID: 7671817517187105253, guid: b7105a176780e1040bbf1cb45311fb26, type: 3}
   - {fileID: 4885742580876638571, guid: ed07dfee373c5554e8153844ff71d2f6, type: 3}
   chance: 0.35
+--- !u!114 &433724108221397753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653990315370750699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1ed79e753f8e940a7d776f41e6b57a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  kind: 0

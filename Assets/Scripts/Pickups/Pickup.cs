@@ -22,6 +22,7 @@ public class Pickup : MonoBehaviour
     {
         if (consumed || player == null || !player.TryApply(kind)) return false;
         consumed = true;
+        GameAudio.Play(kind==PickupKind.Heal?GameSound.Heal:GameSound.Pickup,transform.position);
         gameObject.SetActive(false);
         Destroy(gameObject);
         return true;

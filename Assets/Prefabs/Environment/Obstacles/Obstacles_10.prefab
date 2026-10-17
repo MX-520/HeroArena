@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1304521947753872168}
   - component: {fileID: 3114048862684079738}
   - component: {fileID: 6276952928802233886}
+  - component: {fileID: 1242425886061514565}
   m_Layer: 8
   m_Name: Obstacles_10
   m_TagString: Untagged
@@ -170,3 +171,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 30
+--- !u!114 &1242425886061514565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817628202894740755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1ed79e753f8e940a7d776f41e6b57a, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  kind: 3
