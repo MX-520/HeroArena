@@ -24,6 +24,7 @@ public sealed class GameAudioLibrary : ScriptableObject
     }
     public bool musicEnabled=true;
     [Range(0,1)] public float musicGain=1;
+    [Range(0,2)] public float sfxGain=1;
     public AudioClip menuMusic,battleMusic;
     public Cue[] cues;
 }

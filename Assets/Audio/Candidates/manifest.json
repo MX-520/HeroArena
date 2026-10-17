@@ -1,5 +1,5 @@
 {
-  "stage": "integrated-upbeat-adventure-bgm-awaiting-listening-QA",
+  "stage": "integrated-louder-sfx-priority-mix-and-gentle-overworld-awaiting-listening-QA",
   "verified_date": "2026-10-17",
   "assets": [
     {
@@ -545,6 +545,21 @@
       "download_url": "https://opengameart.org/sites/default/files/flowerbed_fields.ogg",
       "original_file": "flowerbed_fields.ogg",
       "sha256": "99607b996cc43c1891afcbf7c2c8d8aad1009266cea358d4753e3c50b1332d36",
+      "checked_date": "2026-10-17"
+    },
+    {
+      "asset": "ThirdParty/KarateStudios/RPGOverworld.wav",
+      "event_candidate": "游戏内较舒缓的探索冒险BGM",
+      "status": "wired-HeroArenaAudio",
+      "author": "Karate Studios",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page": "https://opengameart.org/content/2-whimsical-rpg-themes",
+      "download_url": "https://opengameart.org/sites/default/files/RPG%20Overworld.flac",
+      "original_file": "RPG Overworld.flac",
+      "download_sha256": "16d53b5f43418a7b1e109bfcae889fe3ff408e3ea3afd079bf321b5a788c6fcd",
+      "processing": "ThirdParty/prepare_overworld_music.py: trim silent tail, 120ms end/start overlap, normalize RMS with 0.60 peak ceiling, encode PCM16",
+      "sha256": "2e725dab1801b25e056eb34c66174950d8a7b73a044213b139245eb59c7fb228",
       "checked_date": "2026-10-17"
     }
   ]

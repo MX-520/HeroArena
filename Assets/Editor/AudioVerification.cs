@@ -39,15 +39,28 @@ public static partial class CompleteDemoVerification
         Require(!GameAudio.Play(GameSound.PlayerShot),"Gameplay cue allowed in menu");
         until=EditorApplication.timeSinceStartup+.2;while(EditorApplication.timeSinceStartup<until) yield return null;
         if(audio.MusicEnabled) Require(audio.MusicSource.timeSamples>menuSample,"Menu music frozen with game time");
-        int transitionSample=audio.MusicSource.timeSamples;
+        var menuSource=audio.MusicSource;
         button.onClick.Invoke();
-        Require(audio.MusicSource.timeSamples>=transitionSample,"Starting run restarted shared adventure music");
-        VerifyMusic("FlowerbedFields");
+        Require(audio.MusicSource!=menuSource && menuSource.isPlaying,"Menu-to-game music did not crossfade");
+        VerifyMusic("RPGOverworld");
+        flow.Waves.enabled=false; // Isolate mix measurements from scheduled wave announcement cues.
         Object.FindObjectOfType<PlayerHealth>().GetComponent<DamageReceiver>().SetInvincible(true);
         until=EditorApplication.timeSinceStartup+1.2;while(EditorApplication.timeSinceStartup<until) yield return null;
         if(audio.MusicEnabled) Require(audio.MusicSource.isPlaying && audio.MusicSource.volume>0,"Battle source silent/stopped");
-        else VerifyMusic("FlowerbedFields");
+        else VerifyMusic("RPGOverworld");
         float battleVolume=audio.MusicSource.volume;
+        Require(!menuSource.isPlaying && menuSource.clip==null,"Old menu music did not finish fading out");
+        // Check actual SFX-first mixing, then wait for both source and duck to recover.
+        Require(GameAudio.Play(GameSound.MagicCast),"Mix focus fixture failed");
+        until=EditorApplication.timeSinceStartup+.07;while(EditorApplication.timeSinceStartup<until) yield return null;
+        Require(audio.MusicSource.volume<battleVolume*.90f,"Critical effect did not duck background music");
+        var castSource=audio.GetComponentsInChildren<AudioSource>().First(v=>v.clip!=null && v.clip.name=="ArcaneCast");
+        Require(castSource.volume>audio.MasterVolume*audio.SfxVolume*.40f*1.5f,"Effects did not receive loudness boost");
+        until=EditorApplication.timeSinceStartup+.6;while(EditorApplication.timeSinceStartup<until) yield return null;
+        Require(audio.MusicSource.volume>=battleVolume*.95f,"Music focus did not recover");
+        var gameSource=audio.MusicSource;gameSource.timeSamples=gameSource.clip.samples-(int)(gameSource.clip.frequency*.15f);
+        until=EditorApplication.timeSinceStartup+.35;while(EditorApplication.timeSinceStartup<until) yield return null;
+        Require(gameSource.isPlaying && gameSource.time<1,"Game music did not wrap at loop end");
         Require(GameAudio.Play(GameSound.MagicImpact),"World cue failed while playing");
         var world=audio.GetComponentsInChildren<AudioSource>().First(s=>s.clip!=null && s.clip.name=="ArcaneImpact");
         flow.Pause();int frozen=world.timeSamples;int musicSample=audio.MusicSource.timeSamples;
@@ -55,7 +68,7 @@ public static partial class CompleteDemoVerification
         until=EditorApplication.timeSinceStartup+.3;while(EditorApplication.timeSinceStartup<until) yield return null;
         Require(world.timeSamples==frozen,"Gameplay audio advanced during pause");
         if(audio.MusicEnabled) Require(audio.MusicSource.timeSamples>musicSample && audio.MusicSource.volume<battleVolume,"Paused music not continuing/ducking");
-        else VerifyMusic("FlowerbedFields");
+        else VerifyMusic("RPGOverworld");
         Require(!GameAudio.Play(GameSound.PlayerShot) && GameAudio.Play(GameSound.UIClick),"Pause did not separate UI and world audio");
         flow.Resume();Require(!AudioListener.pause,"Listener stayed paused on resume");
         float master=audio.MasterVolume,music=audio.MusicVolume,sfx=audio.SfxVolume;

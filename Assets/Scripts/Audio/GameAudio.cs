@@ -21,6 +21,8 @@ public sealed class GameAudio : MonoBehaviour
     private int lastWave;
     private GameFlow.ScreenState state=(GameFlow.ScreenState)(-1);
     private float duck=1;
+    private float actionDuck=1;
+    private float actionDuckUntil;
     private Camera audioCamera;
     public float MasterVolume { get; private set; }
     public float MusicVolume { get; private set; }
@@ -100,14 +102,16 @@ public sealed class GameAudio : MonoBehaviour
     {
         float target=state==GameFlow.ScreenState.Paused?0.25f:state==GameFlow.ScreenState.Playing?1:0.7f;
         duck=Mathf.MoveTowards(duck,target,Time.unscaledDeltaTime*2);
+        float actionTarget=state==GameFlow.ScreenState.Playing && Time.unscaledTime<actionDuckUntil?0.68f:1;
+        actionDuck=Mathf.MoveTowards(actionDuck,actionTarget,Time.unscaledDeltaTime*(actionTarget<actionDuck?12:2.5f));
         for(int i=0;i<2;i++)
         {
             if(!MusicEnabled) {music[i].Stop();music[i].clip=null;music[i].volume=0;musicGain[i]=0;continue;}
             musicGain[i]=Mathf.MoveTowards(musicGain[i],i==activeMusic?1:0,Time.unscaledDeltaTime/0.8f);
-            music[i].volume=MasterVolume*MusicVolume*library.musicGain*musicGain[i]*duck;
+            music[i].volume=MasterVolume*MusicVolume*library.musicGain*musicGain[i]*duck*actionDuck;
             if(i!=activeMusic && musicGain[i]==0 && music[i].clip!=null) {music[i].Stop();music[i].clip=null;}
         }
-        foreach(var voice in voices) voice.source.volume=MasterVolume*SfxVolume*voice.gain;
+        foreach(var voice in voices) voice.source.volume=MasterVolume*SfxVolume*library.sfxGain*voice.gain;
     }
     private bool PlayCue(GameSound sound,Vector3 position)
     {
@@ -132,7 +136,8 @@ public sealed class GameAudio : MonoBehaviour
         slot.source.Stop();slot.sound=sound;slot.priority=cue.priority;slot.gain=cue.gain;
         slot.source.clip=clip;slot.source.pitch=Mathf.Lerp(cue.pitch.x,cue.pitch.y,(float)variation.NextDouble());
         slot.source.panStereo=cue.unpaused || audioCamera==null?0:Mathf.Clamp((position.x-audioCamera.transform.position.x)/12,-0.65f,0.65f);
-        slot.source.volume=MasterVolume*SfxVolume*slot.gain;slot.source.Play();
+        slot.source.volume=MasterVolume*SfxVolume*library.sfxGain*slot.gain;slot.source.Play();
+        if(!cue.unpaused && cue.priority>=2) actionDuckUntil=Time.unscaledTime+0.16f;
         nextAllowed[key]=Time.unscaledTime+cue.cooldown;played[key]++;return true;
     }
 }

@@ -27,3 +27,6 @@ Original 中声音属于本项目程序合成成果，不含下载音源。其�
 
 
 2026-10-17启用Zane Little Music的Flowerbed Fields [Loop]（CC0），来源和完整原文件SHA-256见CC0-Adventure-Music.md及manifest.json；保留原OGG字节与作者署名。
+
+
+2026-10-17新增Karate Studios的RPG Overworld（CC0），游戏内替换为较舒缓探索曲，原始/剪辑关系与署名见CC0-Gentle-Overworld.md；首页保留Flowerbed Fields。

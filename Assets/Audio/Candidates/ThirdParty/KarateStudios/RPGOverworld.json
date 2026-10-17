@@ -1,0 +1,14 @@
+{
+  "source_sha256": "16d53b5f43418a7b1e109bfcae889fe3ff408e3ea3afd079bf321b5a788c6fcd",
+  "source_seconds": 58.625,
+  "trim_start": 0.0,
+  "trim_end": 56.6385625,
+  "seam_overlap_seconds": 0.12,
+  "content_gain": 0.5963525333047022,
+  "seconds": 56.5185625,
+  "sample_rate": 48000,
+  "channels": 2,
+  "peak": 0.5999755859375,
+  "rms": 0.07386105087496539,
+  "sha256": "2e725dab1801b25e056eb34c66174950d8a7b73a044213b139245eb59c7fb228"
+}

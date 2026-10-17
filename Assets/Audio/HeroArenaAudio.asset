@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: HeroArenaAudio
   m_EditorClassIdentifier:
   musicEnabled: 1
-  musicGain: 0.45
+  musicGain: 0.7
+  sfxGain: 1.65
   menuMusic: {fileID: 8300000, guid: bea82726d4be8f942bece84b988375fa, type: 3}
-  battleMusic: {fileID: 8300000, guid: bea82726d4be8f942bece84b988375fa, type: 3}
+  battleMusic: {fileID: 8300000, guid: 9dfc261aa77b9474dbcf90804fc43bdd, type: 3}
   cues:
   - sound: 0
     clips:
