@@ -162,8 +162,8 @@ public static class ChineseUISetup
             if(text.name=="ControlsText") text.fontSize=14;
             if(text.name=="ControlsText")
             {
-                text.color=new Color(0.04f,0.18f,0.20f,0.82f);
-                text.fontStyle=FontStyles.Normal;
+                text.color=Color.black;
+                text.fontStyle=FontStyles.Bold;
                 const string path="Assets/UI/Fonts/ControlsText.mat";
                 var material=AssetDatabase.LoadAssetAtPath<Material>(path);
                 if(material==null) { material=new Material(text.font.material);material.name="ControlsText";AssetDatabase.CreateAsset(material,path); }
