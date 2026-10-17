@@ -14,6 +14,8 @@ public static partial class CompleteDemoVerification
         var ui=Object.FindObjectOfType<GameUI>();ui.gameObject.SetActive(false);
         var shader=Shader.Find("HeroArena/ArcaneParticle");
         Require(shader!=null && !ShaderUtil.ShaderHasError(shader),"Arcane shader failed");
+        var orbShader=Shader.Find("HeroArena/ArcaneOrb");
+        Require(orbShader!=null && !ShaderUtil.ShaderHasError(orbShader),"Purple sphere shader failed");
         var prefab=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Combat/EnemyEnergyBolt.prefab");
         Require(prefab.transform.localScale==Vector3.one*2.7f,"Bolt scale changed");
         var player=Object.FindObjectOfType<PlayerHealth>();
@@ -23,18 +25,24 @@ public static partial class CompleteDemoVerification
         Vector3 from=player.transform.position+Vector3.up*3;
         var shot=Object.Instantiate(prefab,from,Quaternion.identity).GetComponent<Projectile>();
         shot.Initialize(source.transform,Vector2.down,8,6.5f,LayerMask.GetMask("Player"),LayerMask.GetMask("Default","Destructible"));
+        var visual=shot.GetComponent<ArcaneBoltVfx>();float firstPhase=visual.Phase;
         float until=Time.time+0.15f;
         while(Time.time<until) yield return null;
         Require(shot!=null && shot.GetComponentsInChildren<ParticleSystem>().First(p=>p.name=="ArcaneTrail").particleCount>=2,"Missing moving particle trail");
         var ps=shot.GetComponentsInChildren<ParticleSystem>().First(p=>p.name=="OrbitSparks");
         Require(ps.particleCount>0,"Flight sparks did not emit");
+        var body=shot.GetComponentsInChildren<MeshRenderer>().FirstOrDefault(r=>r.name=="OrbBody");
+        Require(body!=null && body.enabled && body.bounds.size.x>0.6f,"Magic bolt lacks a substantial sphere body");
+        Require(visual.Phase>firstPhase,"Sphere surface did not animate during flight");
         var pos=shot.transform.position;float particleTime=ps.time;
+        float phase=visual.Phase;
         var trail=shot.GetComponentsInChildren<ParticleSystem>().First(p=>p.name=="ArcaneTrail");float trailTime=trail.time;
         Time.timeScale=0;
         double wait=EditorApplication.timeSinceStartup+0.15;
         while(EditorApplication.timeSinceStartup<wait) yield return null;
         Require(shot.transform.position==pos && Mathf.Abs(ps.time-particleTime)<0.001f,"Pause did not freeze projectile particles");
         Require(Mathf.Abs(trail.time-trailTime)<0.001f && trail.particleCount>0,"Pause did not preserve particle tail");
+        Require(Mathf.Abs(visual.Phase-phase)<0.001f,"Sphere flow did not pause");
         CaptureArcane("flight");
         Time.timeScale=1;
         until=Time.time+1;
@@ -54,11 +62,36 @@ public static partial class CompleteDemoVerification
         until=Time.time+0.6f;
         while(Time.time<until) yield return null;
         Require(expired==null && !Object.FindObjectsOfType<ParticleSystem>().Any(t=>t.name=="ArcaneTrail"),"Expired VFX did not clean up");
+        var preview=Object.Instantiate(prefab,player.transform.position+Vector3.left*3+Vector3.up,Quaternion.identity).GetComponent<Projectile>();
+        preview.Initialize(source.transform,Vector2.right,0,6.5f,0,0,5);
+        Directory.CreateDirectory("Logs/magic-orb-motion");
+        for(int frame=0;frame<20;frame++)
+        {
+            until=Time.time+0.04f;while(Time.time<until) yield return null;
+            Require(preview!=null,"Magic preview expired too early");
+            CaptureMagicMotion(preview.transform.position,frame);
+        }
+        preview.GetComponent<ArcaneBoltVfx>().Finish(false,preview.transform.position);Object.Destroy(preview.gameObject);
+        until=Time.time+0.5f;while(Time.time<until) yield return null;
         Object.Destroy(source);
         player.GetComponent<DamageReceiver>().SetInvincible(true);
         // Existing tests verify real enemy 1.2-second attacks and the player's original projectile contract.
         var ranged=FeedbackEnemies();while(ranged.MoveNext()) yield return ranged.Current;
         var shooting=Shooting();while(shooting.MoveNext()) yield return shooting.Current;
+    }
+    private static void CaptureMagicMotion(Vector3 position,int frame)
+    {
+        var camera=Camera.main;var previous=camera.targetTexture;var active=RenderTexture.active;
+        var oldPosition=camera.transform.position;float oldSize=camera.orthographicSize;
+        var target=RenderTexture.GetTemporary(640,360,24);var pixels=new Texture2D(640,360,TextureFormat.RGB24,false);
+        try
+        {
+            camera.targetTexture=target;
+            camera.transform.position=new Vector3(position.x-0.7f,position.y,oldPosition.z);camera.orthographicSize=1.5f;
+            camera.Render();RenderTexture.active=target;pixels.ReadPixels(new Rect(0,0,640,360),0,0);pixels.Apply();
+            File.WriteAllBytes("Logs/magic-orb-motion/"+frame.ToString("00")+".png",pixels.EncodeToPNG());
+        }
+        finally {camera.transform.position=oldPosition;camera.orthographicSize=oldSize;camera.targetTexture=previous;RenderTexture.active=active;RenderTexture.ReleaseTemporary(target);Object.Destroy(pixels);}
     }
     private static void CaptureArcane(string name)
     {

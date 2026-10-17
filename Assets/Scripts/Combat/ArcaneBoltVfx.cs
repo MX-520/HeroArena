@@ -7,10 +7,26 @@ public sealed class ArcaneBoltVfx : MonoBehaviour
     [SerializeField] private Transform innerArc;
     [SerializeField] private ParticleSystem trail;
     [SerializeField] private ParticleSystem impact;
+    [SerializeField] private Renderer orbBody;
+    private MaterialPropertyBlock properties;
+    private float phase;
+    public float Phase=>phase;
     private bool finished;
+
+    private void Awake()
+    {
+        phase=Mathf.Abs(GetInstanceID()*0.1234f)%6.28f;
+        properties=new MaterialPropertyBlock();
+    }
 
     private void Update()
     {
+        phase+=Time.deltaTime;
+        if(orbBody!=null)
+        {
+            properties.SetFloat("_Phase",phase);
+            orbBody.SetPropertyBlock(properties);
+        }
         if(outerArc!=null) outerArc.Rotate(0,0,240*Time.deltaTime);
         if(innerArc!=null) innerArc.Rotate(0,0,-320*Time.deltaTime);
     }
