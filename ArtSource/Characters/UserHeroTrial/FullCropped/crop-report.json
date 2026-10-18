@@ -1,0 +1,1432 @@
+{
+  "status": "passed",
+  "source_sha256": "6658fc05b719404bbd7dd97645c12871f40afaa365d1a5f3e6ea7e2460d8f833",
+  "frame_size": [
+    96,
+    112
+  ],
+  "source_claimed_frames_per_direction": 32,
+  "actual_counts": {
+    "Down": 31,
+    "Left": 29,
+    "Right": 29,
+    "Up": 28
+  },
+  "frames": [
+    {
+      "direction": "Down",
+      "index": 1,
+      "source_rect": [
+        80,
+        428,
+        52,
+        72
+      ],
+      "head_centre": 108,
+      "path": "FullCropped/Down/Down_01.png"
+    },
+    {
+      "direction": "Down",
+      "index": 2,
+      "source_rect": [
+        132,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 155,
+      "path": "FullCropped/Down/Down_02.png"
+    },
+    {
+      "direction": "Down",
+      "index": 3,
+      "source_rect": [
+        178,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 201,
+      "path": "FullCropped/Down/Down_03.png"
+    },
+    {
+      "direction": "Down",
+      "index": 4,
+      "source_rect": [
+        224,
+        428,
+        45,
+        72
+      ],
+      "head_centre": 248,
+      "path": "FullCropped/Down/Down_04.png"
+    },
+    {
+      "direction": "Down",
+      "index": 5,
+      "source_rect": [
+        269,
+        428,
+        43,
+        72
+      ],
+      "head_centre": 290,
+      "path": "FullCropped/Down/Down_05.png"
+    },
+    {
+      "direction": "Down",
+      "index": 6,
+      "source_rect": [
+        312,
+        428,
+        44,
+        72
+      ],
+      "head_centre": 334,
+      "path": "FullCropped/Down/Down_06.png"
+    },
+    {
+      "direction": "Down",
+      "index": 7,
+      "source_rect": [
+        356,
+        428,
+        44,
+        72
+      ],
+      "head_centre": 378,
+      "path": "FullCropped/Down/Down_07.png"
+    },
+    {
+      "direction": "Down",
+      "index": 8,
+      "source_rect": [
+        400,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 423,
+      "path": "FullCropped/Down/Down_08.png"
+    },
+    {
+      "direction": "Down",
+      "index": 9,
+      "source_rect": [
+        446,
+        428,
+        47,
+        72
+      ],
+      "head_centre": 468,
+      "path": "FullCropped/Down/Down_09.png"
+    },
+    {
+      "direction": "Down",
+      "index": 10,
+      "source_rect": [
+        493,
+        428,
+        47,
+        72
+      ],
+      "head_centre": 518,
+      "path": "FullCropped/Down/Down_10.png"
+    },
+    {
+      "direction": "Down",
+      "index": 11,
+      "source_rect": [
+        540,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 562,
+      "path": "FullCropped/Down/Down_11.png"
+    },
+    {
+      "direction": "Down",
+      "index": 12,
+      "source_rect": [
+        586,
+        428,
+        47,
+        72
+      ],
+      "head_centre": 610,
+      "path": "FullCropped/Down/Down_12.png"
+    },
+    {
+      "direction": "Down",
+      "index": 13,
+      "source_rect": [
+        633,
+        428,
+        45,
+        72
+      ],
+      "head_centre": 656,
+      "path": "FullCropped/Down/Down_13.png"
+    },
+    {
+      "direction": "Down",
+      "index": 14,
+      "source_rect": [
+        678,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 701,
+      "path": "FullCropped/Down/Down_14.png"
+    },
+    {
+      "direction": "Down",
+      "index": 15,
+      "source_rect": [
+        724,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 746,
+      "path": "FullCropped/Down/Down_15.png"
+    },
+    {
+      "direction": "Down",
+      "index": 16,
+      "source_rect": [
+        770,
+        428,
+        48,
+        72
+      ],
+      "head_centre": 795,
+      "path": "FullCropped/Down/Down_16.png"
+    },
+    {
+      "direction": "Down",
+      "index": 17,
+      "source_rect": [
+        818,
+        428,
+        48,
+        72
+      ],
+      "head_centre": 841,
+      "path": "FullCropped/Down/Down_17.png"
+    },
+    {
+      "direction": "Down",
+      "index": 18,
+      "source_rect": [
+        866,
+        428,
+        48,
+        72
+      ],
+      "head_centre": 890,
+      "path": "FullCropped/Down/Down_18.png"
+    },
+    {
+      "direction": "Down",
+      "index": 19,
+      "source_rect": [
+        914,
+        428,
+        48,
+        72
+      ],
+      "head_centre": 938,
+      "path": "FullCropped/Down/Down_19.png"
+    },
+    {
+      "direction": "Down",
+      "index": 20,
+      "source_rect": [
+        962,
+        428,
+        47,
+        72
+      ],
+      "head_centre": 986,
+      "path": "FullCropped/Down/Down_20.png"
+    },
+    {
+      "direction": "Down",
+      "index": 21,
+      "source_rect": [
+        1009,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 1032,
+      "path": "FullCropped/Down/Down_21.png"
+    },
+    {
+      "direction": "Down",
+      "index": 22,
+      "source_rect": [
+        1055,
+        428,
+        47,
+        72
+      ],
+      "head_centre": 1078,
+      "path": "FullCropped/Down/Down_22.png"
+    },
+    {
+      "direction": "Down",
+      "index": 23,
+      "source_rect": [
+        1102,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 1125,
+      "path": "FullCropped/Down/Down_23.png"
+    },
+    {
+      "direction": "Down",
+      "index": 24,
+      "source_rect": [
+        1148,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 1171,
+      "path": "FullCropped/Down/Down_24.png"
+    },
+    {
+      "direction": "Down",
+      "index": 25,
+      "source_rect": [
+        1194,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 1216,
+      "path": "FullCropped/Down/Down_25.png"
+    },
+    {
+      "direction": "Down",
+      "index": 26,
+      "source_rect": [
+        1240,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 1263,
+      "path": "FullCropped/Down/Down_26.png"
+    },
+    {
+      "direction": "Down",
+      "index": 27,
+      "source_rect": [
+        1286,
+        428,
+        48,
+        72
+      ],
+      "head_centre": 1310,
+      "path": "FullCropped/Down/Down_27.png"
+    },
+    {
+      "direction": "Down",
+      "index": 28,
+      "source_rect": [
+        1334,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 1357,
+      "path": "FullCropped/Down/Down_28.png"
+    },
+    {
+      "direction": "Down",
+      "index": 29,
+      "source_rect": [
+        1380,
+        428,
+        46,
+        72
+      ],
+      "head_centre": 1404,
+      "path": "FullCropped/Down/Down_29.png"
+    },
+    {
+      "direction": "Down",
+      "index": 30,
+      "source_rect": [
+        1426,
+        428,
+        47,
+        72
+      ],
+      "head_centre": 1449,
+      "path": "FullCropped/Down/Down_30.png"
+    },
+    {
+      "direction": "Down",
+      "index": 31,
+      "source_rect": [
+        1473,
+        428,
+        56,
+        72
+      ],
+      "head_centre": 1497,
+      "path": "FullCropped/Down/Down_31.png"
+    },
+    {
+      "direction": "Left",
+      "index": 1,
+      "source_rect": [
+        80,
+        551,
+        51,
+        78
+      ],
+      "head_centre": 106,
+      "path": "FullCropped/Left/Left_01.png"
+    },
+    {
+      "direction": "Left",
+      "index": 2,
+      "source_rect": [
+        131,
+        551,
+        49,
+        78
+      ],
+      "head_centre": 156,
+      "path": "FullCropped/Left/Left_02.png"
+    },
+    {
+      "direction": "Left",
+      "index": 3,
+      "source_rect": [
+        180,
+        551,
+        48,
+        78
+      ],
+      "head_centre": 204,
+      "path": "FullCropped/Left/Left_03.png"
+    },
+    {
+      "direction": "Left",
+      "index": 4,
+      "source_rect": [
+        228,
+        551,
+        48,
+        78
+      ],
+      "head_centre": 253,
+      "path": "FullCropped/Left/Left_04.png"
+    },
+    {
+      "direction": "Left",
+      "index": 5,
+      "source_rect": [
+        276,
+        551,
+        48,
+        78
+      ],
+      "head_centre": 298,
+      "path": "FullCropped/Left/Left_05.png"
+    },
+    {
+      "direction": "Left",
+      "index": 6,
+      "source_rect": [
+        324,
+        551,
+        52,
+        78
+      ],
+      "head_centre": 351,
+      "path": "FullCropped/Left/Left_06.png"
+    },
+    {
+      "direction": "Left",
+      "index": 7,
+      "source_rect": [
+        376,
+        551,
+        52,
+        78
+      ],
+      "head_centre": 401,
+      "path": "FullCropped/Left/Left_07.png"
+    },
+    {
+      "direction": "Left",
+      "index": 8,
+      "source_rect": [
+        428,
+        551,
+        52,
+        78
+      ],
+      "head_centre": 455,
+      "path": "FullCropped/Left/Left_08.png"
+    },
+    {
+      "direction": "Left",
+      "index": 9,
+      "source_rect": [
+        480,
+        551,
+        50,
+        78
+      ],
+      "head_centre": 505,
+      "path": "FullCropped/Left/Left_09.png"
+    },
+    {
+      "direction": "Left",
+      "index": 10,
+      "source_rect": [
+        530,
+        551,
+        48,
+        78
+      ],
+      "head_centre": 556,
+      "path": "FullCropped/Left/Left_10.png"
+    },
+    {
+      "direction": "Left",
+      "index": 11,
+      "source_rect": [
+        578,
+        551,
+        48,
+        78
+      ],
+      "head_centre": 601,
+      "path": "FullCropped/Left/Left_11.png"
+    },
+    {
+      "direction": "Left",
+      "index": 12,
+      "source_rect": [
+        626,
+        551,
+        49,
+        78
+      ],
+      "head_centre": 651,
+      "path": "FullCropped/Left/Left_12.png"
+    },
+    {
+      "direction": "Left",
+      "index": 13,
+      "source_rect": [
+        675,
+        551,
+        47,
+        78
+      ],
+      "head_centre": 699,
+      "path": "FullCropped/Left/Left_13.png"
+    },
+    {
+      "direction": "Left",
+      "index": 14,
+      "source_rect": [
+        722,
+        551,
+        46,
+        78
+      ],
+      "head_centre": 746,
+      "path": "FullCropped/Left/Left_14.png"
+    },
+    {
+      "direction": "Left",
+      "index": 15,
+      "source_rect": [
+        768,
+        551,
+        48,
+        78
+      ],
+      "head_centre": 790,
+      "path": "FullCropped/Left/Left_15.png"
+    },
+    {
+      "direction": "Left",
+      "index": 16,
+      "source_rect": [
+        816,
+        551,
+        50,
+        78
+      ],
+      "head_centre": 841,
+      "path": "FullCropped/Left/Left_16.png"
+    },
+    {
+      "direction": "Left",
+      "index": 17,
+      "source_rect": [
+        866,
+        551,
+        50,
+        78
+      ],
+      "head_centre": 890,
+      "path": "FullCropped/Left/Left_17.png"
+    },
+    {
+      "direction": "Left",
+      "index": 18,
+      "source_rect": [
+        916,
+        551,
+        51,
+        78
+      ],
+      "head_centre": 941,
+      "path": "FullCropped/Left/Left_18.png"
+    },
+    {
+      "direction": "Left",
+      "index": 19,
+      "source_rect": [
+        967,
+        551,
+        51,
+        78
+      ],
+      "head_centre": 993,
+      "path": "FullCropped/Left/Left_19.png"
+    },
+    {
+      "direction": "Left",
+      "index": 20,
+      "source_rect": [
+        1018,
+        551,
+        48,
+        78
+      ],
+      "head_centre": 1043,
+      "path": "FullCropped/Left/Left_20.png"
+    },
+    {
+      "direction": "Left",
+      "index": 21,
+      "source_rect": [
+        1066,
+        551,
+        48,
+        78
+      ],
+      "head_centre": 1089,
+      "path": "FullCropped/Left/Left_21.png"
+    },
+    {
+      "direction": "Left",
+      "index": 22,
+      "source_rect": [
+        1114,
+        551,
+        52,
+        78
+      ],
+      "head_centre": 1139,
+      "path": "FullCropped/Left/Left_22.png"
+    },
+    {
+      "direction": "Left",
+      "index": 23,
+      "source_rect": [
+        1166,
+        551,
+        52,
+        78
+      ],
+      "head_centre": 1192,
+      "path": "FullCropped/Left/Left_23.png"
+    },
+    {
+      "direction": "Left",
+      "index": 24,
+      "source_rect": [
+        1218,
+        551,
+        48,
+        78
+      ],
+      "head_centre": 1243,
+      "path": "FullCropped/Left/Left_24.png"
+    },
+    {
+      "direction": "Left",
+      "index": 25,
+      "source_rect": [
+        1266,
+        551,
+        50,
+        78
+      ],
+      "head_centre": 1290,
+      "path": "FullCropped/Left/Left_25.png"
+    },
+    {
+      "direction": "Left",
+      "index": 26,
+      "source_rect": [
+        1316,
+        551,
+        50,
+        78
+      ],
+      "head_centre": 1343,
+      "path": "FullCropped/Left/Left_26.png"
+    },
+    {
+      "direction": "Left",
+      "index": 27,
+      "source_rect": [
+        1366,
+        551,
+        50,
+        78
+      ],
+      "head_centre": 1390,
+      "path": "FullCropped/Left/Left_27.png"
+    },
+    {
+      "direction": "Left",
+      "index": 28,
+      "source_rect": [
+        1416,
+        551,
+        52,
+        78
+      ],
+      "head_centre": 1441,
+      "path": "FullCropped/Left/Left_28.png"
+    },
+    {
+      "direction": "Left",
+      "index": 29,
+      "source_rect": [
+        1468,
+        551,
+        61,
+        78
+      ],
+      "head_centre": 1494,
+      "path": "FullCropped/Left/Left_29.png"
+    },
+    {
+      "direction": "Right",
+      "index": 1,
+      "source_rect": [
+        80,
+        684,
+        56,
+        76
+      ],
+      "head_centre": 110,
+      "path": "FullCropped/Right/Right_01.png"
+    },
+    {
+      "direction": "Right",
+      "index": 2,
+      "source_rect": [
+        136,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 162,
+      "path": "FullCropped/Right/Right_02.png"
+    },
+    {
+      "direction": "Right",
+      "index": 3,
+      "source_rect": [
+        186,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 211,
+      "path": "FullCropped/Right/Right_03.png"
+    },
+    {
+      "direction": "Right",
+      "index": 4,
+      "source_rect": [
+        236,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 260,
+      "path": "FullCropped/Right/Right_04.png"
+    },
+    {
+      "direction": "Right",
+      "index": 5,
+      "source_rect": [
+        286,
+        684,
+        49,
+        76
+      ],
+      "head_centre": 311,
+      "path": "FullCropped/Right/Right_05.png"
+    },
+    {
+      "direction": "Right",
+      "index": 6,
+      "source_rect": [
+        335,
+        684,
+        49,
+        76
+      ],
+      "head_centre": 359,
+      "path": "FullCropped/Right/Right_06.png"
+    },
+    {
+      "direction": "Right",
+      "index": 7,
+      "source_rect": [
+        384,
+        684,
+        48,
+        76
+      ],
+      "head_centre": 408,
+      "path": "FullCropped/Right/Right_07.png"
+    },
+    {
+      "direction": "Right",
+      "index": 8,
+      "source_rect": [
+        432,
+        684,
+        48,
+        76
+      ],
+      "head_centre": 456,
+      "path": "FullCropped/Right/Right_08.png"
+    },
+    {
+      "direction": "Right",
+      "index": 9,
+      "source_rect": [
+        480,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 505,
+      "path": "FullCropped/Right/Right_09.png"
+    },
+    {
+      "direction": "Right",
+      "index": 10,
+      "source_rect": [
+        530,
+        684,
+        49,
+        76
+      ],
+      "head_centre": 556,
+      "path": "FullCropped/Right/Right_10.png"
+    },
+    {
+      "direction": "Right",
+      "index": 11,
+      "source_rect": [
+        579,
+        684,
+        47,
+        76
+      ],
+      "head_centre": 602,
+      "path": "FullCropped/Right/Right_11.png"
+    },
+    {
+      "direction": "Right",
+      "index": 12,
+      "source_rect": [
+        626,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 651,
+      "path": "FullCropped/Right/Right_12.png"
+    },
+    {
+      "direction": "Right",
+      "index": 13,
+      "source_rect": [
+        676,
+        684,
+        48,
+        76
+      ],
+      "head_centre": 700,
+      "path": "FullCropped/Right/Right_13.png"
+    },
+    {
+      "direction": "Right",
+      "index": 14,
+      "source_rect": [
+        724,
+        684,
+        48,
+        76
+      ],
+      "head_centre": 748,
+      "path": "FullCropped/Right/Right_14.png"
+    },
+    {
+      "direction": "Right",
+      "index": 15,
+      "source_rect": [
+        772,
+        684,
+        48,
+        76
+      ],
+      "head_centre": 795,
+      "path": "FullCropped/Right/Right_15.png"
+    },
+    {
+      "direction": "Right",
+      "index": 16,
+      "source_rect": [
+        820,
+        684,
+        49,
+        76
+      ],
+      "head_centre": 844,
+      "path": "FullCropped/Right/Right_16.png"
+    },
+    {
+      "direction": "Right",
+      "index": 17,
+      "source_rect": [
+        869,
+        684,
+        51,
+        76
+      ],
+      "head_centre": 894,
+      "path": "FullCropped/Right/Right_17.png"
+    },
+    {
+      "direction": "Right",
+      "index": 18,
+      "source_rect": [
+        920,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 945,
+      "path": "FullCropped/Right/Right_18.png"
+    },
+    {
+      "direction": "Right",
+      "index": 19,
+      "source_rect": [
+        970,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 994,
+      "path": "FullCropped/Right/Right_19.png"
+    },
+    {
+      "direction": "Right",
+      "index": 20,
+      "source_rect": [
+        1020,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 1045,
+      "path": "FullCropped/Right/Right_20.png"
+    },
+    {
+      "direction": "Right",
+      "index": 21,
+      "source_rect": [
+        1070,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 1095,
+      "path": "FullCropped/Right/Right_21.png"
+    },
+    {
+      "direction": "Right",
+      "index": 22,
+      "source_rect": [
+        1120,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 1145,
+      "path": "FullCropped/Right/Right_22.png"
+    },
+    {
+      "direction": "Right",
+      "index": 23,
+      "source_rect": [
+        1170,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 1195,
+      "path": "FullCropped/Right/Right_23.png"
+    },
+    {
+      "direction": "Right",
+      "index": 24,
+      "source_rect": [
+        1220,
+        684,
+        48,
+        76
+      ],
+      "head_centre": 1245,
+      "path": "FullCropped/Right/Right_24.png"
+    },
+    {
+      "direction": "Right",
+      "index": 25,
+      "source_rect": [
+        1268,
+        684,
+        50,
+        76
+      ],
+      "head_centre": 1292,
+      "path": "FullCropped/Right/Right_25.png"
+    },
+    {
+      "direction": "Right",
+      "index": 26,
+      "source_rect": [
+        1318,
+        684,
+        48,
+        76
+      ],
+      "head_centre": 1343,
+      "path": "FullCropped/Right/Right_26.png"
+    },
+    {
+      "direction": "Right",
+      "index": 27,
+      "source_rect": [
+        1366,
+        684,
+        49,
+        76
+      ],
+      "head_centre": 1389,
+      "path": "FullCropped/Right/Right_27.png"
+    },
+    {
+      "direction": "Right",
+      "index": 28,
+      "source_rect": [
+        1415,
+        684,
+        53,
+        76
+      ],
+      "head_centre": 1441,
+      "path": "FullCropped/Right/Right_28.png"
+    },
+    {
+      "direction": "Right",
+      "index": 29,
+      "source_rect": [
+        1468,
+        684,
+        61,
+        76
+      ],
+      "head_centre": 1495,
+      "path": "FullCropped/Right/Right_29.png"
+    },
+    {
+      "direction": "Up",
+      "index": 1,
+      "source_rect": [
+        80,
+        820,
+        52,
+        84
+      ],
+      "head_centre": 109,
+      "path": "FullCropped/Up/Up_01.png"
+    },
+    {
+      "direction": "Up",
+      "index": 2,
+      "source_rect": [
+        132,
+        820,
+        49,
+        84
+      ],
+      "head_centre": 156,
+      "path": "FullCropped/Up/Up_02.png"
+    },
+    {
+      "direction": "Up",
+      "index": 3,
+      "source_rect": [
+        181,
+        820,
+        50,
+        84
+      ],
+      "head_centre": 206,
+      "path": "FullCropped/Up/Up_03.png"
+    },
+    {
+      "direction": "Up",
+      "index": 4,
+      "source_rect": [
+        231,
+        820,
+        50,
+        84
+      ],
+      "head_centre": 256,
+      "path": "FullCropped/Up/Up_04.png"
+    },
+    {
+      "direction": "Up",
+      "index": 5,
+      "source_rect": [
+        281,
+        820,
+        51,
+        84
+      ],
+      "head_centre": 306,
+      "path": "FullCropped/Up/Up_05.png"
+    },
+    {
+      "direction": "Up",
+      "index": 6,
+      "source_rect": [
+        332,
+        820,
+        53,
+        84
+      ],
+      "head_centre": 359,
+      "path": "FullCropped/Up/Up_06.png"
+    },
+    {
+      "direction": "Up",
+      "index": 7,
+      "source_rect": [
+        385,
+        820,
+        52,
+        84
+      ],
+      "head_centre": 411,
+      "path": "FullCropped/Up/Up_07.png"
+    },
+    {
+      "direction": "Up",
+      "index": 8,
+      "source_rect": [
+        437,
+        820,
+        51,
+        84
+      ],
+      "head_centre": 463,
+      "path": "FullCropped/Up/Up_08.png"
+    },
+    {
+      "direction": "Up",
+      "index": 9,
+      "source_rect": [
+        488,
+        820,
+        50,
+        84
+      ],
+      "head_centre": 513,
+      "path": "FullCropped/Up/Up_09.png"
+    },
+    {
+      "direction": "Up",
+      "index": 10,
+      "source_rect": [
+        538,
+        820,
+        51,
+        84
+      ],
+      "head_centre": 564,
+      "path": "FullCropped/Up/Up_10.png"
+    },
+    {
+      "direction": "Up",
+      "index": 11,
+      "source_rect": [
+        589,
+        820,
+        51,
+        84
+      ],
+      "head_centre": 614,
+      "path": "FullCropped/Up/Up_11.png"
+    },
+    {
+      "direction": "Up",
+      "index": 12,
+      "source_rect": [
+        640,
+        820,
+        50,
+        84
+      ],
+      "head_centre": 665,
+      "path": "FullCropped/Up/Up_12.png"
+    },
+    {
+      "direction": "Up",
+      "index": 13,
+      "source_rect": [
+        690,
+        820,
+        50,
+        84
+      ],
+      "head_centre": 715,
+      "path": "FullCropped/Up/Up_13.png"
+    },
+    {
+      "direction": "Up",
+      "index": 14,
+      "source_rect": [
+        740,
+        820,
+        50,
+        84
+      ],
+      "head_centre": 765,
+      "path": "FullCropped/Up/Up_14.png"
+    },
+    {
+      "direction": "Up",
+      "index": 15,
+      "source_rect": [
+        790,
+        820,
+        50,
+        84
+      ],
+      "head_centre": 815,
+      "path": "FullCropped/Up/Up_15.png"
+    },
+    {
+      "direction": "Up",
+      "index": 16,
+      "source_rect": [
+        840,
+        820,
+        52,
+        84
+      ],
+      "head_centre": 866,
+      "path": "FullCropped/Up/Up_16.png"
+    },
+    {
+      "direction": "Up",
+      "index": 17,
+      "source_rect": [
+        892,
+        820,
+        51,
+        84
+      ],
+      "head_centre": 917,
+      "path": "FullCropped/Up/Up_17.png"
+    },
+    {
+      "direction": "Up",
+      "index": 18,
+      "source_rect": [
+        943,
+        820,
+        51,
+        84
+      ],
+      "head_centre": 969,
+      "path": "FullCropped/Up/Up_18.png"
+    },
+    {
+      "direction": "Up",
+      "index": 19,
+      "source_rect": [
+        994,
+        820,
+        52,
+        84
+      ],
+      "head_centre": 1020,
+      "path": "FullCropped/Up/Up_19.png"
+    },
+    {
+      "direction": "Up",
+      "index": 20,
+      "source_rect": [
+        1046,
+        820,
+        52,
+        84
+      ],
+      "head_centre": 1072,
+      "path": "FullCropped/Up/Up_20.png"
+    },
+    {
+      "direction": "Up",
+      "index": 21,
+      "source_rect": [
+        1098,
+        820,
+        52,
+        84
+      ],
+      "head_centre": 1124,
+      "path": "FullCropped/Up/Up_21.png"
+    },
+    {
+      "direction": "Up",
+      "index": 22,
+      "source_rect": [
+        1150,
+        820,
+        53,
+        84
+      ],
+      "head_centre": 1176,
+      "path": "FullCropped/Up/Up_22.png"
+    },
+    {
+      "direction": "Up",
+      "index": 23,
+      "source_rect": [
+        1203,
+        820,
+        53,
+        84
+      ],
+      "head_centre": 1230,
+      "path": "FullCropped/Up/Up_23.png"
+    },
+    {
+      "direction": "Up",
+      "index": 24,
+      "source_rect": [
+        1256,
+        820,
+        54,
+        84
+      ],
+      "head_centre": 1283,
+      "path": "FullCropped/Up/Up_24.png"
+    },
+    {
+      "direction": "Up",
+      "index": 25,
+      "source_rect": [
+        1310,
+        820,
+        52,
+        84
+      ],
+      "head_centre": 1336,
+      "path": "FullCropped/Up/Up_25.png"
+    },
+    {
+      "direction": "Up",
+      "index": 26,
+      "source_rect": [
+        1362,
+        820,
+        54,
+        84
+      ],
+      "head_centre": 1389,
+      "path": "FullCropped/Up/Up_26.png"
+    },
+    {
+      "direction": "Up",
+      "index": 27,
+      "source_rect": [
+        1416,
+        820,
+        52,
+        84
+      ],
+      "head_centre": 1442,
+      "path": "FullCropped/Up/Up_27.png"
+    },
+    {
+      "direction": "Up",
+      "index": 28,
+      "source_rect": [
+        1468,
+        820,
+        61,
+        84
+      ],
+      "head_centre": 1493,
+      "path": "FullCropped/Up/Up_28.png"
+    }
+  ],
+  "limitations": [
+    "The presentation board visibly contains 31/29/29/28 characters, not 32 per direction.",
+    "Touching scarves are separated at the midpoint between neighbouring heads; occluded pixels cannot be recovered.",
+    "Baked background removal is approximate. No missing frames are duplicated or generated."
+  ],
+  "total_frames": 117,
+  "checks": [
+    "Every visible head has exactly one numbered output.",
+    "All output PNGs read back and match atlas pixels.",
+    "All frames have transparent padding and the same foot baseline."
+  ]
+}

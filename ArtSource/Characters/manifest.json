@@ -317,7 +317,16 @@
     "clips": 4,
     "active_in_game": false,
     "verification": "ArtSource/Characters/UserHeroTrial/unity-import-report.json",
-    "cropped_frames": "ArtSource/Characters/UserHeroTrial/Cropped",
-    "crop_archive": "ArtSource/Characters/UserHeroTrial/UserHeroIdleCrops.zip"
+    "cropped_frames": "ArtSource/Characters/UserHeroTrial/FullCropped",
+    "crop_archive": "ArtSource/Characters/UserHeroTrial/UserHeroIdleFullCrops.zip",
+    "full_crop_counts": {
+      "Down": 31,
+      "Left": 29,
+      "Right": 29,
+      "Up": 28
+    },
+    "full_crop_total": 117,
+    "full_crop_report": "ArtSource/Characters/UserHeroTrial/FullCropped/crop-report.json",
+    "full_crop_sha256": "9e677c83fbe09c795f9c17319bae86921c9ff004fefe5d5376629397f7e52f1f"
   }
 }
