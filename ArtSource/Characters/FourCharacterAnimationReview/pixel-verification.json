@@ -1,0 +1,8 @@
+{
+  "result": "passed",
+  "source_hashes": 4,
+  "source_frames": 71,
+  "editorial_frames": 17,
+  "exact_frame_comparisons": 88,
+  "anchors_and_durations": true
+}

@@ -1,0 +1,169 @@
+{
+  "sources": [
+    {
+      "role": "hero",
+      "title": "白发主角",
+      "source": "ChatGPT 图像 2026年10月18日 13_57_34-3.png",
+      "sha256": "cac6e0213a21ff7093996ce29340a5fd9b863610acde0af46cdf56d83a435c0d",
+      "size": [
+        1448,
+        1086
+      ],
+      "alpha_minmax": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 718388
+    },
+    {
+      "role": "melee",
+      "title": "持剑哥布林",
+      "source": "ChatGPT 图像 2026年10月18日 13_57_32-2.png",
+      "sha256": "96e76191c1f7660c7a2ea1290edc133112ad7964d7522102aae75521968428e3",
+      "size": [
+        1448,
+        1086
+      ],
+      "alpha_minmax": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 825716
+    },
+    {
+      "role": "runner",
+      "title": "持斧哥布林",
+      "source": "ChatGPT 图像 2026年10月18日 13_57_36-4.png",
+      "sha256": "a823ca10e12b5244eede167208c3dd620311c8a53cf3d11be25144c9b87a8fb9",
+      "size": [
+        1448,
+        1086
+      ],
+      "alpha_minmax": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 680747
+    },
+    {
+      "role": "caster",
+      "title": "紫衣法师",
+      "source": "ChatGPT 图像 2026年10月18日 13_57_26-1.png",
+      "sha256": "6bf33e99127aa2b1025e029b4e2f1502ff67713186f50ef7881a9c7f83cd26af",
+      "size": [
+        1448,
+        1086
+      ],
+      "alpha_minmax": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 670391
+    }
+  ],
+  "clips": [
+    {
+      "role": "hero",
+      "character": "白发主角",
+      "action": "walk",
+      "title": "行走候选",
+      "path": "hero-walk/review.html",
+      "count": 8,
+      "manifest": "hero-walk/manifest.json",
+      "kind": "source"
+    },
+    {
+      "role": "hero",
+      "character": "白发主角",
+      "action": "attack",
+      "title": "挥剑候选",
+      "path": "hero-attack/review.html",
+      "count": 7,
+      "manifest": "hero-attack/manifest.json",
+      "kind": "source"
+    },
+    {
+      "role": "melee",
+      "character": "持剑哥布林",
+      "action": "walk",
+      "title": "行走候选",
+      "path": "melee-walk/review.html",
+      "count": 8,
+      "manifest": "melee-walk/manifest.json",
+      "kind": "source"
+    },
+    {
+      "role": "melee",
+      "character": "持剑哥布林",
+      "action": "attack",
+      "title": "挥剑候选",
+      "path": "melee-attack/review.html",
+      "count": 8,
+      "manifest": "melee-attack/manifest.json",
+      "kind": "source"
+    },
+    {
+      "role": "runner",
+      "character": "持斧哥布林",
+      "action": "run",
+      "title": "奔跑候选",
+      "path": "runner-run/review.html",
+      "count": 8,
+      "manifest": "runner-run/manifest.json",
+      "kind": "source"
+    },
+    {
+      "role": "runner",
+      "character": "持斧哥布林",
+      "action": "attack",
+      "title": "挥斧候选",
+      "path": "runner-attack/review.html",
+      "count": 8,
+      "manifest": "runner-attack/manifest.json",
+      "kind": "source"
+    },
+    {
+      "role": "caster",
+      "character": "紫衣法师",
+      "action": "walk",
+      "title": "移动候选",
+      "path": "caster-walk/review.html",
+      "count": 8,
+      "manifest": "caster-walk/manifest.json",
+      "kind": "source"
+    },
+    {
+      "role": "caster",
+      "character": "紫衣法师",
+      "action": "cast",
+      "title": "蓄力与释放候选",
+      "path": "caster-cast/review.html",
+      "count": 16,
+      "manifest": "caster-cast/manifest.json",
+      "kind": "source"
+    },
+    {
+      "role": "runner",
+      "character": "持斧哥布林",
+      "action": "attack-edit",
+      "title": "挥斧重排试验：跳过纯刀光格",
+      "path": "runner-attack-edit/review.html",
+      "count": 7,
+      "manifest": "runner-attack-edit/manifest.json",
+      "kind": "editorial-experiment"
+    },
+    {
+      "role": "caster",
+      "character": "紫衣法师",
+      "action": "cast-edit",
+      "title": "施法重排试验：移除回退与纯弹体格",
+      "path": "caster-cast-edit/review.html",
+      "count": 10,
+      "manifest": "caster-cast-edit/manifest.json",
+      "kind": "editorial-experiment"
+    }
+  ],
+  "source_frames": 71,
+  "editorial_frames": 17,
+  "scope": "Selected movement and combat rows only, not all poses on each sheet; action grouping inferred, not supplied by artist."
+}

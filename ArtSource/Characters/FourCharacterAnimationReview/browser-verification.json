@@ -1,0 +1,99 @@
+{
+  "result": "passed",
+  "clips": [
+    {
+      "clip": "hero-walk/review.html",
+      "frames": 8,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    },
+    {
+      "clip": "hero-attack/review.html",
+      "frames": 7,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    },
+    {
+      "clip": "melee-walk/review.html",
+      "frames": 8,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    },
+    {
+      "clip": "melee-attack/review.html",
+      "frames": 8,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    },
+    {
+      "clip": "runner-run/review.html",
+      "frames": 8,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    },
+    {
+      "clip": "runner-attack/review.html",
+      "frames": 8,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    },
+    {
+      "clip": "caster-walk/review.html",
+      "frames": 8,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    },
+    {
+      "clip": "caster-cast/review.html",
+      "frames": 16,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    },
+    {
+      "clip": "runner-attack-edit/review.html",
+      "frames": 7,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    },
+    {
+      "clip": "caster-cast-edit/review.html",
+      "frames": 10,
+      "loaded": true,
+      "stepping": true,
+      "controls": true,
+      "two_cycles_at_2x": true,
+      "end_hold": true
+    }
+  ],
+  "role_switching": true,
+  "comparison": true,
+  "comparison_scrubbers_visible": true,
+  "page_errors": []
+}
