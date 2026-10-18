@@ -1,0 +1,1 @@
+PASS: 8 sprites, row-major order, 12 fps, 0.666667s looping, 8 equally spaced keys. All eight poses sampled on SpriteRenderer. Existing clip GUID and events preserved. No scene, controller or live actor modified.

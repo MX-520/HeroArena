@@ -1,0 +1,108 @@
+{
+  "source": "Assets/Role/Test/Player/银发红瞳冒险者行走循环精灵图.png",
+  "source_sha256": "f1ca8108a3ed79305963ef42051b23f90db9283aa724b5927f9b42fcabb5a816",
+  "source_size": [
+    1448,
+    1086
+  ],
+  "clip": "Assets/Animations/TestPlayer/walkdown.anim",
+  "fps": 12,
+  "frames": [
+    {
+      "name": "WalkDown_01",
+      "source_rect": [
+        58,
+        185,
+        345,
+        359
+      ],
+      "pivotX": 0.3130434782608696,
+      "pivotY": 0.011142061281337047,
+      "head_centre": 166.0
+    },
+    {
+      "name": "WalkDown_02",
+      "source_rect": [
+        421,
+        185,
+        333,
+        357
+      ],
+      "pivotX": 0.3213213213213213,
+      "pivotY": 0.011204481792717087,
+      "head_centre": 528.0
+    },
+    {
+      "name": "WalkDown_03",
+      "source_rect": [
+        778,
+        187,
+        323,
+        358
+      ],
+      "pivotX": 0.33126934984520123,
+      "pivotY": 0.0111731843575419,
+      "head_centre": 885.0
+    },
+    {
+      "name": "WalkDown_04",
+      "source_rect": [
+        1126,
+        189,
+        314,
+        356
+      ],
+      "pivotX": 0.3375796178343949,
+      "pivotY": 0.011235955056179775,
+      "head_centre": 1232.0
+    },
+    {
+      "name": "WalkDown_05",
+      "source_rect": [
+        66,
+        587,
+        319,
+        358
+      ],
+      "pivotX": 0.335423197492163,
+      "pivotY": 0.0111731843575419,
+      "head_centre": 173.0
+    },
+    {
+      "name": "WalkDown_06",
+      "source_rect": [
+        428,
+        588,
+        321,
+        362
+      ],
+      "pivotX": 0.3333333333333333,
+      "pivotY": 0.011049723756906077,
+      "head_centre": 535.0
+    },
+    {
+      "name": "WalkDown_07",
+      "source_rect": [
+        779,
+        586,
+        322,
+        362
+      ],
+      "pivotX": 0.33229813664596275,
+      "pivotY": 0.011049723756906077,
+      "head_centre": 886.0
+    },
+    {
+      "name": "WalkDown_08",
+      "source_rect": [
+        1128,
+        587,
+        315,
+        358
+      ],
+      "pivotX": 0.33650793650793653,
+      "pivotY": 0.0111731843575419,
+      "head_centre": 1234.0
+    }
+  ]
+}
