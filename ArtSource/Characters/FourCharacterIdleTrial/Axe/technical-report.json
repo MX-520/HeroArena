@@ -1,0 +1,178 @@
+{
+  "status": "technical-inspection-only",
+  "motion_review": "pending",
+  "frame_count": 8,
+  "duration_ms": 1600,
+  "loop": true,
+  "root": [
+    336,
+    560
+  ],
+  "canvas": [
+    672,
+    672
+  ],
+  "warnings": [],
+  "frames": [
+    {
+      "index": 1,
+      "label": "01",
+      "size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "alpha_bbox": [
+        99,
+        155,
+        526,
+        578
+      ],
+      "pixel_sha256": "d698c9e2e41b64e4544211cfaa3d9e924b81a0a57bffbdc7ba14643e750619cc"
+    },
+    {
+      "index": 2,
+      "label": "02",
+      "size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "alpha_bbox": [
+        82,
+        160,
+        525,
+        577
+      ],
+      "pixel_sha256": "8896f3f23a5b46ca6389ada8fa9f86d464341574ddc0cc4e4230e6a3ba99bbf4"
+    },
+    {
+      "index": 3,
+      "label": "03",
+      "size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "alpha_bbox": [
+        82,
+        166,
+        525,
+        577
+      ],
+      "pixel_sha256": "74bceaff49c47de8792012cd88b6134def6dab990014e0ca62938ead66a9a967"
+    },
+    {
+      "index": 4,
+      "label": "04",
+      "size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "alpha_bbox": [
+        81,
+        150,
+        497,
+        577
+      ],
+      "pixel_sha256": "1b6d190e7c205b525434bd9cee890131d0ffa9b1bfea2e64589cc3903407531f"
+    },
+    {
+      "index": 5,
+      "label": "05",
+      "size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "alpha_bbox": [
+        100,
+        174,
+        526,
+        552
+      ],
+      "pixel_sha256": "e63b2b5d9f5b67d21abe1e302f7a6862f974ec319ccefc1f4895e89db9b6fe06"
+    },
+    {
+      "index": 6,
+      "label": "06",
+      "size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "alpha_bbox": [
+        82,
+        133,
+        525,
+        547
+      ],
+      "pixel_sha256": "dad31771fb1345727d3ccfcefe3910f29eb669fa40c1d244f55f96bb6e5bd971"
+    },
+    {
+      "index": 7,
+      "label": "07",
+      "size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "alpha_bbox": [
+        83,
+        137,
+        518,
+        550
+      ],
+      "pixel_sha256": "12aa0918a7a7268f3583b17d7ca58ac274f9796a1d1bd1ce3cb289a05d30ecbe"
+    },
+    {
+      "index": 8,
+      "label": "08",
+      "size": [
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "alpha_bbox": [
+        82,
+        133,
+        495,
+        548
+      ],
+      "pixel_sha256": "1996620b4d7f0b7effcdd919fc7ce4627bb56a07b6850fbb649779a9315b93c2"
+    }
+  ]
+}

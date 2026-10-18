@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-18",
+  "request": "Idle; hero without weapons, enemies with weapons; research public internet examples",
+  "records": [
+    {
+      "role": "Hero",
+      "identity_source": "ChatGPT 图像 2026年10月18日 13_57_34-3.png",
+      "identity_sha256": "cac6e0213a21ff7093996ce29340a5fd9b863610acde0af46cdf56d83a435c0d",
+      "tool": "built-in image_gen",
+      "iterations": 1,
+      "prompt_file": "Hero-prompt.txt",
+      "generated_board": "Hero-board.png",
+      "final_png": "Hero-Idle-strip8.png",
+      "final_sha256": "64a3cb6a5351ab30bad99990811318537fdb2f1cb814986be4f3bb7c341de39c"
+    },
+    {
+      "role": "Sword",
+      "identity_source": "ArtSource/Characters/GoblinSlashFXRevision/frames/SlashFX_01.png",
+      "identity_sha256": "889ed8227e3edea76686128717a7e4b35cf3c1cdb5ace13f262838b7d320334f",
+      "tool": "built-in image_gen",
+      "iterations": 1,
+      "prompt_file": "Sword-prompt.txt",
+      "generated_board": "Sword-board.png",
+      "final_png": "Sword-Idle-strip8.png",
+      "final_sha256": "eb227790d94796a9782b9ab7bac22aa013497d5a3fb14cec92417e4bf31bbe6e"
+    },
+    {
+      "role": "Axe",
+      "identity_source": "ChatGPT 图像 2026年10月18日 13_57_36-4.png",
+      "identity_sha256": "a823ca10e12b5244eede167208c3dd620311c8a53cf3d11be25144c9b87a8fb9",
+      "tool": "built-in image_gen",
+      "iterations": 1,
+      "prompt_file": "Axe-prompt.txt",
+      "generated_board": "Axe-board.png",
+      "final_png": "Axe-Idle-strip8.png",
+      "final_sha256": "fd9abc19ab511a38ee1d31399fc3462bb0108dc642a42d743a3efc02b6dc968c"
+    },
+    {
+      "role": "Mage",
+      "identity_source": "ChatGPT 图像 2026年10月18日 13_57_26-1.png",
+      "identity_sha256": "6bf33e99127aa2b1025e029b4e2f1502ff67713186f50ef7881a9c7f83cd26af",
+      "tool": "built-in image_gen",
+      "iterations": 1,
+      "prompt_file": "Mage-prompt.txt",
+      "generated_board": "Mage-board.png",
+      "final_png": "Mage-Idle-strip8.png",
+      "final_sha256": "316ba74803cb84e98ededf7ab5d52b3fe1fb4fbbc16c08401f99ed2c2c520b91"
+    }
+  ],
+  "status": "candidate awaiting user visual approval; no Unity integration",
+  "reference_redistribution": "Third party preview GIF and study screenshots stay in work; only URLs/research findings archived."
+}

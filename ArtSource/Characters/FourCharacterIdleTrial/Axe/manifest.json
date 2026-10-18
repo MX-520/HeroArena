@@ -1,0 +1,79 @@
+{
+  "title": "持斧哥布林 · Idle候选",
+  "note": "8帧/1.6秒循环；主角空手，敌人保留武器；未接入Unity。",
+  "loop": true,
+  "frames": [
+    {
+      "file": "frames/Idle_01.png",
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "label": "01"
+    },
+    {
+      "file": "frames/Idle_02.png",
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "label": "02"
+    },
+    {
+      "file": "frames/Idle_03.png",
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "label": "03"
+    },
+    {
+      "file": "frames/Idle_04.png",
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "label": "04"
+    },
+    {
+      "file": "frames/Idle_05.png",
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "label": "05"
+    },
+    {
+      "file": "frames/Idle_06.png",
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "label": "06"
+    },
+    {
+      "file": "frames/Idle_07.png",
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "label": "07"
+    },
+    {
+      "file": "frames/Idle_08.png",
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 200,
+      "label": "08"
+    }
+  ]
+}
