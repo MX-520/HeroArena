@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "roles": [
+    {
+      "role": "Hero",
+      "frames_sampled": 12,
+      "normal_speed_playback_ms": 3600,
+      "loop_wrap_observed": true,
+      "controls_passed": true,
+      "page_errors": [],
+      "art_quality_acceptance": "pending; functional playback is not visual approval"
+    }
+  ]
+}
