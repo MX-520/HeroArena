@@ -1,0 +1,90 @@
+{
+  "source_sha256": "e3e998861b8e3572ae919f5390f7621fabb175a03176e8826eac0ffb6575be7c",
+  "generated_size": [
+    1774,
+    887
+  ],
+  "frame_size": [
+    512,
+    512
+  ],
+  "root": [
+    240,
+    448
+  ],
+  "frames": [
+    {
+      "frame": 1,
+      "root_source": [
+        214,
+        390
+      ],
+      "principal_pixels": 40265,
+      "source_rgba_preserved": true
+    },
+    {
+      "frame": 2,
+      "root_source": [
+        666,
+        390
+      ],
+      "principal_pixels": 49305,
+      "source_rgba_preserved": true
+    },
+    {
+      "frame": 3,
+      "root_source": [
+        1110,
+        390
+      ],
+      "principal_pixels": 51376,
+      "source_rgba_preserved": true
+    },
+    {
+      "frame": 4,
+      "root_source": [
+        1540,
+        390
+      ],
+      "principal_pixels": 45692,
+      "source_rgba_preserved": true
+    },
+    {
+      "frame": 5,
+      "root_source": [
+        188,
+        824
+      ],
+      "principal_pixels": 50049,
+      "source_rgba_preserved": true
+    },
+    {
+      "frame": 6,
+      "root_source": [
+        655,
+        824
+      ],
+      "principal_pixels": 47714,
+      "source_rgba_preserved": true
+    },
+    {
+      "frame": 7,
+      "root_source": [
+        1106,
+        824
+      ],
+      "principal_pixels": 44579,
+      "source_rgba_preserved": true
+    },
+    {
+      "frame": 8,
+      "root_source": [
+        1546,
+        824
+      ],
+      "principal_pixels": 42396,
+      "source_rgba_preserved": true
+    }
+  ],
+  "notes": "Non-uniform generated board; did not assume exact grid division. Principal silhouettes and assigned RGBA preserved."
+}

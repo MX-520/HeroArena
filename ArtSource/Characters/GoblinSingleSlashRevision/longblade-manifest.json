@@ -1,0 +1,79 @@
+{
+  "title": "持剑哥布林 · 单斩修正版（加长剑刃）",
+  "note": "按用户要求，以约20%加长为目标重绘八帧剑刃，实际透视与比例仍需视觉审查；同一八姿势、1秒曝光安排。剑柄/握点按参考保持，生成有轻微细节漂移。未接入Unity。",
+  "loop": false,
+  "frames": [
+    {
+      "file": "longblade-frames/Slash_01.png",
+      "anchor": [
+        240,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "01 警戒"
+    },
+    {
+      "file": "longblade-frames/Slash_02.png",
+      "anchor": [
+        240,
+        448
+      ],
+      "duration_ms": 120,
+      "label": "02 向后加载"
+    },
+    {
+      "file": "longblade-frames/Slash_03.png",
+      "anchor": [
+        240,
+        448
+      ],
+      "duration_ms": 140,
+      "label": "03 最大蓄力"
+    },
+    {
+      "file": "longblade-frames/Slash_04.png",
+      "anchor": [
+        240,
+        448
+      ],
+      "duration_ms": 40,
+      "label": "04 挥出"
+    },
+    {
+      "file": "longblade-frames/Slash_05.png",
+      "anchor": [
+        240,
+        448
+      ],
+      "duration_ms": 80,
+      "label": "05 斩击终点"
+    },
+    {
+      "file": "longblade-frames/Slash_06.png",
+      "anchor": [
+        240,
+        448
+      ],
+      "duration_ms": 140,
+      "label": "06 屈肘回收"
+    },
+    {
+      "file": "longblade-frames/Slash_07.png",
+      "anchor": [
+        240,
+        448
+      ],
+      "duration_ms": 180,
+      "label": "07 归位"
+    },
+    {
+      "file": "longblade-frames/Slash_08.png",
+      "anchor": [
+        240,
+        448
+      ],
+      "duration_ms": 200,
+      "label": "08 接回待机"
+    }
+  ]
+}

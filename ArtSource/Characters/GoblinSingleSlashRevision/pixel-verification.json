@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "frame_comparisons": 16,
+  "frame_size": [
+    512,
+    512
+  ],
+  "duration_ms": 1000,
+  "hit_pose_start_ms": 400,
+  "principal_silhouettes_complete": true
+}

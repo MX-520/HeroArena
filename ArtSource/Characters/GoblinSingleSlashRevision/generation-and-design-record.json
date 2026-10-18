@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-18",
+  "action": "Goblin melee single short slash",
+  "source_reference": "original-reference.png",
+  "generation_tool": "built-in image_gen",
+  "iterations": 3,
+  "selected": "slash-v3.png",
+  "status": "redrawn playable candidate; art acceptance and in-game verification pending",
+  "duration_ms": 1000,
+  "one_shot": true,
+  "root_pixels": [
+    256,
+    448
+  ],
+  "frame_size": [
+    512,
+    512
+  ],
+  "legacy_clip": "Assets/Animations/Enemy/Gobling/Attack.anim",
+  "legacy_duration_seconds": 1,
+  "legacy_detect_hit_seconds": 0.4,
+  "legacy_finish_seconds": 0.9,
+  "legacy_loop": true,
+  "proposed_event_mapping": [
+    {
+      "name": "DetectHit",
+      "time": 0.4,
+      "pose": "05 slash endpoint"
+    },
+    {
+      "name": "OnAttackFinished",
+      "time": 0.9,
+      "pose": "08 guard hold"
+    }
+  ],
+  "limitations": [
+    "Frame 6 is elbow retraction, not the deep downward follow-through requested in the initial blocking.",
+    "Head/stance have residual drift; sprite density, grip and actual combat need calibration.",
+    "Generated sheet contains low-alpha residue. Extraction preserves assigned source RGBA and separates adjacent poses by principal-component ownership.",
+    "No Unity asset, animation, scene or gameplay change."
+  ],
+  "sha256": {
+    "slash-v1.png": "358968697cbf745307b411a2ce718ba4f1cf0b344df5d7435c66bcc644e1b5c4",
+    "slash-v2.png": "92b4b1adc5eafc555ce256c0601c2e6429225dbf6fc83a8e5c990fb04a8b0acc",
+    "slash-v3.png": "60df35f2118702d512d387628eac746206a5cbc7ae4fd720fb05f28f30b515bc",
+    "original-reference.png": "96e76191c1f7660c7a2ea1290edc133112ad7964d7522102aae75521968428e3",
+    "GoblinSingleSlash-strip8.png": "75324810ad9d8c8a4fed18f060392cfe6302d3cf315eed6fe7ab850d62d9e7ff"
+  },
+  "sword_edit": {
+    "request": "lengthen the sword a little",
+    "target": "approximately 20% longer blade; preserve hilt and grip",
+    "tool": "built-in image_gen",
+    "reference": "slash-clean-4x2.png",
+    "selected": "slash-longblade-v1.png",
+    "sha256": "e3e998861b8e3572ae919f5390f7621fabb175a03176e8826eac0ffb6575be7c",
+    "final_manifest": "longblade-manifest.json",
+    "exact_percentage_verified": false,
+    "limitations": "Generative edit; minor pose/detail drift remains, exact identical blade proportions not numerically certified."
+  }
+}
