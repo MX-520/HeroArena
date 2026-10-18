@@ -1,0 +1,167 @@
+{
+  "source_size": [
+    2172,
+    724
+  ],
+  "frame_size": [
+    640,
+    512
+  ],
+  "root": [
+    288,
+    448
+  ],
+  "frames": [
+    {
+      "frame": 1,
+      "source_region": [
+        0,
+        0,
+        450,
+        355
+      ],
+      "source_root": [
+        182,
+        346
+      ],
+      "visible_alpha_pixels": 37747,
+      "copied_rgba_exact": true
+    },
+    {
+      "frame": 2,
+      "source_region": [
+        450,
+        0,
+        350,
+        355
+      ],
+      "source_root": [
+        605,
+        346
+      ],
+      "visible_alpha_pixels": 41106,
+      "copied_rgba_exact": true
+    },
+    {
+      "frame": 3,
+      "source_region": [
+        800,
+        0,
+        440,
+        355
+      ],
+      "source_root": [
+        1050,
+        346
+      ],
+      "visible_alpha_pixels": 42251,
+      "copied_rgba_exact": true
+    },
+    {
+      "frame": 4,
+      "source_region": [
+        1240,
+        0,
+        440,
+        355
+      ],
+      "source_root": [
+        1530,
+        346
+      ],
+      "visible_alpha_pixels": 42229,
+      "copied_rgba_exact": true
+    },
+    {
+      "frame": 5,
+      "source_region": [
+        1680,
+        0,
+        492,
+        355
+      ],
+      "source_root": [
+        1930,
+        346
+      ],
+      "visible_alpha_pixels": 75049,
+      "copied_rgba_exact": true
+    },
+    {
+      "frame": 6,
+      "source_region": [
+        0,
+        355,
+        480,
+        369
+      ],
+      "source_root": [
+        164,
+        670
+      ],
+      "visible_alpha_pixels": 63177,
+      "copied_rgba_exact": true
+    },
+    {
+      "frame": 7,
+      "source_region": [
+        480,
+        355,
+        470,
+        369
+      ],
+      "source_root": [
+        650,
+        668
+      ],
+      "visible_alpha_pixels": 43266,
+      "copied_rgba_exact": true
+    },
+    {
+      "frame": 8,
+      "source_region": [
+        950,
+        355,
+        450,
+        369
+      ],
+      "source_root": [
+        1120,
+        668
+      ],
+      "visible_alpha_pixels": 40011,
+      "copied_rgba_exact": true
+    },
+    {
+      "frame": 9,
+      "source_region": [
+        1400,
+        355,
+        400,
+        369
+      ],
+      "source_root": [
+        1580,
+        670
+      ],
+      "visible_alpha_pixels": 39660,
+      "copied_rgba_exact": true
+    },
+    {
+      "frame": 10,
+      "source_region": [
+        1800,
+        355,
+        372,
+        369
+      ],
+      "source_root": [
+        1960,
+        670
+      ],
+      "visible_alpha_pixels": 37651,
+      "copied_rgba_exact": true
+    }
+  ],
+  "method": "Manual nonuniform frame regions isolate each body and detached FX; assigned original RGBA copied, all alpha>80 pixels in each region retained."
+}

@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "new_frames_sampled": 10,
+  "old_frames": 8,
+  "total_ms": 1000,
+  "step_controls": true,
+  "display_options": true,
+  "one_shot_end_hold": true,
+  "two_cycles_at_2x": true,
+  "page_errors": []
+}

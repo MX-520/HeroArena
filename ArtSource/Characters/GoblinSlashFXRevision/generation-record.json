@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-18",
+  "request": "Reference supplied sword motion trajectory and add effects to the existing long-blade goblin attack.",
+  "reference_path": "E:\\UnityProject\\HeroArena\\Assets\\Role\\Bafu\\spr_basecharacter_attack_strip10.png",
+  "reference_sha256": "78c3ab3deeebc336bcd56d20f7930975ab0ad6d4a167929fe815f9ff010d6d07",
+  "reference_role": "motion and timing only; not character appearance",
+  "tool": "built-in image_gen",
+  "iterations": 2,
+  "selected": "slash-fx-v2.png",
+  "selected_sha256": "798e5656228520c2d5faf252c4a1c0ebade2dbfa2ede43701481ed15a0e8a405",
+  "frames": 10,
+  "duration_ms": 1000,
+  "hit_window_candidate": 0.4,
+  "effects": {
+    "none": [
+      1,
+      2,
+      3,
+      4,
+      9,
+      10
+    ],
+    "main_arc": [
+      5,
+      6
+    ],
+    "contact_flash": [
+      6
+    ],
+    "decay": [
+      7,
+      8
+    ]
+  },
+  "preview_normalization": "Display-only old scale .80 / new scale .90 to approximately match body height and shared root. PNGs unchanged.",
+  "status": "generated and extracted candidate; no Unity change",
+  "limitations": [
+    "Body/weapon details have generative drift; pose 9 hand/perspective and blade proportions need review.",
+    "Effects currently baked into composite frames; no independent FX layer delivered.",
+    "No automatic force/animation-quality acceptance; in-game scale, timing and damage not tested."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "result": "passed",
+  "exact_preview_frames": 18,
+  "generated_frames": 10,
+  "frame_size": [
+    640,
+    512
+  ],
+  "duration_ms": 1000,
+  "source_regions_preserved": true,
+  "preview_scaling_only": true
+}

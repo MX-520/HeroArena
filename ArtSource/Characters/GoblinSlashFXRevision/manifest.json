@@ -1,0 +1,97 @@
+{
+  "title": "持剑哥布林 · 参考轨迹＋刀光版",
+  "note": "十帧单次1秒。1–4帧蓄力，5–6帧银白斩击弧与接触闪光，7–8帧碎光衰减，9–10帧收势。特效目前合成在候选帧内，未接入Unity。",
+  "loop": false,
+  "frames": [
+    {
+      "file": "frames/SlashFX_01.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "01 竖剑警戒"
+    },
+    {
+      "file": "frames/SlashFX_02.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "02 向后加载"
+    },
+    {
+      "file": "frames/SlashFX_03.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "03 后引剑刃"
+    },
+    {
+      "file": "frames/SlashFX_04.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "04 最大蓄力"
+    },
+    {
+      "file": "frames/SlashFX_05.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "05 过顶挥出/命中开始"
+    },
+    {
+      "file": "frames/SlashFX_06.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "06 前方接触/随动"
+    },
+    {
+      "file": "frames/SlashFX_07.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "07 碎光衰减"
+    },
+    {
+      "file": "frames/SlashFX_08.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "08 回收/余光"
+    },
+    {
+      "file": "frames/SlashFX_09.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "09 收剑"
+    },
+    {
+      "file": "frames/SlashFX_10.png",
+      "anchor": [
+        288,
+        448
+      ],
+      "duration_ms": 100,
+      "label": "10 竖剑归位"
+    }
+  ]
+}
