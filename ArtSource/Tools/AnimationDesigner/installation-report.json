@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-18",
+  "project_source": "E:\\UnityProject\\HeroArena\\.agents\\skills\\game-2d-animation-designer",
+  "personal_install": "E:\\CodexData\\skills\\game-2d-animation-designer",
+  "files": [
+    {
+      "file": "SKILL.md",
+      "sha256": "84EE9929BB40783D2FABE5C789CC20F98755DEE5DC25719BCC86069767D840A0"
+    },
+    {
+      "file": "agents\\openai.yaml",
+      "sha256": "5C15A4C85FC3E58FA850FB6CFBDAD9ADF48E578B8E60EB434B4D279B5E124828"
+    },
+    {
+      "file": "references\\motion-design.md",
+      "sha256": "BBA2CB6AC7A20619F5A5DD0C84CED31E42C40841A4B10E1797EF1B14BDC7B0AD"
+    },
+    {
+      "file": "references\\review-and-delivery.md",
+      "sha256": "22D89957AB81A1E0253EC9CEAFAA3AFA5AAC4894D1744EF59A4811FEE860448D"
+    },
+    {
+      "file": "references\\tool-routes.md",
+      "sha256": "C1A6623076DA03738EDE73EF649C06A869BC43D866D6EBBA601507427092BF4A"
+    },
+    {
+      "file": "scripts\\build_review.py",
+      "sha256": "A725FDB4EFD9432627515D98B7F9079CD96FD86EBDE9F883B3941DCDB6278261"
+    }
+  ],
+  "host_discovery": "Installed files verified; new-chat discovery not verified"
+}

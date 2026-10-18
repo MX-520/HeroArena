@@ -1,0 +1,4 @@
+interface:
+  display_name: "2D游戏动画设计师"
+  short_description: "设计角色动作、关键姿势与节奏，检查动画连续性并交付可复用游戏素材"
+  default_prompt: "使用 $game-2d-animation-designer，为这个角色设计动作，先交关键姿势、时序和播放审查，再制作正式素材。"

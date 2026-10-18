@@ -1,0 +1,30 @@
+{
+  "result": "passed",
+  "reports": [
+    {
+      "name": "walk-source",
+      "count": 8,
+      "stepping": true,
+      "playback": true,
+      "end_hold": true,
+      "controls": true
+    },
+    {
+      "name": "attack-source",
+      "count": 7,
+      "stepping": true,
+      "playback": true,
+      "end_hold": true,
+      "controls": true
+    },
+    {
+      "name": "walk-blocking",
+      "count": 8,
+      "stepping": true,
+      "playback": true,
+      "end_hold": true,
+      "controls": true
+    }
+  ],
+  "page_errors": []
+}

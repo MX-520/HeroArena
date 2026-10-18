@@ -1,0 +1,6 @@
+{
+  "pixel_comparisons": 23,
+  "invalid_inputs_rejected": 3,
+  "overwrite_protected": true,
+  "untrusted_labels_escaped": true
+}
