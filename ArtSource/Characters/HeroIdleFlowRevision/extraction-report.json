@@ -1,0 +1,296 @@
+{
+  "tool": "built-in image_gen",
+  "status": "generated candidate; user art approval and Unity integration pending",
+  "cell": [
+    640,
+    640
+  ],
+  "anchor": [
+    320,
+    544
+  ],
+  "frames_per_role": 12,
+  "duration_ms": 1500,
+  "roles": {
+    "Hero": {
+      "source": "Hero-board.png",
+      "source_size": [
+        1448,
+        1086
+      ],
+      "source_sha256": "904d94005d0f222f3fb83c65a9c8a8c90c38a0a62fa424fc8f853b83dd2c643a",
+      "png": "Hero-Idle-Flow-strip12.png",
+      "png_sha256": "c19e3eee76c32b10b0d46dc8f2561a4bb7461eb4e25d1ced6bdffab9b1601cf3",
+      "actual_alpha_extrema": [
+        0,
+        255
+      ],
+      "frames": [
+        {
+          "frame": 1,
+          "source_rect": [
+            0,
+            0,
+            362,
+            383
+          ],
+          "source_root": [
+            234,
+            362
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 66954,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            103,
+            222,
+            448,
+            559
+          ]
+        },
+        {
+          "frame": 2,
+          "source_rect": [
+            362,
+            0,
+            362,
+            383
+          ],
+          "source_root": [
+            596,
+            362
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 64299,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            93,
+            221,
+            448,
+            563
+          ]
+        },
+        {
+          "frame": 3,
+          "source_rect": [
+            724,
+            0,
+            362,
+            383
+          ],
+          "source_root": [
+            958,
+            362
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 63652,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            101,
+            223,
+            448,
+            563
+          ]
+        },
+        {
+          "frame": 4,
+          "source_rect": [
+            1086,
+            0,
+            362,
+            383
+          ],
+          "source_root": [
+            1320,
+            362
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 61746,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            105,
+            215,
+            431,
+            551
+          ]
+        },
+        {
+          "frame": 5,
+          "source_rect": [
+            0,
+            383,
+            362,
+            341
+          ],
+          "source_root": [
+            234,
+            714
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 63126,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            104,
+            228,
+            440,
+            549
+          ]
+        },
+        {
+          "frame": 6,
+          "source_rect": [
+            362,
+            383,
+            362,
+            341
+          ],
+          "source_root": [
+            595,
+            714
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 62708,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            92,
+            214,
+            446,
+            547
+          ]
+        },
+        {
+          "frame": 7,
+          "source_rect": [
+            724,
+            383,
+            362,
+            341
+          ],
+          "source_root": [
+            958,
+            714
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 64548,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            87,
+            226,
+            448,
+            551
+          ]
+        },
+        {
+          "frame": 8,
+          "source_rect": [
+            1086,
+            383,
+            362,
+            341
+          ],
+          "source_root": [
+            1320,
+            714
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 64292,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            87,
+            218,
+            432,
+            547
+          ]
+        },
+        {
+          "frame": 9,
+          "source_rect": [
+            0,
+            724,
+            362,
+            362
+          ],
+          "source_root": [
+            234,
+            1054
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 64030,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            104,
+            221,
+            428,
+            547
+          ]
+        },
+        {
+          "frame": 10,
+          "source_rect": [
+            362,
+            724,
+            362,
+            362
+          ],
+          "source_root": [
+            596,
+            1054
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 64012,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            89,
+            226,
+            448,
+            547
+          ]
+        },
+        {
+          "frame": 11,
+          "source_rect": [
+            724,
+            724,
+            362,
+            362
+          ],
+          "source_root": [
+            958,
+            1054
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 63303,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            93,
+            220,
+            428,
+            550
+          ]
+        },
+        {
+          "frame": 12,
+          "source_rect": [
+            1086,
+            724,
+            362,
+            362
+          ],
+          "source_root": [
+            1320,
+            1054
+          ],
+          "root_method": "midpoint of opaque boot soles in bottom sixteen rows; provisional game root",
+          "alpha_pixels_retained": 64869,
+          "visible_rgba_exact": true,
+          "opaque_bounds": [
+            93,
+            223,
+            431,
+            547
+          ]
+        }
+      ]
+    }
+  }
+}

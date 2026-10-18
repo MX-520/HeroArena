@@ -1,0 +1,377 @@
+{
+  "status": "construction draft only; targets not measured final art",
+  "frames": [
+    {
+      "frame": 1,
+      "duration_ms": 125,
+      "waist_offset": 0.0,
+      "head_offset": -5.5,
+      "cape_tip_offset": -25.11,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            266.0
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            266.0
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "duration_ms": 125,
+      "waist_offset": 3.5,
+      "head_offset": 0.0,
+      "cape_tip_offset": -14.5,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            269.5
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            269.5
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "duration_ms": 125,
+      "waist_offset": 6.06,
+      "head_offset": 5.5,
+      "cape_tip_offset": 0.0,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            272.06
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            272.06
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "duration_ms": 125,
+      "waist_offset": 7.0,
+      "head_offset": 9.53,
+      "cape_tip_offset": 14.5,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            273.0
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            273.0
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "duration_ms": 125,
+      "waist_offset": 6.06,
+      "head_offset": 11.0,
+      "cape_tip_offset": 25.11,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            272.06
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            272.06
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "duration_ms": 125,
+      "waist_offset": 3.5,
+      "head_offset": 9.53,
+      "cape_tip_offset": 29.0,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            269.5
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            269.5
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "duration_ms": 125,
+      "waist_offset": 0.0,
+      "head_offset": 5.5,
+      "cape_tip_offset": 25.11,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            266.0
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            266.0
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "duration_ms": 125,
+      "waist_offset": -3.5,
+      "head_offset": 0.0,
+      "cape_tip_offset": 14.5,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            262.5
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            262.5
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "duration_ms": 125,
+      "waist_offset": -6.06,
+      "head_offset": -5.5,
+      "cape_tip_offset": 0.0,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            259.94
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            259.94
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "duration_ms": 125,
+      "waist_offset": -7.0,
+      "head_offset": -9.53,
+      "cape_tip_offset": -14.5,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            259.0
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            259.0
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "duration_ms": 125,
+      "waist_offset": -6.06,
+      "head_offset": -11.0,
+      "cape_tip_offset": -25.11,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            259.94
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            259.94
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "duration_ms": 125,
+      "waist_offset": -3.5,
+      "head_offset": -9.53,
+      "cape_tip_offset": -29.0,
+      "leg_ik": [
+        {
+          "hip_marker": [
+            218,
+            262.5
+          ],
+          "ankle_marker": [
+            176,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        },
+        {
+          "hip_marker": [
+            265,
+            262.5
+          ],
+          "ankle_marker": [
+            289,
+            338
+          ],
+          "note": "schematic connection only, use hero reference anatomy"
+        }
+      ]
+    }
+  ]
+}

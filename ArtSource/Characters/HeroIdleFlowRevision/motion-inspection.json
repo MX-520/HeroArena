@@ -1,0 +1,65 @@
+{
+  "note": "static silhouette and cloth-color diagnostics only; not measured eyes/waist, curve smoothness or art acceptance",
+  "frames": [
+    {
+      "frame": "Idle_01.png",
+      "head_silhouette_top": 225,
+      "far_cape_red_mean_y": 345.86
+    },
+    {
+      "frame": "Idle_02.png",
+      "head_silhouette_top": 225,
+      "far_cape_red_mean_y": 370.1
+    },
+    {
+      "frame": "Idle_03.png",
+      "head_silhouette_top": 227,
+      "far_cape_red_mean_y": 386.44
+    },
+    {
+      "frame": "Idle_04.png",
+      "head_silhouette_top": 232,
+      "far_cape_red_mean_y": 384.98
+    },
+    {
+      "frame": "Idle_05.png",
+      "head_silhouette_top": 240,
+      "far_cape_red_mean_y": 379.16
+    },
+    {
+      "frame": "Idle_06.png",
+      "head_silhouette_top": 240,
+      "far_cape_red_mean_y": 374.84
+    },
+    {
+      "frame": "Idle_07.png",
+      "head_silhouette_top": 235,
+      "far_cape_red_mean_y": 380.81
+    },
+    {
+      "frame": "Idle_08.png",
+      "head_silhouette_top": 235,
+      "far_cape_red_mean_y": 369.48
+    },
+    {
+      "frame": "Idle_09.png",
+      "head_silhouette_top": 224,
+      "far_cape_red_mean_y": 374.73
+    },
+    {
+      "frame": "Idle_10.png",
+      "head_silhouette_top": 232,
+      "far_cape_red_mean_y": 377.15
+    },
+    {
+      "frame": "Idle_11.png",
+      "head_silhouette_top": 225,
+      "far_cape_red_mean_y": 375.31
+    },
+    {
+      "frame": "Idle_12.png",
+      "head_silhouette_top": 226,
+      "far_cape_red_mean_y": 343.54
+    }
+  ]
+}
