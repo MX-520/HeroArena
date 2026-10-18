@@ -1,0 +1,3 @@
+interface:
+  display_name: "Unity 行为测试与 TDD"
+  short_description: "为 Unity 核心玩法和生命周期修复补充可复现的行为测试与验证证据"
