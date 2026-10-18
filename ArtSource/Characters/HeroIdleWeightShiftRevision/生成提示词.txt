@@ -1,0 +1,22 @@
+Use case: identity-preserve / animation pose edit.
+INPUT IMAGE is the current hero idle sheet and is the authority for character identity, costume and fine pixel-painted art style. Preserve the white-haired red-eyed chibi boy, warm ivory hair, muted dark-red scarf/cape, charcoal/brown leather armor, empty gloved hands and boots, three-quarter facing screen right. Keep the SAME recognizable large travelling S-wave in the cape and selective colored pixel outlines. No weapons.
+TASK: Redraw this into TWELVE consecutive frames of ONE seamless, grounded idle cycle with genuinely articulated KNEE FLEXION and PELVIC/WAIST rise and fall. The original legs and waist barely moved and looked rigid. Do not merely add inbetween copies. Do not shift/scale a rigid full-body cutout.
+LAYOUT: exactly FOUR equal columns by THREE equal rows, chronological row-major order, twelve full characters, no more or less. Wide production sheet, intended about 2048x1536. Same character scale in every cell, enough transparent space for all cape tips; same local ground baseline. Frame12 leads smoothly into frame1; no duplicate endpoints. Real transparent alpha.
+GROUND AND ANATOMY: Both boot soles stay planted in the SAME two ground positions, same width and toe angles throughout all twelve frames; NO stepping, sliding, heel lifting, jumping or turning. Animate ankle/knee/hip articulation above fixed feet. Keep upper/lower leg bone lengths and boot size consistent. When the pelvis sinks, knees flex and move slightly outward/forward; thigh angle visibly changes, waist belt moves down and the trunk absorbs the weight. When rising, knees extend gently without locking, pelvis rises, chest opens with the breath. Preserve torso length/body volumes, no rubber scaling. Shoulders and head respond with a small delay and mild counter-motion; hands follow relaxed, and cloth/soft hair lag one frame. The main motion must be leg/hip weight settling, not only cape flutter.
+READABILITY: clear but controlled waist displacement about 6–8 percent of full character height peak-to-peak, roughly 24–30px if this hero is 360px high. Clearly different knee bend at the lowest and highest poses. A poised alert adventurer with soft spring in the legs, NOT squats for exercise, bobbing dance, running or exaggerated breathing.
+TWELVE PHASES, target 125ms per image / 1.5 second loop:
+01 neutral halfway down, pelvis at reference level, knees soft.
+02 pelvis lowers about 5px, knees begin flexing, chest follows gently.
+03 pelvis lowers about 11px, visibly deeper knee flexion, waist belt lowers.
+04 lowest pelvis about +16px, weight settled, knees most flexed, feet fixed.
+05 bottom reversal, pelvis +14px, trunk/shoulders catch up without stop.
+06 rising pelvis +8px, legs begin extending, hand/cape lag.
+07 pelvis crosses neutral, smooth rise with chest opening.
+08 pelvis -5px, knees open, shoulders continue lift.
+09 pelvis -10px, near upper crest, relaxed abdomen.
+10 highest pelvis about -12px, knees soft not locked, short blink.
+11 pelvis -9px, begins settling, eyes reopen.
+12 pelvis -4px, descending toward01 with matching velocity.
+Use these as coherent pose targets scaled to actual sprite size, not literal labels to draw.
+CAPE: keep its shoulder attachment fixed to torso, keep the already accepted broad wave crest/trough travelling to the tips, delay behind torso; don't let cloth cover the visible hip belt or knees. STYLING: deliberate fine pixel clusters and stepped shading, no smooth glossy cartoon rendering or giant blocky mosaic. Consistent lighting, palette and detail from input.
+AVOID: alternatives of unrelated idle poses, limb length changes, belt/armor redesign, changing scale, foot drift, torso pasted above static legs, whole-image vertical offset, fake shadows, floor, particles, effects, text, labels, numbers, grids, checkerboard or background.
