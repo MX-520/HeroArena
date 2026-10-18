@@ -1,0 +1,1 @@
+PASS: 117 sprites; Down=31 Left=29 Right=29 Up=28; rectangles and unique names verified; source hash matched; no scene or animation changed.

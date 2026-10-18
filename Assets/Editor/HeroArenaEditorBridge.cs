@@ -22,6 +22,11 @@ public static class HeroArenaEditorBridge
             File.Delete(request);
         }
         catch (IOException) { return; } // A producer may still be completing the request; retry next update.
+        if (command == "slice-player-idle-board")
+        {
+            UserHeroBoardSlicing.Slice();
+            return;
+        }
         if (command == "prepare-character-actions")
         {
             CharacterActionPreparation.PrepareLive();

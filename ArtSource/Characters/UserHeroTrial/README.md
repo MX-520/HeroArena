@@ -36,3 +36,7 @@
 已读回所有 PNG 验证尺寸、透明留边、与总表像素一致、脚底对齐，ZIP 完整性通过；已查看全部 117 帧接触表及源图编号图。源图人物间存在围巾相接/重叠，按头部中点分隔，仍可能有围巾切边、邻帧碎片及浅色边缘；被遮挡的像素不能从此展示板恢复。该结果是完整裁剪，不代表正式动作质量验收。
 
 之前 `Cropped/`、`UserHeroIdleTrial.png`、`UserHeroIdleCrops.zip` 和 `extract_board.py` 仅为每方向 8 帧的旧试验子集；不再作为完整素材交付。Unity 试播报告同为历史证据。用户已要求撤回独立预览、仅裁剪素材，本次没有导入 Unity、恢复用户删除的 Characters 目录或改动场景。
+
+## 用户导入原图的 Unity 切片
+
+按用户后续要求，直接对 `Assets/Role/Test/Player/主角四方向像素待机动画展示板.png` 建立117个 Multiple Sprite，命名 Idle_Down_01 等，Point 过滤、无压缩。源图哈希与本目录原板相同，使用 FullCropped 报告中逐帧矩形，数量、唯一名称和每个矩形尺寸实际导入检查通过。只修改原图导入设置，原 PNG 像素与背景保持原样；没有绑定动画或修改场景。可通过 UserHeroBoardSlicing 菜单或现有桥接重新切片。
