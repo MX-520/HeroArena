@@ -1,0 +1,5 @@
+<!doctype html><html><meta charset="utf-8"><style>body{margin:0;background:#243426}canvas{display:block;image-rendering:pixelated}</style><canvas id="c" width="1200" height="780"></canvas><script>
+const ctx=document.querySelector('canvas').getContext('2d');ctx.imageSmoothingEnabled=false;
+const map=new Image(),hero=new Image();map.src='file:///E:/UnityProject/HeroArena/Assets/Maps/BaseMap.png';hero.src='Hero/frames/Idle_04.png';
+Promise.all([map,hero].map(im=>new Promise(r=>{im.onload=r}))).then(()=>{ctx.drawImage(map,350,180,800,520,0,0,1200,780);const s=.25*1.5;ctx.drawImage(hero,600-320*s,460-544*s,640*s,640*s);window.mapReady=true;});
+</script></html>

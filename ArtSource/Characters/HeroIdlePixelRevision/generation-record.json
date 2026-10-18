@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-18",
+  "request": "披风版本可以；主角需要一些像素感，与地图环境适配，减少画面割裂",
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "role": "edit target",
+      "path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero-board.png",
+      "sha256": "1c2e775f310c262c8820cfaf509e80f21eb4761d8c648dd8b5762d50d9ebac9b"
+    },
+    {
+      "role": "environment appearance only",
+      "path": "Assets/Maps/BaseMap.png",
+      "sha256": "261560dc4bd39f14fc4289285fc7370d8b9fb376cd68b21b7147c298d95d78f0"
+    }
+  ],
+  "prompt": "生成提示词.txt",
+  "selected": "Hero-Idle-Pixel-strip8.png",
+  "selected_sha256": "4a0bcc49094713fe43f4910fae580c5f2eb882f060cac5914e30e16fb5cb9219",
+  "iterations": 1,
+  "style_goal": "fine pixel-painted RPG, clustered stepped shading and selective colored outlines; preserve approved unarmed hero/cape motion",
+  "status": "pixel style candidate; user confirmation and Unity integration pending",
+  "qa": "8-frame exact alpha/RGBA extraction, 8 playback samples and two normal-speed cycles passed; static map-context canvas inspected at approximate display scale, not actual Unity scene"
+}
