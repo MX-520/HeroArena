@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-18",
+  "request": "用户认可四角色Idle总体效果，仅要求主角披风幅度更大、更具波形",
+  "tool": "built-in image_gen",
+  "edit_target": "ArtSource\\Characters\\FourCharacterIdleTrial\\Hero-board.png",
+  "edit_target_sha256": "735435f143412623509c05eb9db1a7695bee9aef5af8187e79707307ec702a49",
+  "prompt": "生成提示词.txt",
+  "generated_board": "Hero-board.png",
+  "selected": "Hero-Idle-CapeWave-strip8.png",
+  "selected_sha256": "056acad847c7f1059eccb9403d8b0c69d0fc3941578325fe38fa580a8549eb73",
+  "iterations": 1,
+  "status": "cape revision candidate awaiting visual confirmation; technical extraction/playback passed; no Unity integration",
+  "preserve_goal": "same hero, unarmed poses, breathing/blink, 8 frames and timing; larger travelling cloth wave only",
+  "limitations": [
+    "Generative edit preserves appearance/pose intent, not pixel-identical body pixels.",
+    "Cloth silhouette/folds still need user visual approval; functional playback is not art acceptance."
+  ]
+}

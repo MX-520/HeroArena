@@ -1,0 +1,13 @@
+Use case: precise-object-edit. Edit target: the supplied eight-frame idle animation sheet.
+USER REQUEST: Keep this hero's idle, but make ONLY the red cape/scarf much more wavy, with larger flowing motion.
+Preserve the EXACT same eight full-body hero poses, white hair, face, red eyes, empty hands, leather armor, boots, scale, lighting, breathing/brief blink timing, three-quarter facing right, and planted foot positions of EACH existing frame. Do not redesign or zoom the character. Keep the 4 columns x 2 rows, 8-frame chronological order and equal cell sizes.
+CHANGE ONLY THE HANGING RED CAPE FABRIC behind his left shoulder; keep its attachment at neck/shoulder anchored. It is the same recognizable ragged red cape, same fabric area, length, hue and shading. Make the eight frames a coherent looping cloth wave: shape a clear soft S-shaped contour/billow through the broad cloth, with a wave travelling FROM the shoulder THROUGH the mid cloth TO the free tips on screen left. Mid-cloth leads, tips lag one or two frames. Increase tail displacement to about twice or three times the original restrained idle; clearly readable rise/fall and forward/back curl of the hem, roughly 50-65 pixels total peak-to-peak for a roughly 350px tall hero. Not just translating the entire cape or rotating it as a rigid flap. Cloth folds/highlights follow the curvature without flashing.
+Frame1: gentle S, tips mid-level and beginning to rise.
+Frame2: crest develops in mid cape, tips lag.
+Frame3: crest reaches outer half, tail rising.
+Frame4: tail highest and curling gently, cloth middle beginning to settle.
+Frame5: new shallow trough runs outward, tail starts dropping.
+Frame6: trough approaches tail, tail lower; preserve original blink.
+Frame7: tail lowest with a soft backward curl, shoulder region starts a new crest.
+Frame8: tail eases upward toward frame1, wave passes smoothly through 8→1 without reset; do not repeat frame1.
+No weapon, new accessories, wind streaks, particles, aura, scenery, shadows, text, numbers, grids, watermark or checkered background. Keep each full character/cape isolated well inside its own cell with generous gap to neighbors. Real transparent alpha background; preserve transparency. Clean production sprite art.
