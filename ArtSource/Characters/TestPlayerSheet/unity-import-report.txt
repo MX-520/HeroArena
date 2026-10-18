@@ -1,0 +1,1 @@
+PASS: 54 Sprite subassets; rows 8/8/8/7/8/8/7; source SHA256, names, rectangles, pivots and local file references verified in Unity. Point, no compression/mipmaps. Texture GUID and PPU preserved. No scene, controller or animation modified. Attack-row touching artwork remains in source and overlapping slices may contain neighbour fragments.

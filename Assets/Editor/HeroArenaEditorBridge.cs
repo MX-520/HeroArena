@@ -27,6 +27,11 @@ public static class HeroArenaEditorBridge
             TestPlayerWalkPreparation.Prepare();
             return;
         }
+        if (command == "slice-testplayer-sheet")
+        {
+            TestPlayerSheetSlicing.Slice();
+            return;
+        }
         if (command == "slice-player-idle-board")
         {
             UserHeroBoardSlicing.Slice();
