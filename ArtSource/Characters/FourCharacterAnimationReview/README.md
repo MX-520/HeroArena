@@ -9,6 +9,6 @@
 - 持斧攻击R04F06为纯刀光格，法师R04F06为纯弹体格；若作为角色整帧播放会导致身体消失。重排试验移除这些格子，但未修复结构、握点或补全过渡。
 - 所有角色锚点为人工暂定；原行100ms等曝光不代表最终时长。重排仅为候选序列设计，未制作正式角色图像或接入Unity，未打包。
 
-用户可浏览的审查页和完整包保存在本聊天outputs/FourCharacterTrial及outputs/四角色动作试用包.zip。以下路径记录供接续：E:/CodexWorkspace/2026-10-18/agents-md-projectknowledge/outputs/FourCharacterTrial/index.html。
+用户可浏览的审查页和完整包保存在本聊天outputs/FourCharacterTrial及outputs/四角色动作试用包.zip。以下路径记录供接续：独立交付目录 outputs/FourCharacterTrial/index.html。
 
 build_four_character_trial.py用 --project 指定项目根目录、--out 指定新的空输出目录、--review-script 指向skill的scripts/build_review.py。finish_four_character_trial.py和两份verify脚本是本次任务的验证源文件，保留了当前聊天输出路径与本机浏览器依赖路径，不是通用安装程序。审查器本体在skill内维护。

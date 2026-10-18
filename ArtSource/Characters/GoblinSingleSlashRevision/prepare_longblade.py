@@ -20,7 +20,7 @@ for i,(component,(rx,ry),spec) in enumerate(zip(large,roots,original['frames']),
 m=dict(original,title='持剑哥布林 · 单斩修正版（加长剑刃）',note='按用户要求，以约20%加长为目标重绘八帧剑刃，实际透视与比例仍需视觉审查；同一八姿势、1秒曝光安排。剑柄/握点按参考保持，生成有轻微细节漂移。未接入Unity。',frames=frames)
 (out/'longblade-manifest.json').write_text(json.dumps(m,ensure_ascii=False,indent=2),encoding='utf-8')
 (out/'longblade-extraction-report.json').write_text(json.dumps(dict(source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),generated_size=[a.shape[1],a.shape[0]],frame_size=[512,512],root=[240,448],frames=checks,notes='Non-uniform generated board; did not assume exact grid division. Principal silhouettes and assigned RGBA preserved.'),indent=2),encoding='utf-8')
-spec=importlib.util.spec_from_file_location('review',r'E:\CodexData\skills\game-2d-animation-designer\scripts\build_review.py');builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder);builder.build(out/'longblade-manifest.json',out/'longblade-review')
+spec=importlib.util.spec_from_file_location('review',str(Path(__file__).resolve().parents[3] / '.agents/skills/game-2d-animation-designer/scripts/build_review.py'));builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder);builder.build(out/'longblade-manifest.json',out/'longblade-review')
 strip=Image.new('RGBA',(4096,512))
 for i,f in enumerate(frames):strip.paste(Image.open(out/f['file']),(512*i,0))
 strip.save(out/'GoblinSingleSlash-longblade-strip8.png')

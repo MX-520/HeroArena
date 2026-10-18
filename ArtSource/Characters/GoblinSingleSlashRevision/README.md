@@ -8,7 +8,7 @@ slash-longblade-v1.png是加长后的生成原板，实际1774×887，不能假�
 
 同一八姿势为警戒/后加载/最大蓄力/挥出/斩击终点/屈肘回收/归位/接回待机。曝光100/120/140/40/80/140/180/200ms，总长1秒、非循环。参考既有Enemy/Gobling/Attack.anim的1秒长度、0.4秒DetectHit、0.9秒OnAttackFinished安排候选时序；原Clip实际loop开启，本次没有改其序列化配置/循环/事件。
 
-slash-v3.png及slash-clean-4x2.png保留加长前参考。生成提示词、设计记录、源图哈希与提取报告随附；用户最初角色参考为项目根目录ChatGPT图像13_57_32-2.png（SHA见上一轮四角色审查记录）。复制给用户的完整小样含前三轮原板及对照播放器，位置为E:/CodexWorkspace/2026-10-18/agents-md-projectknowledge/outputs/GoblinSingleSlash/index.html。
+slash-v3.png及slash-clean-4x2.png保留加长前参考。生成提示词、设计记录、源图哈希与提取报告随附；用户最初角色参考为项目根目录ChatGPT图像13_57_32-2.png（SHA见上一轮四角色审查记录）。复制给用户的完整小样含前三轮原板及对照播放器，位置为独立交付目录 outputs/GoblinSingleSlash/index.html。
 
 ## 验证与未完成
 

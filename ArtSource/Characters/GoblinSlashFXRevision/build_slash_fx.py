@@ -19,7 +19,7 @@ for i,((rx,ry),name) in enumerate(zip(roots,labels)):
 manifest=dict(title='持剑哥布林 · 参考轨迹＋刀光版',note='十帧单次1秒。1–4帧蓄力，5–6帧银白斩击弧与接触闪光，7–8帧碎光衰减，9–10帧收势。特效目前合成在候选帧内，未接入Unity。',loop=False,frames=frames)
 (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
 (out/'extraction-report.json').write_text(json.dumps(dict(source_size=[a.shape[1],a.shape[0]],frame_size=[640,512],root=[288,448],frames=checks,method='Manual nonuniform frame regions isolate each body and detached FX; assigned original RGBA copied, all alpha>80 pixels in each region retained.'),indent=2),encoding='utf-8')
-spec=importlib.util.spec_from_file_location('review',r'E:\CodexData\skills\game-2d-animation-designer\scripts\build_review.py');builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder);builder.build(out/'manifest.json',out/'review')
+spec=importlib.util.spec_from_file_location('review',str(Path(__file__).resolve().parents[3] / '.agents/skills/game-2d-animation-designer/scripts/build_review.py'));builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder);builder.build(out/'manifest.json',out/'review')
 strip=Image.new('RGBA',(6400,512))
 for i,f in enumerate(frames):strip.paste(Image.open(out/f['file']),(i*640,0))
 strip.save(out/'GoblinSlashFX-strip10.png')

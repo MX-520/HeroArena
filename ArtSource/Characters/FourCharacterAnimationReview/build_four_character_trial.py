@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw
 ap=argparse.ArgumentParser()
 ap.add_argument('--project',type=Path,default=Path(r'E:\UnityProject\HeroArena'))
 ap.add_argument('--out',type=Path,required=True)
-ap.add_argument('--review-script',type=Path,default=Path(r'E:\CodexData\skills\game-2d-animation-designer\scripts\build_review.py'))
+ap.add_argument('--review-script',type=Path,default=(Path(__file__).resolve().parents[3] / '.agents/skills/game-2d-animation-designer/scripts/build_review.py'))
 args=ap.parse_args();out=args.out.resolve();out.mkdir(parents=True,exist_ok=True)
 spec=importlib.util.spec_from_file_location('review_builder',args.review_script)
 builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
