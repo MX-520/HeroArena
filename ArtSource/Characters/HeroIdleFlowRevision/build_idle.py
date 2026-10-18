@@ -12,7 +12,7 @@ stage = args.source_root.resolve()
 out = args.out.resolve()
 out.mkdir(parents=True, exist_ok=True)
 roles = {'Hero':'主角（空手）头腰曲线与披风联动Idle版'}
-report = {'tool':'built-in image_gen', 'status':'generated candidate; user art approval and Unity integration pending', 'cell':[640,640], 'anchor':[320,544], 'frames_per_role':12, 'duration_ms':1500, 'roles':{}}
+report = {'tool':'built-in image_gen', 'status':'technical extraction only; current user acceptance is recorded separately in acceptance.json', 'cell':[640,640], 'anchor':[320,544], 'frames_per_role':12, 'duration_ms':1500, 'roles':{}}
 for role, title in roles.items():
     src = stage / f'{role}-board.png'
     if not src.exists():
@@ -64,7 +64,7 @@ for role, title in roles.items():
         checks.append({'frame':i+1,'source_rect':[l,t,r-l,b-t],'source_root':[rootx,rooty],'root_method':'midpoint of opaque boot soles in bottom sixteen rows; provisional game root','alpha_pixels_retained':int((arr[:,:,3]>0).sum()),'visible_rgba_exact':True,'opaque_bounds':canvas.getbbox()})
     dest = out / f'{role}-Idle-Flow-strip12.png'
     strip.save(dest)
-    manifest = {'title':title+' · Idle候选','note':'12帧/1.5秒循环；脚底接地、可见头腰错相曲线与披风波浪；空手、轻像素风和披风波浪；未接入Unity。','loop':True,'frames':specs}
+    manifest = {'title':title+' · Idle','note':'12帧/1.5秒循环；脚底接地、可见头腰错相曲线与披风波浪；空手、轻像素风和披风波浪；未接入Unity。','loop':True,'frames':specs}
     (folder / 'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
     for i in range(12):
         assert strip.crop((i*640,0,(i+1)*640,640)).tobytes() == Image.open(folder / specs[i]['file']).tobytes()

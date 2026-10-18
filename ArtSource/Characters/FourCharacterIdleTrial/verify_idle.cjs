@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),{pathToFileURL}=require('n
 (async()=>{
  const base=__dirname, browser=await chromium.launch({headless:true,executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
  const results=[];
- for(const role of ['Hero','Sword','Axe','Mage']){
+ for(const role of ['Sword','Axe','Mage']){
   const page=await browser.newPage({viewport:{width:1280,height:1100}}),errors=[];
   page.on('pageerror',e=>errors.push(String(e)));
   await page.goto(pathToFileURL(path.join(base,role,'review/review.html')).href);
@@ -27,5 +27,5 @@ const fs=require('node:fs'),path=require('node:path'),{pathToFileURL}=require('n
   await page.close();
  }
  await browser.close();fs.writeFileSync(path.join(base,'browser-verification.json'),JSON.stringify({result:'passed',roles:results},null,2));
- console.log('PASS: 32 frame selections, controls, and over two normal-speed loops per role; no script errors.');
+ console.log('PASS: 24 frame selections, controls, and over two normal-speed loops per role; no script errors.');
 })().catch(e=>{console.error(e);process.exitCode=1});

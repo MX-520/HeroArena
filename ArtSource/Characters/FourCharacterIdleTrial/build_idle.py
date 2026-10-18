@@ -11,7 +11,7 @@ args = parser.parse_args()
 stage = args.source_root.resolve()
 out = args.out.resolve()
 out.mkdir(parents=True, exist_ok=True)
-roles = {'Hero':'主角（空手）', 'Sword':'持剑哥布林', 'Axe':'持斧哥布林', 'Mage':'法师哥布林'}
+roles = {'Sword':'持剑哥布林', 'Axe':'持斧哥布林', 'Mage':'法师哥布林'}
 report = {'tool':'built-in image_gen', 'status':'generated candidate; user art approval and Unity integration pending', 'cell':[640,640], 'anchor':[320,544], 'frames_per_role':8, 'duration_ms':1600, 'roles':{}}
 for role, title in roles.items():
     src = stage / f'{role}-board.png'

@@ -1,0 +1,872 @@
+{
+  "date": "2026-10-18",
+  "authorization": "User accepted final Idle and explicitly requested knowledge/skill organization and removal of unnecessary files",
+  "scope": "superseded hero Idle candidates, unselected experiments and task workspace duplicates only",
+  "protected": [
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\Hero-Idle-Flow-strip12.png",
+      "sha256": "c19e3eee76c32b10b0d46dc8f2561a4bb7461eb4e25d1ced6bdffab9b1601cf3",
+      "bytes": 1822481
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\Hero-board.png",
+      "sha256": "904d94005d0f222f3fb83c65a9c8a8c90c38a0a62fa424fc8f853b83dd2c643a",
+      "bytes": 1746530
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\references\\hero-identity-reference.png",
+      "sha256": "ecc33d7dec2790e53568ea683b4b0b64b947beb21940bb9c80cce4b3b72768af",
+      "bytes": 1686199
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\references\\cape-approved-reference.png",
+      "sha256": "1c2e775f310c262c8820cfaf509e80f21eb4761d8c648dd8b5762d50d9ebac9b",
+      "bytes": 1305113
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\outputs\\HeroIdleFlow\\Hero-Idle-Flow-strip12.png",
+      "sha256": "c19e3eee76c32b10b0d46dc8f2561a4bb7461eb4e25d1ced6bdffab9b1601cf3",
+      "bytes": 1822481
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\FourCharacterIdleTrial\\Sword-Idle-strip8.png",
+      "sha256": "eb227790d94796a9782b9ab7bac22aa013497d5a3fb14cec92417e4bf31bbe6e",
+      "bytes": 2028504
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\FourCharacterIdleTrial\\Axe-Idle-strip8.png",
+      "sha256": "fd9abc19ab511a38ee1d31399fc3462bb0108dc642a42d743a3efc02b6dc968c",
+      "bytes": 1731928
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\FourCharacterIdleTrial\\Mage-Idle-strip8.png",
+      "sha256": "316ba74803cb84e98ededf7ab5d52b3fe1fb4fbbc16c08401f99ed2c2c520b91",
+      "bytes": 1534928
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\GoblinSlashFXRevision\\GoblinSlashFX-strip10.png",
+      "sha256": "a7a7a329555ce289431ea8d3a2c44c58757b19062217f19fbe6ee49f729f79b1",
+      "bytes": 1340056
+    }
+  ],
+  "removed_project_files": [
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/生成提示词.txt",
+      "bytes": 2246,
+      "sha256": "5770c7e3d3713b616c575dd00aa5af2489502f34f5e0075e179d9b0b3d7cbb65"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/browser-verification.json",
+      "bytes": 319,
+      "sha256": "213213a62e7bbfa079937e68e8be859ad9d5229b069347d6ccc2e77926d6bcfc"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/build_idle.py",
+      "bytes": 3618,
+      "sha256": "7c1410f2e84c8a2b58120419032bd5b8d70e5fc78775287eb650d70a3c84ec27"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/cape-motion-measurement.json",
+      "bytes": 584,
+      "sha256": "4803c7dce832f66e037ee44f97c0635dee074d01eec8085fecbcd464bdadc431"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/extraction-report.json",
+      "bytes": 4993,
+      "sha256": "f83669f2e0b68b1e22bc259f428776c2648168dc90e4525bceaae5120be10bb5"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/generation-record.json",
+      "bytes": 1050,
+      "sha256": "3b6aa9a7c12584f8bc831ea5f1076354abc32554a485fa17438286e5bda6e45a"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero-board.png",
+      "bytes": 1305113,
+      "sha256": "1c2e775f310c262c8820cfaf509e80f21eb4761d8c648dd8b5762d50d9ebac9b"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero-Idle-CapeWave-strip8.png",
+      "bytes": 1330795,
+      "sha256": "056acad847c7f1059eccb9403d8b0c69d0fc3941578325fe38fa580a8549eb73"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/README.md",
+      "bytes": 2556,
+      "sha256": "cc4deb4bb3ccf0abc087461fa40eb38aa2c94b0bcb3d86cb52ddb8659ea6dd0d"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/verify_idle.cjs",
+      "bytes": 2441,
+      "sha256": "7eb974f44c49647b490bdfea549427c529a429689a33d5bbd2731eb4aee3dc8e"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/manifest.json",
+      "bytes": 1439,
+      "sha256": "48282abe76c95633cbfbd54900e6db832c50406b323ab2b7101166a60203aafa"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/technical-report.json",
+      "bytes": 3216,
+      "sha256": "0cfb4aca555973c9992d914a958dd59ad36d1d64847b61c2ca208faea5b4128e"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/frames/Idle_01.png",
+      "bytes": 170360,
+      "sha256": "0dd8fe6d6a491128ff73aabaa395d9a76b1512050a801b37cc3c74cde6fa38e0"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/frames/Idle_02.png",
+      "bytes": 170039,
+      "sha256": "323521f58c2baf75ab791879914972547b7ddb7513db668c78d5fd7617b57a5e"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/frames/Idle_03.png",
+      "bytes": 171785,
+      "sha256": "f59541581b3d9756a4f6011bf38050a05cda8167c842f990f097a74ec2ef911f"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/frames/Idle_04.png",
+      "bytes": 172128,
+      "sha256": "e494e04532dd37530a90146045cd8c4ac45335828c1159fcdf522865806402d4"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/frames/Idle_05.png",
+      "bytes": 170510,
+      "sha256": "21aac0c9d51d24d4ee2845c8544b14da1957ac988e7348f7a6f3af2d9e8f88f3"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/frames/Idle_06.png",
+      "bytes": 162809,
+      "sha256": "c77791b7659e0f5619ae04cfdb9a25c8aefa8d1b39739ca91bcf29f38d2a3412"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/frames/Idle_07.png",
+      "bytes": 168300,
+      "sha256": "48f77cce49922b34d7d8821fbe8a908eb93f179a5d8dddda6103523ae7b086c9"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero/frames/Idle_08.png",
+      "bytes": 169091,
+      "sha256": "695ea4bf247aacf7a8d2fbc57984a066caa9625588c7f9f17b852dd1ae234756"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/生成提示词.txt",
+      "bytes": 2933,
+      "sha256": "9cb431941dcbc91249fdab9cfac6ae27b8d5fabb525d371a709a54130e221420"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/browser-verification.json",
+      "bytes": 319,
+      "sha256": "213213a62e7bbfa079937e68e8be859ad9d5229b069347d6ccc2e77926d6bcfc"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/build_idle.py",
+      "bytes": 3642,
+      "sha256": "2fb93747a25414488d0e3c56bb9bf77d31d3a63f9d54640d33b85e7a776a9b2a"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/extraction-report.json",
+      "bytes": 4989,
+      "sha256": "667ea1737efb8605f88ccaf301dd4e4059f98fa1e7eaeef1132f6d60cdd64e21"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/generation-record.json",
+      "bytes": 1207,
+      "sha256": "a17a6c8673770ad637ce195aa51404edd76a842a867cf919fc2b5f1d3e6b3bd1"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero-board.png",
+      "bytes": 1443896,
+      "sha256": "4ef97e7a50135161b5620efdf4bfa2fb1febe0b9abe72854de391b13e6866849"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero-Idle-Pixel-strip8.png",
+      "bytes": 1510738,
+      "sha256": "4a0bcc49094713fe43f4910fae580c5f2eb882f060cac5914e30e16fb5cb9219"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/map-check.html",
+      "bytes": 667,
+      "sha256": "a96ef06e59d12493355e1010da023ac315dd9f34e2fe8ab5d2136d7a457f129f"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/README.md",
+      "bytes": 3549,
+      "sha256": "d0a7619aac4d5f660ae563033b9ea44de7f9e7181ebc12f492fe9c0f46ffee2a"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/verify_idle.cjs",
+      "bytes": 2757,
+      "sha256": "acbc345b4e26c956b6a90252d563609222d5c0aa007ce6165568d730d9468562"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/manifest.json",
+      "bytes": 1466,
+      "sha256": "72dafbfbd4b43c47bbb2e058fc00014833051a260a30702f2344f47c74dda466"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/technical-report.json",
+      "bytes": 3215,
+      "sha256": "e2fd1d0fcc578f274db170c08f58ff59f823dc121ef1b1608c5d2b2d41308199"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/frames/Idle_01.png",
+      "bytes": 191972,
+      "sha256": "482e85bf0a77a7dd2665142ea2aac3d46eab36024467147aca3d1e0d9f397efc"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/frames/Idle_02.png",
+      "bytes": 191163,
+      "sha256": "dbc8d469d7561e0fa63f7623d4d7ac406a7cb109269dd1e2e6163588dd034271"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/frames/Idle_03.png",
+      "bytes": 194988,
+      "sha256": "e01b92cec69327858beba28b4fc35f3f96509ca63750a9a140abe5ef0ac3d123"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/frames/Idle_04.png",
+      "bytes": 193202,
+      "sha256": "ee06b1c8b07882d90d8c19302180a4bd88c054bbae12edc2bb3e48643d2d9bff"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/frames/Idle_05.png",
+      "bytes": 192988,
+      "sha256": "ab634cb65aaab0ad4070f70307d490054dc12a806e7541270debea167cc9c7a1"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/frames/Idle_06.png",
+      "bytes": 185698,
+      "sha256": "8d9782c05caeea593c09c966f9eb93676e9dba9b18e923bb24c75df2e11225d9"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/frames/Idle_07.png",
+      "bytes": 192425,
+      "sha256": "3bff10feb852a61ddf869fe440363e9c68cd8a5a85b990623a3cebe066e1134a"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePixelRevision/Hero/frames/Idle_08.png",
+      "bytes": 191382,
+      "sha256": "ab5b54a5aefe64386f78a22e7d629f21168b2d2e5c9dd28857caa60f31005081"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/动作修订记录.md",
+      "bytes": 1460,
+      "sha256": "524cae00f3bec7570aedd6f15c271bef85d5ea8396e7463c15198c4193d09382"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/生成提示词.txt",
+      "bytes": 3860,
+      "sha256": "3a2894a69e1a580e955fa100f13c4e533b785f3e293cfb58edbc5a922f913892"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/收小幅度提示词.txt",
+      "bytes": 2410,
+      "sha256": "1d7b7b48096dd632a996d75257875a40b4bac86e95f11c8006ba150f9f8c2ef1"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/browser-verification.json",
+      "bytes": 320,
+      "sha256": "4305ccce383ae890e49175c4d4a57346ebc54eecd7d83e2bd81a1279766151a0"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/build_idle.py",
+      "bytes": 3851,
+      "sha256": "e9fa1d73f32a13dbea6729a7bf0fbaf99df3b387b564a3bb548f96e80056c0b9"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/extraction-report.json",
+      "bytes": 7150,
+      "sha256": "1739bf50159a37700ee063efeb1f04bc874fcdc50e4d2b8429b356516c45877f"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/generation-record.json",
+      "bytes": 1006,
+      "sha256": "645a34f2099ca89b5ab70dec7998be3c300f9d9769d6b439e243002439af0095"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero-board.png",
+      "bytes": 1635067,
+      "sha256": "4447a9322bdd94e7466f48dc35f19f24a9f4ad6aec5a526db78195771d9d1dc3"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero-deep-rejected.png",
+      "bytes": 1614000,
+      "sha256": "4a5a6f3e9346d2d5bbed6b31ead58617090a383ac893ad09d4ee44ca6d1235c3"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero-Idle-WeightShift-strip12.png",
+      "bytes": 1717414,
+      "sha256": "611c98f7ce0480e27b68a38ab59f9d5954a56b5c09778ec82b21e0119b40ff16"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/motion-diagnostic.json",
+      "bytes": 594,
+      "sha256": "c515a2d4d823cea9d4cf41c7809ccd196ec811895c3843b33068e500615d96c8"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/README.md",
+      "bytes": 2588,
+      "sha256": "e4407b70852aa332511b37644a8414e1c8d8578834dba275ea15f42b43b7d0fd"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/verify_idle.cjs",
+      "bytes": 2457,
+      "sha256": "5849ee9f865ca9326fbfe5b8dbc88d10787a7c2910d1f1d228191c0d1429de78"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/manifest.json",
+      "bytes": 2111,
+      "sha256": "62230ce6acbdd3b82c460436f255c01bca4b2acc41402b4918e35035120619be"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/technical-report.json",
+      "bytes": 4702,
+      "sha256": "b0a0ccf7df52ebdc3b12ee1cc1e55f8a6af28e3f6dd8c4c4fe2c81d0f544b57b"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_01.png",
+      "bytes": 149801,
+      "sha256": "4ff8d8236be566e02cc115d672fdc4a873d930f01f8a736d6d4588d0532a2a23"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_02.png",
+      "bytes": 146014,
+      "sha256": "af64ea77611d452cc1fa5163e94a496d65652da37be61d3d93fd31fb6cd7af6b"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_03.png",
+      "bytes": 144296,
+      "sha256": "5415677fd545bb706cb30841aa716e6d6979f472cff1783f375cf18207052f2c"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_04.png",
+      "bytes": 142919,
+      "sha256": "95c2d67c77717a240f3409c3b85b7e6175ab98b5082558d637f1bed564fe681e"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_05.png",
+      "bytes": 144919,
+      "sha256": "8a1e72dd5c5c6a7415aa7e10bfc4e54c804eb4ff041d1b0dba66e3692ec1cd32"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_06.png",
+      "bytes": 143560,
+      "sha256": "c913efa15e227bb6bea473ac272890136c0cfda73f97e7ab3165463f1499fd5c"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_07.png",
+      "bytes": 143707,
+      "sha256": "c0b82f53e290c2c29b1d7f73bc6dd35e7c42831e9a6726bb47603d63220c1fa8"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_08.png",
+      "bytes": 143232,
+      "sha256": "a60d1b1c885fb500d8bbee740d0aef95154ee535739e5d61d10e3e3f88ac2e29"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_09.png",
+      "bytes": 149364,
+      "sha256": "0190622a607229e3e843bd309591e4c1c22126c8d9dc17a8a980019cb2d6051d"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_10.png",
+      "bytes": 149189,
+      "sha256": "f96cfc229d9b4f09342904b18fd6f12c58a2c1dc3f26cc039e287c2c422d543f"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_11.png",
+      "bytes": 148776,
+      "sha256": "2e173a626922de107370145f6cacd53d764948caa7a9cad5dff8129275d42dd1"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleWeightShiftRevision/Hero/frames/Idle_12.png",
+      "bytes": 149091,
+      "sha256": "b79e52d17aa69b4d00e0b0162869472d200b119ee56822e7598ddb755e67559f"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/生成提示词.txt",
+      "bytes": 3279,
+      "sha256": "489d4ba50fbaabc2ad5ac6788685d844ea1e2499826a56971bacecacd4479479"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/browser-verification.json",
+      "bytes": 320,
+      "sha256": "4305ccce383ae890e49175c4d4a57346ebc54eecd7d83e2bd81a1279766151a0"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/build_idle.py",
+      "bytes": 4358,
+      "sha256": "0ef35ebd28addcec7c3499c5ecf3fe58bd0dd7e8d97c150c1c75585c2f52ec04"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/extraction-report.json",
+      "bytes": 7153,
+      "sha256": "0010cdd130f4a84d513756e43a456e461d80ef57e4e1583872a02188473c63d7"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/generation-record.json",
+      "bytes": 1406,
+      "sha256": "49e401309c7bb5bcac9299847882d925359e23b62f99a23cd06c3b00ab8f7ad0"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero-board.png",
+      "bytes": 1686199,
+      "sha256": "ecc33d7dec2790e53568ea683b4b0b64b947beb21940bb9c80cce4b3b72768af"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero-Idle-Planted-strip12.png",
+      "bytes": 1762370,
+      "sha256": "f858fce70de36bd871b5033461079d4422dd687d38db0adcdd32f2471aa558f5"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/README.md",
+      "bytes": 2915,
+      "sha256": "8ddf53ab32eef00efd82e7813b7c10c0020449f7636464098663f1cec00de62d"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/sole-inspection.json",
+      "bytes": 3094,
+      "sha256": "3148cd9ef811d42165d36f385bb3ebdcb990e660392ff9a7a96d026a64c43f24"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/verify_idle.cjs",
+      "bytes": 2445,
+      "sha256": "08c784fc267f04c95cab2c426089bf489d926b40a6acd590a40b0732d40cf630"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/manifest.json",
+      "bytes": 2131,
+      "sha256": "c6a8e81ba80872bd8a5313d19b23b572644a8052bdfb01bba55b3b38d45b21ad"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/technical-report.json",
+      "bytes": 4709,
+      "sha256": "f00c54d82fdddd92abac3db01f060d7e0a9c8c406a0a4c43ea631d607035cdf7"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_01.png",
+      "bytes": 150952,
+      "sha256": "b0d7d9f96ae14ea486f83b71ad7924e83363723204b7feea18254cdd9dcf1bba"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_02.png",
+      "bytes": 150316,
+      "sha256": "7634bdd02319816129db3f2f06538ee1bcae6d7cd374e65c5dad59c74ef3dc3e"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_03.png",
+      "bytes": 149993,
+      "sha256": "a771cfdf81159b1ed49e408b427a0d6050c6f96a19cac09908a24ad895e02eea"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_04.png",
+      "bytes": 148703,
+      "sha256": "453b4d88b3944855b47d58d71d39edfe5a947abdb62b2af78ca6100ae159ada2"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_05.png",
+      "bytes": 150114,
+      "sha256": "385b210d0ac9a2507137533ec500af75be5a4387d59d9e568227b864a860cc76"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_06.png",
+      "bytes": 150575,
+      "sha256": "45c5a9f25d2ae5fcea982ddef04c280e326c6031988782e768d4adde35b8b937"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_07.png",
+      "bytes": 150961,
+      "sha256": "7d8ec863e061ae51cfdba2bffb18720f2ccbd6ff6b2b280d545f530097858b2b"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_08.png",
+      "bytes": 149464,
+      "sha256": "87322fd053135907a8cfde004c0bf61700c66b34ab6b70dc6db96a8ab95c125a"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_09.png",
+      "bytes": 152148,
+      "sha256": "8e94fd4d4dcf31d557109fd9de862dabe909e8634d14b06b8a2593187113fc7b"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_10.png",
+      "bytes": 151719,
+      "sha256": "309139009d4412cf53a4eb86b06b958f90bb2454397a3aca84cee0fa380a1f63"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_11.png",
+      "bytes": 151761,
+      "sha256": "3c8be63473e4ba123c9f12836f85ed203b47b45047a484b00cfbc23d1b71f2e0"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero/frames/Idle_12.png",
+      "bytes": 150251,
+      "sha256": "59ba3bd0d8ff53376eea9537dbb10033bccf517b0f35a9935d87881906199894"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/manifest.json",
+      "bytes": 1424,
+      "sha256": "6c04167e6183644e378828fa5b3126e05ff0a2b21c933f9f9483bae92a1093ec"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/technical-report.json",
+      "bytes": 3216,
+      "sha256": "bdf23dbae788923423100bfe34fe7d299a30bd93f8854f43b4597b81d14bb19a"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/frames/Idle_01.png",
+      "bytes": 161088,
+      "sha256": "8cf257c6c8a3ae3a6d9f2760ca35f6f4679805eb40523331daa441aade50fb5f"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/frames/Idle_02.png",
+      "bytes": 161089,
+      "sha256": "fa6a116c1e85dedb5af351fb3acaff1629e3c4cf30e29b59a7c000246cd681bd"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/frames/Idle_03.png",
+      "bytes": 165232,
+      "sha256": "5ec1ac8a61013e816c3a910c1797f0a8c0ed8b705c1d4632920b9b22492ca47e"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/frames/Idle_04.png",
+      "bytes": 166742,
+      "sha256": "5014ff9949f04f37af8b897895b34ff63ae567328e543c4594f6ac75f7c8af47"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/frames/Idle_05.png",
+      "bytes": 164345,
+      "sha256": "499ce8db6dddbd6fdaf6be67db511808c90d0ed36047dfed5e5d89f7f5a3df03"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/frames/Idle_06.png",
+      "bytes": 162109,
+      "sha256": "d3d88da68eb3b2cb7fa6231c0714aaff8deecb5155e40cb8d834624f4c741ec8"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/frames/Idle_07.png",
+      "bytes": 161676,
+      "sha256": "d3fc96b7558224aff7e54e61abac67ec86b94a0269e92cc5071c6e7b23decdbf"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero/frames/Idle_08.png",
+      "bytes": 160902,
+      "sha256": "2ed458a2a8432198971ba81c1c1ffbe53c1d8e9a6f01f8f1c5a22e921a75ad3d"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero-Idle-strip8.png",
+      "bytes": 1276491,
+      "sha256": "64a3cb6a5351ab30bad99990811318537fdb2f1cb814986be4f3bb7c341de39c"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero-board.png",
+      "bytes": 1261778,
+      "sha256": "735435f143412623509c05eb9db1a7695bee9aef5af8187e79707307ec702a49"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero-prompt.txt",
+      "bytes": 1883,
+      "sha256": "7a45b6e340f427c670b2e2ba0216f58d838b95ba108756e3df7ce87d36847310"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/FourCharacterIdleTrial/Hero-reference.png",
+      "bytes": 37216,
+      "sha256": "1d23478bf5d35e60202e6d924659610ff67ab0b5b83c147c58a6378bfb0191a0"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleFlowRevision/half1-board.png",
+      "bytes": 1206537,
+      "sha256": "8db39df2366fa40042111684c9cb2e12552909367e5ef47fab2b5a09f99875e0"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleFlowRevision/half2-board.png",
+      "bytes": 1045111,
+      "sha256": "6525a0ed4120becaf67f78f6358886993f2b2c3acacd7ab529a75dc1ea616bb1"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleFlowRevision/half1-prompt.txt",
+      "bytes": 2287,
+      "sha256": "31c10abc42404827e6ccd576d9a635db9804f24f9478aeca376b4d24aa154632"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleFlowRevision/half2-prompt.txt",
+      "bytes": 2407,
+      "sha256": "44f0185e91b07f7c608411f649bb38654719c14b1a74b9a5a5a1769b0026a631"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleFlowRevision/guide-half1.png",
+      "bytes": 20934,
+      "sha256": "47eb1e0422ebdd718917c7f065b6be1cfdfe3045d39649d7ada053e60c0f8407"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleFlowRevision/guide-half2.png",
+      "bytes": 21036,
+      "sha256": "3b3f37695ad9cced2a62ecfaa327e06e8e42c5eccdb5f15bce11e4794ff018f6"
+    },
+    {
+      "former_project_path": "ArtSource/Characters/HeroIdleFlowRevision/build_halves.py",
+      "bytes": 2908,
+      "sha256": "3dc683cee0b24377df1413819598148415f601f129801435583a43b5f0c83a2a"
+    }
+  ],
+  "targets": [
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleCapeWaveRevision",
+      "area": "project",
+      "directory": true,
+      "files": 20,
+      "bytes": 4013392
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdlePixelRevision",
+      "area": "project",
+      "directory": true,
+      "files": 20,
+      "bytes": 4513196
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleWeightShiftRevision",
+      "area": "project",
+      "directory": true,
+      "files": 27,
+      "bytes": 6753858
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdlePlantedRevision",
+      "area": "project",
+      "directory": true,
+      "files": 24,
+      "bytes": 5287336
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\FourCharacterIdleTrial\\Hero",
+      "area": "project",
+      "directory": true,
+      "files": 10,
+      "bytes": 1307823
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\FourCharacterIdleTrial\\Hero-Idle-strip8.png",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 1276491
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\FourCharacterIdleTrial\\Hero-board.png",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 1261778
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\FourCharacterIdleTrial\\Hero-prompt.txt",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 1883
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\FourCharacterIdleTrial\\Hero-reference.png",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 37216
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\half1-board.png",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 1206537
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\half2-board.png",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 1045111
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\half1-prompt.txt",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 2287
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\half2-prompt.txt",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 2407
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\guide-half1.png",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 20934
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\guide-half2.png",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 21036
+    },
+    {
+      "path": "E:\\UnityProject\\HeroArena\\ArtSource\\Characters\\HeroIdleFlowRevision\\build_halves.py",
+      "area": "project",
+      "directory": false,
+      "files": 1,
+      "bytes": 2908
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\outputs\\HeroIdleCapeWave",
+      "area": "workspace",
+      "directory": true,
+      "files": 1,
+      "bytes": 1330795
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\outputs\\HeroIdlePixel",
+      "area": "workspace",
+      "directory": true,
+      "files": 1,
+      "bytes": 1510738
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\outputs\\HeroIdleWeightShift",
+      "area": "workspace",
+      "directory": true,
+      "files": 1,
+      "bytes": 1717414
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\outputs\\HeroIdlePlanted",
+      "area": "workspace",
+      "directory": true,
+      "files": 1,
+      "bytes": 1762370
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\outputs\\FourCharacterIdle\\Hero-Idle-strip8.png",
+      "area": "workspace",
+      "directory": false,
+      "files": 1,
+      "bytes": 1276491
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\HeroIdleCapeWave",
+      "area": "workspace",
+      "directory": true,
+      "files": 21,
+      "bytes": 5777418
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\HeroIdlePixel",
+      "area": "workspace",
+      "directory": true,
+      "files": 22,
+      "bytes": 7403651
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\HeroIdleWeightShift",
+      "area": "workspace",
+      "directory": true,
+      "files": 32,
+      "bytes": 12859803
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\HeroIdlePlanted",
+      "area": "workspace",
+      "directory": true,
+      "files": 25,
+      "bytes": 7553069
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\HeroIdleFlow",
+      "area": "workspace",
+      "directory": true,
+      "files": 35,
+      "bytes": 11844212
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\IdleProduction",
+      "area": "workspace",
+      "directory": true,
+      "files": 71,
+      "bytes": 28041517
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\IdleResearch",
+      "area": "workspace",
+      "directory": true,
+      "files": 5,
+      "bytes": 868578
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\game-2d-animation-designer",
+      "area": "workspace",
+      "directory": true,
+      "files": 7,
+      "bytes": 40861
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\install_animation_knowledge.py",
+      "area": "workspace",
+      "directory": false,
+      "files": 1,
+      "bytes": 5107
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\check_animation_knowledge.py",
+      "area": "workspace",
+      "directory": false,
+      "files": 1,
+      "bytes": 1684
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\commit_animation_knowledge.py",
+      "area": "workspace",
+      "directory": false,
+      "files": 1,
+      "bytes": 2682
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\IdleCleanup",
+      "area": "workspace",
+      "directory": true,
+      "files": 57,
+      "bytes": 21267492
+    },
+    {
+      "path": "E:\\CodexWorkspace\\2026-10-18\\agents-md-projectknowledge\\work\\skill-validation-deps",
+      "area": "workspace",
+      "directory": true,
+      "files": 44,
+      "bytes": 739931
+    }
+  ],
+  "removed_file_count": 439,
+  "removed_bytes": 130758006,
+  "status": "completed; protected files unchanged",
+  "verification": {
+    "final_case": "ANIM-003",
+    "visual_acceptance": true,
+    "skill_files": 7,
+    "pngs_verified": [
+      "Hero-Idle-Flow-strip12.png",
+      "Sword-Idle-strip8.png",
+      "Axe-Idle-strip8.png",
+      "Mage-Idle-strip8.png"
+    ],
+    "input_references_verified": 3,
+    "knowledge_structure": "passed: 18 knowledge entries, 10 skills, 8 references, 32 scripts, 8 intact archives",
+    "official_skill_structure": "passed for both project and personal copies",
+    "runtime_tests": "not run; documentation, cleanup and deterministic export checks only"
+  }
+}

@@ -5,8 +5,9 @@
   "references": [
     {
       "role": "identity",
-      "path": "ArtSource/Characters/HeroIdlePlantedRevision/Hero-board.png",
-      "sha256": "ecc33d7dec2790e53568ea683b4b0b64b947beb21940bb9c80cce4b3b72768af"
+      "path": "ArtSource/Characters/HeroIdleFlowRevision/references/hero-identity-reference.png",
+      "sha256": "ecc33d7dec2790e53568ea683b4b0b64b947beb21940bb9c80cce4b3b72768af",
+      "original_path_before_cleanup": "ArtSource/Characters/HeroIdlePlantedRevision/Hero-board.png"
     },
     {
       "role": "motion rhythm",
@@ -15,8 +16,9 @@
     },
     {
       "role": "approved cape wave",
-      "path": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero-board.png",
-      "sha256": "1c2e775f310c262c8820cfaf509e80f21eb4761d8c648dd8b5762d50d9ebac9b"
+      "path": "ArtSource/Characters/HeroIdleFlowRevision/references/cape-approved-reference.png",
+      "sha256": "1c2e775f310c262c8820cfaf509e80f21eb4761d8c648dd8b5762d50d9ebac9b",
+      "original_path_before_cleanup": "ArtSource/Characters/HeroIdleCapeWaveRevision/Hero-board.png"
     }
   ],
   "construction_guide": "pose-guide.png; schematic motion only, not final art",
@@ -25,10 +27,20 @@
   "selected_prompt": "生成提示词.txt",
   "selected_png": "Hero-Idle-Flow-strip12.png",
   "selected_png_sha256": "c19e3eee76c32b10b0d46dc8f2561a4bb7461eb4e25d1ced6bdffab9b1601cf3",
-  "not_selected": [
-    "half1-board.png",
-    "half2-board.png"
-  ],
   "selection_reason": "split six-pose tests differed in character scale and boundary transitions; final PNG is from the coherent full twelve-pose board, not the stitched half tests",
-  "status": "candidate; head/cape silhouette changes observed, extraction/playback functionality passed; user motion approval and Unity integration pending"
+  "status": "user visually approved on 2026-10-18; technical checks passed; Unity integration/game regression not verified",
+  "discarded_experiments": [
+    {
+      "former_filename": "half1-board.png",
+      "sha256": "8db39df2366fa40042111684c9cb2e12552909367e5ef47fab2b5a09f99875e0",
+      "reason": "分段生成尺度和边界衔接不一致，未采用；按用户要求删除，可由Git历史追溯"
+    },
+    {
+      "former_filename": "half2-board.png",
+      "sha256": "6525a0ed4120becaf67f78f6358886993f2b2c3acacd7ab529a75dc1ea616bb1",
+      "reason": "分段生成尺度和边界衔接不一致，未采用；按用户要求删除，可由Git历史追溯"
+    }
+  ],
+  "acceptance_record": "acceptance.json",
+  "cleanup": "Only selected board, PNG, frames, valid prompt, pose draft, actual input references and evidence retained."
 }

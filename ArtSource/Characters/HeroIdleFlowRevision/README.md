@@ -1,25 +1,25 @@
-# 主角Idle：可见头腰曲线与披风波浪候选
+# 主角Idle定稿：头腰起伏与披风联动
 
-2026-10-18用户进一步指出：哥布林Idle的头部/腰部浮动曲线明显自然，主角披风也要动。上一版过度抑制运动，不应把脚底稳定等同于头腰近乎静止。本轮维持空手、轻像素绘景、三分之四朝右与稳定接地目标，增强头腰高低差和披风轮廓变化。
+2026-10-18用户明确反馈“这次满意了”，并要求整理知识库/skill、删除不需要的文件。本目录是当前主角Idle的权威版本（ANIM-003），旧候选已清理，简要迭代依据见[归档](../../../ProjectKnowledge/archive/2026-10-18-idle-iterations.md)。
 
-## 制作方式与选稿
+## 直接使用
 
-将[主角原板](../HeroIdlePlantedRevision/Hero-board.png)作为身份/画风输入，[哥布林](../FourCharacterIdleTrial/Sword-board.png)作为运动参照，[认可披风](../HeroIdleCapeWaveRevision/Hero-board.png)作为布料波浪参照；新增[动作草案](pose-guide.png)，以十二个采样展示腰→胸肩→头→披风末端的延迟关系。姿势图是简化构造参考，不是角色成品；pose-targets.json内参数是设计目标，不是生成结果的实测值。不得把程序画的构造图称为已完成角色动画。
+[Hero-Idle-Flow-strip12.png](Hero-Idle-Flow-strip12.png)：7680×640透明RGBA，横排12格，每格640×640；8fps、1.5秒循环，格内左上角根锚点[320,544]，对应Unity归一化pivot[0.5,0.15]。Unity使用Multiple、640×640网格、Max Size 8192、Point/无压缩，PPU/Visual比例仍需按实际显示体高校准。单张PNG是默认交付，不另做对照页或ZIP。
 
-内置image_gen共三次调用：先生成整组十二帧，再试两组六姿势分段。分段原板half1/half2的身体尺度和边界衔接不一致，未采用拼接结果。最终选择Hero-board.png整组原画，保留较一致的比例与完整角色；不是把失败分段重新命名成定稿。分段原图/提示词保留供复盘，不能当成最终交付。
+白发红眼、空手、深色皮甲、轻像素绘景；脚底稳定的站姿上方有清楚的头腰起伏，披风中段及末端延迟形成波浪。这个已认可效果是后续同类主角动作的参考，不把12帧、具体幅度或时长变成所有角色的模板。
 
-## 最终候选与使用
+## 保留的制作依据
 
-[Hero-Idle-Flow-strip12.png](Hero-Idle-Flow-strip12.png)：7680×640透明RGBA，横排12格，每格640×640，根锚点[320,544]，8fps/1.5秒循环。Unity Multiple/640×640网格、Max Size 8192、Point/无压缩；PPU/Visual比例按实际显示体高校准。用户副本在outputs/HeroIdleFlow，只有一张PNG，不附对照页或ZIP。
+- [最终生成原板](Hero-board.png)、[有效提示词](生成提示词.txt)、[帧清单](Hero/manifest.json)与12张独立帧。
+- [角色/画风输入](references/hero-identity-reference.png)、[哥布林运动输入](../FourCharacterIdleTrial/Sword-board.png)、[已认可披风输入](references/cape-approved-reference.png)。两张来自旧目录的输入已迁移到本目录，SHA256保持不变；各输入职责不能混用。
+- [动作构造草案](pose-guide.png)与pose-targets.json：辅助约束头腰/披风延迟关系，不是最终角色或实际运动曲线测量。
+- generation-record.json及[用户认可记录](acceptance.json)：标清选稿、认可范围、原输入与清理情况。两组六姿势分段因尺度/边界不一致未选用，其图片/提示词/辅助脚本已删除，原因留在归档中。
+- extraction-report.json、browser-verification.json、motion-inspection.json与Hero/technical-report.json保留原检查证据。浏览器播放功能通过不等于自动美术验收；本次视觉认可来自用户。
 
-最终提取命令：`python build_idle.py --source-root 本目录 --out 新输出目录`；build_halves.py仅复现未采用的分段试验，勿覆盖最终图集。原画时序见[manifest](Hero/manifest.json)，来源/SHA与选择依据见generation-record.json。
+重新提取：`python build_idle.py --source-root 本目录 --out 新输出目录`。验证源文件verify_idle.cjs沿用本次本机Edge/Playwright路径，需先用动画skill审查器生成Hero/review/review.html；不把它当作跨机器即用的工具。
 
-## 观察和验证边界
+## 验收范围
 
-静态逐帧查看：头部有更可见的高低变化；披风前段展开、随后回落/卷曲，末段再抬起，已区别于上一版近乎固定的披风轮廓。诊断中头部剪影顶部约225–240格内像素，远端红布区域平均Y约344–386；这些只是剪影/颜色变化，不能等同于眼线、腰部实际轨迹、相位正确或自然度已验收。motion-inspection.json保存定义与逐帧值。
+用户已认可本版视觉效果。此前检查覆盖12张帧alpha>0像素完整提取、所属原板RGBA保留、横排各格与独立帧逐像素一致，以及12帧定位/控制/超过两轮正常速度循环。清理时复查最终图集和原板哈希、依赖及像素一致性，未重跑Unity游戏测试。
 
-头腰与披风仍有部分帧的衔接待评审，尤其4→5、8→9和12→1；生成结果存在细节/体积、鞋型差异，不宣称靴底逐像素冻结或精确正弦/骨骼曲线已落实。没有把整个成图平移/缩放当作动作制作，也没有程序模糊补帧。此稿待用户按正常速度确认，不能仅因变化加大就标记为“自然流畅通过”。
-
-技术检查：按alpha>80实际空白带划分原板三行，避免等分时切到鞋底；十二帧全部alpha>0像素完整提取，所属原板RGBA原样保留；横排各格与独立帧逐像素一致。内部浏览器12帧定位、控制、超过两轮正常速度循环通过，无脚本错误。证据见extraction-report.json、browser-verification.json和Hero/technical-report.json。播放功能证据不替代动作验收。
-
-未修改Unity正式Clip/Prefab/场景/排序，未做游戏回归或构建。内部播放脚本依赖本机Edge/Playwright，需先用动画skill审查器生成Hero/review/review.html；素材授权仍按项目13核验。
+原报告中的候选/待审字样记录当时技术阶段，以acceptance.json中的最新认可为准。仍不宣称精确正弦曲线、靴底逐像素完全固定或严格统一低分辨率像素格已被证明。本任务未实施正式角色替换、Clip事件/碰撞/排序回归或构建；用户测试目录的导入改动需后续按现场核对。许可和参考授权继续按项目13维护。

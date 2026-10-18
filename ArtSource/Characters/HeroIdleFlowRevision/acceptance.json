@@ -1,0 +1,28 @@
+{
+  "case": "ANIM-003",
+  "date": "2026-10-18",
+  "source": "本聊天用户明确反馈",
+  "quote": "这次满意了，整理知识库和skill并删掉不需要的。",
+  "selected_png": "Hero-Idle-Flow-strip12.png",
+  "sha256": "c19e3eee76c32b10b0d46dc8f2561a4bb7461eb4e25d1ced6bdffab9b1601cf3",
+  "visual_approved": true,
+  "technical_checks": "pixel extraction and playback functionality passed in stored reports",
+  "frame_count": 12,
+  "cell": [
+    640,
+    640
+  ],
+  "root": [
+    320,
+    544
+  ],
+  "fps": 8,
+  "duration_ms": 1500,
+  "loop": true,
+  "not_claimed": [
+    "Unity正式角色替换/动画事件和游戏回归",
+    "数学曲线精确执行",
+    "鞋底逐像素完全冻结",
+    "严格低分辨率统一像素网格"
+  ]
+}
