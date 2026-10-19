@@ -1,0 +1,60 @@
+{
+  "verified_date": "2026-10-19",
+  "transport": "stdio",
+  "installed_package": "mcpforunityserver 10.3.0",
+  "default_instance": "HeroArena",
+  "sessions": [
+    {
+      "session": 1,
+      "seconds": 4.0,
+      "tool_count": 48,
+      "instance": "HeroArena@14be6f5c",
+      "project": {
+        "projectRoot": "E:/UnityProject/HeroArena",
+        "projectName": "HeroArena",
+        "unityVersion": "2022.3.62f3c1",
+        "platform": "StandaloneWindows64",
+        "assetsPath": "E:/UnityProject/HeroArena/Assets"
+      },
+      "active_scene": {
+        "name": "SampleScene",
+        "path": "Assets/Scenes/SampleScene.unity",
+        "buildIndex": 0,
+        "isDirty": false,
+        "isLoaded": true,
+        "rootCount": 17
+      },
+      "ready_for_tools": true,
+      "last_domain_reload_after_unix_ms": 1792377514410
+    },
+    {
+      "session": 2,
+      "seconds": 3.81,
+      "tool_count": 48,
+      "instance": "HeroArena@14be6f5c",
+      "project": {
+        "projectRoot": "E:/UnityProject/HeroArena",
+        "projectName": "HeroArena",
+        "unityVersion": "2022.3.62f3c1",
+        "platform": "StandaloneWindows64",
+        "assetsPath": "E:/UnityProject/HeroArena/Assets"
+      },
+      "active_scene": {
+        "name": "SampleScene",
+        "path": "Assets/Scenes/SampleScene.unity",
+        "buildIndex": 0,
+        "isDirty": false,
+        "isLoaded": true,
+        "rootCount": 17
+      },
+      "ready_for_tools": true,
+      "last_domain_reload_after_unix_ms": 1792377514410
+    }
+  ],
+  "scope": "Two new server processes after temporary recovery asset cleanup and Unity domain reload; project, scene and editor state queried through MCP.",
+  "limitations": [
+    "Desktop app tool catalog refresh in an already-open conversation is not tested by the SDK sessions.",
+    "Full editor or desktop application restart was not performed.",
+    "No gameplay, scene, build or package dependency changes."
+  ]
+}
