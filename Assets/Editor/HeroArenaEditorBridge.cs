@@ -22,6 +22,11 @@ public static class HeroArenaEditorBridge
             File.Delete(request);
         }
         catch (IOException) { return; } // A producer may still be completing the request; retry next update.
+        if (command == "build-recording-demo")
+        {
+            CompleteDemoBuild.BuildWindowsLive();
+            return;
+        }
         if (command == "prepare-testplayer-walkdown")
         {
             TestPlayerWalkPreparation.Prepare();

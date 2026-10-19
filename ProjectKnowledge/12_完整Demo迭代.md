@@ -22,7 +22,7 @@
 - CompleteDemoVerification 入口会打开正式场景、进入 Play Mode，并在 Finish 中退出 Unity 编辑器；适合独立验证会话，不直接对未保存的交互编辑器调用。
 - 在当前编辑器可通过已经连接的工具检查编译、场景、对象和画面；没有 MCP 时可检查现有桥接或用独立 Unity 验证进程，不能对同一工程并发启动两个编辑器。
 - 批处理可使用 Unity 的 `-projectPath`、`-executeMethod`、`-logFile` 参数调用已核对的方法。确认异步 Play Mode 测试的退出行为，不套用会提前结束的命令模板。
-- 当前不构建/打包；有图像和音频内容时，自动断言之外还应查看实际画面或试听。纯文档修改无需运行游戏回归。
+- 构建按用户当前授权执行；2026-10-19 已授权录像用 Windows Demo。图像和音频内容除自动断言外还应查看实际画面或试听，纯文档修改无需运行游戏回归。
 
 ## 打开正式场景
 
@@ -32,6 +32,7 @@
 - `close`：保存所有已打开场景并退出。它有写入副作用，不能只为查询状态发送。
 - `measure-character-art`：退出 Play 后读取当前场景玩家的实际近战几何，写 Logs/Characters/attack-reach-baseline.json；不打开/保存场景，不退出编辑器。命令用临时文件写完再原子改名，桥接对短暂文件占用下一帧重试。
 - `inspect-character-editor`：只读记录当前工程、Play 状态与场景到 `Logs/Characters/editor-state.txt`，不切换运行状态。
+- `build-recording-demo`：调用 CompleteDemoBuild.BuildWindowsLive，Edit Mode 下保存正式场景副本，在副本中将 TestPlayer、TestEnemy 与三个测试敌人标记 EditorOnly，构建后删除临时场景。原场景不主动保存，编辑器不退出；若 Unity 提示保存原场景，构建副本已保存当前内容，勿为打包覆盖其他工作。构建结果见 Logs/windows-build.txt，实际资源清单见 Logs/windows-build-assets.txt；测试角色、替换候选或 Skeleton 泄漏时记为失败。输出采用时间戳目录，旧包和 Burst 调试信息按当次授权另行清理。
 - `prepare-character-actions`：Edit Mode 下读取 `ArtSource/Characters/Actions/import-layout.json`，仅写入 `Assets/Art/Characters/Generated` 的候选 Sprite/Clip，报告到 `Logs/Characters/action-import-report.json`；Play Mode 下报错并保持原状态，不保存/关闭场景。
 - `prepare-testplayer-walkdown`：Edit Mode 下读取 `ArtSource/Characters/UserWalkDown/slicing-layout.json`，切分用户指定行走图并写入已有 TestPlayer/walkdown.anim；只保存该资产，不保存场景或控制器。报告 `Logs/Characters/testplayer-walkdown.txt`，菜单 `Tools/HeroArena/Characters/Prepare TestPlayer WalkDown`。
 - `slice-player-idle-board`：Edit Mode 下对 `Assets/Role/Test/Player/主角四方向像素待机动画展示板.png` 设置 Multiple 切片，校验与已核对源图相同；下31/左29/右29/上28，共117 Sprite，报告 `Logs/Characters/imported-board-slices.txt`。保留原图像素及烘焙背景，不改场景/动画；菜单 `Tools/HeroArena/Characters/Slice Imported Player Idle Board` 可重做。
