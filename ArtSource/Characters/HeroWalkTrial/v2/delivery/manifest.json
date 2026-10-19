@@ -1,0 +1,157 @@
+{
+  "title": "主角Walk修订 · 左右承重分开 / 待确认",
+  "note": "10帧8fps，1.25秒循环。逐姿势重绘；近侧暖亮/远侧阴影维持身份。未接入Unity。",
+  "loop": true,
+  "frames": [
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "01"
+    },
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        640,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "02"
+    },
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        1280,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "03"
+    },
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        1920,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "04"
+    },
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        2560,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "05"
+    },
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        3200,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "06"
+    },
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        3840,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "07"
+    },
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        4480,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "08"
+    },
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        5120,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "09"
+    },
+    {
+      "file": "Hero-Walk-v2-strip10.png",
+      "rect": [
+        5760,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 125,
+      "label": "10"
+    }
+  ]
+}

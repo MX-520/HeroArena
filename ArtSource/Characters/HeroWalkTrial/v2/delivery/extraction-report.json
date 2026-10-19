@@ -1,0 +1,320 @@
+{
+  "status": "technical normalization only; visual review pending",
+  "frames": 10,
+  "cell": [
+    640,
+    640
+  ],
+  "size": [
+    6400,
+    640
+  ],
+  "fps": 8,
+  "duration_ms": 1250,
+  "root": [
+    320,
+    544
+  ],
+  "unity_pivot": [
+    0.5,
+    0.15
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "sha256": "6e71202a25d1785b086f1dc3b718513e5cc1a7c2e82cccba319b210e0d2c95e1",
+  "checks": [
+    {
+      "frame": 1,
+      "source": "../source-frames/Walk_01.png",
+      "source_sha256": "86d2335ece3900a869d6ec9da2dadd1cf303f798b84ffee43e4a0b6614fe856d",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        74,
+        125,
+        533,
+        595
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    },
+    {
+      "frame": 2,
+      "source": "../source-frames/Walk_02.png",
+      "source_sha256": "0415bfd8a49a15a5414efc9b88bc3ad58dfa44004eabee1e0feef04e4c3a3978",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        54,
+        140,
+        529,
+        593
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    },
+    {
+      "frame": 3,
+      "source": "../source-frames/Walk_03.png",
+      "source_sha256": "62e331e30fe9ac31b8d1b077f63681f4faf512031e086033113543c4d3e81663",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        57,
+        119,
+        533,
+        589
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    },
+    {
+      "frame": 4,
+      "source": "../source-frames/Walk_04.png",
+      "source_sha256": "4cd804e1348a1b19b744bf0b7f552d43ffa3b3b405acebb33fc0a1e9dd039be4",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        116,
+        145,
+        500,
+        565
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    },
+    {
+      "frame": 5,
+      "source": "../source-frames/Walk_05.png",
+      "source_sha256": "cbc18c39b7a4348c957f8c5b7f56ff2c4551778c4cbc2f88193ab412dae3f0ec",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        58,
+        140,
+        520,
+        590
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    },
+    {
+      "frame": 6,
+      "source": "../source-frames/Walk_06.png",
+      "source_sha256": "005d25e0929c489a2f00e2c58813afb5a71cf6caf70a2cc20fea35bed84c76bb",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        53,
+        140,
+        516,
+        600
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    },
+    {
+      "frame": 7,
+      "source": "../source-frames/Walk_07.png",
+      "source_sha256": "8d4361be36d4510d3eea35098703837b4b7284dcd6d7877c10585556a4614777",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        57,
+        113,
+        455,
+        585
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    },
+    {
+      "frame": 8,
+      "source": "../source-frames/Walk_08.png",
+      "source_sha256": "d7868b1744b4415cffe52eadbbcaa85e898c2a0e249d5a3e5aff33fe26b69e8c",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        100,
+        146,
+        533,
+        550
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    },
+    {
+      "frame": 9,
+      "source": "../source-frames/Walk_09.png",
+      "source_sha256": "eddf0cf347b4e2a3fbe44dd07d22b4a7d808f13e483c229f1397cb43b49325c8",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        70,
+        114,
+        528,
+        591
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    },
+    {
+      "frame": 10,
+      "source": "../source-frames/Walk_10.png",
+      "source_sha256": "482d650f3c2c18f620393de34fbd2a33061de69cf09a38a76a97cc9b16aadb19",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "common_source_root": [
+        686,
+        1097
+      ],
+      "scaled_size": [
+        502,
+        502
+      ],
+      "placement": [
+        45,
+        105
+      ],
+      "bounds": [
+        45,
+        113,
+        521,
+        575
+      ],
+      "normalized_pixels_exact": true,
+      "resampling": "nearest; uniform 502/1254 for all frames"
+    }
+  ],
+  "note": "Original source pixels are resampled once with nearest; not claimed lossless relative to source. No per-frame foot bounding-box/root fitting."
+}
