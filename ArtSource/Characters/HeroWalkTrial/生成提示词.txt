@@ -1,0 +1,12 @@
+Create exactly EIGHT sequential WALK frames in FOUR columns TWO rows. Image1 is hero identity/texture reference. Image2 is the CORRECT OPPOSITE LEG CONTACT pose: big foreground boot BEHIND on LEFT, small far boot in FRONT on RIGHT. Image3 is exact eight-step leg motion guide, not final art. Mandatory use image2 pose for FRAME5, including FOREGROUND LEG BACKWARD and NEAR HAND FORWARD. Frame1 must have opposite legs/arms to image2.
+Same white-haired red-eyed hero, empty hands, leather armor, brown boots, red two-lobed cape. Match image1 fine pixel-painted style and chibi proportions throughout. Elevated three-quarter facing RIGHT, fixed camera, no turning. Walk on spot, externally translated root.
+Frame1 foreground leg reaches forward right heel contact, far leg rear left toe, near hand BACK.
+Frame2 foreground leg supports under hips, far knee bends behind with boot lifted, hips DOWN.
+Frame3 foreground planted boot now slightly BEHIND hips, far lifted knee passes forward. NARROW passing stance.
+Frame4 foreground rear toe under LEFT side, far heel extends toward RIGHT to land, hips UP, near hand FORWARD.
+Frame5 copy opposite contact from image2: large foreground leg BACK LEFT, small distant leg FRONT RIGHT, near hand FORWARD.
+Frame6 distant leg supports below hips, foreground knee bends behind with boot lifted, hips DOWN.
+Frame7 distant planted boot behind hips, foreground knee passes forward off ground. NARROW passing stance.
+Frame8 distant rear toe under LEFT side, foreground heel extends toward RIGHT to land, hips UP, near hand BACK. Loop into1.
+A WALK: always one foot supporting on ground, moderate small strides, no flight, no bounding. Consistent thigh/shin length, no duplicate limbs, boots or hands. Near leg remains drawn in FRONT of far leg at crossings. Stance foot moves backward under pelvis. Head gently follows two hip bobs. Red cape wave follows shoulders with midsection and tips delayed, stable fabric amount.
+Every fullbody isolated in same-sized cell with generous transparent gaps, identical scale, consistent local pelvis X and ground root; preserve small vertical body bob. REAL transparent alpha, NO shadows, floor, painted checkerboard, grid, labels or scenery. Eight finished frames only, four columns TWO rows.

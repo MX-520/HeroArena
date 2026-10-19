@@ -1,0 +1,127 @@
+{
+  "title": "主角 Walk · 动作风格确认候选",
+  "note": "朝右三分之四视角，原地，8帧10fps。待用户审查；不代表Unity正式接入或滑步回归通过。",
+  "loop": true,
+  "frames": [
+    {
+      "file": "Hero-Walk-strip8.png",
+      "rect": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 100,
+      "label": "01"
+    },
+    {
+      "file": "Hero-Walk-strip8.png",
+      "rect": [
+        640,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 100,
+      "label": "02"
+    },
+    {
+      "file": "Hero-Walk-strip8.png",
+      "rect": [
+        1280,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 100,
+      "label": "03"
+    },
+    {
+      "file": "Hero-Walk-strip8.png",
+      "rect": [
+        1920,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 100,
+      "label": "04"
+    },
+    {
+      "file": "Hero-Walk-strip8.png",
+      "rect": [
+        2560,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 100,
+      "label": "05"
+    },
+    {
+      "file": "Hero-Walk-strip8.png",
+      "rect": [
+        3200,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 100,
+      "label": "06"
+    },
+    {
+      "file": "Hero-Walk-strip8.png",
+      "rect": [
+        3840,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 100,
+      "label": "07"
+    },
+    {
+      "file": "Hero-Walk-strip8.png",
+      "rect": [
+        4480,
+        0,
+        640,
+        640
+      ],
+      "anchor": [
+        320,
+        544
+      ],
+      "duration_ms": 100,
+      "label": "08"
+    }
+  ]
+}

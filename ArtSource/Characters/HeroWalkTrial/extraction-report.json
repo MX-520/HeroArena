@@ -1,0 +1,207 @@
+{
+  "status": "technical extraction passed; visual style pending user review",
+  "size": [
+    5120,
+    640
+  ],
+  "cell": [
+    640,
+    640
+  ],
+  "frame_count": 8,
+  "fps": 10,
+  "loop_seconds": 0.8,
+  "anchor_top_left": [
+    320,
+    544
+  ],
+  "unity_pivot": [
+    0.5,
+    0.15
+  ],
+  "source_size": [
+    1774,
+    887
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "source_sha256": "27900327f34056e57465c8cf3071a81dfe974fe9185713ffcfa359f9a095751a",
+  "output_sha256": "1e4ec94983b8ca4d360a36c859ea8d869dfda409d28d9d5f61d43022528a8b65",
+  "frames": [
+    {
+      "frame": 1,
+      "source_rect": [
+        0,
+        0,
+        444,
+        450
+      ],
+      "source_root": [
+        280,
+        420
+      ],
+      "bounds": [
+        62,
+        180,
+        478,
+        574
+      ],
+      "visible_rgba_exact": true,
+      "alpha_pixels": 75998
+    },
+    {
+      "frame": 2,
+      "source_rect": [
+        444,
+        0,
+        443,
+        450
+      ],
+      "source_root": [
+        724,
+        420
+      ],
+      "bounds": [
+        40,
+        165,
+        479,
+        568
+      ],
+      "visible_rgba_exact": true,
+      "alpha_pixels": 69485
+    },
+    {
+      "frame": 3,
+      "source_rect": [
+        887,
+        0,
+        443,
+        450
+      ],
+      "source_root": [
+        1167,
+        420
+      ],
+      "bounds": [
+        45,
+        149,
+        474,
+        574
+      ],
+      "visible_rgba_exact": true,
+      "alpha_pixels": 67485
+    },
+    {
+      "frame": 4,
+      "source_rect": [
+        1330,
+        0,
+        444,
+        450
+      ],
+      "source_root": [
+        1610,
+        420
+      ],
+      "bounds": [
+        41,
+        153,
+        438,
+        574
+      ],
+      "visible_rgba_exact": true,
+      "alpha_pixels": 71799
+    },
+    {
+      "frame": 5,
+      "source_rect": [
+        0,
+        450,
+        444,
+        437
+      ],
+      "source_root": [
+        280,
+        840
+      ],
+      "bounds": [
+        63,
+        156,
+        484,
+        555
+      ],
+      "visible_rgba_exact": true,
+      "alpha_pixels": 74192
+    },
+    {
+      "frame": 6,
+      "source_rect": [
+        444,
+        450,
+        443,
+        437
+      ],
+      "source_root": [
+        724,
+        840
+      ],
+      "bounds": [
+        40,
+        193,
+        483,
+        557
+      ],
+      "visible_rgba_exact": true,
+      "alpha_pixels": 68718
+    },
+    {
+      "frame": 7,
+      "source_rect": [
+        887,
+        450,
+        443,
+        437
+      ],
+      "source_root": [
+        1167,
+        840
+      ],
+      "bounds": [
+        41,
+        165,
+        478,
+        573
+      ],
+      "visible_rgba_exact": true,
+      "alpha_pixels": 67034
+    },
+    {
+      "frame": 8,
+      "source_rect": [
+        1330,
+        450,
+        444,
+        437
+      ],
+      "source_root": [
+        1610,
+        840
+      ],
+      "bounds": [
+        43,
+        175,
+        436,
+        573
+      ],
+      "visible_rgba_exact": true,
+      "alpha_pixels": 71929
+    }
+  ],
+  "limitations": [
+    "No Unity import, binding, event edits or in-game speed matching.",
+    "Frame 03 and 07 rear/near limb overlap remains a visual review point; cannot certify zero sliding from sprite alone.",
+    "No user acceptance yet."
+  ]
+}
